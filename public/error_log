@@ -1,0 +1,166 @@
+[07-Oct-2017 11:13:47 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[07-Oct-2017 11:16:06 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[07-Oct-2017 11:22:09 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[07-Oct-2017 11:26:52 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[07-Oct-2017 11:45:59 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[07-Oct-2017 11:46:53 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[07-Oct-2017 11:48:41 UTC] PHP Fatal error:  Call to undefined function php_info() in /home/multi786/public_html/multidynamic/public/index.php on line 21
+[07-Oct-2017 11:48:52 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 233
+[17-Oct-2017 07:26:14 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 13077488 bytes) in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/View/Concerns/ManagesLayouts.php on line 93
+[17-Oct-2017 07:27:20 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 13077488 bytes) in /home/multi786/public_html/multidynamic/vendor/laravel/framework/src/Illuminate/View/Concerns/ManagesLayouts.php on line 93
+[25-Oct-2017 11:18:01 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:18:15 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:18:30 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:18:40 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:18:52 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:18:55 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:18:55 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:19:03 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:19:12 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:19:25 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:19:28 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[25-Oct-2017 11:19:30 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 48250880 bytes) in /home/multi786/public_html/multidynamic/storage/framework/views/8ffd8ee1cd771008deb2b87e0bf7a0d7b61b8269.php on line 44
+[30-Aug-2018 01:31:26 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:32:47 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:32:50 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:32:53 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:06 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:08 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:17 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:19 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:23 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:48 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:52 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:54 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:54 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:56 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:57 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:33:59 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:34:00 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752
+[30-Aug-2018 01:34:00 UTC] PHP Fatal error:  Uncaught ReflectionException: Class config does not exist in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:752
+Stack trace:
+#0 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(752): ReflectionClass->__construct('config')
+#1 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(631): Illuminate\Container\Container->build('config')
+#2 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(586): Illuminate\Container\Container->resolve('config', Array)
+#3 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(732): Illuminate\Container\Container->make('config', Array)
+#4 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(110): Illuminate\Foundation\Application->make('config', Array)
+#5 /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(272): in /home/multi786/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 752

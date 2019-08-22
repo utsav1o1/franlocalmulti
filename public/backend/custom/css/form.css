@@ -1,0 +1,8 @@
+.form-group small.validation-error-message {
+    color: #f53333;
+    float: right;
+}
+
+.alert-message-container {
+	margin-top: 15px;
+}
