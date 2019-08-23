@@ -136,7 +136,6 @@
                 {{--<span class="eventfocus">Only for 40 people. Please reserve your seat ASAP.</span>--}}
                 {{--<a href="mailto:sales@multidynamic.com.au" id="join-now" class="join-now" data-toggle="modal" data-target="#myModal">Join Now !</a>--}}
 
-
             {{--</marquee>--}}
         {{--</div>--}}
     {{--</div>--}}
