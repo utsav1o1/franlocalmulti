@@ -44,6 +44,16 @@
     <meta name="keywords" content="real estate in south sydney">
     <meta name="keywords" content="real estate om sydney">
     <meta name="keywords" content="rent a home">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143430108-5"></script>
+    <script>
+         window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-143430108-5');
+    </script>
+
     <div class="row">
         <nav class="navbar navbar-default navbar-inverse navbar-static-top affix-top" data-spy="affix"
              data-offset-top="110">
