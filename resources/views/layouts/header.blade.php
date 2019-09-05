@@ -1,8 +1,49 @@
 <header>
-    <meta name="google-site-verification" content="0cPsDa3kfX0qls1LAJZnUJoKaq72rJ9STJN8NEL2KPo" />
     <meta name="title" content="Multi Dynamic - Ingleburn | Your Dynamic Real Estate">
     <meta name="description" content="Multi Dynamic provides real estate services to the multicultural community all over Australia. Find houses, apartments & townhouses for sale & rent near Ingleburn area.">
-    <meta name="keywords" content="multidynamic, real estate in south west, real estate in minto, real estate in ingleburn, real estate in austral, real estate in edmondson park, real estate in oran park, real estate in lepington, multidynamic ingleburn, nepali real estate in Sydney,nepalese real estate, nepali real estate in Australia , nepali real estate in Australia for rent, real estate, renting , properties buy and sell near me , buy property, buy land, sell property,  house and land, buy house and land, sell land, rent houses, appartments for rent, house for rent in Sydney,house for rent in liverpool,  houses on sale, honest real estate, reliable real estate, fastest way to sell home, first home buyer help, property management near me,real estate seminars, brand new houses,rental properties in Sydney, rental properties in south west sydney, rental properties in liverpool, rental properties in ingleburn, rental property in edmondson park, properties in lease near me">
+    <meta name="keywords" content="multidynamic">
+    <meta name="keywords" content="real estate in south west">
+    <meta name="keywords" content="real estate in minto">
+    <meta name="keywords" content="real estate in ingleburn">
+    <meta name="keywords" content="real estate in austral">
+    <meta name="keywords" content="real estate in edmondson park">
+    <meta name="keywords" content="real estate in oran park">
+    <meta name="keywords" content="real estate in lepington">
+    <meta name="keywords" content="multidynamic ingleburn">
+    <meta name="keywords" content="nepali real estate in Sydney">
+    <meta name="keywords" content="nepalese real estate">
+    <meta name="keywords" content="nepali real estate in Australia">
+    <meta name="keywords" content="nepali real estate in Australia for rent">
+    <meta name="keywords" content="real estate, renting">
+    <meta name="keywords" content="properties buy and sell near me">
+    <meta name="keywords" content="buy property">
+    <meta name="keywords" content="buy land, sell property">
+    <meta name="keywords" content="house and land">
+    <meta name="keywords" content="buy house and land">
+    <meta name="keywords" content="sell land">
+    <meta name="keywords" content="rent houses">
+    <meta name="keywords" content="appartments for rent">
+    <meta name="keywords" content="house for rent in Sydney">
+    <meta name="keywords" content="house for rent in liverpool">
+    <meta name="keywords" content="houses on sale">
+    <meta name="keywords" content="honest real estate">
+    <meta name="keywords" content="reliable real estate">
+    <meta name="keywords" content="fastest way to sell home">
+    <meta name="keywords" content="first home buyer help">
+    <meta name="keywords" content="property management near me">
+    <meta name="keywords" content="real estate seminars">
+    <meta name="keywords" content="brand new houses">
+    <meta name="keywords" content="rental properties in Sydney">
+    <meta name="keywords" content="rental properties in south west sydney">
+    <meta name="keywords" content="rental properties in liverpool">
+    <meta name="keywords" content="rental properties in ingleburn">
+    <meta name="keywords" content="rental property in edmondson park">
+    <meta name="keywords" content="properties in lease near me">
+    <meta name="keywords" content="Multi Dynamic">
+    <meta name="keywords" content="Realestate">
+    <meta name="keywords" content="real estate in south sydney">
+    <meta name="keywords" content="real estate om sydney">
+    <meta name="keywords" content="rent a home">
     <div class="row">
         <nav class="navbar navbar-default navbar-inverse navbar-static-top affix-top" data-spy="affix"
              data-offset-top="110">
