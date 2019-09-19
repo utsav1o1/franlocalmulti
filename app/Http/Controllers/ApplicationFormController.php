@@ -17,11 +17,11 @@ class ApplicationFormController extends Controller
 
     public function submitApplication(ApplicationFormSubmitRequest $request)
     {
-        dd($request->all());
         $pdf = \PDF::loadView('frontend.applicationForm.application_pdf', ['attributes' => $request->all()]);
         $attributes = $request->all();
         $attributes['pdf'] = $pdf;
-        Mail::to('prasang381@gmail.com')->send(new ApplicationFormSubmit($attributes));
+        Mail::to(config('app.application_to_mail'))->send(new ApplicationFormSubmit($attributes));
+        dd("Mail sent");
         return redirect()->route('home');
     }
 }
