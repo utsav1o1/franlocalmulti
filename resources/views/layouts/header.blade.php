@@ -47,11 +47,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143430108-5"></script>
     <script>
-         window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-          gtag('config', 'UA-143430108-5');
+        gtag('config', 'UA-143430108-5');
     </script>
 
     <div class="row">
@@ -64,8 +64,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a href="{{ url(env('CORPORATE_URL')) }}" class="navbar-brand">
+                <a href="{{ url(config('app.corporate_url')) }}" class="navbar-brand">
                     <img src="{!! asset('images/logo.png') !!}" class="img-responsive"/>
                 </a>
 
@@ -73,7 +72,7 @@
                     <div class="top-menu">
                         <ul class="nav navbar-nav top-main-menu">
                             <li class="nav-item">
-                                    <a class="nav-link" href="{!! route('home') !!}">Home <span class="sr-only"></span></a>
+                                <a class="nav-link" href="{!! route('home') !!}">Home <span class="sr-only"></span></a>
                             </li>
                             <li class="">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
@@ -113,7 +112,7 @@
 
                                         <?php
 
-                                            break;
+                                        break;
 
                                         ?>
 
@@ -121,6 +120,7 @@
 
                                     <li><a href="{!! route('agents.index') !!}">Commercial</a></li>
                                     <li><a href="{!! route('properties.leased') !!}">Leased Properties</a></li>
+                                    <li><a href="{!! route('showApplicationForm') !!}" target="_blank">Application Form</a></li>
                                 </ul>
                             </li>
 

@@ -46,6 +46,9 @@ Route::middleware('auth:user')->post('property/save', 'PropertyController@save')
 
 Route::post('subscriber', 'SubscriberController@store')->name('subscriber.store');
 
+Route::get('/application/tenancy-application-form/', 'ApplicationFormController@showForm')->name('showApplicationForm');
+Route::post('/application/tenancy-application-form/', 'ApplicationFormController@submitApplication')->name('submitApplicationForm');
+
 Route::prefix('admin')->namespace('Admin')->group(function () {
     Route::get('login', ['as' => 'admin.login', 'uses' => 'LoginController@login']);
     Route::post('login', ['as' => 'admin.authenticate', 'uses' => 'LoginController@authenticate']);
@@ -112,7 +115,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
         'destroy' => 'admin.property-type.destroy',
     ]]);
     Route::post('property-type/sort/order', 'PropertyTypeController@sortOrder')->name('admin.property-type.sort.order');
-    
+
     Route::resource('property-category', 'PropertyCategoryController', ['names' => [
         'index' => 'admin.property-category.index',
         'create' => 'admin.property-category.create',
@@ -126,72 +129,72 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     Route::group(['prefix' => 'project'], function()
     {
         Route::get('list', 'ProjectController@showProjects')
-             ->name('admin.project.list');
+            ->name('admin.project.list');
 
         Route::get('add-interface', 'ProjectController@showProjectAddInterface')
-             ->name('admin.project.add-interface');
+            ->name('admin.project.add-interface');
 
         Route::post('add', 'ProjectController@addProject')
-             ->name('admin.project.add');
+            ->name('admin.project.add');
 
         Route::get('edit/{id}', 'ProjectController@showProjectEditInterface')
-             ->name('admin.project.edit-interface');
+            ->name('admin.project.edit-interface');
 
         Route::put('update/{id}', 'ProjectController@updateProject')
-             ->name('admin.project.update');
+            ->name('admin.project.update');
 
         Route::get('project-location-list', 'ProjectController@getProjectLocationListForProjectForm')
-             ->name('admin.project.project-location-list');
+            ->name('admin.project.project-location-list');
 
         Route::get('project-type-list', 'ProjectController@getProjectTypeListForProjectForm')
-             ->name('admin.project.project-type-list');
+            ->name('admin.project.project-type-list');
 
         Route::delete('delete/{id}', 'ProjectController@deleteProject')
-             ->name('admin.project.delete');
+            ->name('admin.project.delete');
     });
 
     Route::group(['prefix' => 'project-type'], function()
     {
         Route::get('list', 'ProjectTypeController@showProjectTypes')
-             ->name('admin.project-type.list');
+            ->name('admin.project-type.list');
 
         Route::get('add-interface', 'ProjectTypeController@showProjectTypeAddInterface')
-             ->name('admin.project-type.add-interface');
+            ->name('admin.project-type.add-interface');
 
         Route::post('add', 'ProjectTypeController@addProjectType')
-             ->name('admin.project-type.add');
+            ->name('admin.project-type.add');
 
         Route::get('edit/{id}', 'ProjectTypeController@showProjectTypeEditInterface')
-             ->name('admin.project-type.edit-interface');
+            ->name('admin.project-type.edit-interface');
 
         Route::put('update/{id}', 'ProjectTypeController@updateProjectType')
-             ->name('admin.project-type.update');
+            ->name('admin.project-type.update');
 
         Route::delete('delete/{id}', 'ProjectTypeController@deleteProjectType')
-             ->name('admin.project-type.delete');
+            ->name('admin.project-type.delete');
     });
 
     Route::group(['prefix' => 'project-location'], function() {
         Route::get('list', 'ProjectLocationController@showProjectLocations')
-             ->name('admin.project-location.list');
+            ->name('admin.project-location.list');
 
         Route::get('add-interface', 'ProjectLocationController@showProjectLocationAddInterface')
-             ->name('admin.project-location.add-interface');
+            ->name('admin.project-location.add-interface');
 
         Route::post('add', 'ProjectLocationController@addProjectLocation')
-             ->name('admin.project-location.add');
+            ->name('admin.project-location.add');
 
         Route::get('edit/{id}', 'ProjectLocationController@showProjectLocationEditInterface')
-             ->name('admin.project-location.edit-interface');
+            ->name('admin.project-location.edit-interface');
 
         Route::put('update/{id}', 'ProjectLocationController@updateProjectLocation')
-             ->name('admin.project-location.update');
+            ->name('admin.project-location.update');
 
         Route::delete('delete/{id}', 'ProjectLocationController@deleteProjectLocation')
-             ->name('admin.project-location.delete');
+            ->name('admin.project-location.delete');
 
         Route::get('location-list', 'ProjectLocationController@getLocationListForProjectLocationForm')
-             ->name('admin.project-location.location-list');
+            ->name('admin.project-location.location-list');
     });
 
     Route::post('property-category/sort/order', 'PropertyCategoryController@sortOrder')->name('admin.property-category.sort.order');
