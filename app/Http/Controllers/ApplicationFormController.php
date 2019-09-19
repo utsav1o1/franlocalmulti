@@ -17,6 +17,7 @@ class ApplicationFormController extends Controller
 
     public function submitApplication(ApplicationFormSubmitRequest $request)
     {
+        dd($request->all());
         $pdf = \PDF::loadView('frontend.applicationForm.application_pdf', ['attributes' => $request->all()]);
         $attributes = $request->all();
         $attributes['pdf'] = $pdf;
