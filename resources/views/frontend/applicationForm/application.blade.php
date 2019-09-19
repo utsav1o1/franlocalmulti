@@ -68,7 +68,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="form-group col-md-12 {{$errors->has('property_street_address') ? 'has-error' : ''}}">
-                                <input type="text" class="form-control" placeholder="Street Address"
+                                <input type="text" class="form-control" placeholder="Street Address" required
                                        value="{{old('property_street_address')}}" name="property_street_address">
                                 @if($errors->has('property_street_address'))
                                     <span class="error-message">{{$errors->first('property_street_address')}}</span>
@@ -78,7 +78,7 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <input type="text" class="form-control" placeholder="Suburb" value="{{old('property_suburb')}}"
-                                       name="property_suburb">
+                                       name="property_suburb" required>
                                 @if($errors->has('property_suburb'))
                                     <span class="error-message">{{$errors->first('property_suburb')}}</span>
                                 @endif
@@ -106,7 +106,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Lease commencement date"
+                                <input type="text" class="form-control" placeholder="Lease commencement date (YY-MM-DD)"
                                        name="property_lease_commencement_date" value="{{old('property_lease_commencement_date')}}">
                                 @if($errors->has('property_lease_commencement_date'))
                                     <span class="error-message">{{$errors->first('property_lease_commencement_date')}}</span>
@@ -1246,8 +1246,9 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <div class="form-check form-check-inline">
-                                    <input type="checkbox" class="form-check-input" name="terms_and_conditions">
-                                    <label class="form-check-label">I agree to terms and conditions.</label>
+                                    <input type="checkbox" class="form-check-input" name="terms_and_conditions" required>
+                                    <label class="form-check-label">I agree to terms and conditions.
+                                        <a target="_blank" href="{{asset('/application/privacy-policy')}}"> View Privacy Policy </a> </label>
                                 </div>
                             </div>
                         </div>
@@ -1255,9 +1256,10 @@
                             <div class="form-group col-md-12">
                                 <label> Please provide your signature in the box below.</label>
                                 <div class="row">
-                                    <div class="col-md-4" id="signature" style="background-color: ghostwhite"></div>
+                                    <div class="col-md-4" id="signature" style="background-color: #d8d8d8;"></div>
                                     <div class="col-md-4" id="sigImg"></div>
                                 </div>
+                                <br/>
                                 <div class="col-md-4">
                                     <a type="button" class="btn btn-sm btn-primary" id="bbt">Capture Signature</a>
                                     <a type="button" class="btn btn-sm btn-primary" id="res">Reset</a>

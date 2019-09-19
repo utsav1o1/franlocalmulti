@@ -24,4 +24,9 @@ class ApplicationFormController extends Controller
         $request->session()->flash('success', 'Your application has been successfully sent. We will contact you soon!');
         return redirect()->route('home');
     }
+
+    public function privacyPolicy()
+    {
+        return view('frontend.applicationForm.privacy');
+    }
 }

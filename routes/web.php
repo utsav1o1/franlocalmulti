@@ -78,6 +78,8 @@ Route::post('send-property-estimation', 'SellController@sendPropertyEstimation')
 Route::get('get-recently-sold-properties', 'SellController@showRecentlySoldProperties')->name('properties.recently-sold');
 Route::get('get-recently-leased-properties', 'SellController@showRecentlyLeasedProperties')->name('properties.recently-leased');
 
+Route::get('application/privacy-policy', 'ApplicationFormController@privacyPolicy');
+
 /* admin routes */
 
 Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function () {
