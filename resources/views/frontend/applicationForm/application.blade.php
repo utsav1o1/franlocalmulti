@@ -199,7 +199,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Email" name="personal_email" value="{{old('personal_email')}}">
+                                <input type="email" class="form-control" placeholder="Email" required name="personal_email" value="{{old('personal_email')}}">
                             </div>
                         </div>
                         <div class="row">
@@ -394,7 +394,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Landlord/Agent Email"
+                                <input type="email" class="form-control" placeholder="Landlord/Agent Email"
                                        name="current_tenancy_landlord_email" value="{{old('current_tenancy_landlord_email')}}">
                                 <div class="invalid-feedback">
                                     Valid first name is required.
@@ -602,7 +602,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Accountant Email"
+                                <input type="email" class="form-control" placeholder="Accountant Email"
                                        name="self_employed_accountant_email" value="{{old('self_employed_accountant_email')}}">
                                 <div class="invalid-feedback">
                                     Valid first name is required.
@@ -917,7 +917,7 @@
 
                         <div class="row">
                             <div class="form-group col-sm-12">
-                                <input type="text" class="form-control" placeholder="Email"
+                                <input type="email" class="form-control" placeholder="Email"
                                        name="professional_reference_email" value="{{old('professional_reference_email')}}">
                                 <div class="invalid-feedback">
                                     Valid first name is required.
@@ -961,7 +961,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-12">
-                                <input type="text" class="form-control" placeholder="Email"
+                                <input type="email" class="form-control" placeholder="Email"
                                        name="professional_reference_2_email" value="{{old('professional_reference_2_email')}}">
                                 <div class="invalid-feedback">
                                     Valid first name is required.
