@@ -50,7 +50,7 @@ class HomeController extends Controller
         ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
         ->where('is_active', 'Y')
         ->where('property_category_id', $defaultPropertyCategories['buy'])
-        ->where('branch_id', env('BRANCH_ID'));
+        ->where('branch_id', config('app.branch_id'));
 
         $properties = $query->select('properties.*',
                                      DB::raw("COUNT(property_agents.id) AS agents_count"),
@@ -59,9 +59,9 @@ class HomeController extends Controller
                                      'property_types.name AS property_type_name',
                                      DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
                             ->groupBy('properties.id')
-                            ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
+                            ->orderby('created_at', 'desc')->paginate(9);
 
-        $blogs = \App\Models\Corporate\Blog::where('branch_id', env('BRANCH_ID'))
+        $blogs = \App\Models\Corporate\Blog::where('branch_id', config('app.branch_id'))
                    ->orderBy('created_at', 'desc')
                    ->limit(5)
                    ->get();

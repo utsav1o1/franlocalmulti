@@ -128,6 +128,8 @@ return [
 
     'application_to_mail' => env('APPLICATION_TO_MAIL', null),
 
+    'branch_id' => env('BRANCH_ID', null),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
