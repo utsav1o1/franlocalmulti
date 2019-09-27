@@ -78,7 +78,7 @@ class Property extends Model
 
     public function getDefaultPropertyImagePath()
     {
-        return env('CORPORATE_URL') . '/uploads/default/default-property-image.jpg';
+        return config('app.corporate_url') . '/uploads/default/default-property-image.jpg';
     }
 
     public function getCoverImage()
