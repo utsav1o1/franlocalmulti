@@ -1261,7 +1261,10 @@
                                 </div>
                                 <br/>
                                 <div class="col-md-4">
-                                    <a type="button" class="btn btn-sm btn-primary" id="bbt">Capture Signature</a>
+                                    <a type="button" class="btn btn-sm btn-primary" id="bbt">Ok</a>
+                                    @if($errors->has('image'))
+                                        <span class="error-message"> {{$errors->first('image')}} </span>
+                                    @endif
                                     <a type="button" class="btn btn-sm btn-primary" id="res">Reset</a>
                                 </div>
 
