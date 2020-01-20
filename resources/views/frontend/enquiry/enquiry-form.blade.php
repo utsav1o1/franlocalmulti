@@ -19,6 +19,7 @@
     			<p class="text-center font-weight-bold">
     				Isn’t it time you experienced the Multi Dynamic Ingleburn difference? <br>
     				Here’s how you can get in contact with our team of real estate agents, based throughout Australia.
+    				<hr>
     			</p>
     		</div>
     	</div>
