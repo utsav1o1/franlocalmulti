@@ -8,7 +8,7 @@
                         <a href="#" class="footer-logo">
                             <img class="img-responsive" src="{!! asset('images/footer-logo.png') !!}" />
                         </a>
-                        <p style="text-align: justify;">Multi Dynamic is a team of professional and dedicated real estate agents. Who are dedicated to serve the community with their hard working & honest work ethic, prioritising the best results for their valued clients regarding any real estate sales and property management matter.</p>
+                        <p style="text-align: justify;">Multi Dynamic is a team of professional and dedicated real estate agents committed to serving the local community. Hardworking, honest and ethical in all we do, our priority is to secure the best result possible for our valued clients, whether in sales or property management. </p>
                     </div>
 
                 </div>
@@ -83,7 +83,7 @@
 </div> -->
 
         <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="copyright">Copyright © {!! date('Y') !!} <a href="http://www.multidynamic.com.au">{!! env('APP_NAME') !!}</a> All rights reserved. &nbsp; &nbsp; <a href="{!! route('page.show', 'privacy-policy') !!}">Privacy Policy  </a>
+            <div class="copyright">Copyright &copy; {!! date('Y') !!} <a href="http://www.multidynamic.com.au">{!! env('APP_NAME') !!}</a> All rights reserved. &nbsp; &nbsp; <a href="{!! route('page.show', 'privacy-policy') !!}">Privacy Policy  </a>
                  <div class="copyright">
             
         </div>
@@ -102,9 +102,9 @@
         <div class="copyright">
            <!--  <a href="{!! route('page.show', 'privacy-policy') !!}">Privacy Policy</a>&nbsp; -->
            ABN: 90 165 249 954 &nbsp; &nbsp; 
-            <a href="{!! route('page.show', 'terms-and-conditions') !!}">Terms & Conditions</a>
+            <a href="{!! route('page.show', 'terms-and-conditions') !!}">Terms &amp; Conditions</a>
         </div>
-        <div class="design-develop">Design and developed by <a href="http://www.111it.com.au" target="_blank">111IT </a></div> 
+        <div class="design-develop">Design &amp; Developed By: <a href="http://www.111it.com.au" target="_blank">111iT</a></div> 
     </div>
         </div>
     
