@@ -1,4 +1,59 @@
 <header>
+    <meta name="title" content="Multi Dynamic - Ingleburn | Your Dynamic Real Estate">
+    <meta name="description" content="Multi Dynamic provides real estate services to the multicultural community all over Australia. Find houses, apartments & townhouses for sale & rent near Ingleburn area.">
+    <meta name="keywords" content="multidynamic">
+    <meta name="keywords" content="real estate in south west">
+    <meta name="keywords" content="real estate in minto">
+    <meta name="keywords" content="real estate in ingleburn">
+    <meta name="keywords" content="real estate in austral">
+    <meta name="keywords" content="real estate in edmondson park">
+    <meta name="keywords" content="real estate in oran park">
+    <meta name="keywords" content="real estate in lepington">
+    <meta name="keywords" content="multidynamic ingleburn">
+    <meta name="keywords" content="nepali real estate in Sydney">
+    <meta name="keywords" content="nepalese real estate">
+    <meta name="keywords" content="nepali real estate in Australia">
+    <meta name="keywords" content="nepali real estate in Australia for rent">
+    <meta name="keywords" content="real estate, renting">
+    <meta name="keywords" content="properties buy and sell near me">
+    <meta name="keywords" content="buy property">
+    <meta name="keywords" content="buy land, sell property">
+    <meta name="keywords" content="house and land">
+    <meta name="keywords" content="buy house and land">
+    <meta name="keywords" content="sell land">
+    <meta name="keywords" content="rent houses">
+    <meta name="keywords" content="appartments for rent">
+    <meta name="keywords" content="house for rent in Sydney">
+    <meta name="keywords" content="house for rent in liverpool">
+    <meta name="keywords" content="houses on sale">
+    <meta name="keywords" content="honest real estate">
+    <meta name="keywords" content="reliable real estate">
+    <meta name="keywords" content="fastest way to sell home">
+    <meta name="keywords" content="first home buyer help">
+    <meta name="keywords" content="property management near me">
+    <meta name="keywords" content="real estate seminars">
+    <meta name="keywords" content="brand new houses">
+    <meta name="keywords" content="rental properties in Sydney">
+    <meta name="keywords" content="rental properties in south west sydney">
+    <meta name="keywords" content="rental properties in liverpool">
+    <meta name="keywords" content="rental properties in ingleburn">
+    <meta name="keywords" content="rental property in edmondson park">
+    <meta name="keywords" content="properties in lease near me">
+    <meta name="keywords" content="Multi Dynamic">
+    <meta name="keywords" content="Realestate">
+    <meta name="keywords" content="real estate in south sydney">
+    <meta name="keywords" content="real estate om sydney">
+    <meta name="keywords" content="rent a home">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143430108-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-143430108-5');
+    </script>
+
     <div class="row">
         <nav class="navbar navbar-default navbar-inverse navbar-static-top affix-top" data-spy="affix"
              data-offset-top="110">
@@ -9,8 +64,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a href="{{ url(env('CORPORATE_URL')) }}" class="navbar-brand">
+                <a href="{{ url(config('app.corporate_url')) }}" class="navbar-brand">
                     <img src="{!! asset('images/logo.png') !!}" class="img-responsive"/>
                 </a>
 
@@ -18,7 +72,7 @@
                     <div class="top-menu">
                         <ul class="nav navbar-nav top-main-menu">
                             <li class="nav-item">
-                                    <a class="nav-link" href="{!! route('home') !!}">Home <span class="sr-only"></span></a>
+                                <a class="nav-link" href="{!! route('home') !!}">Home <span class="sr-only"></span></a>
                             </li>
                             <li class="">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
@@ -58,7 +112,7 @@
 
                                         <?php
 
-                                            break;
+                                        break;
 
                                         ?>
 
@@ -66,6 +120,7 @@
 
                                     <li><a href="{!! route('agents.index') !!}">Commercial</a></li>
                                     <li><a href="{!! route('properties.leased') !!}">Leased Properties</a></li>
+                                    <li><a href="{!! route('showApplicationForm') !!}" target="_blank">Application Form</a></li>
                                 </ul>
                             </li>
 

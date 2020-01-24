@@ -136,7 +136,6 @@
                 {{--<span class="eventfocus">Only for 40 people. Please reserve your seat ASAP.</span>--}}
                 {{--<a href="mailto:sales@multidynamic.com.au" id="join-now" class="join-now" data-toggle="modal" data-target="#myModal">Join Now !</a>--}}
 
-
             {{--</marquee>--}}
         {{--</div>--}}
     {{--</div>--}}
@@ -148,11 +147,7 @@
             <h1>Welcome to Multi Dynamic Ingleburn</h1>
             <p>
 
-               Multi Dynamic Real Estate is one of the trusted and fasted growing real estate in Australia. Our dedicated, educated and hardworking Ingleburn team has proven to serve and prioritise our customers to buy, sell, rent and build their properties.
-
-               You can be assured when you get into Multi Dynamic Ingleburn, you will find every solution to your real estate needs.
-
-               We believe the client's satisfaction is the key for our business success.
+              Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate franchises in Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record of results in serving our customers to buy, sell, rent and build their properties. You can be assured when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate requirements, because it’s our client's satisfaction which is the key to our success.
 
 
             </p>

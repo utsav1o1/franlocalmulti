@@ -124,6 +124,12 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    'corporate_url' => env('CORPORATE_URL', null),
+
+    'application_to_mail' => env('APPLICATION_TO_MAIL', null),
+
+    'branch_id' => env('BRANCH_ID', null),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -183,6 +189,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -241,6 +248,7 @@ return [
         'ProjectLocationFormHelper' => App\Helpers\Admin\ProjectLocationFormHelper::class,
         'FileHelper' => App\Helpers\Shared\FileHelper::class,
         'DataHelper' => App\Helpers\Shared\DataHelper::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];
