@@ -31,9 +31,9 @@ class ApplicationFormSubmitRequest extends FormRequest
     }
 
     public function messages()
-{
-return [
-      'image.required' => 'Please  sign in the box and  Click Ok.',
-      ];
-}
+    {
+	return [
+      		'image.required' => 'Please  sign in the box and  Click Ok.',
+      	];
+    }
 }
