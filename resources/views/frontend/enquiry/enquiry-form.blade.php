@@ -238,6 +238,16 @@
                             <small class="validation-error-message">{{ $errors->get('agree_terms_conditions')[0] }}</small>
                         @endif
 					</div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-sm-2 col-md-2"
+                               for="ReCaptcha"></label>
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+
+                        @if($errors->has('g-recaptcha-response'))
+                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        @endif
+                    </div>
 
 					<div class="form-group col-md-12">
 						<button class="btn btn-primary">Submit</button>

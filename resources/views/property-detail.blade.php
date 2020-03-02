@@ -421,6 +421,12 @@
                                                           required>{!! old('message') !!}</textarea>
                                             </div>
                                         </div>
+                                        <div class="row agent-field">
+                                            <label class="control-label col-sm-2 col-md-2"
+                                                   for="ReCaptcha"></label>
+                                            {!! NoCaptcha::renderJs() !!}
+                                            {!! NoCaptcha::display() !!}
+                                        </div>
                                         {!! csrf_field() !!}
                                         <input type="hidden" name="property_id" value="{!! $property->id !!}"/>
                                         <button type="submit" class="btn btn-default agent-btn"><i

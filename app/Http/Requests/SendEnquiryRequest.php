@@ -34,7 +34,8 @@ class SendEnquiryRequest extends FormRequest
             'finance_ready' => 'required',
             'budget' => 'required',
             'first_home_buyer_investor' => 'required',
-            'agree_terms_conditions' => 'required'
+            'agree_terms_conditions' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 
@@ -42,7 +43,8 @@ class SendEnquiryRequest extends FormRequest
     {
         return [
             'required' => '* required',
-            'email' => 'invalid email'
+            'email' => 'invalid email',
+            'g-recaptcha-response.required' => 'Recaptcha field is required'
         ];
     }
 }
