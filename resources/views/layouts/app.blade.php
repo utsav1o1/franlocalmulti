@@ -5,7 +5,7 @@
 
     <?php
 
-        $assetsVersion = 16;
+        $assetsVersion = 17;
 
     ?>
 
