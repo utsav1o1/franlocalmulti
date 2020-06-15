@@ -19,7 +19,7 @@
 
                         </p>
 
-                        <div class="inner-about-img"><img src="../images/multidynamic-team.jpg" class="img-responsive" alt="Multi Dynamic Tam Member"/></div>
+                        <div class="inner-about-img" style="border: 8px solid #efefef;"><img style="border: 12px solid #fff;" src="../images/multidynamic-team.jpg?v=1" class="img-responsive" alt="Multi Dynamic Tam Member"/></div>
                         <p align="justify">As one of the most trusted and fastest growing firms in Australia, we consider ourselves a one stop solution to all your real estate requirements. You can trust our young and energetic team to deliver the right result. 
                         </p>
                         <p align="justify">
