@@ -63,8 +63,13 @@
                                         </div>
                                         <!--Area Block-->
                                         <div class="area-block">
+                                        <?php if(is_null($property->price_view)) {?>
                                             <div class="property-type">Property Type</div>
-                                            <div class="property-area">{!! $property->propertyType ? $property->propertyType->property_type : '' !!}</div>
+                                            <div class="property-area">{!! $property->propertyType ?  $property->propertyType->property_type : '' !!}</div>
+                                        <?php }    
+                                        else { ?>
+							<span class="price">{{ $property->price_view }}</span>
+							 <?php }?>
                                         </div>
                                     </header>
                                     <!--Location-->
