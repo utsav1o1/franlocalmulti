@@ -103,6 +103,9 @@
                                 <a href="{!! route('properties.rent') !!}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rent <span class="caret"></span></a>
 
                                 <ul class="dropdown dropdown-menu">
+                                <li>
+                                        <a href="{{ route('properties.rent', 'rental') }}">{{ "Rental" }}</a>
+                                    </li>
 
 
                                     @foreach(DataHelper::getPropertySubCategoriesOrderByName('rent') as $propertySubCategory)
