@@ -19,16 +19,16 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-2">
-                                <a href="https://www.facebook.com/multidynamicingleburn"><i class="fa fa-facebook book-apprisal"></i></a>
-                                <a href="https://www.instagram.com/mdcanberrarealestate/"<i class="fa fa-instagram book-apprisal"></i></a>
-                                <a href="https://www.linkedin.com/company/18744010/admin/updates/"<i class="fa fa-linkedin book-apprisal"></i></a>
+                                <a href="https://www.facebook.com/multidynamic"><i class="fa fa-facebook book-apprisal"></i></a>
+                                <a href="https://www.instagram.com/multidynamic/"<i class="fa fa-instagram book-apprisal"></i></a>
+                                <a href="https://www.linkedin.com/"<i class="fa fa-linkedin book-apprisal"></i></a>
                                 <a href="#"<i class="fa fa-youtube book-apprisal"></i></a>
                             </div>
                         </div>
                         <div class="row col-md-8"><hr style="width:100%;text-align:left;margin-left:0"></div>
                         <div id="footer-second" class="row col-md-8">
                             <div class="col-md-4">
-                                <p><strong>Multi Dynamic Ingleburn</strong></p>
+                                <p style="font-size: 24px"><strong>Multi Dynamic Ingleburn</strong></p>
                                 <div class="media">
                                     <div class="media-left media-middle">
                                         <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
@@ -63,37 +63,36 @@
                                 </div>
                                 <span class="sp-block"></span>
                             </div>
-                            <div class="col-md-1"></div>
                             <div class="col-md-2">
                                 <p><strong>Buy</strong></p>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=buy&subcategory=residential">Residential</a><br/>
+                                   href="/buy/residential">Residential</a><br/>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=buy&subcategory=land">Land</a><br/>
+                                   href="/buy/land">Land</a><br/>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=buy&subcategory=commercial">Commercial</a>
+                                   href="/buy/commercial">Commercial</a>
                                 <br/>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=buy&subcategory=rural">Rural</a>
+                                   href="/buy/rural">Rural</a>
                                 <br/>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=buy&subcategory=house-land">House
+                                   href="/buy/house-land">House
                                     & Land</a> <br/>
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-2">
                                 <p><strong>Rent</strong></p>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=rent&subcategory=rental">Rental</a><br/>
+                                   href="/rent/rental">Rental</a><br/>
                                 <a id="item"
-                                   href="https://multidynamicingleburn.com.au/properties?category=rent&subcategory=holiday-rental">Holiday
+                                   href="rent/holiday-rental">Holiday
                                     Rental</a><br/>
                                 <span class="sp-block"></span>
                                 <p><strong>Sell</strong></p>
-                                <a id="item" href="https://multidynamicingleburn.com.au/show-recent-sales">Recent Sales</a>
+                                <a id="item" href="/get-recently-sold-properties">Recent Sales</a>
                                 <span class="sp-block"></span>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <h2 class="title newsletter-h2">NEWSLETTER</h2>
                                 <div class="f-text">
                                     Subscribe to our mailing list to get the updates in your email inbox.
@@ -105,7 +104,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
                 </div>
             </div>
         </div>
@@ -141,9 +139,9 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6">
             <ul class="btm-sm-icon">
-                <li><a href="https://www.facebook.com/multidynamicingleburn" target="_blank" class="sm-icon"><i
+                <li><a href="https://www.facebook.com/multidynamic" target="_blank" class="sm-icon"><i
                                 class="fa fa-facebook facebook"></i></a></li>
-                <li><a href="#" target="_blank" class="sm-icon"><i
+                <li><a href="https://www.instagram.com/multi.dynamic/" target="_blank" class="sm-icon"><i
                                 class="fa fa-instagram instagram"></i></a></li>
                 <li><a href="#"></i></a></li>
                 <li><a href="#" target="_blank"

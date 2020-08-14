@@ -1918,70 +1918,70 @@ footer .footer-item .newsletter input {
 }
 
 
-    /* blog details style */
+/* blog details style */
 
-    .blog-details-container {
-        background-color: #fafafa;
-        position: relative;
-        z-index: 3;
-        padding-top: 15px;
-        padding-bottom: 30px;
-    }
+.blog-details-container {
+    background-color: #fafafa;
+    position: relative;
+    z-index: 3;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
 
-    .blog-details-container:after {
-        content: "";
-        width: 221%;
-        height: 100%;
-        left: -38px;
-        top: -90px;
-        position: absolute;
-        background-color: #fafafa;
-        z-index: -1;
-    }
+.blog-details-container:after {
+    content: "";
+    width: 221%;
+    height: 100%;
+    left: -38px;
+    top: -90px;
+    position: absolute;
+    background-color: #fafafa;
+    z-index: -1;
+}
 
-    .blog-details-container .container {
-        background-color: #fff;
-        padding: 15px 25px;
-    }
+.blog-details-container .container {
+    background-color: #fff;
+    padding: 15px 25px;
+}
 
-    .blog-details-container .page-sub-heading {
-        text-align: left;
-        margin-bottom: 20px;
-        font-family: 'Montserrat', sans-serif;
-        color: #00529c;
-        font-size: 23px;
-        font-weight: 600;
-    }
+.blog-details-container .page-sub-heading {
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #00529c;
+    font-size: 23px;
+    font-weight: 600;
+}
 
-    .blog-details-container .blog-attributes-details {
-        font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
-        color: #000;
-    }
+.blog-details-container .blog-attributes-details {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
 
-    .blog-details-description {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 17px;
-        text-align: justify;
-        margin-bottom: 10px;
-    }
+.blog-details-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
 
-    .blog-details-container .blog-main-image img {
-        height: 300px;
-        width: auto;
-    }
+.blog-details-container .blog-main-image img {
+    height: 300px;
+    width: auto;
+}
 
-    .blog-content {
-        margin-top: 10px;
-    }
+.blog-content {
+    margin-top: 10px;
+}
 
-    .page-sub-heading {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 29px;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-    
+.page-sub-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 29px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 /* property details page carousel indicators start */
 
 .property-details-page .carousel-indicators {
@@ -2205,11 +2205,11 @@ footer .footer-item .newsletter input {
 
 .sp-block{
     display: block;
-    height: 1.5em;
+    height: 0.1em;
 }
 
 #footer-second{
-    padding: 20px 0 0 0;
+    padding: 5px 0 0 0;
 }
 .align-self-center
 {
