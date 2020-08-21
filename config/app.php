@@ -130,6 +130,8 @@ return [
 
     'branch_id' => env('BRANCH_ID', null),
 
+    'appraisal_mail' => env('APPRAISAL_MAIL'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

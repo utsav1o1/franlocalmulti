@@ -1,5 +1,169 @@
 ﻿<!--START OF MAIN FOOTER-->
 <footer>
+<style>
+        #appraisal{
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+			color: black;
+        }
+		.modal{
+			color: black;
+		}
+    </style>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+    	
+    	@if(Session::has('success'))
+
+			<!--<div id="appraisal" class="row">
+				<div class="col-md-8">
+		    		<div class="alert alert-success" role="alert">
+		    			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		    			{{ Session::get('success') }}
+		    		</div>	
+				</div>
+			</div>-->
+			<script>
+				alert("Your form has been successfully submitted!");
+			</script>
+		@elseif (count($errors) > 0)
+			<script>
+				alert("There was an error in your details. Please re-submit your form.");
+			</script>
+		@endif
+
+    	<div id="appraisal">
+
+    		<div class="col-md-8">
+    			{!! Form::open(['url' => route('appraisal.send'), 'id' => 'appraisal-form']) !!}
+
+    				<div class="form-group col-md-6">
+    					<label>First Name</label>
+    					{!! Form::text('fname', null, array('class' => 'form-control', 'placeholder' => 'First name' )) !!}
+
+					    @if($errors->has('fname'))
+					        <small class="validation-error-message">{{ $errors->get('lname')[0] }}</small>
+					    @endif
+                    </div>
+                    <div class="form-group col-md-6">
+    					<label>Last Name</label>
+    					{!! Form::text('lname', null, array('class' => 'form-control', 'placeholder' => 'Last name' )) !!}
+
+					    @if($errors->has('lname'))
+					        <small class="validation-error-message">{{ $errors->get('lname')[0] }}</small>
+					    @endif
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Phone Number</label>
+                        {!! Form::text('contact', null, array('class' => 'form-control', 'placeholder' => '04XXXXXXX' )) !!}
+
+                        @if($errors->has('contact'))
+                            <small class="validation-error-message">{{ $errors->get('contact')[0] }}</small>
+                        @endif
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+    					<label>Email Address</label>
+    					{!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'username@example.com' )) !!}
+
+					    @if($errors->has('email'))
+					        <small class="validation-error-message">{{ $errors->get('email')[0] }}</small>
+					    @endif
+    				</div>
+
+    				<div class="form-group col-md-12">
+    					<label>Street Address</label>
+    					{!! Form::text('address', null, array('class' => 'form-control', 'placeholder' => '123 Example Street' )) !!}
+
+					    @if($errors->has('address'))
+					        <small class="validation-error-message">{{ $errors->get('address')[0] }}</small>
+					    @endif
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+						<label>Suburb</label>
+						{!! Form::text('suburb', null, array('class' => 'form-control', 'placeholder' => 'Ex. Mawson' )) !!}
+
+					    @if($errors->has('suburb'))
+					        <small class="validation-error-message">{{ $errors->get('suburb')[0] }}</small>
+					    @endif
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+						<label>Postcode</label>
+						{!! Form::text('postcode', null, array('class' => 'form-control', 'placeholder' => 'Ex. 2607' )) !!}
+
+					    @if($errors->has('postcode'))
+					        <small class="validation-error-message">{{ $errors->get('postcode')[0] }}</small>
+					    @endif
+                    </div>
+
+                    <div class="form-group col-md-4">
+						<label>Bed:</label>
+						{!! Form::selectRange('bed', 0, 5, null, array('class' => 'form-control', 'placeholder' => 'Select' )) !!}
+
+					    @if($errors->has('bed'))
+					        <small class="validation-error-message">{{ $errors->get('bed')[0] }}</small>
+					    @endif
+                    </div>
+
+                    <div class="form-group col-md-4">
+						<label>Bath:</label>
+						{!! Form::selectRange('bath', 0, 5, null, array('class' => 'form-control', 'placeholder' => 'Select' )) !!}
+
+					    @if($errors->has('bath'))
+					        <small class="validation-error-message">{{ $errors->get('bath')[0] }}</small>
+					    @endif
+                    </div>
+
+                    <div class="form-group col-md-4">
+						<label>Car Space:</label>
+						{!! Form::selectRange('car', 0, 5, null, array('class' => 'form-control', 'placeholder' => 'Select' )) !!}
+
+					    @if($errors->has('car'))
+					        <small class="validation-error-message">{{ $errors->get('car')[0] }}</small>
+					    @endif
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+						<label>Additional Message:</label>
+						{!! Form::textarea('messages',null,['class'=>'form-control', 'rows' => 10, 'cols' => 40]) !!}
+
+					    @if($errors->has('messages'))
+					        <small class="validation-error-message">{{ $errors->get('messages')[0] }}</small>
+					    @endif
+					</div>
+                    
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-sm-2 col-md-2"
+                               for="ReCaptcha"></label>
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+
+                        @if($errors->has('g-recaptcha-response'))
+                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        @endif
+                    </div>
+
+					<div class="form-group col-md-12">
+						<button class="btn btn-primary">Submit</button>
+					</div>
+
+    			{!! Form::close() !!}
+    		</div>
+    	</div>
+		</div>
+    </div>
+  </div>
+</div>
     <div class="main-footer">
         <div class="company-location-details-container">
             <div class="container">
@@ -11,7 +175,8 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-3 book-apprisal">
-                                <a href="#" class="foot-block">Book Appraisal</a>
+                                <a href="#" class="foot-block" data-toggle="modal" data-target=".bs-example-modal-lg">Book Appraisal</a>
+                                
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-3 book-apprisal">

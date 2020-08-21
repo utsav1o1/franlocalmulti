@@ -60,6 +60,10 @@ Route::get('contact-us', 'ContactUsController@showContactUsForm')->name('contact
 Route::post('send-enquiry', 'ContactUsController@sendEnquiry')->name('enquiry.send');
 Route::get('location-list-for-enquiry-form', 'ContactUsController@getLocationListForEnquiryForm')->name('enquiry.location-list');
 
+/* Routes for appraisal form */
+//Route::get('appraisal', 'AppraisalController@showAppraisalForm')->name('appraisal.form');
+Route::post('send-appraisal', 'AppraisalController@sendEnquiry')->name('appraisal.send');
+
 /* for maintenance request routes */
 
 Route::get('maintenance-request', 'MaintenanceRequestController@showMaintenanceRequestForm')->name('maintenance-request.form');
