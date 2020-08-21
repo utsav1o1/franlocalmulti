@@ -1,4 +1,4 @@
-﻿<!--START OF MAIN FOOTER-->
+<!--START OF MAIN FOOTER-->
 <footer>
 <style>
         #appraisal{
@@ -16,7 +16,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+             <img class="ap-img" src="{{ url('images/logo.png') }}"/>
         </div>
         <div class="modal-body">
     	
@@ -45,7 +45,7 @@
     			{!! Form::open(['url' => route('appraisal.send'), 'id' => 'appraisal-form']) !!}
 
     				<div class="form-group col-md-6">
-    					<label>First Name</label>
+    					<label>First Name *</label>
     					{!! Form::text('fname', null, array('class' => 'form-control', 'placeholder' => 'First name' )) !!}
 
 					    @if($errors->has('fname'))
@@ -53,7 +53,7 @@
 					    @endif
                     </div>
                     <div class="form-group col-md-6">
-    					<label>Last Name</label>
+    					<label>Last Name *</label>
     					{!! Form::text('lname', null, array('class' => 'form-control', 'placeholder' => 'Last name' )) !!}
 
 					    @if($errors->has('lname'))
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label>Phone Number</label>
+                        <label>Phone Number *</label>
                         {!! Form::text('contact', null, array('class' => 'form-control', 'placeholder' => '04XXXXXXX' )) !!}
 
                         @if($errors->has('contact'))
@@ -71,7 +71,7 @@
                     </div>
                     
                     <div class="form-group col-md-6">
-    					<label>Email Address</label>
+    					<label>Email Address *</label>
     					{!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'username@example.com' )) !!}
 
 					    @if($errors->has('email'))
@@ -80,7 +80,7 @@
     				</div>
 
     				<div class="form-group col-md-12">
-    					<label>Street Address</label>
+    					<label>Street Address *</label>
     					{!! Form::text('address', null, array('class' => 'form-control', 'placeholder' => '123 Example Street' )) !!}
 
 					    @if($errors->has('address'))
@@ -89,7 +89,7 @@
                     </div>
                     
                     <div class="form-group col-md-6">
-						<label>Suburb</label>
+						<label>Suburb *</label>
 						{!! Form::text('suburb', null, array('class' => 'form-control', 'placeholder' => 'Ex. Mawson' )) !!}
 
 					    @if($errors->has('suburb'))
@@ -98,7 +98,7 @@
                     </div>
                     
                     <div class="form-group col-md-6">
-						<label>Postcode</label>
+						<label>Postcode *</label>
 						{!! Form::text('postcode', null, array('class' => 'form-control', 'placeholder' => 'Ex. 2607' )) !!}
 
 					    @if($errors->has('postcode'))
@@ -154,7 +154,7 @@
                     </div>
 
 					<div class="form-group col-md-12">
-						<button class="btn btn-primary">Submit</button>
+						<button class="btn btn-primary">Request an Appraisal</button>
 					</div>
 
     			{!! Form::close() !!}
