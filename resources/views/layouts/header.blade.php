@@ -54,6 +54,29 @@
         gtag('config', 'UA-143430108-5');
     </script>
 
+<div class="top-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="top-panel-contents">
+                    <div class="phone-number-container">
+                        <a href="tel:0296186209"><i class="icon fa fa-phone" aria-hidden="true"></i>
+                            <span class="phone-number"> Phone No: 02 9618 6209</span>
+                        </a>
+                    </div>
+                    <div class="social-links-container">
+                        <ul>
+                            <li class="facebook-link social-link-icon"><a href="https://www.facebook.com/Multidynamicauburn/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li class="instragram-link social-link-icon"><a href="https://www.instagram.com/multi.dynamic"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
     <div class="row">
         <nav class="navbar navbar-default navbar-inverse navbar-static-top affix-top" data-spy="affix"
              data-offset-top="110">
@@ -148,9 +171,7 @@
                             </li>
                         </ul>
                         <ul class="topsocialnav">
-                            <li class="nav-item">
-                                <span class="header-ph"><a href="tel:+61 2 9618 6209" style="font-weight: 600; font-size: 14px;" class="nav-link">02 9618 6209</a></span>
-                            </li>
+                            
 
                             @if($user)
                                 <li class="nav-item">
@@ -179,6 +200,11 @@
                             @endif
 
                             <li class="nav-item">
+                                <a href="#" class="foot-block-nav" data-toggle="modal" data-target=".bs-example-modal-lg">Book Appraisal</a>
+
+                            </li>
+<!---
+                            <li class="nav-item">
                                 <a class="nav-link" href="https://www.facebook.com/multidynamic" target="_blank"><i class="fa fa-facebook facebook"></i></a>
                             </li>
                             <li class="nav-item">
@@ -187,6 +213,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin linkedin"></i></a>
                             </li>
+
+                            -->
                         </ul>
                     </div>
                 </div>
