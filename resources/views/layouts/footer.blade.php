@@ -1,4 +1,4 @@
-﻿<!--START OF MAIN FOOTER-->
+<!--START OF MAIN FOOTER-->
 <footer>
 <style>
         #appraisal{
@@ -16,7 +16,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <img class="ap-img" src="{{ url('images/logo.png') }}"/>
+             <img class="ap-img" src="{{ url('images/logo.png') }}"/>
         </div>
         <div class="modal-body">
     	
