@@ -166,9 +166,10 @@ ul.dropdown.dropdown-menu.topsignup {
 .topsocialnav li a{
     position: relative;
     display: block;
-    padding: 5px 5px 5px 5px;
-    margin-top: 10px;
-    margin-right: 5px;
+    /*padding: 5px 5px 5px 5px;*/
+    margin-top: 5px;
+    /*margin-right: 5px;*/
+    margin-left: 15px;
     margin-bottom: 5px;
 }
 
