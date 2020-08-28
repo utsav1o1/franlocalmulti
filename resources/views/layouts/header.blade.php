@@ -200,7 +200,7 @@
                             @endif
 
                             <li class="nav-item">
-                                <a href="#" class="foot-block-nav" data-toggle="modal" data-target=".bs-example-modal-lg">Book Appraisal</a>
+                                <a href="#" class="foot-block-nav" data-toggle="modal" data-target=".bs-example-modal-lg">Book An Appraisal</a>
 
                             </li>
 <!---
