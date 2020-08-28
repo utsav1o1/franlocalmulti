@@ -2230,8 +2230,8 @@ footer .footer-item .newsletter input {
     color: #ffffff;
     font-size: 14px;
     width: 100%;
-    position: fixed;
     z-index: 50;
+    position: fixed;
 }
 
 .top-panel-contents {
