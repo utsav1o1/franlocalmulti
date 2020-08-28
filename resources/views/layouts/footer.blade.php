@@ -40,7 +40,7 @@
 		@endif
 
     	<div id="appraisal">
-
+       
     		<div class="col-md-8">
     			{!! Form::open(['url' => route('appraisal.send'), 'id' => 'appraisal-form']) !!}
 
@@ -175,7 +175,7 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-3 book-apprisal">
-                                <a href="#" class="foot-block" data-toggle="modal" data-target=".bs-example-modal-lg">Book Appraisal</a>
+                                <a href="#" class="foot-block" data-toggle="modal" data-target=".bs-example-modal-lg">Book An Appraisal</a>
                                 
                                 <span class="sp-block"></span>
                             </div>
@@ -184,16 +184,16 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-2">
-                                <a href="https://www.facebook.com/multidynamic"><i class="fa fa-facebook book-apprisal"></i></a>
-                                <a href="https://www.instagram.com/multidynamic/"<i class="fa fa-instagram book-apprisal"></i></a>
-                                <a href="https://www.linkedin.com/"<i class="fa fa-linkedin book-apprisal"></i></a>
-                                <a href="#"<i class="fa fa-youtube book-apprisal"></i></a>
+                                <a href="https://www.facebook.com/multidynamic"><i  style="color: white;" class="fa fa-facebook book-apprisal"></i></a>
+                                <a href="https://www.instagram.com/multidynamic/"><i  style="color: white;" class="fa fa-instagram book-apprisal"></i></a>
+                                <a href="https://www.linkedin.com/"><i  style="color: white;" class="fa fa-linkedin book-apprisal"></i></a>
+                                <a href="#"><i  style="color: white;" class="fa fa-youtube book-apprisal"></i></a>
                             </div>
                         </div>
                         <div class="row col-md-8"><hr style="width:100%;text-align:left;margin-left:0"></div>
                         <div id="footer-second" class="row col-md-8">
                             <div class="col-md-4">
-                                <p style="font-size: 24px"><strong>Multi Dynamic Ingleburn</strong></p>
+                                <p style="font-size: 24px"><h3>Multi Dynamic Ingleburn</h3></p>
                                 <div class="media">
                                     <div class="media-left media-middle">
                                         <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
@@ -258,7 +258,7 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-4">
-                                <h2 class="title newsletter-h2">NEWSLETTER</h2>
+                                <h3 class="title newsletter-h2">NEWSLETTER</h3>
                                 <div class="f-text">
                                     Subscribe to our mailing list to get the updates in your email inbox.
                                 </div>
