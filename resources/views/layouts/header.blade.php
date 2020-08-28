@@ -66,8 +66,8 @@
                     </div>
                     <div class="social-links-container">
                         <ul>
-                            <li class="facebook-link social-link-icon"><a href="https://www.facebook.com/Multidynamicauburn/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li class="instragram-link social-link-icon"><a href="https://www.instagram.com/multi.dynamic"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li class="facebook-link social-link-icon"><a href="https://www.facebook.com/multidynamic/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li class="instragram-link social-link-icon"><a href="https://www.instagram.com/multidynamic"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>

@@ -193,13 +193,13 @@
                         <div class="row col-md-8"><hr style="width:100%;text-align:left;margin-left:0"></div>
                         <div id="footer-second" class="row col-md-8">
                             <div class="col-md-4">
-                                <p style="font-size: 24px"><h3>Multi Dynamic Ingleburn</h3></p>
+                                <h3 class="title newsletter-h2">Multi Dynamic Ingleburn</h3>
                                 <div class="media">
                                     <div class="media-left media-middle">
                                         <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
                                     </div>
                                     <div class="media-body">
-                                        <a href="https://shorturl.at/cRV08" target="_blank">Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565, Australia</a>
+                                        <a href="https://shorturl.at/cRV08" target="_blank">Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565</a>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -228,6 +228,7 @@
                                 </div>
                                 <span class="sp-block"></span>
                             </div>
+                            <div class="col-md-1"></div>
                             <div class="col-md-2">
                                 <p><strong>Buy</strong></p>
                                 <a id="item"
@@ -257,7 +258,7 @@
                                 <a id="item" href="/get-recently-sold-properties">Recent Sales</a>
                                 <span class="sp-block"></span>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <h3 class="title newsletter-h2">NEWSLETTER</h3>
                                 <div class="f-text">
                                     Subscribe to our mailing list to get the updates in your email inbox.
