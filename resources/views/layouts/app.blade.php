@@ -16,8 +16,8 @@
     <meta name="description" content="@yield('meta_description')"/>
     <meta name="keywords" content="@yield('meta_keywords')"/>
     <meta name="copyright" content="© {!! date('Y-m-d') .' '. env('APP_NAME') !!}"/>
-    <meta name="author" content="Sunil Adhikari"/>
-    <meta name="email" content="adhikarysunil.1@gmail.com"/>
+    <meta name="author" content="Multidynamic Ingleburn"/>
+    <meta name="email" content="ingleburn@multidynamic.com.au"/>
     <meta name="Distribution" content="Global"/>
     <meta name="Rating" content="General"/>
     <meta name="Robots" content="INDEX,FOLLOW"/>
