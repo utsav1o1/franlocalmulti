@@ -17,7 +17,7 @@
     <meta name="keywords" content="@yield('meta_keywords')"/>
     <meta name="copyright" content="© {!! date('Y-m-d') .' '. env('APP_NAME') !!}"/>
     <meta name="author" content="Multidynamic Ingleburn"/>
-    <meta name="email" content="ingleburn@multidynamic.com.au"/>
+    <meta name="email" content="sales@multidynamic.com.au"/>
     <meta name="Distribution" content="Global"/>
     <meta name="Rating" content="General"/>
     <meta name="Robots" content="INDEX,FOLLOW"/>
