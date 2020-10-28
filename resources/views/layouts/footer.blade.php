@@ -318,7 +318,7 @@
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="copyright">
             <!--  <a href="{!! route('page.show', 'privacy-policy') !!}">Privacy Policy</a>&nbsp; -->
-                ABN: 90 165 249 954 &nbsp; &nbsp;
+                ABN:77629002366 &nbsp; &nbsp;
                 <a href="{!! route('page.show', 'terms-and-conditions') !!}">Terms & Conditions</a>
             </div>
             <div class="design-develop">Design and developed by <a href="http://www.111it.com.au" target="_blank">111IT </a></div>
