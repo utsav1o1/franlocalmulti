@@ -39,8 +39,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
     <!--Agent Description and Form Section-->
     <div class="container">
