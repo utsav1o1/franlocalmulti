@@ -35,6 +35,6 @@ class PropertyInquiry extends Authenticatable
      * Get the property that owns the inquiry.
      */
     public function property(){
-        return $this->belongsTo('App\Models\Enquiry\Property', 'property_id');
+        return $this->belongsTo('App\Models\Corporate\Property', 'property_id');
     }
 }
