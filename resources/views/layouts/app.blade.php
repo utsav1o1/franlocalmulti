@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{!! asset('css/inner.css') . '?v=' . $assetsVersion !!}"/>
     <link rel="stylesheet" href="{!! asset('css/innerpage.css') . '?v=' . $assetsVersion !!}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/ico" href="https://multidynamic.com.au/assets/images/logo/favicon.png"/>
 
     @yield('header_css')
 
