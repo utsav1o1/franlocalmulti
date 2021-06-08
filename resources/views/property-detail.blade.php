@@ -497,32 +497,5 @@
     </div>
 
     <!-- Modal -->
-    <div id="sendEmailModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Send Email to a Friend</h4>
-                </div>
-                <form id="sendEmailForm" name="sendEmailForm" action="{!! route('property.send.email') !!}"
-                      method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="department">Email Address *</label>
-                            <input type="email" class="form-control email_address" name="email_address"
-                                   placeholder="Enter email address"/>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                        <button type="submit" class="btn btn-md btn-primary">Send</button>
-                        {{ csrf_field() }}
-                        <input type="hidden" name="property_id" value="{!! $property->id !!}"/>
-                    </div>
-                </form>
-            </div>
 
-        </div>
-    </div>
 @stop
