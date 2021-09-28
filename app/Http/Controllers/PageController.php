@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\PageRepository;
 use App\Repositories\AgentRepository;
-use Illuminate\Http\Request;
+use App\Repositories\PageRepository;
 
 class PageController extends Controller
 {
@@ -18,7 +17,7 @@ class PageController extends Controller
     public function __construct(
         PageRepository $pages,
         AgentRepository $agents
-    ){
+    ) {
         $this->pages = $pages;
         $this->agents = $agents;
     }
@@ -31,7 +30,7 @@ class PageController extends Controller
     public function aboutus()
     {
         return view('aboutus')
-        ->withCoreMembers($this->agents->where('is_active', '=','1')->where('is_core_member', '1')->orderby('order_position', 'asc')->get());
+            ->withCoreMembers($this->agents->where('is_active', '=', '1')->where('is_core_member', '1')->orderby('order_position', 'asc')->get());
     }
 
     /**
@@ -43,7 +42,7 @@ class PageController extends Controller
     public function show($slug)
     {
         $page = $this->pages->findByField('slug', $slug);
-        if($page){
+        if ($page) {
             return view('page-detail')
                 ->withPage($page);
         }
@@ -55,7 +54,7 @@ class PageController extends Controller
         $blog = \App\Models\Corporate\Blog::where('slug', $slug)->first();
 
         return view('frontend.blog-details', [
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 }

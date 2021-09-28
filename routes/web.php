@@ -9,7 +9,21 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
-*/
+ */
+
+// test route
+Route::get('/test-home', function () {
+    return view('frontend.home');
+});
+Route::get('/property-management', function () {
+    return view('agent.Property.property-management');
+});
+Route::get('/guide', function () {
+    return view('agent.Property.guide');
+});
+Route::get('/selling', function () {
+    return view('agent.Property.selling');
+});
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/send', 'HomeController@send')->name('send');
@@ -104,7 +118,6 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     ]]);
     Route::put('page/change/status', ['as' => 'page.change.status', 'uses' => 'PageController@changeStatus']);
 
-
     Route::resource('property-type', 'PropertyTypeController', ['names' => [
         'index' => 'admin.property-type.index',
         'create' => 'admin.property-type.create',
@@ -126,8 +139,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
         'destroy' => 'admin.property-category.destroy',
     ]]);
 
-    Route::group(['prefix' => 'project'], function()
-    {
+    Route::group(['prefix' => 'project'], function () {
         Route::get('list', 'ProjectController@showProjects')
             ->name('admin.project.list');
 
@@ -153,8 +165,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
             ->name('admin.project.delete');
     });
 
-    Route::group(['prefix' => 'project-type'], function()
-    {
+    Route::group(['prefix' => 'project-type'], function () {
         Route::get('list', 'ProjectTypeController@showProjectTypes')
             ->name('admin.project-type.list');
 
@@ -174,7 +185,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
             ->name('admin.project-type.delete');
     });
 
-    Route::group(['prefix' => 'project-location'], function() {
+    Route::group(['prefix' => 'project-location'], function () {
         Route::get('list', 'ProjectLocationController@showProjectLocations')
             ->name('admin.project-location.list');
 
@@ -225,9 +236,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     Route::put('property/change/status', 'PropertyController@changeStatus')->name('admin.property.change.status');
 });
 
-
 //Agent panel routes
-
 
 Route::prefix('agent')->namespace('Agent')->group(function () {
     Route::get('login', ['as' => 'agent.login', 'uses' => 'LoginController@login']);
@@ -244,7 +253,6 @@ Route::prefix('agent')->middleware('auth:agent')->namespace('Agent')->group(func
     Route::get('logout', ['as' => 'agent.logout', 'uses' => 'LoginController@logout']);
     Route::get('change/password', ['as' => 'agent.change.password', 'uses' => 'ResetPasswordController@getChangePassword']);
     Route::post('change/password', ['as' => 'agent.change.password.submit', 'uses' => 'ResetPasswordController@changePassword']);
-
 
     Route::resource('property', 'PropertyController', ['names' => [
         'index' => 'agent.property.index',
@@ -265,7 +273,7 @@ Route::prefix('agent')->middleware('auth:agent')->namespace('Agent')->group(func
                 'create' => 'agent.property.image.create',
                 'store' => 'agent.property.image.store',
                 'destroy' => 'agent.property.image.destroy',
-            ]
+            ],
         ]);
     Route::put('property/{property}/image/{image}/makecover', 'ImageController@makeCover');
 

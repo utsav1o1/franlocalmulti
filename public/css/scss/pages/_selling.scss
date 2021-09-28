@@ -1,0 +1,271 @@
+.banner {
+    padding: 60px 0;
+
+    &--selling {
+        background: $blue url('../images/selling-banner.jpg') no-repeat center;
+        background-size: cover;
+        min-height: 512px;
+        .banner__caption {
+            padding: 35px 25px;
+            background: $blue;
+            max-width: 410px;
+            @include border-radius (10px);
+    
+            h1 {
+                font-weight: 800;
+                font-size: 32px;
+                color: $white;
+                margin-top: 0;
+                margin-bottom: 20px;
+    
+                span {
+                    display: block;
+                    font-size: 20px;
+                }
+            }
+    
+            .list-property {
+                font-size: 24px;
+                font-weight: 800;
+                display: inline-block;
+                padding: 5px 10px;
+                line-height: 1;
+    
+                &.white-bg {
+                    color: $blue;
+                    background: $white;
+    
+                }
+            }
+    
+            h2 {
+                font-size: 41px;
+                color: $white;
+                font-weight: 800;
+                white-space: pre-line;
+                margin-bottom: 20px;
+                line-height: 1;
+                margin-top: 14px
+            }
+    
+            a {
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 19px;
+                display: inline-block;
+                padding: 13px 20px;
+                background: $orange;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    
+}
+
+.nice-select {
+    float: none;
+}
+
+// property appraisal 
+
+.prpoerty__appraisal {
+    padding: 100px 0;
+    position: relative;
+    background: $white;
+
+    &__bg {
+        background: url('../images/free-appeaisal.jpg') no-repeat center;
+        background-size: cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        // z-index: -1;
+        opacity: 0.08;
+        pointer-events: none;
+
+        &:before {
+            // content: '';
+            // position: absolute;
+            // height: 100%;
+            // width: 100%;
+            // background: $white;
+            // left: 0;
+            // top: 0;
+        }
+    }
+
+    &__wrapper {
+        max-width: 1040px;
+        padding: 50px 75px;
+        background: $orange;
+        width: 100%;
+        margin: 0 auto;
+        @include border-radius(10px);
+        position: relative;
+        z-index: 10;
+
+        h2 {
+            color: white;
+            text-align: center;
+            font-size: 35px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            margin-top: 0;
+
+            span {
+                display: block;
+                font-size: 23px;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+        }
+
+        .form-control {
+            border: 1px solid $black;
+            height: 42px;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            font-size: 16px;
+            font-weight: 400;
+            padding-top: 0;
+            padding-bottom: 0;
+            color: $black;
+
+            @include placeholder {
+                opacity: 1;
+                color: $black;
+            }
+        }
+
+        textarea.form-control {
+            height: 95px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .btn {
+            &--primary {
+                background: $blue;
+                color: $white;
+                display: block;
+                width: 100%;
+                font-weight: 700;
+                text-transform: capitalize;
+                font-size: 23px;
+                border: none;
+                padding: 12px;
+                @include border-radius(10px);
+            }
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.free-guides.white-bg {
+    background: #fff;
+    padding: 55px 0;
+
+    .row {
+        min-height: 1px;
+    }
+
+    .free-guides-block {
+        background: $light-white;
+
+        @include breakpoint (md) {
+            margin: 25px 0;
+        }
+
+        h3 {
+            margin-bottom: 35px;
+
+        }
+
+        h4 {
+            margin-top: 35px;
+        }
+    }
+}
+
+// award 
+.award-section {
+    text-align: center;
+    background: $orange;
+    position: relative;
+    min-height: 400px;
+    padding-top: 30px;
+
+    .container {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__bg {
+        background: url('../images/award-banner.png') no-repeat center;
+        background-size: cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.15;
+        pointer-events: none;
+    }
+
+    .award-title {
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+        h2 {
+            margin-top: 0;
+            font-size: 34px;
+            color: $white;
+            background: $blue;
+            font-weight: 800;
+            padding: 20px;
+            display: inline-block;
+        }
+    }
+
+    .award-listitem {
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-flex;
+                color: $white;
+                font-size: 22px;
+                font-weight: 800;
+                margin: 0 18px;
+                align-items: center;
+
+                &:before {
+                    content: "";
+                    background: url("../images/check-icon.png") no-repeat center;
+                    display: inline-block;
+                    height: 40px;
+                    width: 42px;
+                    // margin-right: 5px;
+
+                }
+            }
+        }
+    }
+}
