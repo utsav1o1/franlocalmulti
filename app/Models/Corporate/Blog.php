@@ -2,13 +2,13 @@
 
 namespace App\Models\Corporate;
 
-use \DateTime;
-use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Model;
+use \DateTime;
 
 class Blog extends Model
 {
-	use Sluggable;
+    use Sluggable;
 
     protected $table = 'blogs';
     protected $connection = 'mysql-main';
@@ -17,24 +17,24 @@ class Blog extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
 
     public static function getPublishedKeysInString()
     {
-    	return 'Y,N';
+        return 'Y,N';
     }
 
     public function isPublished()
     {
-    	return $this->published == 'Y';
+        return $this->published == 'Y';
     }
 
     public static function getBlogImageDir()
     {
-        return env('CORPORATE_URL') . '/uploads/blogs/';
+        return env('CORPORATE_URL') . 'uploads/blogs/';
     }
 
     public function isBlogImageProvided()
@@ -44,21 +44,24 @@ class Blog extends Model
 
     public function getDefaultBlogImagePath()
     {
-        return env('CORPORATE_URL') . '/uploads/default/default-blog-image.jpg';
+        return env('CORPORATE_URL') . 'uploads/default/default-blog-image.jpg';
     }
 
     public function getBlogImagePath()
     {
-        if($this->isBlogImageProvided())
+        if ($this->isBlogImageProvided()) {
             return $this->getBlogImageDir() . $this->blog_image;
+        }
 
         return $this->getDefaultBlogImagePath();
     }
 
     public function updateBlogImageCropPoints($cropPoints)
     {
-        if($this->isBlogImageProvided())
+        if ($this->isBlogImageProvided()) {
             FileHelper::cropImage($this->getBlogImagePath(), $cropPoints);
+        }
+
     }
 
     public function getCreatedDate()

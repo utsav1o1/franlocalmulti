@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Corporate\Agent;
+use App\Models\Corporate\Page;
+use App\Models\Corporate\PageDetail;
+use App\Models\Corporate\Service;
+use App\Models\Corporate\Slider;
+use App\Models\Corporate\Testimonial;
 use App\Repositories\LocationRepository;
 use App\Repositories\PropertyCategoryRepository;
 use App\Repositories\PropertyRepository;
@@ -64,12 +70,48 @@ class HomeController extends Controller
 
         $blogs = \App\Models\Corporate\Blog::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'desc')
-            ->limit(5)
+            ->limit(6)
             ->get();
 
+        // new changes
+        $sliders = Slider::where('branch_id', env('BRANCH_ID'))
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $services = Service::where('branch_id', env('BRANCH_ID'))
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
+        $testimonials = Testimonial::where('branch_id', env('BRANCH_ID'))
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $agents = Agent::where('branch_id', env('BRANCH_ID'))
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // gettting home page extra content
+        $home = Page::where('slug', 'home')->first();
+
+        if (isset($home) && $home != null) {
+            $home['welcome_message'] = PageDetail::where('page_id', $home->id)->where('slug', 'welcome-message')->first();
+            $home['welcome_video'] = PageDetail::where('page_id', $home->id)->where('slug', 'welcome-video')->first();
+        } else {
+            $home['welcome_message'] = null;
+            $home['welcome_video'] = null;
+        }
+        // dd($home);
+        // return view('home')
+        //     ->withProperties($properties)
+        //     ->withBlogs($blogs);
         return view('home')
             ->withProperties($properties)
-            ->withBlogs($blogs);
+            ->withBlogs($blogs)
+            ->withSliders($sliders)
+            ->withServices($services)
+            ->withTestimonials($testimonials)
+            ->withAgents($agents)
+            ->withHome($home);
+
     }
 
     public function oldIndex()

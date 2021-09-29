@@ -2,9 +2,9 @@
 
 namespace App\Models\Corporate;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class Agent extends Authenticatable
 {
@@ -27,8 +27,8 @@ class Agent extends Authenticatable
     {
         return [
             'slug' => [
-                'source' => 'first_name'
-            ]
+                'source' => 'first_name',
+            ],
         ];
     }
 
@@ -39,7 +39,7 @@ class Agent extends Authenticatable
 
     public static function getAgentImageDir()
     {
-        return env('CORPORATE_URL') . '/uploads/agent-images/';
+        return env('CORPORATE_URL') . 'uploads/agent-images/';
     }
 
     public function isAgentImageProvided()
@@ -49,13 +49,14 @@ class Agent extends Authenticatable
 
     public function getDefaultAgentImagePath()
     {
-        return env('CORPORATE_URL') . '/uploads/default/default-agent-image.jpg';
+        return env('CORPORATE_URL') . 'uploads/default/default-agent-image.jpg';
     }
 
     public function getAgentImagePath()
     {
-        if($this->isAgentImageProvided())
+        if ($this->isAgentImageProvided()) {
             return $this->getAgentImageDir() . $this->avatar;
+        }
 
         return $this->getDefaultAgentImagePath();
     }
