@@ -134,6 +134,7 @@
                                     </li>
 
                                     @endforeach
+                                    <li><a href="{{route('page.propertymanagement')}}">Property Management</a></li>
 
                                 </ul>
                             </li>
@@ -170,6 +171,7 @@
                                         <a href="{!! route('sell-form') !!}">Property
                                             Estimate</a>
                                     </li>
+                                    <li><a href="{{route('page.selling')}}">Selling</a></li>
                                     <li>
                                         <a href="{!! route('sell-form') !!}">Recent
                                             Sales</a>

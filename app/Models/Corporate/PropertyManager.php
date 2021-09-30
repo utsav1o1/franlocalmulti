@@ -4,17 +4,17 @@ namespace App\Models\Corporate;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class PropertyManager extends Model
 {
-    protected $table = 'pages';
+    protected $table = 'property_managers';
     protected $connection = 'mysql-main';
 
     public static function getImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/pages/';
+        return env('CORPORATE_URL') . 'uploads/property-managers/';
     }
     public function getImagePath()
     {
-        return $this->getImageDir() . $this->banner_image;
+        return $this->getImageDir() . $this->image;
     }
 }

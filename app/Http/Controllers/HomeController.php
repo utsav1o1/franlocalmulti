@@ -99,6 +99,17 @@ class HomeController extends Controller
             $home['welcome_message'] = null;
             $home['welcome_video'] = null;
         }
+        // getting selling page content
+        $selling = Page::where('slug', 'selling')->first();
+        if (isset($selling) && $selling != null) {
+            $home['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->first();
+            $home['buying'] = PageDetail::where('page_id', $selling->id)->where('slug', 'buying-a-home')->first();
+
+        } else {
+            $home['selling'] = null;
+            $home['buying'] = null;
+        }
+
         // dd($home);
         // return view('home')
         //     ->withProperties($properties)

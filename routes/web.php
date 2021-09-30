@@ -12,18 +12,18 @@
  */
 
 // test route
-Route::get('/test-home', function () {
-    return view('frontend.home');
-});
-Route::get('/property-management', function () {
-    return view('agent.Property.property-management');
-});
+// Route::get('/test-home', function () {
+//     return view('frontend.home');
+// });
+// Route::get('/property-management', function () {
+//     return view('agent.Property.property-management');
+// });
 Route::get('/guide', function () {
     return view('agent.Property.guide');
 });
-Route::get('/selling', function () {
-    return view('agent.Property.selling');
-});
+// Route::get('/selling', function () {
+//     return view('agent.Property.selling');
+// });
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/send', 'HomeController@send')->name('send');
@@ -44,6 +44,8 @@ Route::get('rent/{category?}', 'PropertyController@rent')->name('properties.rent
 Route::get('leased-properties', 'PropertyController@leasedProperties')->name('properties.leased');
 
 Route::get('aboutus', 'PageController@aboutus')->name('page.aboutus');
+Route::get('property-management', 'PageController@propertymanagement')->name('page.propertymanagement');
+Route::get('selling', 'PageController@selling')->name('page.selling');
 Route::get('page/{slug}', 'PageController@show')->name('page.show');
 
 Route::get('blog/{slug}', 'PageController@showBlog')->name('page.blog');

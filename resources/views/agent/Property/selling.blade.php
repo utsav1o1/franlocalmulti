@@ -4,14 +4,15 @@
 @section('meta_description', env('APP_NAME'))
 @section('dynamicdata')
 <!-- selling banner  -->
-<div class="banner banner--selling">
+@isset($page)
+
+
+<div class="banner banner--selling" style="background-image: url('{{ url($page->getImagePath()) }}')">
     <div class="container">
         <div class="banner__caption">
             <h1><span>Thinking about</span>Selling Your Home?</h1>
-            <div class="list-property white-bg">LIST YOUR PROPERTY</div>
-            <h2>FOR
-                ZERO DOLLARS
-                UPFRONT</h2>
+            <div class="list-property white-bg">{{$page->sub_heading}}</div>
+            <h2>{!! $page->short_description !!}</h2>
             <a href="#">click here</a>
         </div>
     </div>
@@ -121,21 +122,28 @@
                     <h4>Download yours today!</h4>
                 </div>
             </div>
+            @if($page->selling)
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
-                    <h3>SELLING YOUR HOME?</h3>
-                    <a href="#" class="btn btn-warning">Download Seller’s Guide</a>
+                    <h3>{{$page->selling->meta_key}}?</h3>
+                    <a href="{{ url($page->selling->getFilePath()) }}" class="btn btn-warning" target="_blank">Download
+                        Seller’s Guide</a>
                 </div>
             </div>
+            @endif
+            @if($page->buying)
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
-                    <h3>buying a HOME?</h3>
-                    <a href="#" class="btn btn-warning">Download Buyer’s Guide</a>
+                    <h3>{{$page->buying->meta_key}}?</h3>
+                    <a href="{{ url($page->buying->getFilePath()) }}" class="btn btn-warning" target="_blank">Download
+                        Buyer’s Guide</a>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
+@endisset
 @stop

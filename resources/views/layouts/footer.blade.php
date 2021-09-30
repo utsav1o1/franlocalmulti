@@ -25,7 +25,7 @@
                                 <label>Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565, Australia</label>
                             </li>
                             <li class="clearfix">
-                                <i class="fa fa fa-clock-o fa-lg"></i>
+                                <i class="fa fa-clock-o fa-lg"></i>
                                 <label>09:00- 17:00 (Mon -Sat)</label>
                             </li>
                             <li class="clearfix">
@@ -98,8 +98,10 @@
 
                         <div class="col-md-8">
                             <form method="POST" action="http://multidynamicingleburn.com.au/send-appraisal"
-                                accept-charset="UTF-8" id="appraisal-form"><input name="_token" type="hidden"
-                                    value="DARKESCVe20XUhjpdF4l6jbABMyR7wSn00K0T4Hw">
+                                accept-charset="UTF-8" id="appraisal-form">
+                                {{-- <input name="_token" type="hidden"
+                                    value="DARKESCVe20XUhjpdF4l6jbABMyR7wSn00K0T4Hw"> --}}
+                                {{ csrf_field() }}
 
                                 <div class="form-group col-md-6">
                                     <label>First Name *</label>

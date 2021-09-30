@@ -323,6 +323,16 @@
                             <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
                         </div>
                     </div>
+                    <div class="col-lg-12">
+
+                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
+                        <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+
+                        <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
+                        </div>
+
+
+                    </div>
 
                     <div class="col-lg-12">
                         <button class="btn btn-warning">submit</button>
@@ -406,20 +416,26 @@
                     <h4>Download yours today!</h4>
                 </div>
             </div>
+            @if($home->selling)
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
-                    <h3>SELLING YOUR HOME?</h3>
-                    <a href="#" class="btn btn-warning">Download Seller’s Guide</a>
+                    <h3>{{$home->selling->meta_key}}?</h3>
+                    <a href="{{ url($home->selling->getFilePath()) }}" class="btn btn-warning" target="_blank">Download
+                        Seller’s Guide</a>
                 </div>
             </div>
+            @endif
+            @if($home->buying)
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
-                    <h3>buying a HOME?</h3>
-                    <a href="#" class="btn btn-warning">Download Buyer’s Guide</a>
+                    <h3>{{$home->buying->meta_key}}?</h3>
+                    <a href="{{ url($home->buying->getFilePath()) }}" class="btn btn-warning" target="_blank">Download
+                        Buyer’s Guide</a>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>

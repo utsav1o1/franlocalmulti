@@ -4,134 +4,55 @@
 @section('meta_description', env('APP_NAME'))
 @section('dynamicdata')
 <!-- selling banner  -->
-<div class="banner banner--property">
+@isset($page)
+
+
+<div class="banner banner--property" style="background-image: url('{{ url($page->getImagePath()) }}')">
     <div class="container">
         <div class="banner__caption">
-            <h1>WHAT IS YOUR RENTAL PROPERTY WORTH?</h1>
-            <p>Looking to rent and want to know what your
-                rental property is worth in the current market? </p>
+            <h1>{{$page->sub_heading}}</h1>
+            <p>{!! $page->short_description !!}</p>
             <a href="#">BOOK a PROPERTY APPRAISAL</a>
         </div>
     </div>
 </div>
 <!-- end selling banner  -->
-<div class="property__management text-center">
+@if($page->property_management)
+<div class="text-center property__management">
     <div class="container">
-        <h2>Property Management</h2>
-        <p>Are you the proud owner of an investment property, or thinking about buying an investment property? We
-            are here to help. You need a property manager that is trustworthy, knowledgeable, and skilled at
-            communicating with you and your tenants.</p>
-        <p>We know the Ingleburn market better than anyone. Contact us today to find out what we can do for you.</p>
-        <a href="#">contact us now</a>
+        <h2>{{$page->property_management->meta_key}}</h2>
+        {!! $page->property_management->meta_value !!}
+        <a href="{{ route('contact-us.form') }}">contact us now</a>
     </div>
 </div>
+@endif
 <!-- end prpperty management  -->
+@isset($managers)
+
 <div class="typical__property">
     <div class="container">
         <h2>WE OFFER MORE THAN A TYPICAL PROPERTY MANAGER</h2>
         <ul>
+            @foreach($managers as $manager)
             <li>
                 <div class="typical__property__wrapper">
                     <div class="image-wrapper">
-                        <img src="images/p1.jpg" alt="">
+                        <img src="{{ url($manager->getImagePath()) }}" alt="">
                     </div>
                     <div class="content-wrapper">
-                        <h3>Landlord Insurance</h3>
-                        <p>Feel Secure About Your Property with Multi Dynamic’s Landlord Insurance Policy</p>
-                        <p>Get upto one year of free insurance on your investment property with Multi Dynamic Property
-                            Management</p>
+                        <h3>{{$manager->title}}</h3>
+                        {!! $manager->short_description !!}
                         <a href="#">Read more</a>
                     </div>
                 </div>
             </li>
+            @endforeach
             <!-- end list  -->
 
-            <li>
-                <div class="typical__property__wrapper">
-                    <div class="image-wrapper">
-                        <img src="images/p2.jpg" alt="">
-                    </div>
-                    <div class="content-wrapper">
-                        <h3>Leasing</h3>
-                        <p>Want the Best Tenants for Your Property? We are on it.
-                            Leave your worries to our dedicated property team.
-                            Why Multi Dynamic Property Management for your Leasing needs?
-                        </p>
-                        <p>MD Property Management has a team of qualified and highly motivated individuals: real estate
-                            agents, leasing managers, business development manager, digital marketers, and support
-                            staff. </p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-            </li>
-            <!-- end list  -->
-            <li>
-                <div class="typical__property__wrapper">
-                    <div class="image-wrapper">
-                        <img src="images/p3.jpg" alt="">
-                    </div>
-                    <div class="content-wrapper">
-                        <h3>Property Maintenance</h3>
-                        <p>Best Property Maintenance Service Perfect for Both Landlords and Tenants
-                        </p>
-                        <p>Efficient and Accountable maintenance service to make sure your investment is always in mint
-                            condition.</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-            </li>
-            <!-- end list  -->
-
-            <li>
-                <div class="typical__property__wrapper">
-                    <div class="image-wrapper">
-                        <img src="images/p4.jpg" alt="">
-                    </div>
-                    <div class="content-wrapper">
-                        <h3>Rent Guarantee</h3>
-                        <p>Get Your Rent Payout On Time. No Excuses!
-                            Multi Dynamic Property Management guarantees you always get your payment on (XXXX) day of
-                            the month.</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-            </li>
-            <!-- end list  -->
-
-            <li>
-                <div class="typical__property__wrapper">
-                    <div class="image-wrapper">
-                        <img src="images/p5.jpg" alt="">
-                    </div>
-                    <div class="content-wrapper">
-                        <h3>Routine Inspections</h3>
-                        <p>How Often Will Your Property be Inspected Under Our Supervision!</p>
-                        <p>Each survey of your Property Will be Overseen with Proper Care and Attention to Finest of
-                            Details by Experienced Team</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-            </li>
-            <!-- end list  -->
-
-            <li>
-                <div class="typical__property__wrapper">
-                    <div class="image-wrapper">
-                        <img src="images/p6.jpg" alt="">
-                    </div>
-                    <div class="content-wrapper">
-                        <h3>Team Based Approach</h3>
-                        <p>Team of experienced Home Experts That will Lay foundations for Long term Partnership & Proper
-                            Care of Your Property</p>
-                        <p>Dedicated Team of Home Experts That Will Never Let you Down</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-            </li>
-            <!-- end list  -->
         </ul>
     </div>
 </div>
+@endisset
 
 <div class="free-apprisal-banner">
     <div class="container">
@@ -142,6 +63,86 @@
 </div>
 <!-- end appraisal banner  -->
 
+@isset($properties)
+
+
+<div class="recent__rentals">
+    <div class="container">
+        <h2>View our recently leased rentals</h2>
+        <div class="recent__rentals__slider">
+            @foreach ($properties as $property)
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <div class="thumbnail recent-properties-box">
+                        <a class="thumbnail-container" href="{!! route('properties.show', $property->slug) !!}">
+
+                            <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
+                                class="img-responsive" />
+                        </a>
+                        <!--Caption Detail-->
+                        <div class="caption detail">
+                            <header>
+                                <div class="pull-left">
+                                    <h1 class="title">
+                                        <a href="{!! route('properties.show', $property->slug) !!}">{!!
+                                            str_limit($property->name, 30) !!}</a>
+                                    </h1>
+                                </div>
+
+                                <div class="price-block">
+                                    <div class="starting-price">{!! $property->price_type_name !!}</div>
+                                    <div class="price">{{ $property->getFormattedPrice() }}</div>
+                                </div>
+                                <!--Area Block-->
+                                <div class="area-block">
+                                    <div class="property-type">Property Type</div>
+                                    <div class="property-area">{!! $property->property_type_name !!}</div>
+                                </div>
+                            </header>
+                            <!--Location-->
+                            <h3 class="location">
+                                @if($property->location)
+                                <a href="#">
+                                    <i class="fa fa-map-marker"></i>{!! $property->location_name !!}
+                                </a>
+                                @endif
+                            </h3>
+                            <!--Item Details-->
+                            <ul class="item-details col-md-12">
+                                <li>
+                                    <p class="item-area">@if($property->area > 0) {!! $property->area !!}
+                                        m<sup>2</sup>@else --.-- @endif</p>
+                                </li>
+
+                                <li>
+                                    <p class="item-bed">{!! $property->number_of_bedrooms !!} Bedroom</p>
+                                </li>
+                                <li>
+                                    <p class="item-bath">{!! $property->number_of_bathrooms !!} Bathroom</p>
+                                </li>
+                                <li>
+                                    <p class="item-garage">{!! $property->number_of_garages !!} Garage</p>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div class="detail-footer">
+                                <a href="{!! route('properties.show', $property->slug) !!}"><i class="fa-user"></i>
+                                    {{ $property->agents_count }}
+                                    {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
+                                <span><i class="fa-calendar-o"></i>{!!
+                                    App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+    </div>
+</div>
+@endisset
 <div class="property-evaluation-block">
     <div class="container">
         <h2>Curious about your property's value?</h2>
@@ -181,15 +182,27 @@
                             <input type="text" name="" id="" placeholder="Your property address" class="form-control">
                         </div>
                     </div>
+                    <div class="col-lg-12">
+
+                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
+                        <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+
+                        <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
+                        </div>
+
+
+                    </div>
 
                     <div class="col-lg-12">
                         <button class="btn btn-warning">submit</button>
                     </div>
+
 
                 </div>
             </form>
         </div>
     </div>
 </div>
+@endisset
 <!-- end property evaluation block  -->
 @stop
