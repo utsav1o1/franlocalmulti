@@ -4,9 +4,8 @@
 @section('meta_description', env('APP_NAME'))
 @section('dynamicdata')
 <!-- selling banner  -->
-@isset($page)
 
-
+@if(!empty($page))
 <div class="banner banner--property" style="background-image: url('{{ url($page->getImagePath()) }}')">
     <div class="container">
         <div class="banner__caption">
@@ -17,7 +16,7 @@
     </div>
 </div>
 <!-- end selling banner  -->
-@if($page->property_management)
+@if(!empty($page->property_management))
 <div class="text-center property__management">
     <div class="container">
         <h2>{{$page->property_management->meta_key}}</h2>
@@ -27,7 +26,7 @@
 </div>
 @endif
 <!-- end prpperty management  -->
-@isset($managers)
+@if(!empty($managers))
 
 <div class="typical__property">
     <div class="container">
@@ -52,7 +51,7 @@
         </ul>
     </div>
 </div>
-@endisset
+@endif
 
 <div class="free-apprisal-banner">
     <div class="container">
@@ -63,7 +62,7 @@
 </div>
 <!-- end appraisal banner  -->
 
-@isset($properties)
+@if($properties)
 
 
 <div class="recent__rentals">
@@ -142,7 +141,7 @@
         </div>
     </div>
 </div>
-@endisset
+@endif
 <div class="property-evaluation-block">
     <div class="container">
         <h2>Curious about your property's value?</h2>
@@ -151,35 +150,53 @@
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
                 Multi Dynamic</p>
-            <form action="">
+            <form action="{{route('propertyevaluation')}}" method="POST">
+                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
+                            @if($errors->has('name'))
+                            <span class="error">{{ $errors->first('name') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="email" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
+                            @if($errors->has('email'))
+                            <span class="error">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="number" name="" id="" placeholder="Enter your phone" class="form-control">
+                            <input type="number" name="phone" id="" placeholder="Enter your phone" class="form-control">
+                            @if($errors->has('phone'))
+                            <span class="error">{{ $errors->first('phone') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your post code" class="form-control">
+                            <input type="number" name="postal_code" id="" placeholder="Enter your postal code"
+                                class="form-control">
+                            @if($errors->has('postal_code'))
+                            <span class="error">{{ $errors->first('postal_code') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Your property address" class="form-control">
+                            <input type="text" name="property_address" id="" placeholder="Enter your property address"
+                                class="form-control">
+                            @if($errors->has('property_address'))
+                            <span class="error">{{ $errors->first('property_address') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -194,15 +211,14 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <button class="btn btn-warning">submit</button>
+                        <button class="btn btn-warning" type="submit">submit</button>
                     </div>
-
 
                 </div>
             </form>
         </div>
     </div>
 </div>
-@endisset
+@endif
 <!-- end property evaluation block  -->
 @stop

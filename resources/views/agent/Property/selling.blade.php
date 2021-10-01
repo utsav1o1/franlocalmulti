@@ -4,7 +4,7 @@
 @section('meta_description', env('APP_NAME'))
 @section('dynamicdata')
 <!-- selling banner  -->
-@isset($page)
+@if(!empty($page))
 
 
 <div class="banner banner--selling" style="background-image: url('{{ url($page->getImagePath()) }}')">
@@ -24,48 +24,72 @@
     <div class="container">
         <div class="prpoerty__appraisal__wrapper">
             <h2>GET YOUR FREE PROPERTY APPRAISAL<span>Kindly enter your details below</span></h2>
-            <form action="">
+            <form action="{{route('propertyappraisal')}}" method="POST">
+                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="" id="" placeholder="Enter your full name">
+                            <input class="form-control" type="text" name="name" id="" placeholder="Enter your full name"
+                                value="{{old('name')}}">
+                            @if($errors->has('name'))
+                            <span class="error">{{ $errors->first('name') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- end col  -->
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <input class="form-control" type="email" name="" id="" placeholder="Enter your email">
+                            <input class="form-control" type="email" name="email" id="" placeholder="Enter your email"
+                                value="{{old('email')}}">
+                            @if($errors->has('email'))
+                            <span class="error">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- end col  -->
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input class="form-control" type="number" name="" id=""
-                                placeholder="Enter your phone number">
+                            <input class="form-control" type="number" name="phone" id=""
+                                placeholder="Enter your phone number" value="{{old('phone')}}">
+                            @if($errors->has('phone'))
+                            <span class="error">{{ $errors->first('phone') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- end col  -->
 
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="" id="" placeholder="Post code">
+                            <input class="form-control" type="text" name="postal_code" id="" placeholder="Post code"
+                                value="{{old('postal_code')}}">
+                            @if($errors->has('postal_code'))
+                            <span class="error">{{ $errors->first('postal_code') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- end col  -->
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <select name="" id="" class="form-control wide">
-                                <option value="0">Are you looking to...</option>
+                            <select name="property_type" id="" class="form-control wide"
+                                value="{{old('property_type')}}">
+                                <option value="" disabled selected>Are you looking to...</option>
                                 <option value="1">House</option>
                                 <option value="2">Land</option>
                                 <option value="3">Building</option>
                             </select>
+                            @if($errors->has('property_type'))
+                            <span class="error">{{ $errors->first('property_type') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- end col  -->
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Tell us more!"></textarea>
+                            <textarea name="message" class="form-control" placeholder="Tell us more!"
+                                value="{{old('message')}}"></textarea>
+                            @if($errors->has('message'))
+                            <span class="error">{{ $errors->first('message') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- end col  -->
@@ -122,7 +146,7 @@
                     <h4>Download yours today!</h4>
                 </div>
             </div>
-            @if($page->selling)
+            @if(!empty($page->selling))
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
@@ -132,7 +156,7 @@
                 </div>
             </div>
             @endif
-            @if($page->buying)
+            @if(!empty($page->buying))
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
@@ -145,5 +169,5 @@
         </div>
     </div>
 </div>
-@endisset
+@endif
 @stop

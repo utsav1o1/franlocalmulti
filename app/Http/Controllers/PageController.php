@@ -65,6 +65,7 @@ class PageController extends Controller
     public function propertymanagement()
     {
         $property_management_page = Page::where('slug', 'property-management')->first();
+        // dd($property_management_page);
         $prooperty_managers = PropertyManager::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'desc')
             ->get();
@@ -93,12 +94,11 @@ class PageController extends Controller
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
-
-        if (isset($property_management_page) && $property_management_page != null) {
+        // dd($property_management_page != null);
+        if ($property_management_page != null) {
+            // dd('here i am');
             $property_management_page['property_management'] = PageDetail::where('page_id', $property_management_page->id)->where('slug', 'property-management')->first();
 
-        } else {
-            $property_management_page['property_management'] = null;
         }
 
         return view('agent.Property.property-management')
@@ -113,9 +113,6 @@ class PageController extends Controller
             $selling['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->first();
             $selling['buying'] = PageDetail::where('page_id', $selling->id)->where('slug', 'buying-a-home')->first();
 
-        } else {
-            $selling['selling'] = null;
-            $selling['buying'] = null;
         }
 
         return view('agent.Property.selling')->withPage($selling);

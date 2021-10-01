@@ -76,6 +76,12 @@ Route::get('contact-us', 'ContactUsController@showContactUsForm')->name('contact
 Route::post('send-enquiry', 'ContactUsController@sendEnquiry')->name('enquiry.send');
 Route::get('location-list-for-enquiry-form', 'ContactUsController@getLocationListForEnquiryForm')->name('enquiry.location-list');
 
+// property evaluation and appraisal
+Route::post('property-evaluation/enquiry', 'ContactUsController@propertyEvaludation')->name('propertyevaluation');
+Route::get('property-evaluation/enquiry/success', 'ContactUsController@propertyEvaludationSuccess')->name('propertyevaluationsuccess');
+Route::post('property-appraisal/enquiry', 'ContactUsController@propertyAppraisal')->name('propertyappraisal');
+Route::get('property-appraisal/enquiry/success', 'ContactUsController@propertyAppraisalSuccess')->name('propertyappraisalsuccess');
+
 /* for maintenance request routes */
 
 Route::get('maintenance-request', 'MaintenanceRequestController@showMaintenanceRequestForm')->name('maintenance-request.form');
@@ -282,3 +288,6 @@ Route::prefix('agent')->middleware('auth:agent')->namespace('Agent')->group(func
     Route::get('message', 'MessageController@index')->name('agent.message.index');
     Route::get('message/{message}', 'MessageController@show')->name('agent.message.show');
 });
+
+// instagram
+// Route::get('instagram-get-auth', 'InstgramAuthController@show')->middleware('auth');

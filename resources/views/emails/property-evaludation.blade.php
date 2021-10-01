@@ -6,6 +6,9 @@
     </head>
 
     <body>
+        @php
+        dd($data);
+        @endphp
         <div>
             <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#8d8e90" style="margin: 20px">
                 <tr bgcolor="#520101">
@@ -20,7 +23,7 @@
                         <table cellspacing="0" cellpadding="0" width="100%">
                             <tr>
                                 <td>
-                                    <p>Dear <strong>{!! $inquiry->agent->first_name !!},</strong> <br />
+                                    <p>Dear <strong>Ingleburn,</strong> <br />
                                         <br />
                                         A visitor have send an inquiry to you with following details.
                                     </p>
@@ -31,19 +34,23 @@
                         <table cellspacing="0" cellpadding="0" width="100%">
                             <tr>
                                 <td width="20%">Name</td>
-                                <td>{!! $inquiry->full_name !!}</td>
+                                <td>{{ $data->name }}</td>
                             </tr>
                             <tr>
                                 <td width="20%">Email Address</td>
-                                <td>{!! $inquiry->email_address !!}</td>
+                                <td>{{ $data->email }}</td>
                             </tr>
                             <tr>
                                 <td width="20%">Phone Number</td>
-                                <td>{!! $inquiry->phone_number !!}</td>
+                                <td>{{ $data->phone }}</td>
                             </tr>
                             <tr>
-                                <td width="20%">Message</td>
-                                <td>{!! $inquiry->message !!}</td>
+                                <td width="20%">Postal Code</td>
+                                <td>{{ $data->postal_code }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%">Property Address</td>
+                                <td>{{ $data->property_address }}</td>
                             </tr>
                         </table>
 

@@ -14,6 +14,7 @@ use App\Repositories\PropertyRepository;
 use App\Repositories\PropertyTypeRepository;
 use Auth;
 use DB;
+use Dymantic\InstagramFeed\Profile;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -45,6 +46,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // instagram post
+        $profile = Profile::where('username', 'dibbyakarki')->first();
+        $insta_posts = $profile->feed(6);
+
         $defaultPropertyCategories = \App\Models\Corporate\PropertyCategory::getDefaultPropertyCategories();
 
         $query = \App\Models\Corporate\Property::leftJoin('property_images', 'property_images.id', '=', 'properties.main_image')
@@ -95,9 +100,6 @@ class HomeController extends Controller
         if (isset($home) && $home != null) {
             $home['welcome_message'] = PageDetail::where('page_id', $home->id)->where('slug', 'welcome-message')->first();
             $home['welcome_video'] = PageDetail::where('page_id', $home->id)->where('slug', 'welcome-video')->first();
-        } else {
-            $home['welcome_message'] = null;
-            $home['welcome_video'] = null;
         }
         // getting selling page content
         $selling = Page::where('slug', 'selling')->first();
@@ -105,11 +107,7 @@ class HomeController extends Controller
             $home['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->first();
             $home['buying'] = PageDetail::where('page_id', $selling->id)->where('slug', 'buying-a-home')->first();
 
-        } else {
-            $home['selling'] = null;
-            $home['buying'] = null;
         }
-
         // dd($home);
         // return view('home')
         //     ->withProperties($properties)
@@ -121,7 +119,8 @@ class HomeController extends Controller
             ->withServices($services)
             ->withTestimonials($testimonials)
             ->withAgents($agents)
-            ->withHome($home);
+            ->withHome($home)
+            ->withPosts($insta_posts);
 
     }
 

@@ -224,7 +224,8 @@
 </div>
 <!-- end featured  -->
 
-@isset($home)
+@if(!empty($home))
+
 <div class="welcome-section">
     <div class="container">
         <div class="row">
@@ -243,7 +244,7 @@
 
             <div class="col-lg-3">
                 <div class="main-title">
-                    @if($home->welcome_message)
+                    @if(!empty($home->welcome_message))
                     <h2>{!!$home->welcome_message->meta_value!!}</h2>
                     @endif
 
@@ -256,7 +257,7 @@
         </div>
     </div>
 </div>
-@endisset
+@endif
 <!-- end section  -->
 <div class="zero-dollars" style="background: url('images/selling-banner.jpg');">
     <div class="container">
@@ -292,35 +293,53 @@
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
                 Multi Dynamic</p>
-            <form action="">
+            <form action="{{route('propertyevaluation')}}" method="POST">
+                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
+                            @if($errors->has('name'))
+                            <span class="error">{{ $errors->first('name') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
+                            @if($errors->has('email'))
+                            <span class="error">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="number" name="phone" id="" placeholder="Enter your phone" class="form-control">
+                            @if($errors->has('phone'))
+                            <span class="error">{{ $errors->first('phone') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="number" name="postal_code" id="" placeholder="Enter your postal code"
+                                class="form-control">
+                            @if($errors->has('postal_code'))
+                            <span class="error">{{ $errors->first('postal_code') }}</span>
+                            @endif
                         </div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                            <input type="text" name="property_address" id="" placeholder="Enter your property address"
+                                class="form-control">
+                            @if($errors->has('property_address'))
+                            <span class="error">{{ $errors->first('property_address') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -335,7 +354,7 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <button class="btn btn-warning">submit</button>
+                        <button class="btn btn-warning" type="submit">submit</button>
                     </div>
 
                 </div>
@@ -416,7 +435,7 @@
                     <h4>Download yours today!</h4>
                 </div>
             </div>
-            @if($home->selling)
+            @if(!empty($home->selling))
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
@@ -426,7 +445,7 @@
                 </div>
             </div>
             @endif
-            @if($home->buying)
+            @if(!empty($home->buying))
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
