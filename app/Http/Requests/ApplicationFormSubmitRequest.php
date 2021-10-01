@@ -24,7 +24,16 @@ class ApplicationFormSubmitRequest extends FormRequest
     public function rules()
     {
         return [
-            'property_street_address' => 'required'
+            'property_street_address' => 'required|max:200',
+            'property_suburb' => 'required|max:200',
+            'image' => 'required'
         ];
+    }
+
+    public function messages()
+    {
+	return [
+      		'image.required' => 'Please  sign in the box and  Click Ok.',
+      	];
     }
 }

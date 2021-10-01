@@ -13,35 +13,37 @@
                 <div class="col-sm-6 col-md-6 aboutus-inner-wrap">
                     <div class="col-sm-12 col-md-12 sub-head">
                         <h1 class="inner-about-heading">About Us</h1>
-                        <h3>Your Dream Home is Our Mission</h3>
+                        <h3>It’s Our Mission to Find Your Dream Home</h3>
                         <font color="#00529c">
-                        <p align="justify">Multi Dynamic is a team of a professional and dynamic real estate Agency who are dedicated to serve the community with their hard-working nature & honest work ethics. We have promised to give an exceptional service with consistency, regarding any of our Real Estate Service. “Multi Dynamic has proved to be one of the trusted & fastest growing real estate in Australia”.  <br>
+                        <p align="justify">Multi Dynamic is a team of professional and dedicated real estate agents committed to serving the local community. Hardworking, honest and ethical in all we do, our clients are assured of exceptional, consistent service, no matter whether buying, selling, renting or investing. <br>
 
                         </p>
 
-                        <div class="inner-about-img"><img src="../images/multidynamic-team.jpg" class="img-responsive" alt="Multi Dynamic Tam Member"/></div>
-                        <p align="justify">Our Team is focused on – Residential Project Sales, Residential Individual Sales & Property Management. <br>
-                            We are one stop solution to all your Real Estate needs. Feel free to talk to our Dynamic Experts if you have any questions regarding Real Estate Service. Our Young and Energetic Team are always ready to provide the best service, that a client would expect from an agent. Come have a chat to us today or call us to book your appointment with Multi Dynamic. 
+                        <div class="inner-about-img" style="border: 8px solid #efefef;"><img style="border: 12px solid #fff;" src="../images/multidynamic-team.jpg?v=1" class="img-responsive" alt="Multi Dynamic Tam Member"/></div>
+                        <p align="justify">As one of the most trusted and fastest growing firms in Australia, we consider ourselves a one stop solution to all your real estate requirements. You can trust our young and energetic team to deliver the right result. 
+                        </p>
+                        <p align="justify">
+                            Whether it’s residential project sales, residential individual sales or property management,  one of our Dynamic experts will be ready to assist and provide the highest quality service. We invite you to talk to us today or call on (02) 9618 6209 and book your appointment with a Multi Dynamic agent.
                         </p>
                         <h1 class="inner-about-heading">“Why Multi Dynamic?”</h1>
-                        <h3 class="sub-head">“We care for our Customers”</h3>
+                        <h3 class="sub-head">“We care for our customers”</h3>
                         
                         </font>
                     </div>
-                    <div class="col-sm-12 col-md-12 sub-head-title">
-                        
-                                             
+                    <div class="col-sm-12 col-md-12 sub-head-title">                                                                    
                        
-                     <b>   <h4>Save Money & Time</h4></b>
-                        <p align="justify">Our Research in property market, Our Analysis, Records & Study of the past and present tells us where and what is the best option for you, when you are thinking of your Dream Home. You won’t be wondering anymore once you visit Multi Dynamic.</p>
-                      <b>  <h4>Good Sales & Marketing</h4></b>
-                        <p align="justify">Our Sales and Marketing Team knows what our clients are looking for. We have our stocks according to our buyers need. If you are thinking of selling your property through us, our marketing team will explain you how to market and get 100% success while selling. </p>
+                     <b>   <h4>Save Money and Time</h4></b>
+                        <p align="justify">
+                            We’ve done the research, so you don’t have to. Multi Dynamic knows the market well and is here to save you time and money. Together we will find the best option to meet your real estate needs and turn that dream home into a reality.
+                        </p>
+                      <b>  <h4>Professional Service and Strategic Marketing</h4></b>
+                        <p align="justify">Our Sales and Marketing Team know what our clients are looking for, and we have stocks according to our buyers needs. If you are thinking of selling your property through us, our marketing team will walk you through how to get ready to list and ensure success while selling.</p>
                      <b>   <h4>Comfort</h4></b>
-                        <p align="justify">We ask our clients what they want before we start our consultation. Our Friendly Team will help you in making home-related decisions or your difficulties to decide what to do, by providing the easiest solution. </p>
+                        <p align="justify">Your comfort during the entire sales process is our priority, and we will always ask you what you need before we start our consultation. Our friendly team will help you in making home-related decisions or discuss any difficulties, and provide the easiest solution. </p>
                       <b>  
 
                         <h4>Easy Access </h4></b>
-                        <p align="justify">We have allocated our agents all around Sydney, so you can find one of us wherever you are. We also do home visits in the case of your urgency. We are only a minute walk from Sydney’s South West’s Ingleburn Train station. We are open 6 days a week Monday to Saturday (9am to 5pm) for your service. You can simply come and visit us or call us to book an appointment.</p>
+                        <p align="justify">We have agents all around Sydney, making it easy to locate us, no matter where you live. We are only a minute walk from Sydney’s South West’s Ingleburn Train station. We are open 6 days a week Monday to Saturday (9am to 5pm) for your service. You can simply come and visit us or call us on (02) 9618 6209 to book an appointment or arrange a home visit.</p>
                          </font>
                     </div>
                 </div>

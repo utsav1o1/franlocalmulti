@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SendEnquiryRequest extends FormRequest
+class SendAppraisalRequest extends FormRequest
 {
 
     /**
@@ -25,16 +25,13 @@ class SendEnquiryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'fname' => 'required',
+            'lname' => 'required',
             'address' => 'required',
+            'suburb' => 'required',
+            'postcode' => 'required',
             'email' => 'nullable|email',
             'contact' => 'required',
-            'reference_source' => 'required',
-            'location' => 'required',
-            'finance_ready' => 'required',
-            'budget' => 'required',
-            'first_home_buyer_investor' => 'required',
-            'agree_terms_conditions' => 'required',
             'g-recaptcha-response' => 'required|captcha'
         ];
     }

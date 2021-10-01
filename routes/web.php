@@ -32,7 +32,6 @@ Route::get('properties', 'PropertyController@index')->name('properties.index');
 Route::get('properties/{slug}', 'PropertyController@show')->name('properties.show');
 Route::post('properties/{slug}', 'PropertyController@submitContact')->name('properties.submit.contact');
 Route::get('properties/{slug}/print', 'PropertyController@printProperty')->name('properties.print');
-Route::post('property/send/email', 'PropertyController@sendEmail')->name('property.send.email');
 
 Route::get('project-locations/{projectType}', 'ProjectLocationController@showProjectLocations')->name('project-locations.show-project-locations');
 Route::get('project-location-details/{projectType}/{projectLocation}', 'ProjectLocationController@showProjectLocationDetails')->name('project-locations.detail');
@@ -99,6 +98,8 @@ Route::post('send-property-estimation', 'SellController@sendPropertyEstimation')
 
 Route::get('get-recently-sold-properties', 'SellController@showRecentlySoldProperties')->name('properties.recently-sold');
 Route::get('get-recently-leased-properties', 'SellController@showRecentlyLeasedProperties')->name('properties.recently-leased');
+
+Route::get('application/privacy-policy', 'ApplicationFormController@privacyPolicy');
 
 /* admin routes */
 

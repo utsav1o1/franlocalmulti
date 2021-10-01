@@ -7,7 +7,7 @@
 
         <?php
 
-        $assetsVersion = 16;
+        $assetsVersion = 17;
 
     ?>
 
@@ -18,8 +18,8 @@
         <meta name="description" content="@yield('meta_description')" />
         <meta name="keywords" content="@yield('meta_keywords')" />
         <meta name="copyright" content="© {!! date('Y-m-d') .' '. env('APP_NAME') !!}" />
-        <meta name="author" content="Sunil Adhikari" />
-        <meta name="email" content="adhikarysunil.1@gmail.com" />
+        <meta name="author" content="Multidynamic Ingleburn" />
+        <meta name="email" content="sales@multidynamic.com.au" />
         <meta name="Distribution" content="Global" />
         <meta name="Rating" content="General" />
         <meta name="Robots" content="INDEX,FOLLOW" />
@@ -27,17 +27,13 @@
 
         @yield('extra_meta')
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{!! asset('css/inner.css') . '?v=' . $assetsVersion !!}" />
         <link rel="stylesheet" href="{!! asset('css/innerpage.css') . '?v=' . $assetsVersion !!}" />
-        <link rel="stylesheet" href="{!! asset('css/slick-theme.min.css') . '?v=' . $assetsVersion !!}" />
-        <link rel="stylesheet" href="{!! asset('css/slick.min.css') . '?v=' . $assetsVersion !!}" />
-        <link rel="stylesheet" href="{!! asset('css/custom.min.css') . '?v=' . $assetsVersion !!}" />
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" type="image/ico" href="https://multidynamic.com.au/assets/images/logo/favicon.png" />
 
         @yield('header_css')
 

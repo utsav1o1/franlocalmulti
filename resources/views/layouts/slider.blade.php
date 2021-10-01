@@ -9,7 +9,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img class="first-slide" src="{!! asset('images/slider1-bg.jpg') !!}" alt="{!! env('APP_NAME') !!}"/>
+                <img class="first-slide" src="{!! asset('images/slider1-bg.jpg') !!}?v=1" alt="{!! env('APP_NAME') !!}"/>
                 <div class="conatiner">
                     <div class="carousel-caption">
                         <h1>Find Your Dream Home Today</h1>
@@ -19,7 +19,7 @@
             </div>
             <!--START OF SECOND SLIDER-->
             <div class="item">
-                <img class="second-slide" src="{!! asset('images/slider2-bg.jpg') !!}" alt="{!! env('APP_NAME') !!}"/>
+                <img class="second-slide" src="{!! asset('images/slider2-bg.jpg') !!}?v=1" alt="{!! env('APP_NAME') !!}"/>
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Honest &#8226; Reliable &#8226; Dynamic</h1>
@@ -32,7 +32,7 @@
             </div>
 
              <div class="item">
-                <img class="second-slide" src="{!! asset('images/m-slider.JPG') !!}" alt="{!! env('APP_NAME') !!}"/>
+                <img class="second-slide" src="{!! asset('images/m-slider.JPG') !!}?v=1" alt="{!! env('APP_NAME') !!}"/>
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Buy &#8226;  Sell &#8226; Rent</h1>

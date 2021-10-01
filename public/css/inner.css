@@ -12,18 +12,15 @@ input:invalid {
 
 .row {
     width: 100%;
-    margin: 0 auto;
+    margin:0 auto;
 }
-
-.row .footer-newsletter {
+.row .footer-newsletter{
     padding-top: 60px;
 }
-
-.row .footer-newsletter .fa-facebook {
+.row .footer-newsletter .fa-facebook{
     padding-top: 60px;
 }
-
-.newsletter-h2 {
+.newsletter-h2{
     margin-top: 0px;
 }
 
@@ -181,11 +178,11 @@ ul.dropdown.dropdown-menu.topsignup {
     margin-top: 0px;
 }
 
-.topsocialnav {
-    float: left;
-    display: inline-block;
-    margin: 20px 0px 0px 12px;
-    padding: 0;
+.topsocialnav{
+    float:left;
+    display:inline-block;
+    margin:20px 0px 0px 12px;
+    padding:0;
 }
 
 .topsocialnav li {
@@ -223,8 +220,8 @@ ul.dropdown.dropdown-menu.topsignup {
     margin: 0px 5px 0px 6px;
 }
 
-.carousel-caption {
-    bottom: 125px;
+.carousel-caption{
+    bottom:125px;
 }
 
 .carousel-caption h1 {
@@ -244,22 +241,22 @@ ul.dropdown.dropdown-menu.topsignup {
 }
 
 .mr-auto,
-.mx-auto {
-    margin: 0 !important;
+.mx-auto{
+    margin:0 !important;
 
 }
 
 /*START OF SLIDER FORM CSS*/
-.slider-form-bg {
-    width: 100%;
-    margin: 0 auto;
-    background-color: rgba(0,
-            82,
-            156,
-            0.42);
-    padding: 15px;
-    border-radius: 5px;
-    display: inline-block;
+.slider-form-bg{
+    width:100%;
+    margin:0 auto;
+    background-color:rgba(0,
+    82,
+    156,
+    0.42);
+    padding:15px;
+    border-radius:5px;
+    display:inline-block;
 }
 
 .slider-form-bg div {
@@ -288,9 +285,9 @@ ul.dropdown.dropdown-menu.topsignup {
     color: #fff;
 }
 
-.event-scroll {
-    margin-bottom: 20px;
-    color: #616161;
+.event-scroll{
+    margin-bottom:20px;
+    color:#616161;
     font-size: 18px;
 }
 
@@ -368,7 +365,6 @@ ul.dropdown.dropdown-menu.topsignup {
     border-top-right-radius: 4px;
     padding: 12px 35px;
 }
-
 /* bottom: 8px}
 
 /*New Menu CSS*/
@@ -387,7 +383,7 @@ ul.dropdown.dropdown-menu.topsignup {
     position: fixed;
 }
 
-header+div {
+header + div {
     margin-top: 125px !important;
 }
 
@@ -401,7 +397,9 @@ header+div {
     padding-bottom: 15px;
 }
 
-.affix-top {}
+.affix-top{
+
+}
 
 .navbar-brand {
     width: 260px;
@@ -1056,9 +1054,9 @@ footer .footer-item .newsletter input {
     font-size: 18px;
 }
 
-.btm-footer-bar li a:hover {
-    color: #dcdcdc;
-    text-decoration: underline;
+.btm-footer-bar li a:hover{
+    color:#dcdcdc;
+    text-decoration:underline;
 }
 
 .btm-sm-icon {
@@ -1205,7 +1203,7 @@ footer .footer-item .newsletter input {
         padding: 10px 17px;
     }
 
-    .topsocialnav {
+    .topsocialnav{
         margin: 0px 0px 0px 14px;
     }
 
@@ -1224,11 +1222,11 @@ footer .footer-item .newsletter input {
         margin-top: 2px;
     }
 
-    .header-ph {
-        float: none;
-        margin: 0;
-        padding: 0;
-        background: none;
+    .header-ph{
+        float:none;
+        margin:0;
+        padding:0;
+        background:none;
 
     }
 
@@ -1259,7 +1257,6 @@ footer .footer-item .newsletter input {
         position: inherit;
         margin: 24px 0px;
     }
-
     .col-md-2,
     .col-md-3 {
         padding: 0px;
@@ -1281,7 +1278,7 @@ footer .footer-item .newsletter input {
         padding-left: 8px;
     }
 
-    .ui-autocomplete-input {
+    .ui-autocomplete-input{
         color: #0c0c0c;
         padding-left: 10px;
     }
@@ -1411,7 +1408,7 @@ footer .footer-item .newsletter input {
 
     /*footer*/
 
-    .footer-menu {
+    .footer-menu{
         float: left;
         display: block;
         color: #f2f2f2;
@@ -1422,7 +1419,7 @@ footer .footer-item .newsletter input {
         padding-left: 395px;
     }
 
-    .buy {
+    .buy{
         color: white;
         font-size: 10px;
     }
@@ -1480,15 +1477,13 @@ footer .footer-item .newsletter input {
         padding: 0px;
     }
 
-    .fb-share-button iframe {
-        width: 100px;
-        height: 42px
+    .fb-share-button iframe{
+        width:100px;
+        height:42px
     }
 
-    .inlineBlock button {
-        width: 100px;
-        height: 42px;
-        padding: 5px 0px 5px 2px;
+    .inlineBlock button{
+        width:100px; height:42px; padding:5px 0px 5px 2px;
     }
 
     .properties__ribon {
@@ -1518,7 +1513,7 @@ footer .footer-item .newsletter input {
     }
 }
 
-@media only screen and (min-width:: 770px) {
+@media only screen and (min-width: 770px) {
     .topsocialnav {
         margin: 0px 0px 0px 20px;
     }
@@ -1866,7 +1861,6 @@ footer .footer-item .newsletter input {
 #sell-contact-form .validation-error-message {
     color: #e91515;
 }
-
 .blogs-links-container {
     padding: 15px;
     display: block;
@@ -2155,31 +2149,29 @@ footer .footer-item .newsletter input {
     line-height: 28px;
     transition: all 0.4s ease-in-out;
 }
-
-#footer-first {
+#footer-first{
     padding: 0px 0 0px 0;
 }
 
-.foot-block {
+.foot-block{
     background-color: #f26522;
     padding: 1em 1em;
     border-radius: 3px;
     font-weight: bold;
     text-transform: uppercase;
 }
-
-.foot-block:hover {
+.foot-block:hover{
     color: black;
     background-color: white;
     text-decoration: none;
 }
 
-.social a i {
+.social a i{
     padding: 0.6em;
     color: white;
 }
 
-.social a i:hover {
+.social a i:hover{
     color: black;
     background-color: white;
     border-radius: 2em;
@@ -2191,52 +2183,47 @@ footer .footer-item .newsletter input {
     padding: 0px;
     line-height: 28px;
 }
-
-.company-location-details-container a {
+.company-location-details-container a{
     color: white;
 }
 
-.bottom-border {
+.bottom-border{
     border-bottom: white 0.5px solid;
 }
 
 .footer-links a {
     color: #ffffff;
 }
-
-@media (max-width: 1200px) {
-    .footer-logo {
+@media (max-width: 1200px){
+    .footer-logo{
         width: 10em;
     }
 }
-
-@media (max-width: 1200px) {
-    .foot-block {
+@media (max-width: 1200px){
+    .foot-block{
         font-size: 0.6em;
 
     }
 }
-
-@media (max-width: 1200px) {
-    .social a i {
+@media (max-width: 1200px){
+    .social a i{
         padding: 0.2em;
     }
 }
 
-.sp-block {
+.sp-block{
     display: block;
     height: 0.1em;
 }
 
-#footer-second {
+#footer-second{
     padding: 5px 0 0 0;
 }
-
-.align-self-center {
+.align-self-center
+{
     margin-top: .5em;
 }
-
-.row .book-apprisal {
+.row .book-apprisal{
     padding-top: 20px;
 }
 
@@ -2303,7 +2290,7 @@ footer .footer-item .newsletter input {
     padding: 3px 0px 0px 5px;
 }
 
-.foot-block-nav {
+.foot-block-nav{
     background-color: #f26522;
     color: white;
     padding: 1em 1em;
@@ -2312,8 +2299,7 @@ footer .footer-item .newsletter input {
     text-transform: uppercase;
     width: auto;
 }
-
-.foot-block-nav:hover {
+.foot-block-nav:hover{
     color: black;
     background-color: white;
     text-decoration: none;

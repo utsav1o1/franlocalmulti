@@ -20,7 +20,13 @@ class ApplicationFormController extends Controller
         $pdf = \PDF::loadView('frontend.applicationForm.application_pdf', ['attributes' => $request->all()]);
         $attributes = $request->all();
         $attributes['pdf'] = $pdf;
-        Mail::to('prasang381@gmail.com')->send(new ApplicationFormSubmit($attributes));
+        Mail::to(config('app.application_to_mail'))->send(new ApplicationFormSubmit($attributes));
+        $request->session()->flash('success', 'Your application has been successfully sent. We will contact you soon!');
         return redirect()->route('home');
+    }
+
+    public function privacyPolicy()
+    {
+        return view('frontend.applicationForm.privacy');
     }
 }

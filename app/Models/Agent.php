@@ -39,6 +39,7 @@ class Agent extends Authenticatable
         'order_position',
         'is_active',
         'is_core_member',
+        'rate_agent_link',
         'reset_token',
     ];
 
