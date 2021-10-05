@@ -5,7 +5,7 @@ namespace App\Http;
 use Carbon\Carbon;
 use DateTime;
 
-class Helper
+class Helpers
 {
     /**
      * Return english readable date
@@ -15,13 +15,14 @@ class Helper
      */
     public static function toFormattedDateString($date)
     {
-        if($date){
+        if ($date) {
             return Carbon::createFromFormat('Y-m-d', $date)->toFormattedDateString();
         }
         return $date;
     }
 
-    public static function time_elapsed_string($datetime, $full = false) {
+    public static function time_elapsed_string($datetime, $full = false)
+    {
         $now = new DateTime;
         $ago = new DateTime($datetime);
         $diff = $now->diff($ago);
@@ -46,7 +47,10 @@ class Helper
             }
         }
 
-        if (!$full) $string = array_slice($string, 0, 1);
+        if (!$full) {
+            $string = array_slice($string, 0, 1);
+        }
+
         return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 }

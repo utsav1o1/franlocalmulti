@@ -10,7 +10,7 @@ return [
      * The client secret from registering your app on Instagram,
      * This is not the same as an access token.
      */
-    'client_secret' => 'INSTAGRAM_CLIENT_SECRET',
+    'client_secret' => env('INSTAGRAM_CLIENT_SECRET'),
 
     /*
      * The route that will respond to the Instagram callback during the OAuth process.

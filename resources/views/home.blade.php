@@ -211,7 +211,7 @@
                                     {{ $property->agents_count }}
                                     {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
                                 <span><i class="fa-calendar-o"></i>{!!
-                                    App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
+                                    App\Http\Helpers::time_elapsed_string($property->created_at) !!}</span>
                             </div>
 
                         </div>
@@ -599,11 +599,14 @@
 <div class="instagram">
     <div class="container">
         <h2>Follow our instagram <a href="#">@multi.dynamic</a></h2>
+        @if(!empty($posts))
         <div class="insta-gallery">
             <ul>
+                @foreach($posts as $insta_post)
                 <li class="insta-gallery-block">
                     <div class="image">
-                        <a href="#"><img src="images/insta1.png" alt=""></a>
+                        <a href="{{$insta_post['permalink']}}"><img src="{{$insta_post['url']}}" alt=""
+                                target="_blank"></a>
                     </div>
                     <div class="insta-share">
                         <ul>
@@ -622,126 +625,15 @@
                         </ul>
                     </div>
                 </li>
-                <!-- end block  -->
-                <li class="insta-gallery-block">
-                    <div class="image">
-                        <a href="#"><img src="images/insta2.png" alt=""></a>
-                    </div>
-                    <div class="insta-share">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <span class="count">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                @endforeach
                 <!-- end block  -->
 
-                <li class="insta-gallery-block">
-                    <div class="image">
-                        <a href="#"><img src="images/insta3.png" alt=""></a>
-                    </div>
-                    <div class="insta-share">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <span class="count">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- end block  -->
-
-                <li class="insta-gallery-block">
-                    <div class="image">
-                        <a href="#"><img src="images/insta4.png" alt=""></a>
-                    </div>
-                    <div class="insta-share">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <span class="count">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- end block  -->
-
-                <li class="insta-gallery-block">
-                    <div class="image">
-                        <a href="#"><img src="images/insta5.png" alt=""></a>
-                    </div>
-                    <div class="insta-share">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <span class="count">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- end block  -->
-
-                <li class="insta-gallery-block">
-                    <div class="image">
-                        <a href="#"><img src="images/insta1.png" alt=""></a>
-                    </div>
-                    <div class="insta-share">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <span class="count">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- end block  -->
             </ul>
             <div class="text-center follow-us-btn">
                 <a href="#" class="btn btn-primary">Follow Us</a>
             </div>
         </div>
+        @endif
     </div>
 </div>
 <!-- end instagram  -->

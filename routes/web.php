@@ -291,4 +291,4 @@ Route::prefix('agent')->middleware('auth:agent')->namespace('Agent')->group(func
 });
 
 // instagram
-// Route::get('instagram-get-auth', 'InstgramAuthController@show')->middleware('auth');
+Route::get('instagram-get-auth', 'InstgramAuthController@show')->middleware('auth');

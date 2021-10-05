@@ -48,9 +48,13 @@ class HomeController extends Controller
     {
         // instagram post
         $profile = Profile::where('username', 'dibbyakarki')->first();
+        // dd(!empty($profile));
         if (!empty($profile)) {
-            $insta_posts = $profile->feed(6);
+            $insta_posts = $profile->refreshFeed(6);
+        } else {
+            $insta_posts = [];
         }
+        // dd($insta_posts);
 
         $defaultPropertyCategories = \App\Models\Corporate\PropertyCategory::getDefaultPropertyCategories();
 
