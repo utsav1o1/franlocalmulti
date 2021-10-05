@@ -40,14 +40,19 @@
 
         <script>
             var rootUrl = "{!! url('') !!}";
+
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108755403-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-108755403-1');
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-108755403-1');
+
         </script>
     </head>
 
@@ -67,76 +72,94 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="{!! asset('js/all.js') . '?v=' . $assetsVersion !!}"></script>
+        <script src="{!! asset('js/slick.min.js') . '?v=' . $assetsVersion !!}"></script>
+        <script src="{!! asset('js/jquery.matchHeight-min.js') . '?v=' . $assetsVersion !!}"></script>
+        <script src="{!! asset('js/custom.js') . '?v=' . $assetsVersion !!}"></script>
 
         @yield('footer_js')
 
         <script>
-            $( function() {
-            $( "#location" ).autocomplete({
-                source: function( request, response ) {
-                    $.ajax({
-                        url: "{{ route('api.locations') }}"+'/'+request.term,
-                        data: {location:request.term},
-                        type: 'get',
-                        dataType: "json",
-                        success: function(data) {
-                            response( $.map( data.locations, function( location ) {
-                                return {
-                                    label: location.location_name,
-                                    value: location.id
-                                }
-                            }));
-                        }
-                    });
-                },
-                select: function (event, ui) {
-                    $('#location').val(ui.item.label); // display the selected text
-                    $('#location_id').val(ui.item.value); // save selected id to input
-                    return false;
-                }
+            $(function () {
+                $("#location").autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: "{{ route('api.locations') }}" + '/' + request.term,
+                            data: {
+                                location: request.term
+                            },
+                            type: 'get',
+                            dataType: "json",
+                            success: function (data) {
+                                response($.map(data.locations, function (location) {
+                                    return {
+                                        label: location.location_name,
+                                        value: location.id
+                                    }
+                                }));
+                            }
+                        });
+                    },
+                    select: function (event, ui) {
+                        $('#location').val(ui.item.label); // display the selected text
+                        $('#location_id').val(ui.item.value); // save selected id to input
+                        return false;
+                    }
+                });
             });
-        });
-        $(document).ready(function() {
-            $.fn.delayedHide=function(o){var e=this;return window.setTimeout(function(){e.hide()},o||2500),e}
+            $(document).ready(function () {
+                $.fn.delayedHide = function (o) {
+                    var e = this;
+                    return window.setTimeout(function () {
+                        e.hide()
+                    }, o || 2500), e
+                }
 
-            $("#subscriber_email_address").val(null);
-            $('#btn_subscribe').click(function(){
-                document.getElementById('subscriberNotice').innerHTML = "";
-                $("#subscriberNotice").show();
-                var email = document.getElementById('subscriber_email_address').value;
-                var filter = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/igm;
-                if (filter.test(email)) {
-                    document.getElementById('subscriberNotice').innerHTML = '';
-                    $object = $(this);
-                    $.ajax({
-                        type: "POST",
-                        url: rootUrl+"/subscriber",
-                        data:{email_address:email, _token:'{{ csrf_token() }}' },
-                        success: function(response){
-                            $("#subscriber_email_address").val("");
-                            document.getElementById('subscriberNotice').innerHTML = response.message;
-                            $("#subscriberNotice").delayedHide();
-                            return true;
-                        },
-                        error: function(e){
-                            document.getElementById('subscriberNotice').innerHTML = "Server Error.";
-                            document.getElementById('subscriberNotice').style.color = '#F4645F';
-                            $("#subscriberNotice").delayedHide();
-                            return false;
-                        },
-                    });
-                } else {
-                    document.getElementById('subscriberNotice').innerHTML = 'Enter valid email address.';
-                    document.getElementById('subscriberNotice').style.color = '#F4645F';
-                    $("#subscriberNotice").delayedHide();
-                    return false;
-                }
+                $("#subscriber_email_address").val(null);
+                $('#btn_subscribe').click(function () {
+                    document.getElementById('subscriberNotice').innerHTML = "";
+                    $("#subscriberNotice").show();
+                    var email = document.getElementById('subscriber_email_address').value;
+                    var filter =
+                        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/igm;
+                    if (filter.test(email)) {
+                        document.getElementById('subscriberNotice').innerHTML = '';
+                        $object = $(this);
+                        $.ajax({
+                            type: "POST",
+                            url: rootUrl + "/subscriber",
+                            data: {
+                                email_address: email,
+                                _token: '{{ csrf_token() }}'
+                            },
+                            success: function (response) {
+                                $("#subscriber_email_address").val("");
+                                document.getElementById('subscriberNotice').innerHTML =
+                                    response.message;
+                                $("#subscriberNotice").delayedHide();
+                                return true;
+                            },
+                            error: function (e) {
+                                document.getElementById('subscriberNotice').innerHTML =
+                                    "Server Error.";
+                                document.getElementById('subscriberNotice').style.color =
+                                    '#F4645F';
+                                $("#subscriberNotice").delayedHide();
+                                return false;
+                            },
+                        });
+                    } else {
+                        document.getElementById('subscriberNotice').innerHTML =
+                            'Enter valid email address.';
+                        document.getElementById('subscriberNotice').style.color = '#F4645F';
+                        $("#subscriberNotice").delayedHide();
+                        return false;
+                    }
+                });
             });
-        });
+
         </script>
-        <script src="{!! asset('js/slick.min.js') . '?v=' . $assetsVersion !!}"></script>
-        <script src="{!! asset('js/jquery.matchHeight-min.js') . '?v=' . $assetsVersion !!}"></script>
-        <script src="{!! asset('js/custom.js') . '?v=' . $assetsVersion !!}"></script>
+
 
     </body>
 
