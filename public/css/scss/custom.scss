@@ -1,0 +1,35 @@
+
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/font';
+
+@import 'layout/grid';
+@import 'layout/navbar';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+@import 'components/banners';
+@import 'components/welcome';
+@import 'components/services';
+@import 'components/featured-property';
+@import 'components/property-worth';
+@import 'components/why-choose';
+@import 'components/free-guide';
+@import 'components/testimonial';
+@import 'components/team';
+@import 'components/instagram';
+@import 'components/home-blog';
+@import 'components/search-form';
+
+@import 'pages/home';
+@import 'pages/thankyou.scss';
+@import 'pages/guide';
+@import 'pages/selling';
+@import 'pages/property-management';
+
+// sass --watch scss/custom.scss:custom.min.css --style compressed
