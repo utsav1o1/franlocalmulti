@@ -93,6 +93,16 @@
                         </div>
                     </div>
                     <!-- end col  -->
+                    <div class="col-lg-12">
+
+                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
+                        <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+
+                        <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
+                        </div>
+
+
+                    </div>
 
                     <div class="col-lg-12">
                         <div class="form-group">

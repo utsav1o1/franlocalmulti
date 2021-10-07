@@ -131,7 +131,7 @@
                         <div class="service-content">
                             <h3>{{$service->title}}</h3>
                             <p>{!! $service->description !!}</p>
-                            <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
+                            <a href="{!! $service->link !!}">Read more <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </li>
@@ -265,7 +265,7 @@
             <h2><span>WE WILL LIST YOUR HOME</span>FOR ZERO
                 DOLLARS!</h2>
             <div class="text-center">
-                <a href="#">ask us now</a>
+                <a href="#property-evaluation">ask us now</a>
             </div>
         </div>
     </div>
@@ -273,8 +273,8 @@
 <!-- end banner  -->
 <div class="sold-banner">
     <div class="container">
-        <a href="">
-            <img src="images/sold-banner.jpg" alt="">
+        <a href="#property-evaluation">
+            <img src="{{asset('')}}images/sold-banner.jpg" alt="">
         </a>
     </div>
 </div>
@@ -289,7 +289,7 @@
             income. Want to know what your home is worth? We will be happy to review your property, completely free
             and with no obligation, to provide you a comprehensive review of your home, the current market analysis,
             and suburb insights.</p>
-        <div class="property-evaluation-wrapper">
+        <div class="property-evaluation-wrapper" id="property-evaluation">
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
                 Multi Dynamic</p>
