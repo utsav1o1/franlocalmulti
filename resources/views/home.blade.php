@@ -211,7 +211,7 @@
                                     {{ $property->agents_count }}
                                     {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
                                 <span><i class="fa-calendar-o"></i>{!!
-                                    App\Http\Helpers::time_elapsed_string($property->created_at) !!}</span>
+                                    App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
                             </div>
 
                         </div>

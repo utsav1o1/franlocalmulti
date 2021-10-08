@@ -5,7 +5,7 @@ namespace App\Http;
 use Carbon\Carbon;
 use DateTime;
 
-class Helpers
+class Helper
 {
     /**
      * Return english readable date
