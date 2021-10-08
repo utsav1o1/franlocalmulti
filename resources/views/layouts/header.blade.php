@@ -173,7 +173,7 @@
                                     </li>
                                     <li><a href="{{route('page.selling')}}">Selling</a></li>
                                     <li>
-                                        <a href="{!! route('sell-form') !!}">Recent
+                                        <a href="{!! route('properties.recently-sold') !!}">Recent
                                             Sales</a>
                                     </li>
                                 </ul>
