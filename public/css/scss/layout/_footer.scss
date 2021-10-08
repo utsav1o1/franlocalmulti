@@ -1,9 +1,18 @@
 .main-footer {
     margin-top: 0;
 }
+
 footer {
     background: $orange;
+
+    input.nsu-field {
+        border: none;
+    }
+    #btn_subscribe {
+        background: $blue;
+    }
 }
+
 .bottom-footer {
     background: $blue;
 }
