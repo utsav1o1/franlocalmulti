@@ -39,7 +39,7 @@ class Agent extends Authenticatable
 
     public static function getAgentImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/agent-images/';
+        return env('CORPORATE_URL') . '/uploads/agent-images/';
     }
 
     public function isAgentImageProvided()

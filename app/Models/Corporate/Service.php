@@ -11,7 +11,7 @@ class Service extends Model
 
     public static function getServiceImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/services/';
+        return env('CORPORATE_URL') . '/uploads/services/';
     }
     public function getServiceImagePath()
     {
