@@ -96,7 +96,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $agents = Agent::where('branch_id', env('BRANCH_ID'))
+        $agents = Agent::where('branch_id', env('BRANCH_ID'))->where('is_active','Y')
             ->orderBy('created_at', 'desc')
             ->get();
 
