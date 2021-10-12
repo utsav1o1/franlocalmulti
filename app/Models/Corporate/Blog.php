@@ -34,7 +34,7 @@ class Blog extends Model
 
     public static function getBlogImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/blogs/';
+        return env('CORPORATE_URL') . '/uploads/blogs/';
     }
 
     public function isBlogImageProvided()
@@ -44,7 +44,7 @@ class Blog extends Model
 
     public function getDefaultBlogImagePath()
     {
-        return env('CORPORATE_URL') . 'uploads/default/default-blog-image.jpg';
+        return env('CORPORATE_URL') . '/uploads/default/default-blog-image.jpg';
     }
 
     public function getBlogImagePath()
