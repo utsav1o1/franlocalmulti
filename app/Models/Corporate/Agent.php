@@ -49,7 +49,7 @@ class Agent extends Authenticatable
 
     public function getDefaultAgentImagePath()
     {
-        return env('CORPORATE_URL') . 'uploads/default/default-agent-image.jpg';
+        return env('CORPORATE_URL') . '/uploads/default/default-agent-image.jpg';
     }
 
     public function getAgentImagePath()

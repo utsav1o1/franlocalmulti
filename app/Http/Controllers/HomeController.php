@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function index()
     {
         // instagram post
-        $profile = Profile::where('username', 'dibbyakarki')->first();
+        $profile = Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
         // dd(!empty($profile));
         if (!empty($profile)) {
             $insta_posts = $profile->refreshFeed(6);
