@@ -62,11 +62,11 @@
 							</li>
                         </ul>
     				</div>
-    				<div class="location-container">
-    					<div class="google_map">
-                            <div id="gmap_canvas" style="height:400px;width:100%;"></div>
-                        </div>
-    				</div>
+					<div class="location-container">
+						<div class="google_map">
+							<iframe width="100%" height="500" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.760921301286!2d150.8619727152136!3d-33.998674180620625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12eb7c35efffff%3A0x42923019afa6e69!2sshop%202%2F16%20Ingleburn%20Rd%2C%20Ingleburn%20NSW%202565!5e0!3m2!1sen!2sau!4v1634530023127!5m2!1sen!2sau"></iframe>
+						</div>
+					</div>
     			</div>
     		</div>
 

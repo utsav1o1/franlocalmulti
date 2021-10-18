@@ -342,11 +342,15 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
-                        <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
-                        <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
-                        </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-sm-2 col-md-2"
+                               for="ReCaptcha"></label>
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+
+                        @if($errors->has('g-recaptcha-response'))
+                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        @endif
                     </div>
                     Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate franchises in
                     Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record of

@@ -81,8 +81,8 @@ class AgentController extends Controller
     {
         $validated = $request->validate([
             'full_name' => 'required|min:3|max:255',
-            'email' => 'required|email',
-            'phone' => 'required|numeric',
+            'email_address' => 'required|email',
+            'phone_number' => 'required|numeric',
             'g-recaptcha-response' => 'required|captcha'
         ]);
 
