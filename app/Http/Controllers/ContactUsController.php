@@ -75,7 +75,7 @@ class ContactUsController extends Controller
         ]);
 
         try {
-            Mail::to('prakashkarki6565@gmail.com')->send(new PropertyEvaluationMail($validated));
+            Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
 
         } catch (\Exception $e) {
             // dd($e);

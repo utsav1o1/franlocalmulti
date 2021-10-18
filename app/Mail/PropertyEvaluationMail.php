@@ -33,7 +33,7 @@ class PropertyEvaluationMail extends Mailable
             ->subject('Inquiry for the property evaluation.')
             ->with([
                 'data' => $this->data,
-                'logoPath' => public_path('images/logo.png'),
+                'logoPath' => public_path('/images/logo.png'),
             ]);
 
     }
