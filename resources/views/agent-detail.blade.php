@@ -79,11 +79,15 @@
                                 <textarea type="text" class="form-control agent-form-control" name="message" rows="4" placeholder="Leave your message"></textarea>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
-                            <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
-                            <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
-                            </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-sm-2 col-md-2"
+                                   for="ReCaptcha"></label>
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+
+                            @if($errors->has('g-recaptcha-response'))
+                                <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                            @endif
                         </div>
                         {!! csrf_field() !!}
                         <input type="hidden" name="agent_id" value="{!! $agent->id !!}" />
