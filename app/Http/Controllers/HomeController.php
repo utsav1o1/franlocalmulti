@@ -81,7 +81,7 @@ class HomeController extends Controller
 
         $blogs = \App\Models\Corporate\Blog::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'desc')
-            ->limit(6)
+            ->limit(3)
             ->get();
 
         // new changes
@@ -89,7 +89,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         $services = Service::where('branch_id', env('BRANCH_ID'))
-            ->orderBy('created_at', 'desc')
+            ->orderBy('created_at', 'asc')
             ->limit(6)
             ->get();
         $testimonials = Testimonial::where('branch_id', env('BRANCH_ID'))
