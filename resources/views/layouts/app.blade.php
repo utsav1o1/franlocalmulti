@@ -27,7 +27,7 @@
 
         @yield('extra_meta')
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{!! asset('css/inner.css') . '?v=' . $assetsVersion !!}" />
         <link rel="stylesheet" href="{!! asset('css/innerpage.css') . '?v=' . $assetsVersion !!}" />

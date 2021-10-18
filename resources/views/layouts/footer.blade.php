@@ -269,6 +269,7 @@
 </div>
 </footer> --}}
 <footer>
+
     <style>
         #appraisal {
             align-items: center;
@@ -533,6 +534,101 @@
 <script type="text/javascript">
     @yield ('scripts')
 </script>
+
+<!-- modals  -->
+<!-- selling modal  -->
+<div class="modal modal__download fade" id="sellingModal" tabindex="-1" role="dialog" aria-labelledby="sellingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title" id="sellingModalLabel">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="number" name="phone" id="" placeholder="Enter your phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="number" name="postal_code" id="" placeholder="Enter your postal code" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input type="text" name="property_address" id="" placeholder="Enter your property address" class="form-control">
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-warning">Download</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- buying modal  -->
+<div class="modal modal__download fade" id="buyingModal" tabindex="-1" role="dialog" aria-labelledby="buyingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title" id="buyingModalLabel">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="number" name="phone" id="" placeholder="Enter your phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="number" name="postal_code" id="" placeholder="Enter your postal code" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input type="text" name="property_address" id="" placeholder="Enter your property address" class="form-control">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-warning">Download</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--BOTTOM FOOTER-->
 <div class="bottom-footer">

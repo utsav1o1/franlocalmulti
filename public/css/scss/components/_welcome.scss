@@ -24,12 +24,14 @@
     .main-title {
         text-align: left;
 
+        h1,
         h2 {
             font-size: 29px;
             color: $white;
             font-weight: 800;
             margin-top: 0;
             width: 85%;
+            text-transform: none;
         }
     }
     p {

@@ -449,7 +449,7 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>{{$home->selling->meta_key}}?</h3>
-                    <a href="{{ url($home->selling->getFilePath()) }}" class="btn btn-warning" target="_blank">Download
+                    <a href="{{ url($home->selling->getFilePath()) }}" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download
                         Seller’s Guide</a>
                 </div>
             </div>
@@ -459,7 +459,7 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>{{$home->buying->meta_key}}?</h3>
-                    <a href="{{ url($home->buying->getFilePath()) }}" class="btn btn-warning" target="_blank">Download
+                    <a href="{{ url($home->buying->getFilePath()) }}" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download
                         Buyer’s Guide</a>
                 </div>
             </div>

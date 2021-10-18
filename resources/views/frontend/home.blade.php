@@ -989,14 +989,14 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>SELLING YOUR HOME?</h3>
-                    <a href="#" class="btn btn-warning">Download Seller’s Guide</a>
+                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download Seller’s Guide</a>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>buying a HOME?</h3>
-                    <a href="#" class="btn btn-warning">Download Buyer’s Guide</a>
+                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download Buyer’s Guide</a>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ $headings : h1 h2 h3 h4 h5 h6;
 
 @each $heading in $headings {
     #{$heading} {
-
+        // font-family: 'Montserrat', sans-serif !important;
     }
 }
 p {
