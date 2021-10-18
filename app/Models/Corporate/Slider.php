@@ -11,7 +11,7 @@ class Slider extends Model
 
     public static function getSliderImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/sliders/';
+        return env('CORPORATE_URL') . '/uploads/sliders/';
     }
     public function getSliderImagePath()
     {

@@ -11,7 +11,7 @@ class Testimonial extends Model
 
     public static function getImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/testimonials/';
+        return env('CORPORATE_URL') . '/uploads/testimonials/';
     }
     public function getImagePath()
     {

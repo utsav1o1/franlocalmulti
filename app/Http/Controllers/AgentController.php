@@ -79,6 +79,13 @@ class AgentController extends Controller
 
     public function submitContact(Request $request)
     {
+        $validated = $request->validate([
+            'full_name' => 'required|min:3|max:255',
+            'email_address' => 'required|email',
+            'phone_number' => 'required|numeric',
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+
         $message = $this->messages->create($request->all());
         if ($message) {
             if($message->agent){

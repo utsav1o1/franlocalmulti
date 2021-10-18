@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function index()
     {
         // instagram post
-        $profile = Profile::where('username', 'dibbyakarki')->first();
+        $profile = Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
         // dd(!empty($profile));
         if (!empty($profile)) {
             $insta_posts = $profile->refreshFeed(6);
@@ -81,7 +81,7 @@ class HomeController extends Controller
 
         $blogs = \App\Models\Corporate\Blog::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'desc')
-            ->limit(6)
+            ->limit(3)
             ->get();
 
         // new changes
@@ -89,14 +89,14 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         $services = Service::where('branch_id', env('BRANCH_ID'))
-            ->orderBy('created_at', 'desc')
+            ->orderBy('created_at', 'asc')
             ->limit(6)
             ->get();
         $testimonials = Testimonial::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $agents = Agent::where('branch_id', env('BRANCH_ID'))
+        $agents = Agent::where('branch_id', env('BRANCH_ID'))->where('is_active','Y')
             ->orderBy('created_at', 'desc')
             ->get();
 

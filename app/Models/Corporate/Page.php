@@ -11,7 +11,7 @@ class Page extends Model
 
     public static function getImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/pages/';
+        return env('CORPORATE_URL') . '/uploads/pages/';
     }
     public function getImagePath()
     {

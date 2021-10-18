@@ -128,6 +128,8 @@ return [
 
     'application_to_mail' => env('APPLICATION_TO_MAIL', null),
 
+    'enquiry_to_mail' => env('Enquiry_TO_MAIL', null),
+
     'branch_id' => env('BRANCH_ID', null),
 
     'appraisal_mail' => env('APPRAISAL_MAIL'),

@@ -11,7 +11,7 @@ class PropertyManager extends Model
 
     public static function getImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/property-managers/';
+        return env('CORPORATE_URL') . '/uploads/property-managers/';
     }
     public function getImagePath()
     {

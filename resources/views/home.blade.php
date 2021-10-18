@@ -232,9 +232,9 @@
 
             <div class="col-lg-9">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="hidden embed-responsive-item" src="https://www.youtube.com/embed/ex7jGbyFgpA?rel=0"
+                    <iframe class="hidden embed-responsive-item" src={{env('YOUTUBE_LINK')}}
                         allowfullscreen=""></iframe>
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ex7jGbyFgpA"
+                    <iframe class="embed-responsive-item" src={{env('YOUTUBE_LINK')}}
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
@@ -342,15 +342,15 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-sm-2 col-md-2"
+                               for="ReCaptcha"></label>
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
 
-                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
-                        <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
-
-                        <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
-                        </div>
-
-
+                        @if($errors->has('g-recaptcha-response'))
+                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        @endif
                     </div>
                     <div class="col-lg-12">
                         <div class="mesage-content">
@@ -530,7 +530,7 @@
 <div class="testimonial">
     <div class="container">
         <div class="main-title">
-            <h2>Testimonilas</h2>
+            <h2>Testimonials</h2>
             <p>Find out what people are really saying about Multi Dynamic</p>
         </div>
         <div class="testimonial__slider">

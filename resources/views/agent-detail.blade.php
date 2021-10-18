@@ -79,6 +79,16 @@
                                 <textarea type="text" class="form-control agent-form-control" name="message" rows="4" placeholder="Leave your message"></textarea>
                             </div>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-sm-2 col-md-2"
+                                   for="ReCaptcha"></label>
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+
+                            @if($errors->has('g-recaptcha-response'))
+                                <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                            @endif
+                        </div>
                         {!! csrf_field() !!}
                         <input type="hidden" name="agent_id" value="{!! $agent->id !!}" />
                         <button type="submit" class="btn btn-default agent-btn"><i class="glyphicon glyphicon-send"></i>Submit</button>
