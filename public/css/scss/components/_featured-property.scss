@@ -1,6 +1,12 @@
 .fefatured__property {
     padding: 75px 0;
     background: rgba($orange, 0.1);
+    @include breakpoint (sm1) {
+        padding: 50px 0;
+    }
+    .thumbnail {
+        margin-bottom: 0;
+    }
 
     h2 {
         color: rgba($orange, 1);
