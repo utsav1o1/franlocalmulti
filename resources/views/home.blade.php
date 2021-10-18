@@ -232,9 +232,9 @@
 
             <div class="col-lg-9">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="hidden embed-responsive-item" src="https://www.youtube.com/watch?v=ZvlkjsuKr0M"
+                    <iframe class="hidden embed-responsive-item" src={{env('YOUTUBE_LINK')}}
                         allowfullscreen=""></iframe>
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=ZvlkjsuKr0M"
+                    <iframe class="embed-responsive-item" src={{env('YOUTUBE_LINK')}}
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
