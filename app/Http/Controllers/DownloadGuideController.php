@@ -21,7 +21,7 @@ class DownloadGuideController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => 'required',
-            // 'g-recaptcha-response' => 'required|captcha',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
@@ -42,7 +42,7 @@ class DownloadGuideController extends Controller
             Mail::to(config('app.enquiry_to_mail'))->send(new SellingGuideMail($data));
             Mail::to($data['email'])->send(new SendSellingGuideMail($data));
         } catch (\Exception $e) {
-            dd($e);
+            // dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
