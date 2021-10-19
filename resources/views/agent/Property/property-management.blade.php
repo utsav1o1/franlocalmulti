@@ -11,7 +11,7 @@
         <div class="banner__caption">
             <h1>{{$page->sub_heading}}</h1>
             <p>{!! $page->short_description !!}</p>
-            <a href="#">BOOK a PROPERTY APPRAISAL</a>
+            <a href="#property-evaluation">BOOK a PROPERTY APPRAISAL</a>
         </div>
     </div>
 </div>
@@ -128,8 +128,8 @@
                                 <a href="{!! route('properties.show', $property->slug) !!}"><i class="fa-user"></i>
                                     {{ $property->agents_count }}
                                     {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
-                                <span><i class="fa-calendar-o"></i>{!!
-                                    App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
+                                        <span><i class="fa-calendar-o"></i>{!!
+                                            App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
                             </div>
 
                         </div>
@@ -146,7 +146,7 @@
     <div class="container">
         <h2>Curious about your property's value?</h2>
         <p>Don’t list in Ingleburn without talking to Ingleburn’s premium property experts</p>
-        <div class="property-evaluation-wrapper">
+        <div class="property-evaluation-wrapper" id="property-evaluation">
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
                 Multi Dynamic</p>
@@ -200,13 +200,12 @@
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <label class="control-label col-sm-2 col-md-2"
-                               for="ReCaptcha"></label>
+                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
 
                         @if($errors->has('g-recaptcha-response'))
-                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
                         @endif
                     </div>
 
