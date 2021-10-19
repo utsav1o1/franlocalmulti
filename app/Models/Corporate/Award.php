@@ -11,7 +11,7 @@ class Award extends Model
 
     public static function getAwardImageDir()
     {
-        return env('CORPORATE_URL') . 'uploads/awards/';
+        return env('CORPORATE_URL') . '/uploads/awards/';
     }
     public function getAwardImagePath()
     {
