@@ -13,6 +13,16 @@
                 img {
                     margin: 0 auto;
                 }
+                ul {
+                    display: flex;
+                    margin: 0 -5px;
+                    padding-left: 0;
+                    li {
+                        padding: 0 5px;
+                        margin-bottom: 10px;
+
+                    }
+                }
             }
         }
 
