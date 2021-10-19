@@ -43,6 +43,7 @@ Route::get('rent/{category?}', 'PropertyController@rent')->name('properties.rent
 Route::get('leased-properties', 'PropertyController@leasedProperties')->name('properties.leased');
 
 Route::get('aboutus', 'PageController@aboutus')->name('page.aboutus');
+Route::get('blogs', 'PageController@blogs')->name('page.blogs');
 Route::get('property-management', 'PageController@propertymanagement')->name('page.propertymanagement');
 Route::get('selling', 'PageController@selling')->name('page.selling');
 Route::get('page/{slug}', 'PageController@show')->name('page.show');
@@ -80,6 +81,10 @@ Route::post('property-evaluation/enquiry', 'ContactUsController@propertyEvaludat
 Route::get('property-evaluation/enquiry/success', 'ContactUsController@propertyEvaludationSuccess')->name('propertyevaluationsuccess');
 Route::post('property-appraisal/enquiry', 'ContactUsController@propertyAppraisal')->name('propertyappraisal');
 Route::get('property-appraisal/enquiry/success', 'ContactUsController@propertyAppraisalSuccess')->name('propertyappraisalsuccess');
+// download guide
+Route::post('selling-download-guide', 'DownloadGuideController@sellingdownloadguide')->name('sellingdownloadguide');
+Route::post('buying-download-guide', 'DownloadGuideController@buyingdownloadguide')->name('buyingdownloadguide');
+Route::get('download-guide/success', 'DownloadGuideController@downloadguidesuccess')->name('downloadguidesuccess');
 
 /* for maintenance request routes */
 

@@ -118,4 +118,12 @@ class PageController extends Controller
         return view('agent.Property.selling')->withPage($selling);
 
     }
+    public function blogs()
+    {
+        $blogs = \App\Models\Corporate\Blog::where('branch_id', env('BRANCH_ID'))
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
+        // dd($blogs->count());
+        return view('blogs')->withBlogs($blogs);
+    }
 }

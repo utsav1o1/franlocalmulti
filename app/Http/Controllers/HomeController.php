@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Corporate\Agent;
+use App\Models\Corporate\Award;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use App\Models\Corporate\Service;
@@ -88,6 +89,9 @@ class HomeController extends Controller
         $sliders = Slider::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'desc')
             ->get();
+        $awards = Award::where('branch_id', env('BRANCH_ID'))
+            ->orderBy('created_at', 'desc')
+            ->get();
         $services = Service::where('branch_id', env('BRANCH_ID'))
             ->orderBy('created_at', 'asc')
             ->limit(6)
@@ -96,7 +100,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $agents = Agent::where('branch_id', env('BRANCH_ID'))->where('is_active','Y')
+        $agents = Agent::where('branch_id', env('BRANCH_ID'))->where('is_active', 'Y')
             ->orderBy('created_at', 'desc')
             ->get();
 
@@ -126,7 +130,8 @@ class HomeController extends Controller
             ->withTestimonials($testimonials)
             ->withAgents($agents)
             ->withHome($home)
-            ->withPosts($insta_posts);
+            ->withPosts($insta_posts)
+            ->withAwards($awards);
 
     }
 

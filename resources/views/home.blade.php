@@ -11,9 +11,17 @@
         @foreach($sliders as $slider)
         <div class="item ">
             <img src="{{ url($slider->getSliderImagePath()) }}" alt="Multi Dynamic" />
+            @if(!empty($awards))
             <div class="main-banner-caption">
-                <img src="images/home-banner-icon.png" alt="">
+                <ul>
+                    @foreach($awards as $award)
+                    <li>
+                        <img src="{{ url($award->getAwardImagePath()) }}" alt="">
+                    </li>
+                    @endforeach
+                </ul>
             </div>
+            @endif
         </div>
         @endforeach
         <!-- end item  -->
@@ -210,8 +218,8 @@
                                 <a href="{!! route('properties.show', $property->slug) !!}"><i class="fa-user"></i>
                                     {{ $property->agents_count }}
                                     {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
-                                <span><i class="fa-calendar-o"></i>{!!
-                                    App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
+                                        <span><i class="fa-calendar-o"></i>{!!
+                                            App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
                             </div>
 
                         </div>
@@ -234,8 +242,8 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="hidden embed-responsive-item" src={{env('YOUTUBE_LINK')}}
                         allowfullscreen=""></iframe>
-                    <iframe class="embed-responsive-item" src={{env('YOUTUBE_LINK')}}
-                        title="YouTube video player" frameborder="0"
+                    <iframe class="embed-responsive-item" src={{env('YOUTUBE_LINK')}} title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
 
@@ -343,22 +351,24 @@
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <label class="control-label col-sm-2 col-md-2"
-                               for="ReCaptcha"></label>
+                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
 
                         @if($errors->has('g-recaptcha-response'))
-                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
                         @endif
                     </div>
                     <div class="col-lg-12">
                         <div class="mesage-content">
-                        Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate franchises in
-                    Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record of
-                    results in serving our customers to buy, sell, rent and build their properties. You can be assured
-                    when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate
-                    requirements, because it’s our client's satisfaction which is the key to our success.
+                            Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate
+                            franchises in
+                            Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record
+                            of
+                            results in serving our customers to buy, sell, rent and build their properties. You can be
+                            assured
+                            when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate
+                            requirements, because it’s our client's satisfaction which is the key to our success.
                         </div>
                     </div>
 
@@ -449,7 +459,8 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>{{$home->selling->meta_key}}?</h3>
-                    <a href="{{ url($home->selling->getFilePath()) }}" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download
+                    <a href="{{ url($home->selling->getFilePath()) }}" class="btn btn-warning" data-toggle="modal"
+                        data-target="#sellingModal">Download
                         Seller’s Guide</a>
                 </div>
             </div>
@@ -459,7 +470,8 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>{{$home->buying->meta_key}}?</h3>
-                    <a href="{{ url($home->buying->getFilePath()) }}" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download
+                    <a href="{{ url($home->buying->getFilePath()) }}" class="btn btn-warning" data-toggle="modal"
+                        data-target="#buyingModal">Download
                         Buyer’s Guide</a>
                 </div>
             </div>
@@ -503,8 +515,8 @@
                                 <div class="row blog-other-attributes">
 
                                     <div class="col-md-6 posted-date-container">
-                                        <i class="fa fa-calendar"></i> <span
-                                            class="posted-date">{{ $blog->getCreatedDate() }}</span>
+                                        <i class="fa fa-calendar"></i> <span class="posted-date">{{
+                                            $blog->getCreatedDate() }}</span>
                                     </div>
                                     <div class="col-md-6 posted-by-container">
                                         <a href="{{ route('page.blog', ['slug' => $blog->slug]) }}">Read more <i
@@ -519,7 +531,7 @@
                 @endforeach
             </div>
             <div class="text-center view-all">
-                <a href="">View all</a>
+                <a href="{{route('page.blogs')}}" target="_blank">View all</a>
             </div>
         </div>
     </div>
@@ -640,5 +652,6 @@
         @endif
     </div>
 </div>
+
 <!-- end instagram  -->
 @endsection

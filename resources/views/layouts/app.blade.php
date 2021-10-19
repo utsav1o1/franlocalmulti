@@ -64,6 +64,7 @@
         <!--Start of Header-->
         @include('layouts.header')
         <!--Start of Body Part-->
+        @include('layouts.toaster')
         @yield('dynamicdata')
 
         <!--Start of Footer-->
@@ -161,6 +162,8 @@
             });
 
         </script>
+
+        {{-- download guide --}}
 
 
     </body>

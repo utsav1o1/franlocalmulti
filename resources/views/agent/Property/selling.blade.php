@@ -3,6 +3,7 @@
 @section('meta_keywords', env('APP_NAME'))
 @section('meta_description', env('APP_NAME'))
 @section('dynamicdata')
+
 <!-- selling banner  -->
 @if(!empty($page))
 
@@ -94,13 +95,12 @@
                     </div>
                     <!-- end col  -->
                     <div class="form-group col-md-12">
-                        <label class="control-label col-sm-2 col-md-2"
-                               for="ReCaptcha"></label>
+                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
 
                         @if($errors->has('g-recaptcha-response'))
-                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                        <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
                         @endif
                     </div>
 
@@ -161,7 +161,7 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>{{$page->selling->meta_key}}?</h3>
-                    <a href="{{ url($page->selling->getFilePath()) }}" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download
+                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download
                         Seller’s Guide</a>
                 </div>
             </div>
@@ -171,7 +171,7 @@
                 <div class="free-guides-block">
                     <img src="images/MD---Seller-Guide.png" alt="">
                     <h3>{{$page->buying->meta_key}}?</h3>
-                    <a href="{{ url($page->buying->getFilePath()) }}" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download
+                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download
                         Buyer’s Guide</a>
                 </div>
             </div>
