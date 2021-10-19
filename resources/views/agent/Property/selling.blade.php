@@ -14,7 +14,7 @@
             <h1><span>Thinking about</span>Selling Your Home?</h1>
             <div class="list-property white-bg">{{$page->sub_heading}}</div>
             <h2>{!! $page->short_description !!}</h2>
-            <a href="#">click here</a>
+            <a href="#property-appraisal">click here</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
 <div class="prpoerty__appraisal">
     <div class="prpoerty__appraisal__bg"></div>
     <div class="container">
-        <div class="prpoerty__appraisal__wrapper">
+        <div class="prpoerty__appraisal__wrapper" id="property-appraisal">
             <h2>GET YOUR FREE PROPERTY APPRAISAL<span>Kindly enter your details below</span></h2>
             <form action="{{route('propertyappraisal')}}" method="POST">
                 {{ csrf_field() }}
