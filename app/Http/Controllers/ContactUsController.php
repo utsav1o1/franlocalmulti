@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendEnquiryRequest;
+use App\Mail\PropertyApprasialMail;
 use App\Mail\PropertyEvaluationMail;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use App\Repositories\LocationRepository;
 use App\Transformers\Select2Transformer;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
@@ -72,14 +73,14 @@ class ContactUsController extends Controller
             'phone' => 'required|numeric',
             'postal_code' => 'required|numeric',
             'property_address' => 'required|min:5|max:255',
-            'g-recaptcha-response' => 'required|captcha',
+//            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         try {
             Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
 
         } catch (\Exception $e) {
-            // dd($e);
+             dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $validated['name']);
