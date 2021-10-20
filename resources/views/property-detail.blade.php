@@ -204,7 +204,7 @@
 
                         <li><a href="{!! url()->previous() !!}" class="btn btn-info detail-btn"><span
                                     class="glyphicon glyphicon-menu-left"></span>Back</a></li>
-                        <li><a href="{!! route('properties.print', $property->slug) !!}" target="_blank"
+                        {{-- <li><a href="{!! route('properties.print', $property->slug) !!}" target="_blank"
                                 class="btn btn-info detail-btn"><span class="glyphicon glyphicon-print"></span>Print</a>
                         </li>
                         <li>
@@ -220,7 +220,7 @@
                         <li>
                             <a class="btn btn-info detail-btn" data-toggle="modal" data-target="#sendEmailModal">
                                 <span class="glyphicon glyphicon-message"></span>Email</a>
-                        </li>
+                        </li> --}}
 
                         <li class="fb-share">
                             <div class="fb-share-button" data-href="{!! route('properties.show', $property->slug) !!}"
@@ -289,8 +289,8 @@
                                 <a href="#agent-details-navigation"><i class="fa-user"></i>
                                     {{ $property->agents_count }}
                                     {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
-                                <span><i class="fa-calendar-o"></i>{!!
-                                    App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
+                                        <span><i class="fa-calendar-o"></i>{!!
+                                            App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
                             </div>
 
                         </div>
@@ -364,14 +364,16 @@
                     <ul class="nav nav-tabs">
                         <li @unless(session('success_message') || session('warning_message') || count($errors)> 0)
                             class="active" @endunless>
-                            <a data-toggle="tab" href="#description">Description</a></li>
+                            <a data-toggle="tab" href="#description">Description</a>
+                        </li>
                         @if(file_exists('storage/properties/'.$property->id.'/'.$property->floor_plan ) &&
                         $property->floor_plan != '')
                         <li><a data-toggle="tab" href="#floor_plan">Floor Plan</a></li>
                         @endif
                         <li @if(session('success_message') || session('warning_message') || count($errors)> 0)
                             class="active" @endif>
-                            <a data-toggle="tab" href="#inquiry" id="inquiry-tab-link">Inquiry</a></li>
+                            <a data-toggle="tab" href="#inquiry" id="inquiry-tab-link">Inquiry</a>
+                        </li>
                     </ul>
                     <div class="tab-content">
                         <div id="description" @if(session('success_message') || session('warning_message') ||

@@ -72,14 +72,14 @@ class ContactUsController extends Controller
             'phone' => 'required|numeric',
             'postal_code' => 'required|numeric',
             'property_address' => 'required|min:5|max:255',
-            // 'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         try {
             Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
 
         } catch (\Exception $e) {
-            dd($e);
+            // dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $validated['name']);
