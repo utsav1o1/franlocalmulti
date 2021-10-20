@@ -129,8 +129,8 @@
                                     @foreach(DataHelper::getPropertySubCategoriesOrderByName('buy') as
                                     $propertySubCategory)
                                     <li>
-                                        <a
-                                            href="{{ route('properties.buy', $propertySubCategory->slug) }}">{{ $propertySubCategory->name }}</a>
+                                        <a href="{{ route('properties.buy', $propertySubCategory->slug) }}">{{
+                                            $propertySubCategory->name }}</a>
                                     </li>
 
                                     @endforeach
@@ -147,8 +147,8 @@
                                     @foreach(DataHelper::getPropertySubCategoriesOrderByName('rent') as
                                     $propertySubCategory)
                                     <li>
-                                        <a
-                                            href="{{ route('properties.rent', $propertySubCategory->slug) }}">{{ $propertySubCategory->name }}</a>
+                                        <a href="{{ route('properties.rent', $propertySubCategory->slug) }}">{{
+                                            $propertySubCategory->name }}</a>
                                     </li>
 
                                     <?php break; ?>
@@ -189,7 +189,7 @@
                         </ul>
                         <ul class="topsocialnav">
 
-                            @if($user)
+                            {{-- @if($user)
                             <li class="nav-item">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Welcome, {!! ucfirst(explode(' ',
@@ -217,7 +217,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            @endif
+                            @endif --}}
 
                             <li class="nav-item">
                                 <a href="#" class="nav-linka" data-toggle="modal"
