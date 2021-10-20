@@ -73,7 +73,7 @@ class ContactUsController extends Controller
             'phone' => 'required|numeric',
             'postal_code' => 'required|numeric',
             'property_address' => 'required|min:5|max:255',
-//            'g-recaptcha-response' => 'required|captcha',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         try {
