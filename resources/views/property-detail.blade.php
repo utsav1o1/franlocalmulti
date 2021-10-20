@@ -136,6 +136,12 @@
             $('#inquiry-us-button').on('click', function (e) {
                 $('#inquiry-tab-link').click();
             });
+            $('#inquiry-tab-link').on('click',function(e){
+                $("li").removeClass("active");
+                $("div").removeClass("in active");
+                $(this).parent().addClass('active')
+                $("#inquiry").addClass('in active')
+            });
         });
 </script>
 @endsection
