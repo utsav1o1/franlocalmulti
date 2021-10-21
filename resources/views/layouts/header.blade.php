@@ -68,13 +68,16 @@
                         <div class="social-links-container">
                             <ul>
                                 <li class="facebook-link social-link-icon"><a
-                                        href="https://www.facebook.com/multidynamic/"><i class="fa fa-facebook"
+                                        href="https://www.facebook.com/multidynamicingleburn"><i class="fa fa-facebook"
                                             aria-hidden="true"></i></a></li>
                                 <li class="instragram-link social-link-icon"><a
-                                        href="https://www.instagram.com/multidynamic"><i class="fa fa-instagram"
-                                            aria-hidden="true"></i></a></li>
+                                        href="https://www.instagram.com/multidynamic.ingleburn/"><i
+                                            class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i
                                             class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="linkedin-link social-link-icon"><a
+                                        href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
+                                            class="fa fa-youtube" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>

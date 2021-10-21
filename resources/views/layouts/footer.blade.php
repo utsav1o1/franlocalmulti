@@ -459,13 +459,14 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-2">
-                                <a href="https://www.facebook.com/multidynamic"><i style="color: white;"
+                                <a href="https://www.facebook.com/multidynamicingleburn"><i style="color: white;"
                                         class="fa fa-facebook book-apprisal"></i></a>
-                                <a href="https://www.instagram.com/multidynamic/"><i style="color: white;"
+                                <a href="https://www.instagram.com/multidynamic.ingleburn/"><i style="color: white;"
                                         class="fa fa-instagram book-apprisal"></i></a>
                                 <a href="https://www.linkedin.com/"><i style="color: white;"
                                         class="fa fa-linkedin book-apprisal"></i></a>
-                                <a href="#"><i style="color: white;" class="fa fa-youtube book-apprisal"></i></a>
+                                <a href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
+                                        style="color: white;" class="fa fa-youtube book-apprisal"></i></a>
                             </div>
                         </div>
                         <div class="row col-md-8">
