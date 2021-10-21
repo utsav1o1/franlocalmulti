@@ -326,8 +326,12 @@
                             </a>
                         </div>
                         <div class="agent-text">
-                            <h5><a href="{!! route('agents.show', encrypt($agent->id)) !!}">{!! $agent->first_name .' '.
-                                    $agent->last_name !!}</a></h5>
+                            <h5>
+                                <a href="{!! route('agents.show', $agent->getCustomId()) !!}">
+                                    {!! $agent->first_name .' '.
+                                    $agent->last_name !!}
+                                </a>
+                            </h5>
                             <p class="designation"></p>
                             <div class="agent-short-contact">
                                 @if($agent->phone_number)
