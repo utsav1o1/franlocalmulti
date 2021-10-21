@@ -614,7 +614,7 @@
 @endisset
 <div class="instagram">
     <div class="container">
-        <h2>Follow our instagram <a href="#">@multi.dynamic</a></h2>
+        <h2>Follow our instagram <a href="#">@multidynamic.ingleburn</a></h2>
         @if(!empty($posts))
         <div class="insta-gallery">
             <ul>
