@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3cedcc466cc40c0271c225df1b18f5c",
+    "content-hash": "92c96ffeecf998c2a117ef10e8649e63",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -72,27 +72,27 @@
         },
         {
             "name": "barryvdh/laravel-dompdf",
-            "version": "v0.8.7",
+            "version": "v0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-dompdf.git",
-                "reference": "30310e0a675462bf2aa9d448c8dcbf57fbcc517d"
+                "reference": "5b99e1f94157d74e450f4c97e8444fcaffa2144b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/30310e0a675462bf2aa9d448c8dcbf57fbcc517d",
-                "reference": "30310e0a675462bf2aa9d448c8dcbf57fbcc517d",
+                "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/5b99e1f94157d74e450f4c97e8444fcaffa2144b",
+                "reference": "5b99e1f94157d74e450f4c97e8444fcaffa2144b",
                 "shasum": ""
             },
             "require": {
-                "dompdf/dompdf": "^0.8",
+                "dompdf/dompdf": "^1",
                 "illuminate/support": "^5.5|^6|^7|^8",
-                "php": ">=7"
+                "php": "^7.1 || ^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.8-dev"
+                    "dev-master": "0.9-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -124,17 +124,13 @@
                 "laravel",
                 "pdf"
             ],
-            "support": {
-                "issues": "https://github.com/barryvdh/laravel-dompdf/issues",
-                "source": "https://github.com/barryvdh/laravel-dompdf/tree/master"
-            },
             "funding": [
                 {
                     "url": "https://github.com/barryvdh",
                     "type": "github"
                 }
             ],
-            "time": "2020-09-07T11:50:18+00:00"
+            "time": "2020-12-27T12:05:53+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -487,16 +483,16 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v0.8.6",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "db91d81866c69a42dad1d2926f61515a1e3f42c5"
+                "reference": "8768448244967a46d6e67b891d30878e0e15d25c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/db91d81866c69a42dad1d2926f61515a1e3f42c5",
-                "reference": "db91d81866c69a42dad1d2926f61515a1e3f42c5",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/8768448244967a46d6e67b891d30878e0e15d25c",
+                "reference": "8768448244967a46d6e67b891d30878e0e15d25c",
                 "shasum": ""
             },
             "require": {
@@ -504,11 +500,11 @@
                 "ext-mbstring": "*",
                 "phenx/php-font-lib": "^0.5.2",
                 "phenx/php-svg-lib": "^0.3.3",
-                "php": "^7.1"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^7.5",
+                "phpunit/phpunit": "^7.5 || ^8 || ^9",
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "suggest": {
@@ -551,11 +547,7 @@
             ],
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
-            "support": {
-                "issues": "https://github.com/dompdf/dompdf/issues",
-                "source": "https://github.com/dompdf/dompdf/tree/master"
-            },
-            "time": "2020-08-30T22:54:22+00:00"
+            "time": "2021-01-08T14:18:52+00:00"
         },
         {
             "name": "dymantic/laravel-instagram-feed",
@@ -1050,10 +1042,6 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
-            "support": {
-                "issues": "https://github.com/JakubOnderka/PHP-Console-Color/issues",
-                "source": "https://github.com/JakubOnderka/PHP-Console-Color/tree/master"
-            },
             "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
@@ -1101,10 +1089,6 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
-            "support": {
-                "issues": "https://github.com/JakubOnderka/PHP-Console-Highlighter/issues",
-                "source": "https://github.com/JakubOnderka/PHP-Console-Highlighter/tree/master"
-            },
             "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
@@ -1509,10 +1493,6 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "https://laravelcollective.com",
-            "support": {
-                "issues": "https://github.com/LaravelCollective/html/issues",
-                "source": "https://github.com/LaravelCollective/html"
-            },
             "time": "2018-03-24T00:39:21+00:00"
         },
         {
@@ -2082,31 +2062,28 @@
             ],
             "description": "A library to read, parse, export and make subsets of different types of font files.",
             "homepage": "https://github.com/PhenX/php-font-lib",
-            "support": {
-                "issues": "https://github.com/PhenX/php-font-lib/issues",
-                "source": "https://github.com/PhenX/php-font-lib/tree/0.5.2"
-            },
             "time": "2020-03-08T15:31:32+00:00"
         },
         {
             "name": "phenx/php-svg-lib",
-            "version": "v0.3.3",
+            "version": "0.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhenX/php-svg-lib.git",
-                "reference": "5fa61b65e612ce1ae15f69b3d223cb14ecc60e32"
+                "reference": "f627771eb854aa7f45f80add0f23c6c4d67ea0f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/5fa61b65e612ce1ae15f69b3d223cb14ecc60e32",
-                "reference": "5fa61b65e612ce1ae15f69b3d223cb14ecc60e32",
+                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/f627771eb854aa7f45f80add0f23c6c4d67ea0f2",
+                "reference": "f627771eb854aa7f45f80add0f23c6c4d67ea0f2",
                 "shasum": ""
             },
             "require": {
+                "php": "^7.4 || ^8.0",
                 "sabberworm/php-css-parser": "^8.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.5|^6.5"
+                "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "autoload": {
@@ -2126,11 +2103,7 @@
             ],
             "description": "A library to read, parse and export to PDF SVG files.",
             "homepage": "https://github.com/PhenX/php-svg-lib",
-            "support": {
-                "issues": "https://github.com/PhenX/php-svg-lib/issues",
-                "source": "https://github.com/PhenX/php-svg-lib/tree/master"
-            },
-            "time": "2019-09-11T20:02:13+00:00"
+            "time": "2021-10-18T02:13:32+00:00"
         },
         {
             "name": "psr/container",
@@ -2228,9 +2201,6 @@
                 "request",
                 "response"
             ],
-            "support": {
-                "source": "https://github.com/php-fig/http-message/tree/master"
-            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
@@ -2329,9 +2299,6 @@
                 "psr-16",
                 "simple-cache"
             ],
-            "support": {
-                "source": "https://github.com/php-fig/simple-cache/tree/master"
-            },
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
@@ -2604,10 +2571,6 @@
                 "parser",
                 "stylesheet"
             ],
-            "support": {
-                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
-                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.3.1"
-            },
             "time": "2020-06-01T09:10:00+00:00"
         },
         {
@@ -4563,10 +4526,6 @@
                 "profiler",
                 "webprofiler"
             ],
-            "support": {
-                "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
-                "source": "https://github.com/barryvdh/laravel-debugbar/tree/2.4"
-            },
             "time": "2017-07-21T11:56:48+00:00"
         },
         {
@@ -4736,10 +4695,6 @@
             "keywords": [
                 "test"
             ],
-            "support": {
-                "issues": "https://github.com/hamcrest/hamcrest-php/issues",
-                "source": "https://github.com/hamcrest/hamcrest-php/tree/master"
-            },
             "time": "2015-05-11T14:41:42+00:00"
         },
         {
@@ -4801,10 +4756,6 @@
                 "debug",
                 "debugbar"
             ],
-            "support": {
-                "issues": "https://github.com/maximebf/php-debugbar/issues",
-                "source": "https://github.com/maximebf/php-debugbar/tree/master"
-            },
             "time": "2017-01-05T08:46:19+00:00"
         },
         {
@@ -4987,10 +4938,6 @@
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
-            "support": {
-                "issues": "https://github.com/phar-io/manifest/issues",
-                "source": "https://github.com/phar-io/manifest/tree/master"
-            },
             "time": "2017-03-05T18:14:27+00:00"
         },
         {
@@ -5038,10 +4985,6 @@
                 }
             ],
             "description": "Library for handling version information and constraints",
-            "support": {
-                "issues": "https://github.com/phar-io/version/issues",
-                "source": "https://github.com/phar-io/version/tree/master"
-            },
             "time": "2017-03-05T17:38:23+00:00"
         },
         {
@@ -5331,10 +5274,6 @@
                 "testing",
                 "xunit"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/5.3"
-            },
             "time": "2018-04-06T15:36:58+00:00"
         },
         {
@@ -5382,11 +5321,6 @@
                 "filesystem",
                 "iterator"
             ],
-            "support": {
-                "irc": "irc://irc.freenode.net/phpunit",
-                "issues": "https://github.com/sebastianbergmann/php-file-iterator/issues",
-                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/1.4.5"
-            },
             "time": "2017-11-27T13:52:08+00:00"
         },
         {
@@ -5428,10 +5362,6 @@
             "keywords": [
                 "template"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/php-text-template/issues",
-                "source": "https://github.com/sebastianbergmann/php-text-template/tree/1.2.1"
-            },
             "time": "2015-06-21T13:50:34+00:00"
         },
         {
@@ -5481,10 +5411,6 @@
             "keywords": [
                 "timer"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/php-timer/issues",
-                "source": "https://github.com/sebastianbergmann/php-timer/tree/master"
-            },
             "time": "2017-02-26T11:10:40+00:00"
         },
         {
@@ -5534,10 +5460,6 @@
             "keywords": [
                 "tokenizer"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/php-token-stream/issues",
-                "source": "https://github.com/sebastianbergmann/php-token-stream/tree/master"
-            },
             "abandoned": true,
             "time": "2017-11-27T05:48:46+00:00"
         },
@@ -5686,10 +5608,6 @@
                 "mock",
                 "xunit"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/phpunit-mock-objects/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit-mock-objects/tree/5.0.10"
-            },
             "abandoned": true,
             "time": "2018-08-09T05:50:03+00:00"
         },
@@ -5810,10 +5728,6 @@
                 "compare",
                 "equality"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/comparator/issues",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/master"
-            },
             "time": "2018-02-01T13:46:46+00:00"
         },
         {
@@ -5866,10 +5780,6 @@
             "keywords": [
                 "diff"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/master"
-            },
             "time": "2017-08-03T08:09:46+00:00"
         },
         {
@@ -5920,10 +5830,6 @@
                 "environment",
                 "hhvm"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/environment/issues",
-                "source": "https://github.com/sebastianbergmann/environment/tree/master"
-            },
             "time": "2017-07-01T08:51:00+00:00"
         },
         {
@@ -6052,10 +5958,6 @@
             "keywords": [
                 "global state"
             ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/global-state/issues",
-                "source": "https://github.com/sebastianbergmann/global-state/tree/2.0.0"
-            },
             "time": "2017-04-27T15:39:26+00:00"
         },
         {
@@ -6273,10 +6175,7 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/resource-operations/issues",
-                "source": "https://github.com/sebastianbergmann/resource-operations/tree/master"
-            },
+            "abandoned": true,
             "time": "2015-07-28T20:34:47+00:00"
         },
         {
@@ -6320,10 +6219,6 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/version/issues",
-                "source": "https://github.com/sebastianbergmann/version/tree/master"
-            },
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
@@ -6444,5 +6339,5 @@
         "php": ">7.0.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "1.1.0"
 }

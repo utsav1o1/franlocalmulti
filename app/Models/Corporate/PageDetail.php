@@ -11,7 +11,7 @@ class PageDetail extends Model
 
     public static function getFileDir()
     {
-        return env('CORPORATE_URL') . '/uploads/pagedetails/';
+        return env('CORPORATE_URL') . 'uploads/pagedetails/';
     }
     public function getFilePath()
     {

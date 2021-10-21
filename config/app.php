@@ -255,6 +255,7 @@ return [
         'DataHelper' => App\Helpers\Shared\DataHelper::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+
     ],
 
 ];

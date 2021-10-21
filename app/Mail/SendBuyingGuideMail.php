@@ -27,7 +27,7 @@ class SendBuyingGuideMail extends Mailable
      */
     public function build()
     {
-        $file = url($this->data['buying']->getFilePath());
+        $file = $this->data['buying']->getFilePath();
         return $this->from(env('NO_REPLY_EMAIL'))
             ->view('emails.send-buying-guide')
             ->subject('Downloaded Buying Guide.')

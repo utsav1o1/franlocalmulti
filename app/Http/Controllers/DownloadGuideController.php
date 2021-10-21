@@ -21,7 +21,7 @@ class DownloadGuideController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
@@ -33,11 +33,12 @@ class DownloadGuideController extends Controller
         try {
             $selling = Page::where('slug', 'selling')->first();
             if (isset($selling) && $selling != null) {
-                $data['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->first();
+                $data['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->select('image')->first();
 
             } else {
                 $data['selling'] = null;
             }
+            // dd($data['selling']['image']);
             // dd($validator);
             Mail::to(config('app.enquiry_to_mail'))->send(new SellingGuideMail($data));
             Mail::to($data['email'])->send(new SendSellingGuideMail($data));
@@ -69,7 +70,7 @@ class DownloadGuideController extends Controller
         try {
             $buying = Page::where('slug', 'selling')->first();
             if (isset($buying) && $buying != null) {
-                $data['buying'] = PageDetail::where('page_id', $buying->id)->where('slug', 'buying-a-home')->first();
+                $data['buying'] = PageDetail::where('page_id', $buying->id)->where('slug', 'buying-a-home')->select('image')->first();
 
             } else {
                 $data['buying'] = null;

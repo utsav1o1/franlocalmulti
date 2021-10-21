@@ -273,7 +273,7 @@
             <h2><span>WE WILL LIST YOUR HOME</span>FOR ZERO
                 DOLLARS!</h2>
             <div class="text-center">
-                <a href="#property-evaluation">ask us now</a>
+                <a href="{{route('page.selling')}}">ask us now</a>
             </div>
         </div>
     </div>
@@ -281,7 +281,7 @@
 <!-- end banner  -->
 <div class="sold-banner">
     <div class="container">
-        <a href="#property-evaluation">
+        <a href="{{route('properties.recently-sold')}}">
             <img src="{{asset('')}}images/sold-banner.jpg" alt="">
         </a>
     </div>
