@@ -304,13 +304,21 @@
                     <img class="ap-img" src="http://multidynamicingleburn.com.au/images/logo.png" />
                 </div>
                 <div class="modal-body">
-
+                    @if(Session::has('success'))
+                    <script>
+                        alert("Your form has been successfully submitted!");
+                    </script>
+                    @elseif (count($errors) > 0)
+                    <script>
+                        alert("There was an error in your details. Please re-submit your form.");
+                    </script>
+                    @endif
 
                     <div id="appraisal">
 
                         <div class="col-md-8">
-                            <form method="POST" action="http://multidynamicingleburn.com.au/send-appraisal"
-                                accept-charset="UTF-8" id="appraisal-form">
+                            <form method="POST" action="{{route('appraisal.send')}}" accept-charset="UTF-8"
+                                id="appraisal-form">
                                 {{-- <input name="_token" type="hidden"
                                     value="DARKESCVe20XUhjpdF4l6jbABMyR7wSn00K0T4Hw"> --}}
                                 {{ csrf_field() }}
@@ -408,10 +416,13 @@
 
                                 <div class="form-group col-md-12">
                                     <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
-                                    <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+                                    {!! NoCaptcha::renderJs() !!}
+                                    {!! NoCaptcha::display() !!}
 
-                                    <div data-sitekey="6Lc8y90UAAAAAHGkmqzQQ5Eibu-nlNZUCVFus0qR" class="g-recaptcha">
-                                    </div>
+                                    @if($errors->has('g-recaptcha-response'))
+                                    <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0]
+                                        }}</small>
+                                    @endif
 
                                 </div>
 
@@ -562,6 +573,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -641,6 +653,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
+
+                    @if (count($errors) > 0)
+                    <script>
+                        alert("There was an error in your details. Please re-submit your form.");
+                    </script>
+                    @endif
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">

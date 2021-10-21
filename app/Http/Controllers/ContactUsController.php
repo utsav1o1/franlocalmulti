@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendEnquiryRequest;
-use App\Mail\PropertyApprasialMail;
-use App\Mail\PropertyEvaluationMail;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use App\Repositories\LocationRepository;
 use App\Transformers\Select2Transformer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -76,11 +75,14 @@ class ContactUsController extends Controller
             'g-recaptcha-response' => 'required|captcha',
         ]);
 
+        $validated['mail_to'] = config('app.enquiry_to_mail');
         try {
-            Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
+            // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
+            $jobToDispatch = (new PropertyEvaluationJob($validated))->delay(Carbon::now()->addSeconds(10));
+            dispatch($jobToDispatch);
 
         } catch (\Exception $e) {
-             dd($e);
+            //dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $validated['name']);
@@ -110,9 +112,12 @@ class ContactUsController extends Controller
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
         ]);
+        $validated['mail_to'] = config('app.enquiry_to_mail');
 
         try {
-            Mail::to(config('app.enquiry_to_mail'))->send(new PropertyApprasialMail($validated));
+            // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyApprasialMail($validated));
+            $jobToDispatch = (new PropertyApprasialJob($validated))->delay(Carbon::now()->addSeconds(10));
+            dispatch($jobToDispatch);
 
         } catch (\Exception $e) {
             // dd($e);
