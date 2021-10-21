@@ -314,7 +314,7 @@
 
                 ?>
             @foreach($agents as $agent)
-            <a class="agent-detail-link" href="{!! route('agents.show', encrypt($agent->id)) !!}">
+            <a class="agent-detail-link" href="{!! route('agents.show', $agent->getCustomId()) !!}">
                 <div class="col-lg-4 col-md-4 col-sm-6 agent-block">
                     <div class="agent-wrapper">
                         <div class="agent-image">
