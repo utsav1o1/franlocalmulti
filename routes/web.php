@@ -86,13 +86,15 @@ Route::post('selling-download-guide', 'DownloadGuideController@sellingdownloadgu
 Route::post('buying-download-guide', 'DownloadGuideController@buyingdownloadguide')->name('buyingdownloadguide');
 Route::get('download-guide/success', 'DownloadGuideController@downloadguidesuccess')->name('downloadguidesuccess');
 
-/* for maintenance request routes */
+/* Routes for appraisal form */
+//Route::get('appraisal', 'AppraisalController@showAppraisalForm')->name('appraisal.form');
+Route::post('send-appraisal', 'AppraisalController@sendEnquiry')->name('appraisal.send');
 
+/* for maintenance request routes */
 Route::get('maintenance-request', 'MaintenanceRequestController@showMaintenanceRequestForm')->name('maintenance-request.form');
 Route::post('send-maintenance-request', 'MaintenanceRequestController@sendMaintenanceRequest')->name('maintenance-request.send');
 
 /* for vacate notice routes */
-
 Route::get('vacate-notice', 'VacateNoticeController@showVacateNoticeForm')->name('vacate-notice.form');
 Route::post('send-vacate-notice', 'VacateNoticeController@sendVacateNotice')->name('vacate-notice.send');
 

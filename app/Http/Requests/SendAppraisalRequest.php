@@ -32,7 +32,7 @@ class SendAppraisalRequest extends FormRequest
             'postcode' => 'required',
             'email' => 'nullable|email',
             'contact' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+            // 'g-recaptcha-response' => 'required|captcha'
         ];
     }
 
@@ -41,7 +41,7 @@ class SendAppraisalRequest extends FormRequest
         return [
             'required' => '* required',
             'email' => 'invalid email',
-            'g-recaptcha-response.required' => 'Recaptcha field is required'
+            'g-recaptcha-response.required' => 'Recaptcha field is required',
         ];
     }
 }

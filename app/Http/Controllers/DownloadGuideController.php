@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\BuyingGuideMail;
-use App\Mail\SellingGuideMail;
-use App\Mail\SendBuyingGuideMail;
-use App\Mail\SendSellingGuideMail;
+use App\Jobs\BuyingGuideJob;
+use App\Jobs\SellingGuideJob;
+use App\Jobs\SendSellingGuideJob;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class DownloadGuideController extends Controller
 {
@@ -21,14 +20,14 @@ class DownloadGuideController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => 'required',
-            // 'g-recaptcha-response' => 'required|captcha',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
         // dd($data['email']);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Please provide all info!');
+            return redirect()->back()->with('errors_selling', 'Please provide all info!');
         }
         try {
             $selling = Page::where('slug', 'selling')->first();
@@ -38,10 +37,16 @@ class DownloadGuideController extends Controller
             } else {
                 $data['selling'] = null;
             }
+            $data['mail_to'] = config('app.enquiry_to_mail');
             // dd($data['selling']['image']);
             // dd($validator);
-            Mail::to(config('app.enquiry_to_mail'))->send(new SellingGuideMail($data));
-            Mail::to($data['email'])->send(new SendSellingGuideMail($data));
+            // Mail::to(config('app.enquiry_to_mail'))->send(new SellingGuideMail($data));
+            // Mail::to($data['email'])->send(new SendSellingGuideMail($data));
+            $sellingJobToDispatch = (new SellingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+            dispatch($sellingJobToDispatch);
+            $sendSellingJobToDispatch = (new SendSellingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+            dispatch($sendSellingJobToDispatch);
+
         } catch (\Exception $e) {
             // dd($e);
             return $this->serverErrorResponse();
@@ -65,7 +70,7 @@ class DownloadGuideController extends Controller
 
         // dd($validator->fails());
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Please provide all info!');
+            return redirect()->back()->with('errors_buying', 'Please provide all info!');
         }
         try {
             $buying = Page::where('slug', 'selling')->first();
@@ -75,9 +80,16 @@ class DownloadGuideController extends Controller
             } else {
                 $data['buying'] = null;
             }
+            $data['mail_to'] = config('app.enquiry_to_mail');
+
             // dd($validator);
-            Mail::to(config('app.enquiry_to_mail'))->send(new BuyingGuideMail($data));
-            Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
+            // Mail::to(config('app.enquiry_to_mail'))->send(new BuyingGuideMail($data));
+            $buyingJobToDispatch = (new BuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+            dispatch($buyingJobToDispatch);
+            $sendBuyingJobToDispatch = (new BuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+            dispatch($sendBuyingJobToDispatch);
+
+            // Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
         } catch (\Exception $e) {
             // dd($e);
             return $this->serverErrorResponse();

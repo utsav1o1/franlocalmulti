@@ -64,17 +64,17 @@
         <!--Start of Header-->
         @include('layouts.header')
         <!--Start of Body Part-->
-        @include('layouts.toaster')
+        {{-- @include('layouts.toaster') --}}
         @yield('dynamicdata')
 
         <!--Start of Footer-->
         @include('layouts.footer')
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{!! asset('js/all.js') . '?v=' . $assetsVersion !!}"></script>
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <script src="{!! asset('js/all.js') . '?v=' . $assetsVersion !!}"></script>
         <script src="{!! asset('js/slick.min.js') . '?v=' . $assetsVersion !!}"></script>
         <script src="{!! asset('js/jquery.matchHeight-min.js') . '?v=' . $assetsVersion !!}"></script>
         <script src="{!! asset('js/custom.js') . '?v=' . $assetsVersion !!}"></script>
@@ -163,6 +163,24 @@
             });
 
         </script>
+        @if(session('errors_selling'))
+        <script>
+            $(document).ready(function () {
+                alert("There was an error in your details. Please fill all field and re-submit your form.");
+                $('#sellingModal').modal('show');
+            })
+
+        </script>
+        @endif
+        @if(session('errors_buying'))
+        <script>
+            $(document).ready(function () {
+                alert("There was an error in your details. Please fill all field and re-submit your form.");
+                $('#buyingModal').modal('show');
+            })
+
+        </script>
+        @endif
 
         {{-- download guide --}}
 
