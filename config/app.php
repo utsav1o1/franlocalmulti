@@ -128,7 +128,7 @@ return [
 
     'application_to_mail' => env('APPLICATION_TO_MAIL', null),
 
-    'enquiry_to_mail' => env('Enquiry_TO_MAIL', null),
+    'enquiry_to_mail' => env('ENQUIRY_TO_MAIL', 'jthapa.111it@gmail.com'),
 
     'branch_id' => env('BRANCH_ID', null),
 
