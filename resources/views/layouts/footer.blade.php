@@ -469,7 +469,7 @@
                                         style="color: white;" class="fa fa-youtube book-apprisal"></i></a>
                             </div>
                         </div>
-                        <div class="row col-md-8">
+                        <div class="row col-md-8 ft-divider">
                             <hr style="width:100%;text-align:left;margin-left:0">
                         </div>
                         <div id="footer-second" class="row col-md-8">

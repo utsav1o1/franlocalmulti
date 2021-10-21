@@ -11,8 +11,34 @@ footer {
     #btn_subscribe {
         background: $blue;
     }
+    .row {
+        .book-apprisal {
+            @include breakpoint (xs) {
+                margin: 0;
+            padding: 0;
+            }
+        }
+    }
 }
 
 .bottom-footer {
     background: $blue;
+}
+
+.company-location-details-container a {
+    @include breakpoint (xs) {
+        padding: 0;
+    }
+}
+
+#footer-second .sp-block {
+    @include breakpoint (xs) {
+        height: 10px;
+    }
+}
+
+.ft-divider {
+    @include breakpoint (xs) {
+        padding: 0;
+    }
 }
