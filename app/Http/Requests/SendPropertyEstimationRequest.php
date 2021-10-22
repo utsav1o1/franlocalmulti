@@ -32,7 +32,8 @@ class SendPropertyEstimationRequest extends FormRequest
             'suburb_postcode' => 'required',
             'bedrooms' => 'required',
             'bathrooms' => 'required',
-            'garages' => 'required'
+            'garages' => 'required',
+            'g-recaptcha-response' => 'required|captcha',
         ];
     }
 
