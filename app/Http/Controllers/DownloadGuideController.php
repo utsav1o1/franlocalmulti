@@ -35,16 +35,20 @@ class DownloadGuideController extends Controller
             $selling = Page::where('slug', 'selling')->first();
             if (isset($selling) && $selling != null) {
                 $data['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->select('image')->first();
-                $path = 'files';
-                $copying_path = $data['selling']->getFilePath();
-                if (!File::exists(public_path() . '/' . $path)) {
-                    File::makeDirectory(public_path() . '/' . $path, 0777, true);
-                }
-                if (!File::exists(public_path() . '/' . $path . '/' . $data['selling']['image'])) {
-                    // $image->move($destinationPath, $this->data['selling']->getFilePath());
-                    File::copy($copying_path, public_path($path . '/' . $data['selling']['image']));
-                }
-                $data['selling'] = asset('files' . '/' . $data['selling']['image']);
+                if (!empty($data['selling'])):
+                    $path = 'files';
+                    $copying_path = $data['selling']->getFilePath();
+                    if (!File::exists(public_path() . '/' . $path)) {
+                        File::makeDirectory(public_path() . '/' . $path, 0777, true);
+                    }
+                    if (!File::exists(public_path() . '/' . $path . '/' . $data['selling']['image'])) {
+                        // $image->move($destinationPath, $this->data['selling']->getFilePath());
+                        File::copy($copying_path, public_path($path . '/' . $data['selling']['image']));
+                    }
+                    $data['selling'] = asset('files' . '/' . $data['selling']['image']);
+                else:
+                    $data['selling'] = null;
+                endif;
 
             } else {
                 $data['selling'] = null;
@@ -90,15 +94,19 @@ class DownloadGuideController extends Controller
                 $data['buying'] = PageDetail::where('page_id', $buying->id)->where('slug', 'buying-a-home')->select('image')->first();
                 //dd($data['buying']->getFilePath());
                 $path = 'files';
-                $copying_path = $data['buying']->getFilePath();
-                if (!File::exists(public_path() . '/' . $path)) {
-                    File::makeDirectory(public_path() . '/' . $path, 0777, true);
-                }
-                if (!File::exists(public_path() . '/' . $path . '/' . $data['buying']['image'])) {
-                    // $image->move($destinationPath, $this->data['buying']->getFilePath());
-                    File::copy($copying_path, public_path($path . '/' . $data['buying']['image']));
-                }
-                $data['buying'] = asset('files' . '/' . $data['buying']['image']);
+                if (!empty($data['buying'])):
+                    $copying_path = $data['buying']->getFilePath();
+                    if (!File::exists(public_path() . '/' . $path)) {
+                        File::makeDirectory(public_path() . '/' . $path, 0777, true);
+                    }
+                    if (!File::exists(public_path() . '/' . $path . '/' . $data['buying']['image'])) {
+                        // $image->move($destinationPath, $this->data['buying']->getFilePath());
+                        File::copy($copying_path, public_path($path . '/' . $data['buying']['image']));
+                    }
+                    $data['buying'] = asset('files' . '/' . $data['buying']['image']);
+                else:
+                    $data['buying'] = null;
+                endif;
 
             } else {
                 $data['buying'] = null;
