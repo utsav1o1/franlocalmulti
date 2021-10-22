@@ -9,6 +9,7 @@ use App\Jobs\SendSellingGuideJob;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use Carbon\Carbon;
+use File;
 use Illuminate\Http\Request;
 
 class DownloadGuideController extends Controller
@@ -21,7 +22,7 @@ class DownloadGuideController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
@@ -34,6 +35,16 @@ class DownloadGuideController extends Controller
             $selling = Page::where('slug', 'selling')->first();
             if (isset($selling) && $selling != null) {
                 $data['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->select('image')->first();
+                $path = 'files';
+                $copying_path = $data['selling']->getFilePath();
+                if (!File::exists(public_path() . '/' . $path)) {
+                    File::makeDirectory(public_path() . '/' . $path, 0777, true);
+                }
+                if (!File::exists(public_path() . '/' . $path . '/' . $data['selling']['image'])) {
+                    // $image->move($destinationPath, $this->data['selling']->getFilePath());
+                    File::copy($copying_path, public_path($path . '/' . $data['selling']['image']));
+                }
+                $data['selling'] = asset('files' . '/' . $data['selling']['image']);
 
             } else {
                 $data['selling'] = null;
@@ -49,7 +60,7 @@ class DownloadGuideController extends Controller
             dispatch($sendSellingJobToDispatch);
 
         } catch (\Exception $e) {
-            // dd($e);
+            dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
@@ -77,10 +88,22 @@ class DownloadGuideController extends Controller
             $buying = Page::where('slug', 'selling')->first();
             if (isset($buying) && $buying != null) {
                 $data['buying'] = PageDetail::where('page_id', $buying->id)->where('slug', 'buying-a-home')->select('image')->first();
+                //dd($data['buying']->getFilePath());
+                $path = 'files';
+                $copying_path = $data['buying']->getFilePath();
+                if (!File::exists(public_path() . '/' . $path)) {
+                    File::makeDirectory(public_path() . '/' . $path, 0777, true);
+                }
+                if (!File::exists(public_path() . '/' . $path . '/' . $data['buying']['image'])) {
+                    // $image->move($destinationPath, $this->data['buying']->getFilePath());
+                    File::copy($copying_path, public_path($path . '/' . $data['buying']['image']));
+                }
+                $data['buying'] = asset('files' . '/' . $data['buying']['image']);
 
             } else {
                 $data['buying'] = null;
             }
+            // dd($data);
             $data['mail_to'] = config('app.enquiry_to_mail');
 
             // dd($validator);
@@ -92,7 +115,7 @@ class DownloadGuideController extends Controller
 
             // Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
         } catch (\Exception $e) {
-            // dd($e);
+            dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);

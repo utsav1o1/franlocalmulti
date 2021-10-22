@@ -67,7 +67,7 @@
                         </div>
                         <div class="social-links-container">
                             <ul>
-                                <li class="facebook-link social-link-icon"><a
+                                <li class="facebook-link social-link-icon" title="facesaldfjas;fkj;salfdj"><a
                                         href="https://www.facebook.com/multidynamicingleburn"><i class="fa fa-facebook"
                                             aria-hidden="true"></i></a></li>
                                 <li class="instragram-link social-link-icon"><a
@@ -150,7 +150,7 @@
                                         <a href="{{ route('properties.rent', 'rental') }}">{{ "Rental" }}</a>
                                     </li>
 
-                                @foreach(DataHelper::getPropertySubCategoriesOrderByName('rent') as
+                                    @foreach(DataHelper::getPropertySubCategoriesOrderByName('rent') as
                                     $propertySubCategory)
                                     <li>
                                         <a href="{{ route('properties.rent', $propertySubCategory->slug) }}">{{
