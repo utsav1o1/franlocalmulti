@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\BuyingGuideJob;
 use App\Jobs\SellingGuideJob;
+use App\Jobs\SendBuyingGuideJob;
 use App\Jobs\SendSellingGuideJob;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
@@ -86,7 +87,7 @@ class DownloadGuideController extends Controller
             // Mail::to(config('app.enquiry_to_mail'))->send(new BuyingGuideMail($data));
             $buyingJobToDispatch = (new BuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
             dispatch($buyingJobToDispatch);
-            $sendBuyingJobToDispatch = (new BuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+            $sendBuyingJobToDispatch = (new SendBuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
             dispatch($sendBuyingJobToDispatch);
 
             // Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
