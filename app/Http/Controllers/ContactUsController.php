@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendEnquiryRequest;
+use App\Jobs\PropertyApprasialJob;
+use App\Jobs\PropertyEvaluationJob;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use App\Repositories\LocationRepository;
