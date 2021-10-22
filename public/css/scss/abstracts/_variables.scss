@@ -21,7 +21,6 @@ $headings : h1 h2 h3 h4 h5 h6;
 // serif;
 // $title-font: 'YoungSerif';
 
-
 @each $heading in $headings {
     #{$heading} {
         // font-family: 'Montserrat', sans-serif !important;
@@ -49,6 +48,10 @@ body {
     &.body-overflow-hidden {
         overflow: hidden;
     }
+}
+.container {
+    max-width: 1170px;
+    width: 100%;
 }
 
 img {
