@@ -15,6 +15,8 @@ class SendSellingGuideJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $data;
+    public $tries = 5;
+
     /**
      * Create a new job instance.
      *
