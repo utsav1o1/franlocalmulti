@@ -137,7 +137,6 @@
                                     </li>
 
                                     @endforeach
-                                    <li><a href="{{route('page.propertymanagement')}}">Property Management</a></li>
 
                                 </ul>
                             </li>
@@ -147,7 +146,11 @@
                                     <span class="caret"></span></a>
 
                                 <ul class="dropdown dropdown-menu">
-                                    @foreach(DataHelper::getPropertySubCategoriesOrderByName('rent') as
+                                    <li>
+                                        <a href="{{ route('properties.rent', 'rental') }}">{{ "Rental" }}</a>
+                                    </li>
+
+                                @foreach(DataHelper::getPropertySubCategoriesOrderByName('rent') as
                                     $propertySubCategory)
                                     <li>
                                         <a href="{{ route('properties.rent', $propertySubCategory->slug) }}">{{
@@ -157,7 +160,7 @@
                                     <?php break; ?>
 
                                     @endforeach
-
+                                    <li><a href="{{route('page.propertymanagement')}}">Property Management</a></li>
                                     <li><a href="{!! route('agents.index') !!}">Commercial</a></li>
                                     <li><a href="{!! route('properties.leased') !!}">Leased Properties</a></li>
                                     <li><a href="{!! route('showApplicationForm') !!}" target="_blank">Application
