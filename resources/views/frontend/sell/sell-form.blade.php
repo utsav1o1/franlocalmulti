@@ -157,7 +157,15 @@
 						        <small class="validation-error-message">{{ $errors->get('additional_details')[0] }}</small>
 						    @endif
 	    				</div>
+					<div class="form-group col-md-12">
+						<label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
+						{!! NoCaptcha::renderJs() !!}
+						{!! NoCaptcha::display() !!}
 
+						@if($errors->has('g-recaptcha-response'))
+							<small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+						@endif
+					</div>
 	    				<div class="clearfix"></div>
 
 						<div class="form-group col-md-12">
