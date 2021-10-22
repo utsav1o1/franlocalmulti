@@ -60,7 +60,6 @@ class DownloadGuideController extends Controller
             dispatch($sendSellingJobToDispatch);
 
         } catch (\Exception $e) {
-            dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
