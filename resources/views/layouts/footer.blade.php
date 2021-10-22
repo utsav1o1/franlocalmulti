@@ -480,7 +480,7 @@
                                         <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
                                     </div>
                                     <div class="media-body">
-                                        <a href="https://shorturl.at/cRV08" target="_blank">Shop 2, 16 Ingleburn Rd,
+                                        <a href="https://www.google.com/maps/place/shop+2%2F16+Ingleburn+Rd,+Ingleburn+NSW+2565/@-33.998541,150.864215,967m/data=!3m1!1e3!4m5!3m4!1s0x6b12eb7c35efffff:0x42923019afa6e69!8m2!3d-33.9986742!4d150.8641614?hl=en" target="_blank">Shop 2, 16 Ingleburn Rd,
                                             Ingleburn NSW 2565</a>
                                     </div>
                                 </div>
