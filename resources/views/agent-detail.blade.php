@@ -10,7 +10,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-4 agent-img-block">
-                @if(file_exists('storage/agents/'. $agent->attachment) && $agent->attachment != '')
+                {{-- @if(file_exists('storage/agents/'. $agent->attachment) && $agent->attachment != '') --}}
+                @if(!empty($agent->getAgentImagePath()))
                 <div class="agent-detail-img">
                     <img src="{!! asset($agent->getAgentImagePath()) !!}"
                         alt="{!! $agent->first_name .' '. $agent->last_name !!}" class="img-responsive">

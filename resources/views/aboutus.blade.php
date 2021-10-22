@@ -86,7 +86,8 @@
                 @foreach($coreMembers as $member)
                 <div class="col-sm-6 col-md-6 our-team-block">
                     <div class="team-image">
-                        @if(file_exists('storage/agents/'. $member->attachment) && $member->attachment != '')
+                        {{-- @if(file_exists('storage/agents/'. $member->attachment) && $member->attachment != '') --}}
+                        @if(!empty($member->getAgentImagePath()))
                         <img src="{!! asset($member->getAgentImagePath()) !!}"
                             alt="{!! $member->first_name .' '. $member->last_name !!}" class="img-responsive">
                         @else
