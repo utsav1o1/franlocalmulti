@@ -60,7 +60,7 @@ class DownloadGuideController extends Controller
             dispatch($sendSellingJobToDispatch);
 
         } catch (\Exception $e) {
-            return $this->serverErrorResponse();
+            $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
         return redirect()->route('downloadguidesuccess');
@@ -114,8 +114,7 @@ class DownloadGuideController extends Controller
 
             // Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
         } catch (\Exception $e) {
-            dd($e);
-            return $this->serverErrorResponse();
+            $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
         return redirect()->route('downloadguidesuccess');
