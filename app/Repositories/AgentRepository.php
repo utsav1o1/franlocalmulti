@@ -1,7 +1,7 @@
 <?php
 namespace App\Repositories;
 
-use App\Models\Agent;
+use App\Models\Corporate\Agent;
 
 class AgentRepository extends Repository
 {

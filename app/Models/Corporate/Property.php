@@ -2,19 +2,18 @@
 
 namespace App\Models\Corporate;
 
-use DB;
 use App\Models\Corporate\Agent;
 use App\Models\Corporate\PriceType;
-use App\Models\Corporate\PropertyImage;
 use App\Models\Corporate\PropertyAgent;
 use App\Models\Corporate\PropertyCategory;
+use App\Models\Corporate\PropertyImage;
 use Cviebrock\EloquentSluggable\Sluggable;
-
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
-	use Sluggable;
+    use Sluggable;
 
     protected $table = 'properties';
     protected $connection = 'mysql-main';
@@ -23,17 +22,17 @@ class Property extends Model
 
     public function __construct()
     {
-    	parent::__construct();
+        parent::__construct();
 
-    	$this->defaultPropertyCategories = PropertyCategory::getDefaultPropertyCategories();
+        $this->defaultPropertyCategories = PropertyCategory::getDefaultPropertyCategories();
     }
 
     public function sluggable()
     {
         return [
             'slug' => [
-                'source' => 'name'
-            ]
+                'source' => 'name',
+            ],
         ];
     }
 
@@ -41,24 +40,26 @@ class Property extends Model
     {
         return [
             'width' => 400,
-            'height' => 258
+            'height' => 258,
         ];
     }
 
     public function isLeased()
     {
-    	if($this->is_leased_sold == 'Y' && ($this->property_category_id == $this->defaultPropertyCategories['rent']))
-    		return true;
+        if ($this->is_leased_sold == 'Y' && ($this->property_category_id == $this->defaultPropertyCategories['rent'])) {
+            return true;
+        }
 
-    	return false;
+        return false;
     }
 
     public function isSold()
     {
-    	if($this->is_leased_sold == 'Y' && ($this->property_category_id == $this->defaultPropertyCategories['buy']))
-    		return true;
+        if ($this->is_leased_sold == 'Y' && ($this->property_category_id == $this->defaultPropertyCategories['buy'])) {
+            return true;
+        }
 
-    	return false;
+        return false;
     }
 
     public function getOwnPropertyImagesDir()
@@ -83,8 +84,9 @@ class Property extends Model
 
     public function getCoverImage()
     {
-        if($this->isCoverImageProvided())
+        if ($this->isCoverImageProvided()) {
             return $this->getOwnPropertyImagesDir() . '/thumbnail-' . $this->property_image;
+        }
 
         return $this->getDefaultPropertyImagePath();
     }
@@ -93,53 +95,50 @@ class Property extends Model
     {
         $defaultPriceTypes = PriceType::getDefaultPriceTypes();
 
-        switch($this->price_type_id)
-        {
+        switch ($this->price_type_id) {
             case 4:
             case 5:
-            {
-                return '';
-            }
-            break;
+                {
+                    return '';
+                }
+                break;
 
             case 1:
             case 2:
-            {
-                switch($this->property_category_id)
                 {
-                    case $this->defaultPropertyCategories['rent']:
-                    {
-                        return '$' . number_format($this->price_from) . '/W';
-                    }
-                    break;
+                    switch ($this->property_category_id) {
+                        case $this->defaultPropertyCategories['rent']:
+                            {
+                                return '$' . number_format($this->price_from) . '/W';
+                            }
+                            break;
 
-                    case $this->defaultPropertyCategories['buy']:
-                    {
-                        return '$' . number_format($this->price_from);
+                        case $this->defaultPropertyCategories['buy']:
+                            {
+                                return '$' . number_format($this->price_from);
+                            }
+                            break;
                     }
-                    break;
                 }
-            }
-            break;
+                break;
 
             case 3:
-            {
-                switch($this->property_category_id)
                 {
-                    case $this->defaultPropertyCategories['rent']:
-                    {
-                        return '$' . number_format($this->price_from) . '/W - $' . number_format($this->price_to) . '/W';
-                    }
-                    break;
+                    switch ($this->property_category_id) {
+                        case $this->defaultPropertyCategories['rent']:
+                            {
+                                return '$' . number_format($this->price_from) . '/W - $' . number_format($this->price_to) . '/W';
+                            }
+                            break;
 
-                    case $this->defaultPropertyCategories['buy']:
-                    {
-                        return '$' . number_format($this->price_from) . ' - $' . number_format($this->price_to);
+                        case $this->defaultPropertyCategories['buy']:
+                            {
+                                return '$' . number_format($this->price_from) . ' - $' . number_format($this->price_to);
+                            }
+                            break;
                     }
-                    break;
                 }
-            }
-            break;
+                break;
         }
     }
 
@@ -151,7 +150,7 @@ class Property extends Model
             1 => '1',
             2 => '2',
             3 => '3',
-            4 => '4+'
+            4 => '4+',
         ];
     }
 
@@ -163,7 +162,7 @@ class Property extends Model
             1 => '1',
             2 => '2',
             3 => '3',
-            4 => '4+'
+            4 => '4+',
         ];
     }
 
@@ -175,7 +174,7 @@ class Property extends Model
             1 => '1',
             2 => '2',
             3 => '3',
-            4 => '4+'
+            4 => '4+',
         ];
     }
 
@@ -200,10 +199,11 @@ class Property extends Model
 
         $propertyAgents = $this->getPropertyAgentIds();
 
-        if($propertyAgents->count() > 0)
-        {
-            foreach($propertyAgents as $agent)
+        if ($propertyAgents->count() > 0) {
+            foreach ($propertyAgents as $agent) {
                 $agentIds[] = $agent->agent_id;
+            }
+
         }
 
         return $agentIds;
@@ -211,14 +211,14 @@ class Property extends Model
 
     public function incrementViewCount()
     {
-        $this->view_count ++;
+        $this->view_count++;
         $this->save();
     }
 
     public function getPropertyAgentIds()
     {
         return PropertyAgent::where('property_id', $this->id)
-                            ->get();
+            ->get();
     }
 
     public function getPropertyAgents()
@@ -226,14 +226,14 @@ class Property extends Model
         $agentIds = $this->getAgentIds();
 
         return Agent::whereIn('id', $agentIds)
-                    ->get();
+            ->get();
     }
 
     public function getImages()
     {
         return PropertyImage::leftJoin('properties', 'properties.id', '=', 'property_images.property_id')
-                            ->select('property_images.*', DB::raw("(CASE WHEN properties.main_image = property_images.id THEN 'Y' ELSE 'N' END) AS is_cover_image"))
-                            ->where('property_images.property_id', $this->id)
-                            ->get();
+            ->select('property_images.*', DB::raw("(CASE WHEN properties.main_image = property_images.id THEN 'Y' ELSE 'N' END) AS is_cover_image"))
+            ->where('property_images.property_id', $this->id)
+            ->get();
     }
 }

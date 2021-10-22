@@ -34,7 +34,7 @@ class PageController extends Controller
     public function aboutus()
     {
         return view('aboutus')
-            ->withCoreMembers($this->agents->where('is_active', '=', '1')->where('is_core_member', '1')->orderby('order_position', 'asc')->get());
+            ->withCoreMembers($this->agents->where('is_active', '=', 'Y')->orderby('created_at', 'asc')->where('branch_id', env('BRANCH_ID'))->get());
     }
 
     /**
