@@ -30,12 +30,16 @@
                                 substr($agent->mobile_number,0,4). ' ' .substr($agent->mobile_number,4,3).'
                                 '.substr($agent->mobile_number,7) !!}</a></p>
                         <p><a href="mailto:{!! $agent->email_address !!}"><i
-                                    class="glyphicon glyphicon-envelope"></i>{!! $agent->email_address !!}</a></p>
+                                    class="glyphicon glyphicon-envelope"></i>{!! $agent->email !!}</a></p>
                         <p><a href="#"><i class="glyphicon glyphicon-flag"></i>{!! $agent->location ?
                                 $agent->location->location_name : '' !!}</a></p>
-                        <p><a href={!! $agent->rate_agent_link !!}> <img
-                                    src='https://static.ratemyagent.com.au/assets/images/widgets/rma-duo-logo.png'
-                                    width='164' height='40' /><span>Rate My Agent</span></a></p>
+                        <p>
+                            <a href={!! $agent->rate_agent_link !!}>
+                                <img src='https://static.ratemyagent.com.au/assets/images/widgets/rma-duo-logo.png'
+                                    width='164' height='40' />
+                                <span>Rate My Agent</span>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

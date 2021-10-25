@@ -46,11 +46,12 @@
 <script src="{{ asset('backend/plugins/formValidation/formValidation.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/formValidation/bootstrap.min.js') }}"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false"
+<script src="https://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false&callback=initialize"
     type="text/javascript"></script>
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
+      
         var longitude = '{!! $property->longitude !!}';
         var zoomValue = parseInt('{!! 1 !!}');
         var name = '{!! $property->name !!}';
@@ -332,7 +333,8 @@
                                     $agent->last_name !!}
                                 </a>
                             </h5>
-                            <p class="designation"></p>
+                            <p class="designation">{!! $agent->designation ? $agent->designation->designation : '' !!}
+                            </p>
                             <div class="agent-short-contact">
                                 @if($agent->phone_number)
                                 <p>
@@ -351,10 +353,12 @@
                                 </p>
                                 @endif
                                 @if($agent->email)
+
                                 <p>
                                     <a href="mailto:{!! $agent->email !!}"><i
-                                            class="glyphicon glyphicon-envelope"></i>{!! str_limit($agent->email, 20)
-                                        !!}</a>
+                                            class="glyphicon glyphicon-envelope"></i>{!!
+                                        str_limit($agent->email,
+                                        17) !!}</a>
                                 </p>
                                 @endif
                             </div>

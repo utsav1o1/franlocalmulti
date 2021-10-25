@@ -64,4 +64,5 @@ class Agent extends Authenticatable
     {
         return strtolower(str_replace(' ', '-', $this->first_name)) . "-" . strtolower(str_replace(' ', '-', $this->last_name)) . "-" . $this->id;
     }
+
 }
