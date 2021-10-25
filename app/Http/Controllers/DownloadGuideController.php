@@ -53,13 +53,16 @@ class DownloadGuideController extends Controller
             } else {
                 $data['selling'] = null;
             }
-            $data['mail_to'] = config('app.enquiry_to_mail');
-            // dd($data['selling']['image']);
             // dd($validator);
             // Mail::to(config('app.enquiry_to_mail'))->send(new SellingGuideMail($data));
             // Mail::to($data['email'])->send(new SendSellingGuideMail($data));
-            $sellingJobToDispatch = (new SellingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
-            dispatch($sellingJobToDispatch);
+            $emails = explode(',', config('app.enquiry_to_mail'));
+            foreach ($emails as $email):
+                $data['mail_to'] = $email;
+                $sellingJobToDispatch = (new SellingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+                dispatch($sellingJobToDispatch);
+            endforeach;
+
             $sendSellingJobToDispatch = (new SendSellingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
             dispatch($sendSellingJobToDispatch);
 
@@ -111,12 +114,14 @@ class DownloadGuideController extends Controller
                 $data['buying'] = null;
             }
             // dd($data);
-            $data['mail_to'] = config('app.enquiry_to_mail');
+            $emails = explode(',', config('app.enquiry_to_mail'));
+            foreach ($emails as $email):
+                $data['mail_to'] = $email;
+                $buyingJobToDispatch = (new BuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
+                dispatch($buyingJobToDispatch);
 
-            // dd($validator);
-            // Mail::to(config('app.enquiry_to_mail'))->send(new BuyingGuideMail($data));
-            $buyingJobToDispatch = (new BuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
-            dispatch($buyingJobToDispatch);
+            endforeach;
+
             $sendBuyingJobToDispatch = (new SendBuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
             dispatch($sendBuyingJobToDispatch);
 

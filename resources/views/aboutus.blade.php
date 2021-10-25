@@ -113,10 +113,10 @@
                                     ' .substr($member->mobile_number,4,3).' '.substr($member->mobile_number,7) !!}</a>
                             </p>
                             @endif
-                            @if($member->email_address)
+                            @if($member->email)
                             <p>
-                                <a href="mailto:{!! $member->email_address !!}"><i
-                                        class="glyphicon glyphicon-envelope"></i>{!! str_limit($member->email_address,
+                                <a href="mailto:{!! $member->email !!}"><i class="glyphicon glyphicon-envelope"></i>{!!
+                                    str_limit($member->email,
                                     20) !!}</a>
                             </p>
                             @endif

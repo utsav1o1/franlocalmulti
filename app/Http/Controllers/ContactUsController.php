@@ -77,11 +77,16 @@ class ContactUsController extends Controller
             // 'g-recaptcha-response' => 'required|captcha',
         ]);
 
-        $validated['mail_to'] = config('app.enquiry_to_mail');
+        $emails = explode(',', config('app.enquiry_to_mail'));
+        // dd($emails);
         try {
             // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
-            $jobToDispatch = (new PropertyEvaluationJob($validated))->delay(Carbon::now()->addSeconds(10));
-            dispatch($jobToDispatch);
+
+            foreach ($emails as $email):
+                $validated['mail_to'] = $email;
+                $jobToDispatch = (new PropertyEvaluationJob($validated))->delay(Carbon::now()->addSeconds(10));
+                dispatch($jobToDispatch);
+            endforeach;
 
         } catch (\Exception $e) {
             //dd($e);
@@ -114,12 +119,16 @@ class ContactUsController extends Controller
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
         ]);
-        $validated['mail_to'] = config('app.enquiry_to_mail');
+
+        $emails = explode(',', config('app.enquiry_to_mail'));
 
         try {
             // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyApprasialMail($validated));
-            $jobToDispatch = (new PropertyApprasialJob($validated))->delay(Carbon::now()->addSeconds(10));
-            dispatch($jobToDispatch);
+            foreach ($emails as $email):
+                $validated['mail_to'] = $email;
+                $jobToDispatch = (new PropertyApprasialJob($validated))->delay(Carbon::now()->addSeconds(10));
+                dispatch($jobToDispatch);
+            endforeach;
 
         } catch (\Exception $e) {
             // dd($e);
