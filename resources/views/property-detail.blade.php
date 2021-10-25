@@ -351,10 +351,12 @@
                                 </p>
                                 @endif
                                 @if($agent->email)
+
                                 <p>
                                     <a href="mailto:{!! $agent->email !!}"><i
-                                            class="glyphicon glyphicon-envelope"></i>{!! str_limit($agent->email, 20)
-                                        !!}</a>
+                                            class="glyphicon glyphicon-envelope"></i>{!!
+                                        str_limit($agent->email,
+                                        17) !!}</a>
                                 </p>
                                 @endif
                             </div>
