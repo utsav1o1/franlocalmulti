@@ -28,13 +28,17 @@
             }
         }
         .topsocialnav {
-            @include breakpoint (sm1) {
-               margin: 0;
-            }
-            .nav-linka {
+            @include breakpoint (sm) {
                 @include breakpoint (sm1) {
                     margin: 0;
-                 }
+                }
+            }
+            .nav-linka {
+                @include breakpoint (sm) {
+                    @include breakpoint (sm1) {
+                        margin: 0;
+                    }
+                }
             }
         }
     }
@@ -47,11 +51,12 @@
             }
         }
         .nav-item {
-            display: flex;
-            float: none;
+            
             @include breakpoint (sm) {
                 @include breakpoint (sm1) {
                     border: none;
+                    display: flex;
+            float: none;
                 }
             }
             a {
