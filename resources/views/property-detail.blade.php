@@ -46,14 +46,14 @@
 <script src="{{ asset('backend/plugins/formValidation/formValidation.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/formValidation/bootstrap.min.js') }}"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false&callback=initialize"
+<script src="https://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false"
     type="text/javascript"></script>
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
       
         var longitude = '{!! $property->longitude !!}';
-        var zoomValue = parseInt('{!! 1 !!}');
+        var zoomValue = parseInt('{!! 11 !!}');
         var name = '{!! $property->name !!}';
         var address = '{!! $property->location ? $property->location_name : '' !!}';
 
