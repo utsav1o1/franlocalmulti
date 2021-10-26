@@ -31,8 +31,10 @@
                                 '.substr($agent->mobile_number,7) !!}</a></p>
                         <p><a href="mailto:{!! $agent->email_address !!}"><i
                                     class="glyphicon glyphicon-envelope"></i>{!! $agent->email !!}</a></p>
+                        @if($agent->location)
                         <p><a href="#"><i class="glyphicon glyphicon-flag"></i>{!! $agent->location ?
                                 $agent->location->location_name : '' !!}</a></p>
+                        @endif
                         <p>
                             <a href={!! $agent->rate_agent_link !!}>
                                 <img src='https://static.ratemyagent.com.au/assets/images/widgets/rma-duo-logo.png'
