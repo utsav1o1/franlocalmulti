@@ -2,6 +2,7 @@
 
 namespace App\Models\Corporate;
 
+use App\Models\Corporate\Designation;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -63,6 +64,10 @@ class Agent extends Authenticatable
     public function getCustomId()
     {
         return strtolower(str_replace(' ', '-', $this->first_name)) . "-" . strtolower(str_replace(' ', '-', $this->last_name)) . "-" . $this->id;
+    }
+    public function designation()
+    {
+        return $this->belongsTo(Designation::class, 'designation_id');
     }
 
 }

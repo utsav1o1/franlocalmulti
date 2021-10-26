@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 use App\Traits\ModelEventLogger;
+use Illuminate\Database\Eloquent\Model;
 
 class Designation extends Model
 {
@@ -23,7 +22,7 @@ class Designation extends Model
      * @var array
      */
     protected $fillable = [
-        'designation'
+        'designation',
     ];
 
     /**

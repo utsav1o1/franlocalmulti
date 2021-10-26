@@ -98,7 +98,8 @@
                     <div class="team-text">
                         <h5><a href="{!! route('agents.show', $member->getCustomId()) !!}">{!! $member->first_name .' '.
                                 $member->last_name !!}</a></h5>
-                        <p class="designation">{!! $member->designation ? $member->designation->designation : '' !!}</p>
+
+                        <p class="designation">{!! $member->designation ? $member->designation->name : '' !!}</p>
                         <div class="team-short-contact">
                             @if($member->phone_number)
                             <p><a href="tel:{!! $member->phone_number !!}"><i
