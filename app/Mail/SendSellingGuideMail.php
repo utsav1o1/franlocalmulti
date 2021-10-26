@@ -28,7 +28,7 @@ class SendSellingGuideMail extends Mailable
      */
     public function build()
     {
-        $file = $this->data['selling'];
+        // $file = $this->data['selling'];
 
         // dd($file);
         return $this->from(env('NO_REPLY_EMAIL'))
@@ -37,6 +37,6 @@ class SendSellingGuideMail extends Mailable
             ->with([
                 'data' => $this->data,
                 'logoPath' => public_path('images/logo.png'),
-            ])->attach($file);
+            ]);
     }
 }
