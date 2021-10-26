@@ -53,7 +53,7 @@
         var latitude = '{!! $property->latitude !!}';
       
         var longitude = '{!! $property->longitude !!}';
-        var zoomValue = parseInt('{!! 11 !!}');
+        var zoomValue = parseInt('{!! 1 !!}');
         var name = '{!! $property->name !!}';
         var address = '{!! $property->location ? $property->location_name : '' !!}';
 
