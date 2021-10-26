@@ -358,7 +358,7 @@
                                     <a href="mailto:{!! $agent->email !!}"><i
                                             class="glyphicon glyphicon-envelope"></i>{!!
                                         str_limit($agent->email,
-                                        17) !!}</a>
+                                        15) !!}</a>
                                 </p>
                                 @endif
                             </div>
