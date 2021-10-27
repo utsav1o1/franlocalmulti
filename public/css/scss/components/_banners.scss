@@ -89,6 +89,9 @@
             @include breakpoint (sm1) {
                 font-size: 45px;  
             }
+            @include breakpoint (xs) {
+                text-align: center;
+            }
             span {
                 display: block;
                 color: $blue;
