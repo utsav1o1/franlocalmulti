@@ -463,8 +463,8 @@
                                         class="fa fa-facebook book-apprisal"></i></a>
                                 <a href="https://www.instagram.com/multidynamic.ingleburn/"><i style="color: white;"
                                         class="fa fa-instagram book-apprisal"></i></a>
-                                <a href="https://www.linkedin.com/"><i style="color: white;"
-                                        class="fa fa-linkedin book-apprisal"></i></a>
+{{--                                <a href="https://www.linkedin.com/"><i style="color: white;"--}}
+{{--                                        class="fa fa-linkedin book-apprisal"></i></a>--}}
                                 <a href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
                                         style="color: white;" class="fa fa-youtube book-apprisal"></i></a>
                             </div>
@@ -752,12 +752,13 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6">
             <ul class="btm-sm-icon">
-                <li><a href="https://www.facebook.com/multidynamic" target="_blank" class="sm-icon"><i
+                <li><a href="https://www.facebook.com/multidynamicingleburn" target="_blank" class="sm-icon"><i
                             class="fa fa-facebook facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/multi.dynamic/" target="_blank" class="sm-icon"><i
+                <li><a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank" class="sm-icon"><i
                             class="fa fa-instagram instagram"></i></a></li>
-                <li><a href="#"></i></a></li>
-                <li><a href="#" target="_blank" class="sm-icon"><i class="fa fa-linkedin linkedin"></i></a></li>
+                <li class="linkedin-link social-link-icon"><a
+                            href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
+                                class="fa fa-youtube" aria-hidden="true"></i></a></li>
             </ul>
 
         </div>
