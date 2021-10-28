@@ -1,5 +1,6 @@
 /node_modules
 /public/hot
+/public/storage/credentials.json
 /bower_components
 /vendor
 /.idea

@@ -12,6 +12,7 @@ use App\Transformers\Select2Transformer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Sheets;
 
 class ContactUsController extends Controller
 {
@@ -74,11 +75,23 @@ class ContactUsController extends Controller
             'phone' => 'required|numeric',
             'postal_code' => 'required|numeric',
             'property_address' => 'required|min:5|max:255',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
 
         $emails = explode(',', config('app.enquiry_to_mail'));
-        // dd($emails);
+
+        $appendData = [
+            $validated['name'],
+            $validated['email'],
+            $validated['phone'],
+            $validated['postal_code'],
+            $validated['property_address'],
+            '',
+            '',
+        ];
+
+        $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
         try {
             // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
 
