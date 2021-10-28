@@ -7,7 +7,7 @@
 .navbar {
     @include breakpoint (sm) {
         @include breakpoint (sm1) {
-            background: none !important;
+            background: $white !important;
             padding: 7px 0 !important;
         }
     }
@@ -86,7 +86,7 @@
 header + div {
     @include breakpoint (sm) {
         @include breakpoint (sm1) {
-            margin-top: 27px !important;
+            margin-top: 107px !important;
         }
     }
 }
