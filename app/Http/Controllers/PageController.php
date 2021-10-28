@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use App\Models\Corporate\PropertyManager;
+use App\Models\Corporate\PropertyType;
 use App\Repositories\AgentRepository;
 use App\Repositories\PageRepository;
 use DB;
@@ -109,13 +110,14 @@ class PageController extends Controller
     public function selling()
     {
         $selling = Page::where('slug', 'selling')->first();
+        $property_types = PropertyType::select('name')->get();
         if (isset($selling) && $selling != null) {
             $selling['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->first();
             $selling['buying'] = PageDetail::where('page_id', $selling->id)->where('slug', 'buying-a-home')->first();
 
         }
 
-        return view('agent.Property.selling')->withPage($selling);
+        return view('agent.Property.selling')->withPage($selling)->withPropertyTypes($property_types);
 
     }
     public function blogs()

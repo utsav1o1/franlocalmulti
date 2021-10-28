@@ -75,31 +75,30 @@ class ContactUsController extends Controller
             'phone' => 'required|numeric',
             'postal_code' => 'required|numeric',
             'property_address' => 'required|min:5|max:255',
-            // 'g-recaptcha-response' => 'required|captcha',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         $emails = explode(',', config('app.enquiry_to_mail'));
 
-        $appendData = [
-            $validated['name'],
-            $validated['email'],
-            $validated['phone'],
-            $validated['postal_code'],
-            $validated['property_address'],
-            '',
-            '',
-        ];
-
-        $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
-
         try {
-            // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyEvaluationMail($validated));
 
             foreach ($emails as $email):
                 $validated['mail_to'] = $email;
                 $jobToDispatch = (new PropertyEvaluationJob($validated))->delay(Carbon::now()->addSeconds(10));
                 dispatch($jobToDispatch);
             endforeach;
+
+            // saving data to spreadsheet
+            $appendData = [
+                $validated['name'],
+                $validated['email'],
+                $validated['phone'],
+                $validated['postal_code'],
+                $validated['property_address'],
+                '',
+                '',
+            ];
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
         } catch (\Exception $e) {
             //dd($e);
@@ -130,7 +129,7 @@ class ContactUsController extends Controller
             'postal_code' => 'required|numeric',
             'property_type' => 'required',
             'message' => 'required|max:500',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
 
         $emails = explode(',', config('app.enquiry_to_mail'));
@@ -143,8 +142,22 @@ class ContactUsController extends Controller
                 dispatch($jobToDispatch);
             endforeach;
 
+            // saving data to google spread sheet
+            $appendData = [
+                $validated['name'],
+                $validated['email'],
+                $validated['phone'],
+                $validated['postal_code'],
+                '',
+                $validated['property_type'],
+                $validated['message'],
+
+            ];
+
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
         } catch (\Exception $e) {
-            // dd($e);
+            dd($e);
             return $this->serverErrorResponse();
         }
         session()->put('name', $validated['name']);

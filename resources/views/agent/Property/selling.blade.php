@@ -69,14 +69,15 @@
                         </div>
                     </div>
                     <!-- end col  -->
+
                     <div class="col-lg-12">
                         <div class="form-group">
                             <select name="property_type" id="" class="form-control wide"
                                 value="{{old('property_type')}}">
                                 <option value="" disabled selected>Are you looking to...</option>
-                                <option value="1">House</option>
-                                <option value="2">Land</option>
-                                <option value="3">Building</option>
+                                @foreach($propertyTypes as $property_type)
+                                <option value="{{ $property_type->name }}">{{$property_type->name}}</option>
+                                @endforeach
                             </select>
                             @if($errors->has('property_type'))
                             <span class="error">{{ $errors->first('property_type') }}</span>
