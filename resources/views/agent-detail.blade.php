@@ -36,7 +36,7 @@
                                 $agent->location->location_name : '' !!}</a></p>
                         @endif
                         <p>
-                            <a href={!! $agent->rate_agent_link !!}>
+                            <a href="{!! $agent->rate_agent_link !!}">
                                 <img src='https://static.ratemyagent.com.au/assets/images/widgets/rma-duo-logo.png'
                                     width='164' height='40' />
                                 <span>Rate My Agent</span>
