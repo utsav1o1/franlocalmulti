@@ -531,6 +531,7 @@
                                 <a id="item" href="rent/holiday-rental">Holiday
                                     Rental</a><br />
                                 <span class="sp-block"></span>
+                                <p></p>
                                 <p><strong>Sell</strong></p>
                                 <a id="item" href="/get-recently-sold-properties">Recent Sales</a>
                                 <span class="sp-block"></span>
