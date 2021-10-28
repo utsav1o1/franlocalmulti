@@ -10,6 +10,7 @@ use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Sheets;
 
 class DownloadGuideController extends Controller
 {
@@ -21,7 +22,7 @@ class DownloadGuideController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
@@ -70,8 +71,21 @@ class DownloadGuideController extends Controller
             $sendSellingJobToDispatch = (new SendSellingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
             dispatch($sendSellingJobToDispatch);
 
+            // saving data to google spread sheet
+            $appendData = [
+                $data['name'],
+                $data['email'],
+                $data['phone'],
+                $data['postal_code'],
+                $data['property_address'],
+                '',
+                '',
+            ];
+
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
         } catch (\Exception $e) {
-//            dd($e);
+            // dd($e);
             $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
@@ -135,6 +149,19 @@ class DownloadGuideController extends Controller
 
             $sendBuyingJobToDispatch = (new SendBuyingGuideJob($data))->delay(Carbon::now()->addSeconds(10));
             dispatch($sendBuyingJobToDispatch);
+
+            // saving data to google spreadsheet
+            $appendData = [
+                $data['name'],
+                $data['email'],
+                $data['phone'],
+                $data['postal_code'],
+                $data['property_address'],
+                '',
+                '',
+            ];
+
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
             // Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
         } catch (\Exception $e) {
