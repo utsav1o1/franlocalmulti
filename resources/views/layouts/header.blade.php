@@ -73,8 +73,8 @@
                                 <li class="instragram-link social-link-icon"><a
                                         href="https://www.instagram.com/multidynamic.ingleburn/"><i
                                             class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i
-                                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+{{--                                <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i--}}
+{{--                                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>--}}
                                 <li class="linkedin-link social-link-icon"><a
                                         href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
                                             class="fa fa-youtube" aria-hidden="true"></i></a></li>
