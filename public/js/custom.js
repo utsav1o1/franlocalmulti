@@ -14,6 +14,7 @@ jQuery(document).ready(function ($) {
         $('.blog-short-descriptions').matchHeight(options);
         $('.services__lists__item h3').matchHeight(options);
         $('.services__lists__item p').matchHeight(options);
+        $('.services__lists__item .service-content').matchHeight(options);
     }
     sliderContentHeight();
 

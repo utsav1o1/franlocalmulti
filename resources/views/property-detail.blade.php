@@ -149,7 +149,8 @@
 
 @section('dynamicdata')
 <!--Page Details-->
-<div class="container property-details-page">
+<div class="property-details-page">
+<div class="container">
     <div class="row custom-top-spacing">
         <div class="col-sm-9 col-md-9">
             <!--Start of Image Carousel-->
@@ -316,7 +317,7 @@
                 ?>
             @foreach($agents as $agent)
             <a class="agent-detail-link" href="{!! route('agents.show', $agent->getCustomId()) !!}">
-                <div class="col-lg-4 col-md-4 col-sm-6 agent-block">
+                <div class="col-lg-4 col-md-4 col-sm-6 agent-block no-padding">
                     <div class="agent-wrapper">
                         <div class="agent-image">
                             <a>
@@ -524,6 +525,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 
