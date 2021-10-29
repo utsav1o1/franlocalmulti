@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use App\Repositories\LocationRepository;
-use Illuminate\Http\Request;
+use DB;
 
 class LocationController extends Controller
 {
@@ -16,7 +15,7 @@ class LocationController extends Controller
      */
     public function __construct(
         LocationRepository $locations
-    ){
+    ) {
         $this->locations = $locations;
     }
 
@@ -26,13 +25,14 @@ class LocationController extends Controller
      * @param string $location
      * @return \Illuminate\Http\Response
      */
-    public function locations($location=null)
+    public function locations($location = null)
     {
         $locations = \App\Models\Corporate\Location::where(DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code))"), 'like', '%' . $location . '%')
 
-        ->select('id', DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))->get();
+            ->select('id', DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))->get();
+        $locations = $locations->unique('location_name');
 
-        return response()->json(['locations'=>$locations], 200);
+        return response()->json(['locations' => $locations], 200);
     }
 
     /**
