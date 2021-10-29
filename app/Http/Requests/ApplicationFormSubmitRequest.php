@@ -26,7 +26,9 @@ class ApplicationFormSubmitRequest extends FormRequest
         return [
             'property_street_address' => 'required|max:200',
             'property_suburb' => 'required|max:200',
-            'image' => 'required'
+            'image' => 'required',
+            'g-recaptcha-response' => 'required|captcha',
+
         ];
     }
 
