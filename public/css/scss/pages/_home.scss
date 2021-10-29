@@ -46,3 +46,8 @@
         
     }
 }
+
+.ui-widget.ui-widget-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
