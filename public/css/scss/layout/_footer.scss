@@ -15,7 +15,7 @@ footer {
 
     .row {
         .book-apprisal {
-            @include breakpoint (xs) {
+            @include breakpoint (sm1) {
                 margin: 0;
                 padding: 0;
             }
@@ -28,14 +28,14 @@ footer {
 }
 
 .company-location-details-container a {
-    @include breakpoint (xs) {
+    @include breakpoint (sm1) {
         padding: 0;
     }
 }
 
 #footer-second {
     .sp-block {
-        @include breakpoint (xs) {
+        @include breakpoint (sm1) {
             height: 10px;
         }
     }
@@ -47,7 +47,7 @@ footer {
 
 
 .ft-divider {
-    @include breakpoint (xs) {
+    @include breakpoint (sm1) {
         padding: 0;
     }
 }

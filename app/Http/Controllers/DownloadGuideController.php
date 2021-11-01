@@ -80,6 +80,7 @@ class DownloadGuideController extends Controller
                 $data['property_address'],
                 '',
                 '',
+                Carbon::parse(Carbon::now())->format('M d, Y'),
             ];
 
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
@@ -159,6 +160,7 @@ class DownloadGuideController extends Controller
                 $data['property_address'],
                 '',
                 '',
+                Carbon::parse(Carbon::now())->format('M d, Y'),
             ];
 
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);

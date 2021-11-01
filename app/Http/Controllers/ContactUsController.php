@@ -97,6 +97,8 @@ class ContactUsController extends Controller
                 $validated['property_address'],
                 '',
                 '',
+                Carbon::parse(Carbon::now())->format('M d, Y'),
+
             ];
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
@@ -151,6 +153,7 @@ class ContactUsController extends Controller
                 '',
                 $validated['property_type'],
                 $validated['message'],
+                Carbon::parse(Carbon::now())->format('M d, Y'),
 
             ];
 
