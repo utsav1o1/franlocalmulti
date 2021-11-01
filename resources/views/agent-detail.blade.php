@@ -56,63 +56,65 @@
     </div>
 </div>
 <!--Agent Description and Form Section-->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-md-8">
-            <div class="agent-description">
-                {!! $agent->description !!}
+<div class="agent-detail-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7">
+                <div class="agent-description">
+                    {!! $agent->description !!}
+                </div>
+
             </div>
 
-        </div>
+            <div class="col-sm-4 col-md-5">
+                <div class="form-group agent-form">
+                    <h3>Contact the agent</h3>
+                    <p>Contact agent for more details</p>
+                    @include('layouts.alert')
+                    <form action="{!! route('agents.submit.contact', $agent->id) !!}" method="post">
+                        <div class="row agent-field">
+                            <label class="control-label col-sm-2 col-md-2" for="name">Name</label>
+                            <div class="col-sm-10 col-md-10">
+                                <input type="text" class="form-control agent-form-control" name="full_name"
+                                    placeholder="Enter your full name" required />
+                            </div>
+                        </div>
+                        <div class="row agent-field">
+                            <label class="control-label col-sm-2 col-md-2" for="email">Email</label>
+                            <div class="col-sm-10 col-md-10">
+                                <input type="email" class="form-control agent-form-control" name="email_address"
+                                    placeholder="Enter email address" required />
+                            </div>
+                        </div>
+                        <div class="row agent-field">
+                            <label class="control-label col-sm-2 col-md-2" for="phone">Phone</label>
+                            <div class="col-sm-10 col-md-10">
+                                <input type="text" class="form-control agent-form-control" name="phone_number"
+                                    placeholder="Enter phone number" />
+                            </div>
+                        </div>
+                        <div class="row agent-field">
+                            <label class="control-label col-sm-2 col-md-2" for="message">Message</label>
+                            <div class="col-sm-10 col-md-10">
+                                <textarea type="text" class="form-control agent-form-control" name="message" rows="4"
+                                    placeholder="Leave your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
 
-        <div class="col-sm-4 col-md-4">
-            <div class="form-group agent-form">
-                <h3>Contact the agent</h3>
-                <p>Contact agent for more details</p>
-                @include('layouts.alert')
-                <form action="{!! route('agents.submit.contact', $agent->id) !!}" method="post">
-                    <div class="row agent-field">
-                        <label class="control-label col-sm-2 col-md-2" for="name">Name</label>
-                        <div class="col-sm-10 col-md-10">
-                            <input type="text" class="form-control agent-form-control" name="full_name"
-                                placeholder="Enter your full name" required />
+                            @if($errors->has('g-recaptcha-response'))
+                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                            @endif
                         </div>
-                    </div>
-                    <div class="row agent-field">
-                        <label class="control-label col-sm-2 col-md-2" for="email">Email</label>
-                        <div class="col-sm-10 col-md-10">
-                            <input type="email" class="form-control agent-form-control" name="email_address"
-                                placeholder="Enter email address" required />
-                        </div>
-                    </div>
-                    <div class="row agent-field">
-                        <label class="control-label col-sm-2 col-md-2" for="phone">Phone</label>
-                        <div class="col-sm-10 col-md-10">
-                            <input type="text" class="form-control agent-form-control" name="phone_number"
-                                placeholder="Enter phone number" />
-                        </div>
-                    </div>
-                    <div class="row agent-field">
-                        <label class="control-label col-sm-2 col-md-2" for="message">Message</label>
-                        <div class="col-sm-10 col-md-10">
-                            <textarea type="text" class="form-control agent-form-control" name="message" rows="4"
-                                placeholder="Leave your message"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
-                        {!! NoCaptcha::renderJs() !!}
-                        {!! NoCaptcha::display() !!}
-
-                        @if($errors->has('g-recaptcha-response'))
-                        <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
-                        @endif
-                    </div>
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="agent_id" value="{!! $agent->id !!}" />
-                    <button type="submit" class="btn btn-default agent-btn"><i
-                            class="glyphicon glyphicon-send"></i>Submit</button>
-                </form>
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="agent_id" value="{!! $agent->id !!}" />
+                        <button type="submit" class="btn btn-default agent-btn"><i
+                                class="glyphicon glyphicon-send"></i>Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
