@@ -67,9 +67,21 @@ class AgentController extends Controller
 
         $id = $arr[count($arr) - 1];
         $agent = $this->agents->findByField('id', $id);
+        $leased_properties = $agent->properties()->where('is_leased_sold',
+            'Y')->where('property_category_id', 2)->paginate(9);
+        $sold_properties = $agent->properties()->where('is_leased_sold',
+            'Y')->where('property_category_id', 1)->paginate(9);
+        $rent_properties = $agent->properties()->where('property_category_id', 2)->paginate(9);
+        $buy_properties = $agent->properties()->where('property_category_id', 1)->paginate(9);
+        // dd($agent->properties()->where('property_category_id', '=', 1)->count());
+
         if ($agent) {
             return view('agent-detail')
-                ->withAgent($agent);
+                ->withAgent($agent)
+                ->withLeasedProperties($leased_properties)
+                ->withRentProperties($rent_properties)
+                ->withBuyProperties($buy_properties)
+                ->withSoldProperties($sold_properties);
         } else {
             return view('404');
         }

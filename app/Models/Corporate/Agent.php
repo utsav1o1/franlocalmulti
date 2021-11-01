@@ -3,6 +3,7 @@
 namespace App\Models\Corporate;
 
 use App\Models\Corporate\Designation;
+use App\Models\Corporate\Property;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -68,6 +69,10 @@ class Agent extends Authenticatable
     public function designation()
     {
         return $this->belongsTo(Designation::class, 'designation_id');
+    }
+    public function properties()
+    {
+        return $this->belongsToMany(Property::class, 'property_agents');
     }
 
 }
