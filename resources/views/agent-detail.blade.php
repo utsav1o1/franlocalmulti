@@ -122,20 +122,25 @@
 <div class="team-tab">
     <div class="container">
         <ul class="nav nav-tabs" role="tablist">
+            @if($agent->property_manage_type=='1')
             <li role="presentation" @if(Request::query('tab')==null || Request::query('tab')=='sold' ) class="active"
                 @endif><a href="#sold" aria-controls="sold" role="tab" data-toggle="tab">Sold</a></li>
-            <li role="presentation" @if ( Request::query('tab')=='leased' ) class="active" @endif><a href="#leased"
-                    aria-controls="leased" role="tab" data-toggle="tab">Leased</a>
-            </li>
+
             <li role="presentation" @if ( Request::query('tab')=='buy' ) class="active" @endif><a href="#buy"
-                    aria-controls="buy" role="tab" data-toggle="tab">Buy</a></li>
+                    aria-controls="buy" role="tab" data-toggle="tab">Current Listing</a></li>
+            @else
+            <li role="presentation" @if ( Request::query('tab')==null ||Request::query('tab')=='leased' ) class="active"
+                @endif><a href="#leased" aria-controls="leased" role="tab" data-toggle="tab">Leased</a>
+            </li>
             <li role="presentation" @if ( Request::query('tab')=='rent' ) class="active" @endif><a href="#rent"
-                    aria-controls="rent" role="tab" data-toggle="tab">Rent</a></li>
+                    aria-controls="rent" role="tab" data-toggle="tab">Rental</a></li>
+            @endif
 
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
+            @if($agent->property_manage_type=='1')
             @if(count($soldProperties)>0)
             <div role="tabpanel" class="tab-pane @if(Request::query('tab')==null || Request::query('tab')=='sold' ) active
                 @endif" id="sold">
@@ -237,9 +242,109 @@
                 </div>
             </div>
             @endif
+            @if(count($buyProperties)>0)
+            <div role="tabpanel" class="tab-pane @if ( Request::query('tab') == 'buy') active @endif" id="buy">
+                <div class="fefatured__property__tab">
+                    <div class="row">
+                        @foreach($buyProperties as $property)
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="thumbnail">
+                                <div class="thumbnail recent-properties-box">
+                                    <a class="thumbnail-container"
+                                        href="{!! route('properties.show', $property->slug) !!}">
 
+                                        <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
+                                            class="img-responsive" />
+                                    </a>
+                                    <!--Caption Detail-->
+                                    <div class="caption detail">
+                                        <header>
+                                            <div class="pull-left">
+                                                <h1 class="title">
+                                                    <a href="{!! route('properties.show', $property->slug) !!}">{!!
+                                                        str_limit($property->name, 30) !!}</a>
+                                                </h1>
+                                            </div>
+
+                                            <div class="price-block">
+                                                <div class="starting-price">{!! $property->price_type_name !!}</div>
+                                                <div class="price">
+                                                    <?php if(is_null($property->price_view)) {?>
+                                                    {{ $property->getFormattedPrice() }}
+                                                    <?php }
+                                                                                else { ?>
+                                                    <span style="font-size: 12px">{{ str_limit(
+                                                        $property->price_view,22)}}</span>
+                                                    <?php }?>
+                                                </div>
+                                            </div>
+                                            <!--Area Block-->
+                                            <div class="area-block">
+                                                <div class="property-type">Property Type</div>
+                                                <div class="property-area">{!! $property->property_type_name !!}</div>
+                                            </div>
+                                        </header>
+                                        <!--Location-->
+                                        <h3 class="location">
+                                            @if($property->location)
+                                            <a href="#">
+                                                <i class="fa fa-map-marker"></i>{!! $property->location_name !!}
+                                            </a>
+                                            @endif
+                                        </h3>
+                                        <!--Item Details-->
+                                        <ul class="item-details col-md-12">
+                                            <li>
+                                                <p class="item-area">@if($property->area > 0) {!! $property->area !!}
+                                                    m<sup>2</sup>@else --.-- @endif</p>
+                                            </li>
+
+                                            <li>
+                                                <p class="item-bed">{!! $property->number_of_bedrooms !!} Bedroom</p>
+                                            </li>
+                                            <li>
+                                                <p class="item-bath">{!! $property->number_of_bathrooms !!} Bathroom</p>
+                                            </li>
+                                            <li>
+                                                <p class="item-garage">{!! $property->number_of_garages !!} Garage</p>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <div class="detail-footer">
+                                            <a href="{!! route('properties.show', $property->slug) !!}"><i
+                                                    class="fa-user"></i>
+                                                {{ $property->agents_count }}
+                                                {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
+                                                    <span><i class="fa-calendar-o"></i>{!!
+                                                        App\Http\Helper::time_elapsed_string($property->created_at)
+                                                        !!}</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        {!! $buyProperties->appends(['tab' => 'buy'])->links() !!}
+                    </div>
+                </div>
+            </div>
+            @else
+            <div role="tabpanel" class="tab-pane @if ( Request::query('tab')=='buy' ) active @endif" id="buy">
+                <div class="fefatured__property__tab">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <p>No properties to show.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @else
             @if(count($leasedProperties)>0)
-            <div role="tabpanel" class="tab-pane @if ( Request::query('tab') == 'leased') active @endif" id="leased">
+            <div role="tabpanel"
+                class="tab-pane @if ( Request::query('tab')==null ||Request::query('tab') == 'leased') active @endif"
+                id="leased">
                 <div class="fefatured__property__tab">
                     <div class="row">
                         @foreach($leasedProperties as $property)
@@ -326,7 +431,9 @@
                 </div>
             </div>
             @else
-            <div role="tabpanel" class="tab-pane @if ( Request::query('tab')=='leased' ) active @endif" id="leased">
+            <div role="tabpanel"
+                class="tab-pane @if ( Request::query('tab')==null || Request::query('tab')=='leased' ) active @endif"
+                id="leased">
                 <div class="fefatured__property__tab">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-6">
@@ -337,104 +444,7 @@
             </div>
             @endif
 
-            @if(count($buyProperties)>0)
-            <div role="tabpanel" class="tab-pane @if ( Request::query('tab') == 'buy') active @endif" id="buy">
-                <div class="fefatured__property__tab">
-                    <div class="row">
-                        @foreach($buyProperties as $property)
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="thumbnail">
-                                <div class="thumbnail recent-properties-box">
-                                    <a class="thumbnail-container"
-                                        href="{!! route('properties.show', $property->slug) !!}">
 
-                                        <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
-                                            class="img-responsive" />
-                                    </a>
-                                    <!--Caption Detail-->
-                                    <div class="caption detail">
-                                        <header>
-                                            <div class="pull-left">
-                                                <h1 class="title">
-                                                    <a href="{!! route('properties.show', $property->slug) !!}">{!!
-                                                        str_limit($property->name, 30) !!}</a>
-                                                </h1>
-                                            </div>
-
-                                            <div class="price-block">
-                                                <div class="starting-price">{!! $property->price_type_name !!}</div>
-                                                <div class="price">
-                                                    <?php if(is_null($property->price_view)) {?>
-                                                    {{ $property->getFormattedPrice() }}
-                                                    <?php }
-                                                                    else { ?>
-                                                    <span style="font-size: 12px">{{ str_limit(
-                                                        $property->price_view,22)}}</span>
-                                                    <?php }?>
-                                                </div>
-                                            </div>
-                                            <!--Area Block-->
-                                            <div class="area-block">
-                                                <div class="property-type">Property Type</div>
-                                                <div class="property-area">{!! $property->property_type_name !!}</div>
-                                            </div>
-                                        </header>
-                                        <!--Location-->
-                                        <h3 class="location">
-                                            @if($property->location)
-                                            <a href="#">
-                                                <i class="fa fa-map-marker"></i>{!! $property->location_name !!}
-                                            </a>
-                                            @endif
-                                        </h3>
-                                        <!--Item Details-->
-                                        <ul class="item-details col-md-12">
-                                            <li>
-                                                <p class="item-area">@if($property->area > 0) {!! $property->area !!}
-                                                    m<sup>2</sup>@else --.-- @endif</p>
-                                            </li>
-
-                                            <li>
-                                                <p class="item-bed">{!! $property->number_of_bedrooms !!} Bedroom</p>
-                                            </li>
-                                            <li>
-                                                <p class="item-bath">{!! $property->number_of_bathrooms !!} Bathroom</p>
-                                            </li>
-                                            <li>
-                                                <p class="item-garage">{!! $property->number_of_garages !!} Garage</p>
-                                            </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                        <div class="detail-footer">
-                                            <a href="{!! route('properties.show', $property->slug) !!}"><i
-                                                    class="fa-user"></i>
-                                                {{ $property->agents_count }}
-                                                {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
-                                                    <span><i class="fa-calendar-o"></i>{!!
-                                                        App\Http\Helper::time_elapsed_string($property->created_at)
-                                                        !!}</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        {!! $buyProperties->appends(['tab' => 'buy'])->links() !!}
-                    </div>
-                </div>
-            </div>
-            @else
-            <div role="tabpanel" class="tab-pane @if ( Request::query('tab')=='buy' ) active @endif" id="buy">
-                <div class="fefatured__property__tab">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <p>No properties to show.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endif
             @if(count($rentProperties)>0)
             <div role="tabpanel" class="tab-pane @if ( Request::query('tab') == 'rent') active @endif" id="rent">
                 <div class="fefatured__property__tab">
@@ -533,6 +543,7 @@
                 </div>
             </div>
             @endif
+            @endif
 
         </div>
     </div>
@@ -541,11 +552,27 @@
 @stop
 @section('footer_js')
 <script>
-    $(document).ready(function(e){
-        $('.nav-tabs').on('click',function(){
+    $(document).ready(function (e) {
+        $('.nav-tabs').on('click', function () {
             $("body").removeClass("active");
             $(this).addClass("active");
+
         })
+
+        // this is when tab click if needed then we implement this code
+        // $("ul.nav.nav-tabs li a").click(function (e) {
+        //     var tab_id = ''
+        //     tab_id=$(this).attr('href');
+        //     var currentUrl = window.location.href;
+           
+        //     var url = new URL(currentUrl);
+        //     url.searchParams.set("tab", tab_id.replace('#', '')); // setting your param
+        //     url.searchParams.set("page", 1); // setting your param
+        //     var newUrl = url.href;
+        //     newUrl = newUrl.split('#', 1)[0].concat(tab_id)
+        //     window.location.href = newUrl;
+        // });
     })
+
 </script>
 @endsection
