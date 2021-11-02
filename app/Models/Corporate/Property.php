@@ -85,7 +85,7 @@ class Property extends Model
     public function getCoverImage()
     {
         if ($this->isCoverImageProvided()) {
-            return $this->getOwnPropertyImagesDir() . '/thumbnail-' . $this->property_image;
+            return $this->getOwnPropertyImagesDir() . '/thumbnail-' . $this->main_image;
         }
 
         return $this->getDefaultPropertyImagePath();
