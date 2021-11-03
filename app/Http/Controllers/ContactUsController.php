@@ -53,6 +53,20 @@ class ContactUsController extends Controller
 
         $this->sendContactUsByEmail($data);
 
+        // saving data to google sheet
+        $appendData = [
+            $data['name'],
+            $data['email'],
+            $data['contact'],
+            '',
+            $data['address'],
+            '',
+            '',
+            Carbon::parse(Carbon::now())->format('M d, Y'),
+        ];
+
+        $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
         $request->session()->flash('success', 'Successfully Sent!!');
 
         return redirect(route('contact-us.form'));

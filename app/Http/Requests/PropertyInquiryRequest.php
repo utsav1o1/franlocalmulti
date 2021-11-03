@@ -28,14 +28,14 @@ class PropertyInquiryRequest extends FormRequest
             'full_name' => 'required',
             'email_address' => 'required|email',
             'message' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+            // 'g-recaptcha-response' => 'required|captcha'
         ];
     }
 
     public function messages()
     {
         return [
-            'g-recaptcha-response.required' => 'ReCaptcha field is required!!'
+            'g-recaptcha-response.required' => 'ReCaptcha field is required!!',
         ];
     }
 }
