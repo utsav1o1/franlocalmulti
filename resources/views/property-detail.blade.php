@@ -395,6 +395,7 @@
                             count($errors)> 0) class="tab-pane fade"
                             @else class="tab-pane fade in active" @endif>
                             <h3>{!! $property->name !!}</h3>
+                            <h4>{{ $property->street_number }} {{' '.$property->street.' ' }}{!! $property->location_name !!}</h4>
                             <div>{!! $property->description !!}</div>
                             <div class="row map-container">
                                 <div class="col-sm-12 col-md-12">
