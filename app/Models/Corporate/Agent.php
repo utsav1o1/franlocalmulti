@@ -2,6 +2,7 @@
 
 namespace App\Models\Corporate;
 
+use App\Models\Corporate\AgentSocial;
 use App\Models\Corporate\Designation;
 use App\Models\Corporate\Property;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -73,6 +74,10 @@ class Agent extends Authenticatable
     public function properties()
     {
         return $this->belongsToMany(Property::class, 'property_agents');
+    }
+    public function socials()
+    {
+        return $this->hasMany(AgentSocial::class);
     }
 
 }

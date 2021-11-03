@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Mail;
-use Illuminate\Http\Request;
-use App\Transformers\Select2Transformer;
 use App\Http\Requests\SendAppraisalRequest;
 use App\Repositories\LocationRepository;
+use App\Transformers\Select2Transformer;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Mail;
+use Sheets;
 
 class AppraisalController extends Controller
 {
-	protected $locationRepo;
+    protected $locationRepo;
 
-	public function __construct(LocationRepository $locationRepo)
-	{
-		$this->locationRepo = $locationRepo;
-	}
+    public function __construct(LocationRepository $locationRepo)
+    {
+        $this->locationRepo = $locationRepo;
+    }
 
     public function showAppraisalForm()
     {
@@ -32,7 +34,7 @@ class AppraisalController extends Controller
         $pageLimit = $request->input('pageLimit');
 
         try {
-                $paginatedData = $this->locationRepo->getLocationListForSelect2($searchText, $pageLimit);
+            $paginatedData = $this->locationRepo->getLocationListForSelect2($searchText, $pageLimit);
 
         } catch (\Exception $e) {
 
@@ -40,15 +42,29 @@ class AppraisalController extends Controller
         }
 
         $select2Data = Select2Transformer::transformPaginatedDataToSelect2Data($paginatedData);
-        
+
         return $this->successDataResponse($select2Data);
     }
 
     public function sendEnquiry(SendAppraisalRequest $request)
     {
         $data = $request->all();
+        // dd($data);
 
         $this->sendContactUsByEmail($data);
+
+        $appendData = [
+            $data['fname'] . ' ' . $data['lname'],
+            $data['email'],
+            $data['contact'],
+            $data['postcode'],
+            $data['address'],
+            '',
+            $data['messages'],
+            Carbon::parse(Carbon::now())->format('M d, Y'),
+        ];
+
+        $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
         $request->session()->flash('success', 'Successfully Sent!!');
 
@@ -57,10 +73,10 @@ class AppraisalController extends Controller
 
     private function sendContactUsByEmail($data)
     {
-        Mail::send('emails.appraisalmail', ['data' => $data], function($message) use ($data) {
+        Mail::send('emails.appraisalmail', ['data' => $data], function ($message) use ($data) {
             $emailSender = \Config::get('app.appraisal_mail');
             $message->to($emailSender, 'Appraisal Booking')
-                    ->subject('New Appraisal Booking - MD Ingleburn');
+                ->subject('New Appraisal Booking - MD Ingleburn');
         });
     }
 }

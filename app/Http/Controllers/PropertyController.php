@@ -10,10 +10,12 @@ use App\Repositories\PropertyInquiryRepository;
 use App\Repositories\PropertyRepository;
 use App\Repositories\PropertyTypeRepository;
 use Auth;
+use Carbon\Carbon;
 use DataHelper;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Sheets;
 
 class PropertyController extends Controller
 {
@@ -570,6 +572,8 @@ class PropertyController extends Controller
      */
     public function submitContact(PropertyInquiryRequest $request)
     {
+
+        $data = $request->all();
         $inquiry = $this->inquiries->create($request->all());
 
         if ($inquiry) {
@@ -585,6 +589,21 @@ class PropertyController extends Controller
 
                 Mail::to($emails)
                     ->send(new PropertyInquirySent($inquiry));
+
+                $appendData = [
+                    $data['full_name'],
+                    $data['email_address'],
+                    $data['phone_number'],
+                    '',
+                    '',
+                    '',
+                    $data['message'],
+                    Carbon::parse(Carbon::now())->format('M d, Y'),
+
+                ];
+
+                $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
             }
             return redirect()->back()
                 ->withSuccessMessage('Your inquiry is submitted successfully.');
