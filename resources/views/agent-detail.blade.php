@@ -106,7 +106,8 @@
                             {!! NoCaptcha::display() !!}
 
                             @if($errors->has('g-recaptcha-response'))
-                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                            <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0]
+                                }}</small>
                             @endif
                         </div>
                         {!! csrf_field() !!}
@@ -155,7 +156,7 @@
                                     <a class="thumbnail-container"
                                         href="{!! route('properties.show', $property->slug) !!}">
 
-                                        <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
+                                        <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
                                     <!--Caption Detail-->

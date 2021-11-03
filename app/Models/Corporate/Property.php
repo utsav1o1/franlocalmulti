@@ -236,4 +236,14 @@ class Property extends Model
             ->where('property_images.property_id', $this->id)
             ->get();
     }
+    public function getImage()
+    {
+        $image = PropertyImage::find($this->main_image);
+
+        if (!empty($image)):
+            return $this->getOwnPropertyImagesDir() . '/thumbnail-' . $image->property_image;
+        else:
+            return $this->getDefaultPropertyImagePath();
+        endif;
+    }
 }
