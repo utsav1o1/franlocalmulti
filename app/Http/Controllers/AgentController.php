@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\AgentInquirySent;
+use App\Models\Corporate\PropertyCategory;
 use App\Repositories\AgentMessageRepository;
 use App\Repositories\AgentRepository;
 use App\Repositories\PropertyRepository;
@@ -67,12 +68,15 @@ class AgentController extends Controller
 
         $id = $arr[count($arr) - 1];
         $agent = $this->agents->findByField('id', $id);
+        $propertyCategory = $this->getPropertyCategory();
         $leased_properties = $agent->properties()->where('is_leased_sold',
             'Y')->where('property_category_id', 2)->orderBy('created_at', 'desc')->paginate(6);
         $sold_properties = $agent->properties()->where('is_leased_sold',
             'Y')->where('property_category_id', 1)->orderBy('created_at', 'desc')->paginate(6);
-        $rent_properties = $agent->properties()->where('property_category_id', 2)->orderBy('created_at', 'desc')->paginate(6);
-        $buy_properties = $agent->properties()->where('property_category_id', 1)->orderBy('created_at', 'desc')->paginate(6);
+        $rent_properties = $agent->properties()->where('property_category_id', 2)->where('is_leased_sold',
+            'N')->orderBy('created_at', 'desc')->paginate(6);
+        $buy_properties = $agent->properties()->where('property_category_id', 1)->where('is_leased_sold',
+            'N')->orderBy('created_at', 'desc')->paginate(6);
         // dd($agent->properties()->where('property_category_id', '=', 1)->count());
 
         if ($agent) {
@@ -86,7 +90,11 @@ class AgentController extends Controller
             return view('404');
         }
     }
-
+    public function getPropertyCategory()
+    {
+        $categories = PropertyCategory::getDefaultPropertyCategories();
+        return $categories;
+    }
     public function submitContact(Request $request)
     {
         $validated = $request->validate([

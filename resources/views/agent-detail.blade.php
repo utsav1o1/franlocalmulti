@@ -258,7 +258,7 @@
                                     <a class="thumbnail-container"
                                         href="{!! route('properties.show', $property->slug) !!}">
 
-                                        <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
+                                        <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
                                     <!--Caption Detail-->
@@ -359,7 +359,7 @@
                                     <a class="thumbnail-container"
                                         href="{!! route('properties.show', $property->slug) !!}">
 
-                                        <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
+                                        <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
                                     <!--Caption Detail-->
@@ -461,7 +461,7 @@
                                     <a class="thumbnail-container"
                                         href="{!! route('properties.show', $property->slug) !!}">
 
-                                        <img src="{!! url($property->getCoverImage()) !!}" alt="{!! $property->name !!}"
+                                        <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
                                     <!--Caption Detail-->

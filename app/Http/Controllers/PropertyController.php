@@ -69,7 +69,10 @@ class PropertyController extends Controller
             ->where('branch_id', env('BRANCH_ID'));
 
         if ($request->get('category')) {
-            $query->where('property_sub_category_id', (int) $request->get('category'));
+            /**
+             * filter only for sold and for leased properties only
+             */
+            $query->where('property_sub_category_id', (int) $request->get('category'))->where('is_leased_sold','N');
         }
 
         if ($request->get('property_type')) {
