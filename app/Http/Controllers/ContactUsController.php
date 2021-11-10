@@ -90,6 +90,9 @@ class ContactUsController extends Controller
             'postal_code' => 'required|numeric',
             'property_address' => 'required|min:5|max:255',
             'g-recaptcha-response' => 'required|captcha',
+            'my_name'   => 'honeypot',
+            'my_time'   => 'required|honeytime:10'
+
         ]);
 
         $emails = explode(',', config('app.enquiry_to_mail'));

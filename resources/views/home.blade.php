@@ -357,6 +357,7 @@
                             @endif
                         </div>
                     </div>
+                    {{ Honeypot::generate('my_name', 'my_time') }}
                     <div class="form-group col-md-12">
                         <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                         {!! NoCaptcha::renderJs() !!}

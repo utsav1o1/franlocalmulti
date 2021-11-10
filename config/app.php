@@ -195,6 +195,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Msurguy\Honeypot\HoneypotServiceProvider::class,
+
 
     ],
 
@@ -255,6 +257,8 @@ return [
         'DataHelper' => App\Helpers\Shared\DataHelper::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class
+
 
     ],
 
