@@ -357,10 +357,14 @@
                             @endif
                         </div>
                     </div>
-                        <div class="" style="display:none;">
-                            <input name="my_name" type="text" value="" id="my_name"/>
-                            <input name="my_time" type="text" value="eyJpdiI6IlNhcjQ3WGVzYVljVm1HdVF4NklWMlE9PSIsInZhbHVlIjoieDJOeXB5aXVNUmxodmdqSU5yVEdjUT09IiwibWFjIjoiNWNlMTQ2ZDZiMGUyZTlkYTU4OTA2NTNlYjhkNDU2MmYzYmFmMjU1MzQ5MjMyZWIxZGQwYmNkMDNmNzVkYzY1ZCJ9"/>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            {!! Honeypot::generate('my_name', 'my_time') !!}
+                            @if($errors->has('my_name'))
+                                <span class="error">{{ $errors->first('my_name') }}</span>
+                            @endif
                         </div>
+                    </div>
                     <div class="form-group col-md-12">
                         <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                         {!! NoCaptcha::renderJs() !!}
