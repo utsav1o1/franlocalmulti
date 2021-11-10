@@ -639,22 +639,22 @@
                         <a href="{{$insta_post['permalink']}}"><img src="{{$insta_post['url']}}" alt=""
                                 target="_blank"></a>
                     </div>
-                    <div class="insta-share">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <span class="count">10</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
-                                    <span class="count">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+{{--                    <div class="insta-share">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-heart" aria-hidden="true"></i>--}}
+{{--                                    <span class="count">20</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-comment" aria-hidden="true"></i>--}}
+{{--                                    <span class="count">0</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </li>
                 @endforeach
                 <!-- end block  -->
