@@ -636,7 +636,7 @@
                 @foreach($posts as $insta_post)
                 <li class="insta-gallery-block">
                     <div class="image">
-                        <a href="{{$insta_post['permalink']}}"><img src="{{$insta_post['url']}}" alt=""
+                        <a href="{{$insta_post['permalink']}}" target="_blank"><img src="{{$insta_post['url']}}" alt=""
                                 target="_blank"></a>
                     </div>
 {{--                    <div class="insta-share">--}}
