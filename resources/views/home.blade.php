@@ -661,7 +661,7 @@
 
             </ul>
             <div class="text-center follow-us-btn">
-                <a href="#" class="btn btn-primary">Follow Us</a>
+                <a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank" class="btn btn-primary">Follow Us</a>
             </div>
         </div>
         @endif
