@@ -47,9 +47,11 @@
             </div>
             <div class="col-sm-4 col-md-4">
                 <div class="agent-sm">
-                    <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook facebook"></a>
-                    <a href="https://twitter.com/" target="_blank" class="fa fa-twitter twitter"></a>
-                    <a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin linkedin"></a>
+                    @if($agent->socials->count()>0)
+                    @foreach($agent->socials as $social)
+                    <a href="{!! $social->link !!}" target="_blank" class="{{$social->icon_class}}"></a>
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
