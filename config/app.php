@@ -196,6 +196,7 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Msurguy\Honeypot\HoneypotServiceProvider::class,
+        Axlon\PostalCodeValidation\ValidationServiceProvider::class,
 
 
     ],

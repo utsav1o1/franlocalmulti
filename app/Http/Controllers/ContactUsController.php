@@ -86,8 +86,8 @@ class ContactUsController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'phone' => 'required|numeric|max:10',
-            'postal_code' => 'required|numeric|max:4',
+            'phone' => 'required|numeric',
+            'postal_code' => 'required|postal_code:Au',
             'property_address' => 'required|min:5|max:255',
             'g-recaptcha-response' => 'required|captcha',
             'my_name'   => 'honeypot',
@@ -144,8 +144,8 @@ class ContactUsController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'phone' => 'required|numeric|max:10',
-            'postal_code' => 'required|numeric|max:4',
+            'phone' => 'required|numeric',
+            'postal_code' => 'required|required|postal_code:Au',
             'property_type' => 'required',
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
