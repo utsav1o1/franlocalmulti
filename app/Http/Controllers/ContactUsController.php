@@ -144,11 +144,13 @@ class ContactUsController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'phone' => 'required|numeric',
-            'postal_code' => 'required|numeric',
+            'phone' => 'required|numeric|max:10',
+            'postal_code' => 'required|numeric|max:4',
             'property_type' => 'required',
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
+            'my_name'   => 'honeypot',
+            'my_time'   => 'required|honeytime:10',
         ]);
 
         $emails = explode(',', config('app.enquiry_to_mail'));

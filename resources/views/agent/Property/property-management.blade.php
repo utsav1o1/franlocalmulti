@@ -199,6 +199,14 @@
                             @endif
                         </div>
                     </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            {!! Honeypot::generate('my_name', 'my_time') !!}
+                            @if($errors->has('my_name'))
+                                <span class="error">{{ $errors->first('my_name') }}</span>
+                            @endif
+                        </div>
+                    </div>
                     <div class="form-group col-md-12">
                         <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                         {!! NoCaptcha::renderJs() !!}
