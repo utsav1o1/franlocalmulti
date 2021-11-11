@@ -28,6 +28,7 @@ class PropertyInquiryRequest extends FormRequest
             'full_name' => 'required',
             'email_address' => 'required|email',
             'message' => 'required',
+            'phone_number' => 'required|numeric',
             'g-recaptcha-response' => 'required|captcha',
             'my_name' => 'honeypot',
             'my_time' => 'required|honeytime:10',
