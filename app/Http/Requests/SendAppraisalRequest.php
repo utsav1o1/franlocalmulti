@@ -29,10 +29,12 @@ class SendAppraisalRequest extends FormRequest
             'lname' => 'required',
             'address' => 'required',
             'suburb' => 'required',
-            'postcode' => 'required',
             'email' => 'nullable|email',
-            'contact' => 'required',
-            // 'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha',
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
+            'contact' => 'required|numeric',
+            'postal_code' => 'required|required|postal_code:Au',
         ];
     }
 

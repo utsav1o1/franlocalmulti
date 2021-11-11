@@ -27,13 +27,15 @@ class SendPropertyEstimationRequest extends FormRequest
         return [
             'full_name' => 'required',
             'email' => 'required|email',
-            'phone_number' => 'required',
             'street_address' => 'required',
             'suburb_postcode' => 'required',
             'bedrooms' => 'required',
             'bathrooms' => 'required',
             'garages' => 'required',
             'g-recaptcha-response' => 'required|captcha',
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
+            'phone_number' => 'required|numeric',
         ];
     }
 
@@ -41,7 +43,7 @@ class SendPropertyEstimationRequest extends FormRequest
     {
         return [
             'required' => '* required',
-            'email' => 'invalid email'
+            'email' => 'invalid email',
         ];
     }
 }

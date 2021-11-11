@@ -326,17 +326,26 @@
                                 <div class="form-group col-md-6">
                                     <label>First Name *</label>
                                     <input class="form-control" placeholder="First name" name="fname" type="text">
+                                    @if($errors->has('fname'))
+                                    <span class="error">{{ $errors->first('fname') }}</span>
+                                    @endif
 
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Last Name *</label>
                                     <input class="form-control" placeholder="Last name" name="lname" type="text">
+                                    @if($errors->has('lname'))
+                                    <span class="error">{{ $errors->first('lname') }}</span>
+                                    @endif
 
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Phone Number *</label>
                                     <input class="form-control" placeholder="04XXXXXXX" name="contact" type="text">
+                                    @if($errors->has('contact'))
+                                    <span class="error">{{ $errors->first('contact') }}</span>
+                                    @endif
 
                                 </div>
 
@@ -344,6 +353,9 @@
                                     <label>Email Address *</label>
                                     <input class="form-control" placeholder="username@example.com" name="email"
                                         type="text">
+                                    @if($errors->has('email'))
+                                    <span class="error">{{ $errors->first('email') }}</span>
+                                    @endif
 
                                 </div>
 
@@ -357,12 +369,18 @@
                                 <div class="form-group col-md-6">
                                     <label>Suburb *</label>
                                     <input class="form-control" placeholder="Ex. Mawson" name="suburb" type="text">
+                                    @if($errors->has('suburb'))
+                                    <span class="error">{{ $errors->first('suburb') }}</span>
+                                    @endif
 
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Postcode *</label>
                                     <input class="form-control" placeholder="Ex. 2607" name="postcode" type="text">
+                                    @if($errors->has('postcode'))
+                                    <span class="error">{{ $errors->first('postcode') }}</span>
+                                    @endif
 
                                 </div>
 
@@ -412,6 +430,14 @@
                                     <label>Additional Message:</label>
                                     <textarea class="form-control" rows="10" cols="40" name="messages"></textarea>
 
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        {!! Honeypot::generate('my_name', 'my_time') !!}
+                                        @if($errors->has('my_name'))
+                                        <span class="error">{{ $errors->first('my_name') }}</span>
+                                        @endif
+                                    </div>
                                 </div>
 
                                 <div class="form-group col-md-12">
@@ -463,8 +489,8 @@
                                         class="fa fa-facebook book-apprisal"></i></a>
                                 <a href="https://www.instagram.com/multidynamic.ingleburn/"><i style="color: white;"
                                         class="fa fa-instagram book-apprisal"></i></a>
-{{--                                <a href="https://www.linkedin.com/"><i style="color: white;"--}}
-{{--                                        class="fa fa-linkedin book-apprisal"></i></a>--}}
+                                {{-- <a href="https://www.linkedin.com/"><i style="color: white;" --}} {{--
+                                        class="fa fa-linkedin book-apprisal"></i></a>--}}
                                 <a href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
                                         style="color: white;" class="fa fa-youtube book-apprisal"></i></a>
                             </div>
@@ -622,6 +648,14 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                {!! Honeypot::generate('my_name', 'my_time') !!}
+                                @if($errors->has('my_name'))
+                                <span class="error">{{ $errors->first('my_name') }}</span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group col-md-12">
                             <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                             {!! NoCaptcha::renderJs() !!}
@@ -707,6 +741,14 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                {!! Honeypot::generate('my_name', 'my_time') !!}
+                                @if($errors->has('my_name'))
+                                <span class="error">{{ $errors->first('my_name') }}</span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group col-md-12">
                             <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
                             {!! NoCaptcha::renderJs() !!}
@@ -758,8 +800,8 @@
                 <li><a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank" class="sm-icon"><i
                             class="fa fa-instagram instagram"></i></a></li>
                 <li class="linkedin-link social-link-icon"><a
-                            href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
-                                class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i class="fa fa-youtube"
+                            aria-hidden="true"></i></a></li>
             </ul>
 
         </div>

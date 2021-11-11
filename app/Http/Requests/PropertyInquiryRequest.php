@@ -28,7 +28,10 @@ class PropertyInquiryRequest extends FormRequest
             'full_name' => 'required',
             'email_address' => 'required|email',
             'message' => 'required',
-            // 'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha',
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
+
         ];
     }
 

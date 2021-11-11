@@ -28,14 +28,17 @@ class SendEnquiryRequest extends FormRequest
             'name' => 'required',
             'address' => 'required',
             'email' => 'nullable|email',
-            'contact' => 'required',
             'reference_source' => 'required',
             'location' => 'required',
             'finance_ready' => 'required',
             'budget' => 'required',
             'first_home_buyer_investor' => 'required',
             'agree_terms_conditions' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha',
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
+            'contact' => 'required|numeric',
+
         ];
     }
 
@@ -44,7 +47,7 @@ class SendEnquiryRequest extends FormRequest
         return [
             'required' => '* required',
             'email' => 'invalid email',
-            'g-recaptcha-response.required' => 'Recaptcha field is required'
+            'g-recaptcha-response.required' => 'Recaptcha field is required',
         ];
     }
 }
