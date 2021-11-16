@@ -22,7 +22,7 @@ class DownloadGuideController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => '',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
@@ -73,6 +73,7 @@ class DownloadGuideController extends Controller
 
             // saving data to google spread sheet
             $appendData = [
+                'Selling Guide Download',
                 $data['name'],
                 $data['email'],
                 $data['phone'],
@@ -153,6 +154,7 @@ class DownloadGuideController extends Controller
 
             // saving data to google spreadsheet
             $appendData = [
+                'Buying Guide Download',
                 $data['name'],
                 $data['email'],
                 $data['phone'],

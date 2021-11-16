@@ -55,6 +55,7 @@ class ContactUsController extends Controller
 
         // saving data to google sheet
         $appendData = [
+            'Send Enquiry',
             $data['name'],
             $data['email'],
             $data['contact'],
@@ -90,8 +91,8 @@ class ContactUsController extends Controller
             'postal_code' => 'required|postal_code:Au',
             'property_address' => 'required|min:5|max:255',
             'g-recaptcha-response' => 'required|captcha',
-            'my_name'   => 'honeypot',
-            'my_time'   => 'required|honeytime:10'
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
 
         ]);
 
@@ -107,6 +108,7 @@ class ContactUsController extends Controller
 
             // saving data to spreadsheet
             $appendData = [
+                'Property Evaluation',
                 $validated['name'],
                 $validated['email'],
                 $validated['phone'],
@@ -149,8 +151,8 @@ class ContactUsController extends Controller
             'property_type' => 'required',
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
-            'my_name'   => 'honeypot',
-            'my_time'   => 'required|honeytime:10',
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
         ]);
 
         $emails = explode(',', config('app.enquiry_to_mail'));
@@ -165,6 +167,7 @@ class ContactUsController extends Controller
 
             // saving data to google spread sheet
             $appendData = [
+                'Property Appraisal',
                 $validated['name'],
                 $validated['email'],
                 $validated['phone'],

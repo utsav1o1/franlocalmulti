@@ -49,11 +49,18 @@ class AppraisalController extends Controller
     public function sendEnquiry(SendAppraisalRequest $request)
     {
         $data = $request->all();
-        // dd($data);
+        
 
-        $this->sendContactUsByEmail($data);
+        try {
+            $this->sendContactUsByEmail($data);
+
+        } catch (\Exception $e) {
+            
+            return $this->serverErrorResponse();
+        }
 
         $appendData = [
+            'Book an Apprasial',
             $data['fname'] . ' ' . $data['lname'],
             $data['email'],
             $data['contact'],
