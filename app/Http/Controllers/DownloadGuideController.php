@@ -21,8 +21,8 @@ class DownloadGuideController extends Controller
             'email' => 'required|email',
             'phone' => 'required',
             'postal_code' => 'required',
-            'property_address' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            'property_address' => '',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
         unset($data['_token']);
@@ -77,7 +77,7 @@ class DownloadGuideController extends Controller
                 $data['email'],
                 $data['phone'],
                 $data['postal_code'],
-                $data['property_address'],
+                '',
                 '',
                 '',
                 Carbon::parse(Carbon::now())->format('M d, Y'),
@@ -100,7 +100,7 @@ class DownloadGuideController extends Controller
             'email' => 'required|email',
             'phone' => 'required',
             'postal_code' => 'required',
-            'property_address' => 'required',
+            'property_address' => '',
             'g-recaptcha-response' => 'required|captcha',
         ]);
         $data = $request->all();
@@ -157,7 +157,7 @@ class DownloadGuideController extends Controller
                 $data['email'],
                 $data['phone'],
                 $data['postal_code'],
-                $data['property_address'],
+                '',
                 '',
                 '',
                 Carbon::parse(Carbon::now())->format('M d, Y'),

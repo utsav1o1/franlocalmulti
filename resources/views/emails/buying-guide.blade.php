@@ -20,9 +20,6 @@ Please find the details of a new buying your home guide download below:</br />
         <td>Postal Code:</td>
         <td>{{ $data['postal_code'] }}</td>
     </tr>
-    <tr>
-        <td>Property Address:</td>
-        <td>{{ $data['property_address'] }}</td>
-    </tr>
+
 
 </table>

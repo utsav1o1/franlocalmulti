@@ -639,7 +639,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        {{-- <div class="col-lg-12">
                             <div class="form-group">
                                 <input type="text" name="property_address" id=""
                                     placeholder="Enter your property address" class="form-control">
@@ -647,7 +647,7 @@
                                 <span class="error">{{ $errors->first('property_address') }}</span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-lg-12">
                             <div class="form-group">
                                 {!! Honeypot::generate('my_name', 'my_time') !!}
@@ -732,7 +732,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        {{-- <div class="col-lg-12">
                             <div class="form-group">
                                 <input type="text" name="property_address" id=""
                                     placeholder="Enter your property address" class="form-control">
@@ -740,7 +740,7 @@
                                 <span class="error">{{ $errors->first('property_address') }}</span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-lg-12">
                             <div class="form-group">
                                 {!! Honeypot::generate('my_name', 'my_time') !!}
