@@ -195,7 +195,7 @@
                     $.ajax({
                         url: url,
                         data: result,
-                        dataType: "Json",
+                        dataType: "json",
                         contentType: false,
                         processData: false,
                         cache: false,
@@ -235,7 +235,7 @@
                     $.ajax({
                         url: url,
                         data: result,
-                        dataType: "Json",
+                        dataType: "json",
                         contentType: false,
                         processData: false,
                         cache: false,
@@ -275,7 +275,7 @@
                     $.ajax({
                         url: url,
                         data: result,
-                        dataType: "Json",
+                        dataType: "json",
                         contentType: false,
                         processData: false,
                         cache: false,
@@ -315,7 +315,7 @@
                     $.ajax({
                         url: url,
                         data: result,
-                        dataType: "Json",
+                        dataType: "json",
                         contentType: false,
                         processData: false,
                         cache: false,
@@ -355,7 +355,7 @@
                     $.ajax({
                         url: url,
                         data: result,
-                        dataType: "Json",
+                        dataType: "json",
                         contentType: false,
                         processData: false,
                         cache: false,
