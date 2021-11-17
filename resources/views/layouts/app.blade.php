@@ -215,8 +215,8 @@
                         },
                         error: function (errors) {
                             $('.sendPropertyEvaluation').prop('disabled', false);
-                            $("span.error").hide();
-                            $("span.error").text("");
+                            $("#propertyEvaluationForm span.error").hide();
+                            $("#propertyEvaluationForm span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
                                 $("#propertyEvaluationForm span" + "." + i)
@@ -255,8 +255,8 @@
                         },
                         error: function (errors) {
                             $('.sendPropertyAppraisal').prop('disabled', false);
-                            $("span.error").hide();
-                            $("span.error").text("");
+                            $("#propertyAppraisalForm span.error").hide();
+                            $("#propertyAppraisalForm span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
                                 $("#propertyAppraisalForm span" + "." + i)
@@ -295,11 +295,11 @@
                         },
                         error: function (errors) {
                             $('.sendBuyingGuide').prop('disabled', false);
-                            $("span.error").hide();
+                            $("#buyingGuideForm span.error").hide();
                             $("#buyingGuideForm span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
-                                $("span" + "." + i)
+                                $("#buyingGuideForm span" + "." + i)
                                     .text(v[0])
                                     .show();
                             });
@@ -335,8 +335,8 @@
                         },
                         error: function (errors) {
                             $('.sendSellingGuide').prop('disabled', false);
-                            $("span.error").hide();
-                            $("span.error").text("");
+                            $("#sellingGuideForm span.error").hide();
+                            $("#sellingGuideForm span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
                                 $("#sellingGuideForm span" + "." + i)
@@ -375,8 +375,8 @@
                         },
                         error: function (errors) {
                             $('.sendBookAppraisal').prop('disabled', false);
-                            $("span.error").hide();
-                            $("span.error").text("");
+                            $("#appraisalForm span.error").hide();
+                            $("#appraisalForm span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
                                 $("#appraisalForm span" + "." + i)
