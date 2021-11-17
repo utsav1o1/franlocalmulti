@@ -25,16 +25,18 @@
     <div class="container">
         <div class="prpoerty__appraisal__wrapper" id="property-appraisal">
             <h2>GET YOUR FREE PROPERTY APPRAISAL<span>Kindly enter your details below</span></h2>
-            <form action="{{route('propertyappraisal')}}" method="POST">
+            <form method="POST" id="propertyAppraisalForm">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
                             <input class="form-control" type="text" name="name" id="" placeholder="Enter your full name"
                                 value="{{old('name')}}">
-                            @if($errors->has('name'))
+                            {{-- @if($errors->has('name'))
                             <span class="error">{{ $errors->first('name') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error name'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <!-- end col  -->
@@ -42,9 +44,11 @@
                         <div class="form-group">
                             <input class="form-control" type="email" name="email" id="" placeholder="Enter your email"
                                 value="{{old('email')}}">
-                            @if($errors->has('email'))
+                            {{-- @if($errors->has('email'))
                             <span class="error">{{ $errors->first('email') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error email'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <!-- end col  -->
@@ -52,9 +56,11 @@
                         <div class="form-group">
                             <input class="form-control" type="number" name="phone" id=""
                                 placeholder="Enter your phone number" value="{{old('phone')}}">
-                            @if($errors->has('phone'))
+                            {{-- @if($errors->has('phone'))
                             <span class="error">{{ $errors->first('phone') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error phone'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <!-- end col  -->
@@ -63,9 +69,11 @@
                         <div class="form-group">
                             <input class="form-control" type="text" name="postal_code" id="" placeholder="Post code"
                                 value="{{old('postal_code')}}">
-                            @if($errors->has('postal_code'))
+                            {{-- @if($errors->has('postal_code'))
                             <span class="error">{{ $errors->first('postal_code') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error postal_code'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <!-- end col  -->
@@ -79,9 +87,11 @@
                                 <option value="{{ $property_type->name }}">{{$property_type->name}}</option>
                                 @endforeach
                             </select>
-                            @if($errors->has('property_type'))
+                            {{-- @if($errors->has('property_type'))
                             <span class="error">{{ $errors->first('property_type') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error property_type'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <!-- end col  -->
@@ -89,17 +99,21 @@
                         <div class="form-group">
                             <textarea name="message" class="form-control" placeholder="Tell us more!"
                                 value="{{old('message')}}"></textarea>
-                            @if($errors->has('message'))
+                            {{-- @if($errors->has('message'))
                             <span class="error">{{ $errors->first('message') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error message'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             {!! Honeypot::generate('my_name', 'my_time') !!}
-                            @if($errors->has('my_name'))
-                                <span class="error">{{ $errors->first('my_name') }}</span>
-                            @endif
+                            {{-- @if($errors->has('my_name'))
+                            <span class="error">{{ $errors->first('my_name') }}</span>
+                            @endif --}}
+                            <span class='text-danger error my_time'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <!-- end col  -->
@@ -108,14 +122,16 @@
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
 
-                        @if($errors->has('g-recaptcha-response'))
+                        {{-- @if($errors->has('g-recaptcha-response'))
                         <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
-                        @endif
+                        @endif --}}
+                        <span class='text-danger error g-recaptcha-response'
+                            style='display:none;font-size:11px;color:white;'></span>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <button class="btn btn--primary">submit enquiry</button>
+                            <button class="btn btn--primary sendPropertyAppraisal">submit enquiry</button>
                         </div>
                     </div>
                     <!-- end col  -->

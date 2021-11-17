@@ -84,7 +84,8 @@ class ContactUsController extends Controller
     // home page property evaluation inquery
     public function propertyEvaludation(Request $request)
     {
-        $validated = $request->validate([
+
+        $validated = validator()->make(request()->all(), [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
             'phone' => 'required|numeric',
@@ -93,9 +94,11 @@ class ContactUsController extends Controller
             'g-recaptcha-response' => 'required|captcha',
             'my_name' => 'honeypot',
             'my_time' => 'required|honeytime:10',
-
         ]);
-
+        if ($validated->fails()) {
+            return response()->json(['errors' => $validated->errors()], 422);
+        }
+        $validated = $request->all();
         $emails = explode(',', config('app.enquiry_to_mail'));
 
         try {
@@ -122,11 +125,12 @@ class ContactUsController extends Controller
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
         } catch (\Exception $e) {
-//            dd($e);
+
             return $this->serverErrorResponse();
         }
         session()->put('name', $validated['name']);
-        return redirect()->route('propertyevaluationsuccess');
+        // return redirect()->route('propertyevaluationsuccess');
+        return response()->json(['status' => 'success']);
 
     }
     public function propertyEvaludationSuccess()
@@ -142,8 +146,8 @@ class ContactUsController extends Controller
     }
     public function propertyAppraisal(Request $request)
     {
-        // dd($request->all());
-        $validated = $request->validate([
+
+        $validated = validator()->make(request()->all(), [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
             'phone' => 'required|numeric',
@@ -154,7 +158,10 @@ class ContactUsController extends Controller
             'my_name' => 'honeypot',
             'my_time' => 'required|honeytime:10',
         ]);
-
+        if ($validated->fails()) {
+            return response()->json(['errors' => $validated->errors()], 422);
+        }
+        $validated = $request->all();
         $emails = explode(',', config('app.enquiry_to_mail'));
 
         try {
@@ -186,7 +193,8 @@ class ContactUsController extends Controller
             return $this->serverErrorResponse();
         }
         session()->put('name', $validated['name']);
-        return redirect()->route('propertyappraisalsuccess');
+        // return redirect()->route('propertyappraisalsuccess');
+        return response()->json(['status' => 'success']);
 
     }
     public function propertyAppraisalSuccess()

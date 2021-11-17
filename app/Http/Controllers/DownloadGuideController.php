@@ -16,21 +16,22 @@ class DownloadGuideController extends Controller
 {
     public function sellingdownloadguide(Request $request)
     {
+
         $validator = \Validator::make($request->all(), [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
             'phone' => 'required',
             'postal_code' => 'required',
             'property_address' => '',
-            // 'g-recaptcha-response' => 'required|captcha',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
         $data = $request->all();
         unset($data['_token']);
-        // dd($data['email']);
 
-        if ($validator->fails()) {
-            return redirect()->back()->with('errors_selling', 'Please provide all info!');
-        }
         try {
             $selling = Page::where('slug', 'selling')->first();
             if (isset($selling) && $selling != null) {
@@ -91,7 +92,7 @@ class DownloadGuideController extends Controller
             $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
-        return redirect()->route('downloadguidesuccess');
+        return response()->json(['status' => 'success']);
 
     }
     public function buyingdownloadguide(Request $request)
@@ -109,7 +110,8 @@ class DownloadGuideController extends Controller
 
         // dd($validator->fails());
         if ($validator->fails()) {
-            return redirect()->back()->with('errors_buying', 'Please provide all info!');
+            return response()->json(['errors' => $validator->errors()], 422);
+
         }
         try {
             $buying = Page::where('slug', 'selling')->first();
@@ -173,7 +175,8 @@ class DownloadGuideController extends Controller
             $this->serverErrorResponse();
         }
         session()->put('name', $data['name']);
-        return redirect()->route('downloadguidesuccess');
+        // return redirect()->route('downloadguidesuccess');
+        return response()->json(['status' => 'success']);
 
     }
     public function downloadguidesuccess()

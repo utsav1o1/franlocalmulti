@@ -150,33 +150,39 @@
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
                 Multi Dynamic</p>
-            <form action="{{route('propertyevaluation')}}" method="POST">
+            <form method="POST" id="propertyEvaluationForm">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="form-group">
                             <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
-                            @if($errors->has('name'))
+                            {{-- @if($errors->has('name'))
                             <span class="error">{{ $errors->first('name') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error name'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
-                            @if($errors->has('email'))
+                            {{-- @if($errors->has('email'))
                             <span class="error">{{ $errors->first('email') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error email'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <input type="number" name="phone" id="" placeholder="Enter your phone" class="form-control">
-                            @if($errors->has('phone'))
+                            {{-- @if($errors->has('phone'))
                             <span class="error">{{ $errors->first('phone') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error phone'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
@@ -184,9 +190,11 @@
                         <div class="form-group">
                             <input type="number" name="postal_code" id="" placeholder="Enter your postal code"
                                 class="form-control">
-                            @if($errors->has('postal_code'))
+                            {{-- @if($errors->has('postal_code'))
                             <span class="error">{{ $errors->first('postal_code') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error postal_code'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
@@ -194,17 +202,21 @@
                         <div class="form-group">
                             <input type="text" name="property_address" id="" placeholder="Enter your property address"
                                 class="form-control">
-                            @if($errors->has('property_address'))
+                            {{-- @if($errors->has('property_address'))
                             <span class="error">{{ $errors->first('property_address') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error property_address'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             {!! Honeypot::generate('my_name', 'my_time') !!}
-                            @if($errors->has('my_name'))
-                                <span class="error">{{ $errors->first('my_name') }}</span>
-                            @endif
+                            {{-- @if($errors->has('my_name'))
+                            <span class="error">{{ $errors->first('my_name') }}</span>
+                            @endif --}}
+                            <span class='text-danger error my_time'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
@@ -212,13 +224,27 @@
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
 
-                        @if($errors->has('g-recaptcha-response'))
+                        {{-- @if($errors->has('g-recaptcha-response'))
                         <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
-                        @endif
+                        @endif --}}
+                        <span class='text-danger error g-recaptcha-response'
+                            style='display:none;font-size:11px;color:white;'></span>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="mesage-content">
+                            Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate
+                            franchises in
+                            Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record
+                            of
+                            results in serving our customers to buy, sell, rent and build their properties. You can be
+                            assured
+                            when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate
+                            requirements, because it’s our client's satisfaction which is the key to our success.
+                        </div>
                     </div>
 
                     <div class="col-lg-12">
-                        <button class="btn btn-warning" type="submit">submit</button>
+                        <button class="btn btn-warning sendPropertyEvaluation" type="button">submit</button>
                     </div>
 
                 </div>

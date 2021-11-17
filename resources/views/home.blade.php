@@ -183,10 +183,10 @@
                                     <div class="price">
                                         <?php if(is_null($property->price_view)) {?>
                                         {{ $property->getFormattedPrice() }}
-                                            <?php }
+                                        <?php }
                                             else { ?>
-                                            <span style="font-size: 12px">{{ str_limit( $property->price_view,22)}}</span>
-                                            <?php }?>
+                                        <span style="font-size: 12px">{{ str_limit( $property->price_view,22)}}</span>
+                                        <?php }?>
                                     </div>
                                 </div>
                                 <!--Area Block-->
@@ -308,33 +308,39 @@
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
                 Multi Dynamic</p>
-            <form action="{{route('propertyevaluation')}}" method="POST">
+            <form method="POST" id="propertyEvaluationForm">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="form-group">
                             <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
-                            @if($errors->has('name'))
+                            {{-- @if($errors->has('name'))
                             <span class="error">{{ $errors->first('name') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error name'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
-                            @if($errors->has('email'))
+                            {{-- @if($errors->has('email'))
                             <span class="error">{{ $errors->first('email') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error email'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="form-group">
                             <input type="number" name="phone" id="" placeholder="Enter your phone" class="form-control">
-                            @if($errors->has('phone'))
+                            {{-- @if($errors->has('phone'))
                             <span class="error">{{ $errors->first('phone') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error phone'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
@@ -342,9 +348,11 @@
                         <div class="form-group">
                             <input type="number" name="postal_code" id="" placeholder="Enter your postal code"
                                 class="form-control">
-                            @if($errors->has('postal_code'))
+                            {{-- @if($errors->has('postal_code'))
                             <span class="error">{{ $errors->first('postal_code') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error postal_code'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
 
@@ -352,17 +360,21 @@
                         <div class="form-group">
                             <input type="text" name="property_address" id="" placeholder="Enter your property address"
                                 class="form-control">
-                            @if($errors->has('property_address'))
+                            {{-- @if($errors->has('property_address'))
                             <span class="error">{{ $errors->first('property_address') }}</span>
-                            @endif
+                            @endif --}}
+                            <span class='text-danger error property_address'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             {!! Honeypot::generate('my_name', 'my_time') !!}
-                            @if($errors->has('my_name'))
-                                <span class="error">{{ $errors->first('my_name') }}</span>
-                            @endif
+                            {{-- @if($errors->has('my_name'))
+                            <span class="error">{{ $errors->first('my_name') }}</span>
+                            @endif --}}
+                            <span class='text-danger error my_name'
+                                style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
@@ -370,9 +382,11 @@
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
 
-                        @if($errors->has('g-recaptcha-response'))
+                        {{-- @if($errors->has('g-recaptcha-response'))
                         <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
-                        @endif
+                        @endif --}}
+                        <span class='text-danger error g-recaptcha-response'
+                            style='display:none;font-size:11px;color:white;'></span>
                     </div>
                     <div class="col-lg-12">
                         <div class="mesage-content">
@@ -388,7 +402,7 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <button class="btn btn-warning" type="submit">submit</button>
+                        <button class="btn btn-warning sendPropertyEvaluation" type="button">submit</button>
                     </div>
 
                 </div>
@@ -629,7 +643,8 @@
 @endisset
 <div class="instagram">
     <div class="container">
-        <h2>Follow our instagram <a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank">@multidynamic.ingleburn</a></h2>
+        <h2>Follow our instagram <a href="https://www.instagram.com/multidynamic.ingleburn/"
+                target="_blank">@multidynamic.ingleburn</a></h2>
         @if(!empty($posts))
         <div class="insta-gallery">
             <ul>
@@ -639,29 +654,30 @@
                         <a href="{{$insta_post['permalink']}}" target="_blank"><img src="{{$insta_post['url']}}" alt=""
                                 target="_blank"></a>
                     </div>
-{{--                    <div class="insta-share">--}}
-{{--                        <ul>--}}
-{{--                            <li>--}}
-{{--                                <a href="#">--}}
-{{--                                    <i class="fa fa-heart" aria-hidden="true"></i>--}}
-{{--                                    <span class="count">20</span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li>--}}
-{{--                                <a href="#">--}}
-{{--                                    <i class="fa fa-comment" aria-hidden="true"></i>--}}
-{{--                                    <span class="count">0</span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
+                    {{-- <div class="insta-share">--}}
+                        {{-- <ul>--}}
+                            {{-- <li>--}}
+                                {{-- <a href="#">--}}
+                                    {{-- <i class="fa fa-heart" aria-hidden="true"></i>--}}
+                                    {{-- <span class="count">20</span>--}}
+                                    {{-- </a>--}}
+                                {{-- </li>--}}
+                            {{-- <li>--}}
+                                {{-- <a href="#">--}}
+                                    {{-- <i class="fa fa-comment" aria-hidden="true"></i>--}}
+                                    {{-- <span class="count">0</span>--}}
+                                    {{-- </a>--}}
+                                {{-- </li>--}}
+                            {{-- </ul>--}}
+                        {{-- </div>--}}
                 </li>
                 @endforeach
                 <!-- end block  -->
 
             </ul>
             <div class="text-center follow-us-btn">
-                <a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank" class="btn btn-primary">Follow Us</a>
+                <a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank"
+                    class="btn btn-primary">Follow Us</a>
             </div>
         </div>
         @endif

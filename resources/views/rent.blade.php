@@ -12,8 +12,10 @@
         <div class="row">
             <div class="inner-menu-bg col-md-12">
                 <ul class="nav nav-tabs">
-                    <li @if($slug=='residential' ) class="active" @endif><a data-toggle="tab"
+                    {{-- <li @if($slug=='residential' ) class="active" @endif><a data-toggle="tab"
                             href="#residential">Residential</a>
+                    </li> --}}
+                    <li class="active"><a data-toggle="tab" href="#residential">Residential</a>
                     </li>
                     <li><a href="{!! route('agents.index') !!}">Commercial</a></li>
                     </li>
@@ -36,9 +38,15 @@
             </div>
 
             <div class="clearfix tab-content">
-                <div id="residential"
+                {{-- <div id="residential"
                     class="tab-pane fade in @if($slug == DataHelper::getRentResidentialSlug()) {{ 'active' }} @endif">
                     <form method="get" action="{!! route('properties.rent', DataHelper::getRentResidentialSlug()) !!}"
+                        class="clearfix form-group-lg">
+                        @include('layouts.rent-search')
+                    </form>
+                </div> --}}
+                <div id="residential" class="tab-pane fade in active">
+                    <form method="get" action="{!! route('properties.rent', 'residential') !!}"
                         class="clearfix form-group-lg">
                         @include('layouts.rent-search')
                     </form>

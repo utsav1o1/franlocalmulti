@@ -38,23 +38,34 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcut icon" type="image/ico" href="https://multidynamic.com.au/assets/images/logo/favicon.png" />
 
+
         @yield('header_css')
         <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
+            ! function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
                 'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '945761719624928');
             fbq('track', 'PageView');
+
         </script>
 
         <noscript><img height="1" width="1" style="display:none"
-                       src="https://www.facebook.com/tr?id=945761719624928&ev=PageView&noscript=1"
-            /></noscript>
+                src="https://www.facebook.com/tr?id=945761719624928&ev=PageView&noscript=1" /></noscript>
         <script>
             var rootUrl = "{!! url('') !!}";
 
@@ -175,29 +186,224 @@
                         return false;
                     }
                 });
+
+                // property evaluation form submit
+                $('.sendPropertyEvaluation').on('click', function (e) {
+                    e.preventDefault();
+                    var url = "{{route('propertyevaluation')}}";
+                    var result = new FormData($("#propertyEvaluationForm")[0]);
+                    $.ajax({
+                        url: url,
+                        data: result,
+                        dataType: "Json",
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        type: 'POST',
+                        beforeSend: function () {
+                            $('.sendPropertyEvaluation').prop('disabled', true);
+                        },
+                        success: function (data) {
+                            $('.sendPropertyEvaluation').prop('disabled', false);
+                            if (data.status == "success") {
+                                window.location.href =
+                                    "{{ route('propertyevaluationsuccess') }}"
+                            } else {
+                                alert('Something went wrong. please try later!')
+                            }
+
+                        },
+                        error: function (errors) {
+                            $('.sendPropertyEvaluation').prop('disabled', false);
+                            $("span.error").hide();
+                            $("span.error").text("");
+                            $.each(errors.responseJSON.errors, function (i, v) {
+                                // console.log('input field '+i+' error '+v[0])
+                                $("span" + "." + i)
+                                    .text(v[0])
+                                    .show();
+                            });
+                        }
+
+                    });
+                })
+                // property appraisal form submit
+                $('.sendPropertyAppraisal').on('click', function (e) {
+                    e.preventDefault();
+                    var url = "{{route('propertyappraisal')}}";
+                    var result = new FormData($("#propertyAppraisalForm")[0]);
+                    $.ajax({
+                        url: url,
+                        data: result,
+                        dataType: "Json",
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        type: 'POST',
+                        beforeSend: function () {
+                            $('.sendPropertyAppraisal').prop('disabled', true);
+                        },
+                        success: function (data) {
+                            $('.sendPropertyAppraisal').prop('disabled', false);
+                            if (data.status == "success") {
+                                window.location.href =
+                                    "{{ route('propertyappraisalsuccess') }}"
+                            } else {
+                                alert('Something went wrong. please try later!')
+                            }
+
+                        },
+                        error: function (errors) {
+                            $('.sendPropertyAppraisal').prop('disabled', false);
+                            $("span.error").hide();
+                            $("span.error").text("");
+                            $.each(errors.responseJSON.errors, function (i, v) {
+                                // console.log('input field '+i+' error '+v[0])
+                                $("span" + "." + i)
+                                    .text(v[0])
+                                    .show();
+                            });
+                        }
+
+                    });
+                })
+                // buying guide form submit
+                $('.sendBuyingGuide').on('click', function (e) {
+                    e.preventDefault();
+                    var url = "{{route('buyingdownloadguide')}}";
+                    var result = new FormData($("#buyingGuideForm")[0]);
+                    $.ajax({
+                        url: url,
+                        data: result,
+                        dataType: "Json",
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        type: 'POST',
+                        beforeSend: function () {
+                            $('.sendBuyingGuide').prop('disabled', true);
+                        },
+                        success: function (data) {
+                            $('.sendBuyingGuide').prop('disabled', false);
+                            if (data.status == "success") {
+                                window.location.href =
+                                    "{{ route('downloadguidesuccess') }}"
+                            } else {
+                                alert('Something went wrong. please try later!')
+                            }
+
+                        },
+                        error: function (errors) {
+                            $('.sendBuyingGuide').prop('disabled', false);
+                            $("span.error").hide();
+                            $("span.error").text("");
+                            $.each(errors.responseJSON.errors, function (i, v) {
+                                // console.log('input field '+i+' error '+v[0])
+                                $("span" + "." + i)
+                                    .text(v[0])
+                                    .show();
+                            });
+                        }
+
+                    });
+                })
+                // selling fudie form submit
+                $('.sendSellingGuide').on('click', function (e) {
+                    e.preventDefault();
+                    var url = "{{route('sellingdownloadguide')}}";
+                    var result = new FormData($("#sellingGuideForm")[0]);
+                    $.ajax({
+                        url: url,
+                        data: result,
+                        dataType: "Json",
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        type: 'POST',
+                        beforeSend: function () {
+                            $('.sendSellingGuide').prop('disabled', true);
+                        },
+                        success: function (data) {
+                            $('.sendSellingGuide').prop('disabled', false);
+                            if (data.status == "success") {
+                                window.location.href =
+                                    "{{ route('downloadguidesuccess') }}"
+                            } else {
+                                alert('Something went wrong. please try later!')
+                            }
+
+                        },
+                        error: function (errors) {
+                            $('.sendSellingGuide').prop('disabled', false);
+                            $("span.error").hide();
+                            $("span.error").text("");
+                            $.each(errors.responseJSON.errors, function (i, v) {
+                                // console.log('input field '+i+' error '+v[0])
+                                $("span" + "." + i)
+                                    .text(v[0])
+                                    .show();
+                            });
+                        }
+
+                    });
+                })
+                // book an apprasial form submit
+                $('.sendBookAppraisal').on('click', function (e) {
+                    e.preventDefault();
+                    var url = "{{route('appraisal.send')}}";
+                    var result = new FormData($("#appraisalForm")[0]);
+                    $.ajax({
+                        url: url,
+                        data: result,
+                        dataType: "Json",
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        type: 'POST',
+                        beforeSend: function () {
+                            $('.sendBookAppraisal').prop('disabled', true);
+                        },
+                        success: function (data) {
+                           
+                            $('.sendBookAppraisal').prop('disabled', false);
+                            if (data.status == "success") {
+                                window.location.href ="{{ route('home') }}"
+                            } else {
+                                alert('Something went wrong. please try later!')
+                            }
+
+                        },
+                        error: function (errors) {
+                            $('.sendBookAppraisal').prop('disabled', false);
+                            $("span.error").hide();
+                            $("span.error").text("");
+                            $.each(errors.responseJSON.errors, function (i, v) {
+                                // console.log('input field '+i+' error '+v[0])
+                                $("span" + "." + i)
+                                    .text(v[0])
+                                    .show();
+                            });
+                        }
+
+                    });
+                })
+
+                // on modal close reset validation form
+                $('.modal').on('hidden.bs.modal', function () {
+                    //reset the form, form validation and the editor
+                    $('#sellingGuideForm')[0].reset();
+                    $('#buyingGuideForm')[0].reset();
+                    $('#appraisalForm')[0].reset();
+
+                    $("span.error").hide();
+                    $("span.error").text('');
+
+                });
+
             });
 
         </script>
-        @if(session('errors_selling'))
-        <script>
-            $(document).ready(function () {
-                alert("There was an error in your details. Please fill all field and re-submit your form.");
-                $('#sellingModal').modal('show');
-            })
 
-        </script>
-        @endif
-        @if(session('errors_buying'))
-        <script>
-            $(document).ready(function () {
-                alert("There was an error in your details. Please fill all field and re-submit your form.");
-                $('#buyingModal').modal('show');
-            })
-
-        </script>
-        @endif
-
-        {{-- download guide --}}
 
 
     </body>

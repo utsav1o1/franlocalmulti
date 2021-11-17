@@ -49,13 +49,12 @@ class AppraisalController extends Controller
     public function sendEnquiry(SendAppraisalRequest $request)
     {
         $data = $request->all();
-        
 
         try {
             $this->sendContactUsByEmail($data);
 
         } catch (\Exception $e) {
-            
+
             return $this->serverErrorResponse();
         }
 
@@ -67,15 +66,17 @@ class AppraisalController extends Controller
             $data['postcode'],
             $data['address'],
             '',
-            $data['messages'],
+            $data['messages'] != null ? $data['messages'] : '',
             Carbon::parse(Carbon::now())->format('M d, Y'),
         ];
+        // dd($appendData);
 
         $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
         $request->session()->flash('success', 'Successfully Sent!!');
 
-        return redirect(route('home'));
+        return response()->json(['status' => 'success']);
+
     }
 
     private function sendContactUsByEmail($data)
