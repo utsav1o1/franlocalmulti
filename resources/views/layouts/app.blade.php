@@ -219,7 +219,7 @@
                             $("span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
-                                $("span" + "." + i)
+                                $("#propertyEvaluationForm span" + "." + i)
                                     .text(v[0])
                                     .show();
                             });
@@ -259,7 +259,7 @@
                             $("span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
-                                $("span" + "." + i)
+                                $("#propertyAppraisalForm span" + "." + i)
                                     .text(v[0])
                                     .show();
                             });
@@ -296,7 +296,7 @@
                         error: function (errors) {
                             $('.sendBuyingGuide').prop('disabled', false);
                             $("span.error").hide();
-                            $("span.error").text("");
+                            $("#buyingGuideForm span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
                                 $("span" + "." + i)
@@ -339,7 +339,7 @@
                             $("span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
-                                $("span" + "." + i)
+                                $("#sellingGuideForm span" + "." + i)
                                     .text(v[0])
                                     .show();
                             });
@@ -379,7 +379,7 @@
                             $("span.error").text("");
                             $.each(errors.responseJSON.errors, function (i, v) {
                                 // console.log('input field '+i+' error '+v[0])
-                                $("span" + "." + i)
+                                $("#appraisalForm span" + "." + i)
                                     .text(v[0])
                                     .show();
                             });
@@ -395,8 +395,12 @@
                     $('#buyingGuideForm')[0].reset();
                     $('#appraisalForm')[0].reset();
 
-                    $("span.error").hide();
-                    $("span.error").text('');
+                    $("#sellingGuideForm span.error").hide();
+                    $("#sellingGuideForm span.error").text('');
+                    $("#buyingGuideForm span.error").hide();
+                    $("#buyingGuideForm span.error").text('');
+                    $("#appraisalForm span.error").hide();
+                    $("#appraisalForm span.error").text('');
 
                 });
 
