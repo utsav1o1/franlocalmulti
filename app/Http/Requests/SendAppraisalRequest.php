@@ -34,7 +34,7 @@ class SendAppraisalRequest extends FormRequest
             'my_name' => 'honeypot',
             'my_time' => 'required|honeytime:10',
             'contact' => 'required|numeric',
-            'postcode' => 'required',
+            'postcode' => 'required|numeric',
         ];
     }
 

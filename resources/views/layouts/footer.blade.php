@@ -840,7 +840,7 @@
         <div class="col-lg-4 col-md-4 col-sm-6">
             <ul class="btm-sm-icon">
                 <li><a href="https://www.facebook.com/multidynamicingleburn" target="_blank" class="sm-icon"><i
-                            class="fa fa-facebook facebook"></i></a></li>
+                            class="fa fa-facebook "></i></a></li>
                 <li><a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank" class="sm-icon"><i
                             class="fa fa-instagram instagram"></i></a></li>
                 <li class="linkedin-link social-link-icon"><a
