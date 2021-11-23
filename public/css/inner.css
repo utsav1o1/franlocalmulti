@@ -2318,3 +2318,15 @@ footer .footer-item .newsletter input {
     background-color: white;
     text-decoration: none;
 }
+.preformater pre
+{
+    width: 90%;
+    white-space: pre-line;
+    background: none;
+    border:none;
+    padding:0px;
+    font-family: Montserrat;
+    /*height: 200px;*/
+    overflow: hidden;
+;
+}

@@ -174,7 +174,8 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a href="{!! route('properties.show', $property->slug) !!}">{!!
-                                            str_limit($property->name, 30) !!}</a>
+                                            str_limit($property->street_number.' '.$property->street
+                                   ) !!}</a>
                                     </h1>
                                 </div>
 

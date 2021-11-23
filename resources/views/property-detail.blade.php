@@ -51,7 +51,7 @@
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
-      
+
         var longitude = '{!! $property->longitude !!}';
         var zoomValue = parseInt('{!! 11 !!}');
         var name = '{!! $property->name !!}';
@@ -145,6 +145,11 @@
             });
         });
 </script>
+    <script>
+        $( "span" ).on( "click", function() {
+            $("pre").css("height", "auto");
+        });
+    </script>
 @endsection
 
 @section('dynamicdata')
@@ -157,7 +162,7 @@
                 <div class="row">
 
                     <?php
-                        
+
                         $propertyImages = $property->getImages();
 
                     ?>
@@ -403,7 +408,12 @@
                                 <h3>{!! $property->name !!}</h3>
                                 <h4>{{ $property->street_number }} {{' '.$property->street.' ' }}{!!
                                     $property->location_name !!}</h4>
-                                <div>{!! $property->description !!}</div>
+                                <div class="preformater">
+                                    <pre>{!! $property->description !!}</pre>
+                                    <div class="readmore">
+{{--                                        <span onclick="preReadmore()">read more</span>--}}
+                                    </div>
+                                </div>
                                 <div class="row map-container">
                                     <div class="col-sm-12 col-md-12">
                                         <h4>{!! $property->location_name !!}</h4>
