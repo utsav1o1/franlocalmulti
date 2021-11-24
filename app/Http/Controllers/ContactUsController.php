@@ -71,7 +71,9 @@ class ContactUsController extends Controller
         $request->session()->flash('success', 'Successfully Sent!!');
 
 //        return redirect(route('contact-us.form'));
-        return redirect()->route('propertyevaluationsuccess');
+        session()->put('name', $data['name']);
+        // return redirect()->route('propertyappraisalsuccess');
+        return response()->json(['status' => 'success']);
 
     }
 
