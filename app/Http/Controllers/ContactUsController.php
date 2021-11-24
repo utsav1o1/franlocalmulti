@@ -70,7 +70,9 @@ class ContactUsController extends Controller
 
         $request->session()->flash('success', 'Successfully Sent!!');
 
-        return redirect(route('contact-us.form'));
+//        return redirect(route('contact-us.form'));
+        return response()->json(['status' => 'success']);
+
     }
 
     private function sendContactUsByEmail($data)
