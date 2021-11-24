@@ -172,11 +172,11 @@
                         <div class="caption detail">
                             <header>
                                 <div class="pull-left">
-                                    <h1 class="title">
+                                    <h2 class="title">
                                         <a href="{!! route('properties.show', $property->slug) !!}">{!!
                                             str_limit($property->street_number.' '.$property->street.' '.$property->location_short_name
                                    ) !!}</a>
-                                    </h1>
+                                    </h2>
                                 </div>
 
                                 <div class="price-block">
