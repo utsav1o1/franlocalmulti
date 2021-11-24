@@ -76,7 +76,7 @@
 			{!! Form::open(['url' => route('enquiry.send'), 'id' => 'enquiry-form']) !!}
 
 			<div class="form-group col-md-12">
-				<label>Name</label>
+				<label>Name *</label>
 				{!! Form::text('name', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('name'))
@@ -85,7 +85,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>Address</label>
+				<label>Address *</label>
 				{!! Form::text('address', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('address'))
@@ -94,7 +94,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>Email</label>
+				<label>Email *</label>
 				{!! Form::text('email', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('email'))
@@ -103,7 +103,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>Contact</label>
+				<label>Contact *</label>
 				{!! Form::text('contact', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('contact'))
@@ -112,7 +112,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>1. How did you hear about Multi Dynamic?</label>
+				<label>1. How did you hear about Multi Dynamic? *</label>
 				<div class="checkbox">
 					<label>
 						{!! Form::checkbox('reference_source[]', 'facebook') !!} Facebook
@@ -160,7 +160,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>2. Where would you prefer to buy?</label>
+				<label>2. Where would you prefer to buy? *</label>
 				{!! Form::select('location', [], null, ['class' => 'form-control', 'select2-link' =>
 				route('enquiry.location-list'), 'placeholder' => 'Choose Location']) !!}
 
@@ -170,7 +170,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>3. Do you have your finance ready?</label>
+				<label>3. Do you have your finance ready? *</label>
 				{!! Form::text('finance_ready', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('finance_ready'))
@@ -179,7 +179,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>4. What is your budget?</label>
+				<label>4. What is your budget? *</label>
 				{!! Form::text('budget', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('budget'))
@@ -206,7 +206,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<label>7. Are you first home buyer or investor?</label>
+				<label>7. Are you first home buyer or investor? *</label>
 				<div class="radio">
 					<label>
 						{!! Form::radio('first_home_buyer_investor', 'home-buyer', null) !!} Home Buyer
