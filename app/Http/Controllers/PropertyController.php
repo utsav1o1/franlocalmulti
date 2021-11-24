@@ -525,7 +525,7 @@ class PropertyController extends Controller
      */
     public function show($slug)
     {
-
+        $existFlag = false;
         $user = [];
         $userProperties = [];
         $property = \App\Models\Corporate\Property::leftJoin('property_images', 'property_images.id', '=', 'properties.main_image')
