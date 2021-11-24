@@ -409,9 +409,12 @@
                                 <h4>{{ $property->street_number }} {{' '.$property->street.' ' }}{!!
                                     $property->location_name !!}</h4>
                                 <div class="preformater">
-                                    <pre>{!! $property->description !!}</pre>
-                                    <div class="readmore">
-{{--                                        <span onclick="preReadmore()">read more</span>--}}
+                                    <div class="inner-wrap">
+                                        <pre>{!! $property->description !!}</pre>
+                                        <div class="shadow"></div>
+                                    </div>
+                                    <div class="read-more">
+                                       <span>Read more</span>
                                     </div>
                                 </div>
                                 <div class="row map-container">

@@ -1,0 +1,144 @@
+.property_sidebar {
+    .property-search-sidebar-container {
+        padding-left: 0;
+    }
+}
+
+.single-property {
+    padding-bottom: 20px;
+
+    .content-box {
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding: 0;
+                list-style: none;
+                margin-bottom: 5px;
+            }
+        }
+
+        h2 {
+            font-size: 20px;
+            text-transform: capitalize;
+            color: $blue;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .video__block {
+        position: relative;
+        overflow: hidden;
+
+        .link {
+            position: absolute;
+            background: $orange;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            line-height: 40px;
+            display: flex;
+            color: $white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                color: $white;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.plan-image {
+    margin-bottom: 20px;
+}
+
+.floorplan {
+    .panel-default {
+        border: none;
+
+        >.panel-heading {
+            background: none;
+            border: none;
+            padding: 0;
+
+            button {
+                padding: 12px 15px;
+                border: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+                color: $white;
+                background: $blue;
+                position: relative;
+
+                &:after {
+                    content: "\f107";
+                    position: absolute;
+                    top: 1px;
+                    display: inline-block;
+                    font-family: 'FontAwesome';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    transition: transform .25s linear;
+                    -webkit-transition: -webkit-transform .25s linear;
+                    right: 20px;
+                    top: 11px;
+                }
+
+                &[aria-expanded="true"] {
+                    background: $orange;
+
+                    &:after {
+                        content: "\f106";
+                    }
+                }
+
+            }
+
+        }
+
+        .panel-body {
+            border: 1px solid #eee;
+        }
+    }
+}
+
+.single-property {
+    .features-details {
+        ul {
+            li {
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 10px;
+
+                &:before {
+                    content: '\f00c';
+                    font-family: 'FontAwesome';
+                    position: absolute;
+                    left: 0;
+                    height: 20px;
+                    width: 20px;
+                    background: rgba($color: $blue, $alpha: 1);
+                    color: white;
+                    text-align: center;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

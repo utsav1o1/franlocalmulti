@@ -763,8 +763,8 @@ header+div {
 
 .item-details li:nth-child(2) p,
 .item-details li:last-child p {
-    float: right;
-    width: 110px;
+    /* float: right;
+    width: 110px; */
 }
 
 .item-area {
@@ -2318,15 +2318,42 @@ footer .footer-item .newsletter input {
     background-color: white;
     text-decoration: none;
 }
-.preformater pre
-{
+
+.preformater pre {
     width: 90%;
     white-space: pre-line;
     background: none;
-    border:none;
-    padding:0px;
+    border: none;
+    padding: 0px;
     font-family: Montserrat;
-    /*height: 200px;*/
+    height: 200px;
     overflow: hidden;
-;
+    position: relative;
+
+}
+
+.preformater .shadow {
+    background: linear-gradient(rgba(0, 0, 0, 0), #fff);
+    height: 30px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.preformater .read-more span {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.preformater .read-more {
+    margin-top: 20px;
+}
+
+.preformater.visible pre {
+    height: auto;
+}
+
+.preformater.visible .read-more {
+    margin-top: 0;
 }
