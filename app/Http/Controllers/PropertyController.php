@@ -525,7 +525,7 @@ class PropertyController extends Controller
      */
     public function show($slug)
     {
-        $existFlag = false;
+
         $user = [];
         $userProperties = [];
         $property = \App\Models\Corporate\Property::leftJoin('property_images', 'property_images.id', '=', 'properties.main_image')
@@ -541,6 +541,7 @@ class PropertyController extends Controller
                 'property_images.property_image',
                 'price_types.name AS price_type_name',
                 'property_types.name AS property_type_name',
+                DB::raw("CONCAT(locations.suburb) AS location_short_name"),
                 DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBY('properties.id')
             ->first();
@@ -552,7 +553,6 @@ class PropertyController extends Controller
                 $existFlag = in_array($property->id, $userProperties);
             }
             $property->incrementViewCount();
-
             return view('property-detail')
                 ->withProperty($property)
                 ->withUser($user)
