@@ -63,17 +63,17 @@
                                                                 !!}</a>
                                                             </h1>
                                                         </div>
-                                                        <div class="price">
-                                                            <?php if(is_null($property->price_view)) {?>
-                                                            {{ $property->getFormattedPrice() }}
-                                                            <?php }
-                                                            else { ?>
-                                                            <span style="font-size: 12px">{{ str_limit( $property->price_view,22)}}</span>
-                                                            <?php }?>
-                                                        </div>
+
                                                         <div class="price-block">
                                                             <div class="starting-price">{!! $property->price_type_name !!}</div>
-                                                            <div class="price">{{ $property->getFormattedPrice() }}</div>
+                                                            <div class="price">
+                                                                <?php if(is_null($property->price_view)) {?>
+                                                                {{ $property->getFormattedPrice() }}
+                                                                <?php }
+                                                                else { ?>
+                                                                <span style="font-size: 12px">{{ str_limit( $property->price_view,22)}}</span>
+                                                                <?php }?>
+                                                            </div>
                                                         </div>
                                                         <div class="area-block">
                                                             <div class="property-type">Property Type</div>
