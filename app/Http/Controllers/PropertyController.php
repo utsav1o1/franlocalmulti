@@ -598,6 +598,7 @@ class PropertyController extends Controller
                     ->send(new PropertyInquirySent($inquiry));
 
                 $appendData = [
+                    'Property Enquiry',
                     $data['full_name'],
                     $data['email_address'],
                     $data['phone_number'],
