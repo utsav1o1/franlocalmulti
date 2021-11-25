@@ -43,13 +43,22 @@
                                 <header>
                                     <div class="pull-left">
                                         <h1 class="title">
-                                            <a href="{!! route('properties.show', $property->slug) !!}">{!! str_limit($property->name, 30) !!}</a>
+                                            <a href="{!! route('properties.show', $property->slug) !!}">{!!
+                                                                        str_limit($property->street_number.' '.$property->street.' '.$property->location_short_name,30)
+                                                                !!}</a>
                                         </h1>
                                     </div>
                                     {{--<div class="price">${!! $property->price !!}</div>--}}
                                     <div class="price-block">
                                         <div class="starting-price">{!! $property->price_type_name !!}</div>
-                                        <div class="price">{{ $property->getFormattedPrice() }}</div>
+                                        <div class="price">
+                                            <?php if(is_null($property->price_view)) {?>
+                                            {{ $property->getFormattedPrice() }}
+                                            <?php }
+                                            else { ?>
+                                            <span style="font-size: 12px">{{ str_limit( $property->price_view,22)}}</span>
+                                            <?php }?>
+                                        </div>
                                     </div>
                                     <!--Area Block-->
                                     <div class="area-block">

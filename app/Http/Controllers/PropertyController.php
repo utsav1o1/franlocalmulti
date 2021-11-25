@@ -120,6 +120,7 @@ class PropertyController extends Controller
             'property_images.property_image',
             'price_types.name AS price_type_name',
             'property_types.name AS property_type_name',
+            DB::raw("CONCAT(locations.suburb) AS location_short_name"),
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
@@ -449,6 +450,7 @@ class PropertyController extends Controller
             'property_images.property_image',
             'price_types.name AS price_type_name',
             'property_types.name AS property_type_name',
+            DB::raw("CONCAT(locations.suburb) AS location_short_name"),
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
