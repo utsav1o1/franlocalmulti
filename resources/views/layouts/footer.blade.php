@@ -306,7 +306,7 @@
                 <div class="modal-body">
                     @if(Session::has('success'))
                     <script>
-                        alert("Your form has been successfully submitted!");
+                        // alert("Your form has been successfully submitted!");
                     </script>
                     @elseif (count($errors) > 0)
                     <script>
