@@ -99,6 +99,7 @@ class AgentController extends Controller
     }
     public function submitContact(Request $request)
     {
+        $data = $request->all();
         $validated = $request->validate([
             'full_name' => 'required|min:3|max:255',
             'email_address' => 'required|email',
