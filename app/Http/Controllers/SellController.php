@@ -21,9 +21,9 @@ class SellController extends Controller
 
         $this->sendPropertyEstimationByEmail($data);
 
-        $request->session()->flash('success', 'Form Successfully Submitted!!');
-
-        return redirect(route('sell-form'));
+//        $request->session()->flash('success', 'Form Successfully Submitted!!');
+        return redirect(route('thank-you'));
+//        return redirect(route('sell-form'));
     }
 
     public function showRecentlyLeasedProperties()

@@ -608,8 +608,9 @@ class PropertyController extends Controller
                 $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
             }
-            return redirect()->back()
-                ->withSuccessMessage('Your inquiry is submitted successfully.');
+//            return redirect()->back()
+//                ->withSuccessMessage('Your inquiry is submitted successfully.');
+            return redirect(route('thank-you'));
         }
 
         return redirect()->back()

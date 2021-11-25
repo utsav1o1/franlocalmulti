@@ -68,10 +68,8 @@ class ContactUsController extends Controller
 
         $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
-//        $request->session()->flash('success', 'Successfully Sent!!');
 
-//        return redirect(route('contact-us.form'));
-        return view('frontend.enquiry-success.property-evaluation-success');
+        return redirect(route('thank-you'));
 
     }
 

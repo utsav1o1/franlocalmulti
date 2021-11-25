@@ -110,8 +110,9 @@ class AgentController extends Controller
                 Mail::to($message->agent->email_address)
                     ->send(new AgentInquirySent($message));
             }
-            return redirect()->back()
-                ->withSuccessMessage('Your message is submitted.');
+            return redirect(route('thank-you'));
+//            return redirect()->back()
+//                ->withSuccessMessage('Your message is submitted.');
         }
 
         return redirect()->back()
