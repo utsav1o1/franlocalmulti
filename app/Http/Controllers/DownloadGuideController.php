@@ -181,10 +181,37 @@ class DownloadGuideController extends Controller
     }
     public function downloadguidesuccess()
     {
-        // dd(session()->get('name'));
+        $buying = Page::where('slug', 'selling')->first();
+        if (isset($buying) && $buying != null) {
+            $data['buying'] = PageDetail::where('page_id', $buying->id)->where('slug', 'buying-a-home')->select('image')->first();
+            if (!empty($data['buying'])) {
+                $data['buying'] = $data['buying']->getFilePath();
+            } else {
+                $data['buying'] = null;
+
+            }
+
+        } else {
+            $data['buying'] = null;
+        }
+        /**
+         * selling
+         */
+        $selling = Page::where('slug', 'selling')->first();
+        if (isset($selling) && $selling != null) {
+            $data['selling'] = PageDetail::where('page_id', $selling->id)->where('slug', 'selling-your-home')->select('image')->first();
+            if (!empty($data['selling'])) {
+                $data['selling'] = $data['selling']->getFilePath();
+            } else {
+                $data['selling'] = null;
+
+            }
+        } else {
+            $data['selling'] = null;
+        }
         if (session()->get('name') != null) {
             session()->forget('name');
-            return view('frontend.enquiry-success.download-guide-success');
+            return view('frontend.enquiry-success.download-guide-success')->withBuying($data['buying'])->withSelling($data['selling']);
         } else {
             return redirect('/');
         }
