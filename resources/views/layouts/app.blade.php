@@ -367,7 +367,7 @@
                            
                             $('.sendBookAppraisal').prop('disabled', false);
                             if (data.status == "success") {
-                                window.location.href ="{{ route('hank-you') }}"
+                                window.location.href ="{{ route('thank-you') }}"
                             } else {
                                 alert('Something went wrong. please try later!')
                             }
