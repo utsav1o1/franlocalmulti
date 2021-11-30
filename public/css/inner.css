@@ -546,7 +546,7 @@ header+div {
 .recent-properties-box .detail header {
     position: relative;
     padding-bottom: 20px;
-    margin: 0px 0px 20px !important;
+    /* margin: 0px 0px 20px !important; */
     display: inline-block;
     width: 100%;
 }
@@ -758,7 +758,7 @@ header+div {
 }
 
 .item-details li {
-    width: 50%;
+    /* width: 50%; */
 }
 
 .item-details li:nth-child(2) p,
