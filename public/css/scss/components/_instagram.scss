@@ -8,6 +8,7 @@
         color: $white;
         font-weight: 500;
         margin-bottom: 40px;
+
         @include breakpoint (xs) {
             font-size: 20px;
         }
@@ -55,7 +56,27 @@
                         visibility: visible;
                     }
                 }
+
+                .image {
+                    a {
+                        position: relative;
+                        overflow: hidden;
+                        padding-top: 80%;
+                        display: block;
+
+                        img {
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            object-fit: cover;
+                        }
+                    }
+                }
             }
+
+
         }
     }
 }

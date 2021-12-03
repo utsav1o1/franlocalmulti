@@ -141,4 +141,129 @@
             }
         }
     }
+
+    .inspections {
+        margin-bottom: 20px;
+
+        .nav-tabs {
+            li {
+                margin-bottom: 0;
+
+                a {
+                    border: none;
+                    color: #333;
+                    min-width: 100px;
+                    text-align: center;
+                }
+
+                &.active {
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 15px 0;
+
+            .content-wrapper {
+                .main-row {
+                    .row {
+                        margin: 0 -15px;
+                        width: auto;
+                    }
+
+                    border-bottom: 1px solid #d0d3d8;
+                    padding: 10px 0;
+
+                    &:hover {
+                        background: #f8f9fa;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.final-link {
+    margin-top: 15px;
+
+    .btn {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 0;
+        background: none !important;
+        border: none;
+        margin-bottom: 10px;
+        box-shadow: none !important;
+    }
+
+    .final-collapse-content {
+        display: none;
+    }
+}
+
+.property_sidebar {
+    .agent-wrapper {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+
+        .agent-image {
+            border: none;
+            max-width: 50px;
+            margin: 0;
+
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+}
+
+.detail {
+    ul {
+        margin: 0;
+        margin-bottom: 20px;
+        display: block;
+        height: auto;
+
+        li {
+            float: none;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.recent-properties-box {
+    .detail header {
+        padding-bottom: 10px;
+
+        .area-block {
+            padding-top: 8px;
+        }
+    }
+}
+
+.inspection-date {
+    .table {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+border-collapse: inherit;
+border-top: none;
+
+        td {
+            background: #fafafa;
+            a {
+                &:not(:hover) {
+                    color: #333;
+                }
+            }
+        }
+    }
 }
