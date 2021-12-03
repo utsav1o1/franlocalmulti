@@ -267,3 +267,28 @@ border-top: none;
         }
     }
 }
+
+.detail-print-container {
+    .detail-print {
+        margin-top: 0;
+    }
+}
+
+.single-gallery-row {
+    background: $orange;
+    width: calc(100% - 30px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    div[class*='col-lg'] {
+        padding: 0;
+    }
+    .single-title-block {
+        color: white;
+        padding: 20px;
+        h1 {
+            font-weight: 700;
+            font-size: 32px;
+        }
+    }
+}
