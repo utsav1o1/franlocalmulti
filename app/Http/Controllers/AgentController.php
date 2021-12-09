@@ -8,8 +8,10 @@ use App\Repositories\AgentMessageRepository;
 use App\Repositories\AgentRepository;
 use App\Repositories\PropertyRepository;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Sheets;
 
 class AgentController extends Controller
 {
@@ -97,6 +99,7 @@ class AgentController extends Controller
     }
     public function submitContact(Request $request)
     {
+        $data = $request->all();
         $validated = $request->validate([
             'full_name' => 'required|min:3|max:255',
             'email_address' => 'required|email',
@@ -110,8 +113,23 @@ class AgentController extends Controller
                 Mail::to($message->agent->email_address)
                     ->send(new AgentInquirySent($message));
             }
-            return redirect()->back()
-                ->withSuccessMessage('Your message is submitted.');
+            $appendData = [
+                'Contact Agent',
+                $data['full_name'],
+                $data['email_address'],
+                $data['phone_number'],
+                '',
+                '',
+                '',
+                $data['message'],
+                Carbon::parse(Carbon::now())->format('M d, Y'),
+
+            ];
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
+            return redirect(route('thank-you'));
+//            return redirect()->back()
+//                ->withSuccessMessage('Your message is submitted.');
         }
 
         return redirect()->back()

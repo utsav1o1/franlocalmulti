@@ -1,0 +1,294 @@
+.property_sidebar {
+    .property-search-sidebar-container {
+        padding-left: 0;
+    }
+}
+
+.single-property {
+    padding-bottom: 20px;
+
+    .content-box {
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding: 0;
+                list-style: none;
+                margin-bottom: 5px;
+            }
+        }
+
+        h2 {
+            font-size: 20px;
+            text-transform: capitalize;
+            color: $blue;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .video__block {
+        position: relative;
+        overflow: hidden;
+
+        .link {
+            position: absolute;
+            background: $orange;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            line-height: 40px;
+            display: flex;
+            color: $white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                color: $white;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.plan-image {
+    margin-bottom: 20px;
+}
+
+.floorplan {
+    .panel-default {
+        border: none;
+
+        >.panel-heading {
+            background: none;
+            border: none;
+            padding: 0;
+
+            button {
+                padding: 12px 15px;
+                border: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+                color: $white;
+                background: $blue;
+                position: relative;
+
+                &:after {
+                    content: "\f107";
+                    position: absolute;
+                    top: 1px;
+                    display: inline-block;
+                    font-family: 'FontAwesome';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    transition: transform .25s linear;
+                    -webkit-transition: -webkit-transform .25s linear;
+                    right: 20px;
+                    top: 11px;
+                }
+
+                &[aria-expanded="true"] {
+                    background: $orange;
+
+                    &:after {
+                        content: "\f106";
+                    }
+                }
+
+            }
+
+        }
+
+        .panel-body {
+            border: 1px solid #eee;
+        }
+    }
+}
+
+.single-property {
+    .features-details {
+        ul {
+            li {
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 10px;
+
+                &:before {
+                    content: '\f00c';
+                    font-family: 'FontAwesome';
+                    position: absolute;
+                    left: 0;
+                    height: 20px;
+                    width: 20px;
+                    background: rgba($color: $blue, $alpha: 1);
+                    color: white;
+                    text-align: center;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    .inspections {
+        margin-bottom: 20px;
+
+        .nav-tabs {
+            li {
+                margin-bottom: 0;
+
+                a {
+                    border: none;
+                    color: #333;
+                    min-width: 100px;
+                    text-align: center;
+                }
+
+                &.active {
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 15px 0;
+
+            .content-wrapper {
+                .main-row {
+                    .row {
+                        margin: 0 -15px;
+                        width: auto;
+                    }
+
+                    border-bottom: 1px solid #d0d3d8;
+                    padding: 10px 0;
+
+                    &:hover {
+                        background: #f8f9fa;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.final-link {
+    margin-top: 15px;
+
+    .btn {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 0;
+        background: none !important;
+        border: none;
+        margin-bottom: 10px;
+        box-shadow: none !important;
+    }
+
+    .final-collapse-content {
+        display: none;
+    }
+}
+
+.property_sidebar {
+    .agent-wrapper {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+
+        .agent-image {
+            border: none;
+            max-width: 50px;
+            margin: 0;
+
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+}
+
+.detail {
+    ul {
+        margin: 0;
+        margin-bottom: 20px;
+        display: block;
+        height: auto;
+
+        li {
+            float: none;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.recent-properties-box {
+    .detail header {
+        padding-bottom: 10px;
+
+        .area-block {
+            padding-top: 8px;
+        }
+    }
+}
+
+.inspection-date {
+    .table {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+border-collapse: inherit;
+border-top: none;
+
+        td {
+            background: #fafafa;
+            a {
+                &:not(:hover) {
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
+.detail-print-container {
+    .detail-print {
+        margin-top: 0;
+    }
+}
+
+.single-gallery-row {
+    background: $orange;
+    width: calc(100% - 30px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    div[class*='col-lg'] {
+        padding: 0;
+    }
+    .single-title-block {
+        color: white;
+        padding: 20px;
+        h1 {
+            font-weight: 700;
+            font-size: 32px;
+        }
+    }
+}

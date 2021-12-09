@@ -97,7 +97,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{ url(config('app.corporate_url')) }}" class="navbar-brand">
+                <a href="{!! route('home') !!}" class="navbar-brand">
                     <img src="{!! asset('images/logo.png') !!}" class="img-responsive" />
                 </a>
 

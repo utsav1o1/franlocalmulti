@@ -68,15 +68,15 @@ class ContactUsController extends Controller
 
         $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
-        $request->session()->flash('success', 'Successfully Sent!!');
 
-        return redirect(route('contact-us.form'));
+        return redirect(route('thank-you'));
+
     }
 
     private function sendContactUsByEmail($data)
     {
         Mail::send('emails.contact-us', ['data' => $data], function ($message) use ($data) {
-            $message->to('megha.poudel@multidynamic.com.au', 'Contact Us')
+            $message->to('sales@multidynamic.com.au', 'Contact Us')
                 ->subject('Contact Us');
         });
     }

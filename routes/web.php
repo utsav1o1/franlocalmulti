@@ -21,9 +21,9 @@
 Route::get('/guide', function () {
     return view('agent.Property.guide');
 });
-// Route::get('/selling', function () {
-//     return view('agent.Property.selling');
-// });
+ Route::get('/thank-you', function () {
+     return view('frontend.enquiry-success.property-evaluation-success');
+ })->name('thank-you');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/send', 'HomeController@send')->name('send');

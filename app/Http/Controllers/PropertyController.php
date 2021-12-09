@@ -120,6 +120,7 @@ class PropertyController extends Controller
             'property_images.property_image',
             'price_types.name AS price_type_name',
             'property_types.name AS property_type_name',
+            DB::raw("CONCAT(locations.suburb) AS location_short_name"),
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
@@ -260,6 +261,7 @@ class PropertyController extends Controller
             'property_images.property_image',
             'price_types.name AS price_type_name',
             'property_types.name AS property_type_name',
+            DB::raw("CONCAT(locations.suburb) AS location_short_name"),
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
@@ -413,6 +415,7 @@ class PropertyController extends Controller
             'property_images.property_image',
             'price_types.name AS price_type_name',
             'property_types.name AS property_type_name',
+            DB::raw("CONCAT(locations.suburb) AS location_short_name"),
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
@@ -447,6 +450,7 @@ class PropertyController extends Controller
             'property_images.property_image',
             'price_types.name AS price_type_name',
             'property_types.name AS property_type_name',
+            DB::raw("CONCAT(locations.suburb) AS location_short_name"),
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
@@ -541,6 +545,7 @@ class PropertyController extends Controller
                 'property_images.property_image',
                 'price_types.name AS price_type_name',
                 'property_types.name AS property_type_name',
+                DB::raw("CONCAT(locations.suburb) AS location_short_name"),
                 DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBY('properties.id')
             ->first();
@@ -552,7 +557,6 @@ class PropertyController extends Controller
                 $existFlag = in_array($property->id, $userProperties);
             }
             $property->incrementViewCount();
-
             return view('property-detail')
                 ->withProperty($property)
                 ->withUser($user)
@@ -594,6 +598,7 @@ class PropertyController extends Controller
                     ->send(new PropertyInquirySent($inquiry));
 
                 $appendData = [
+                    'Property Enquiry',
                     $data['full_name'],
                     $data['email_address'],
                     $data['phone_number'],
@@ -608,8 +613,9 @@ class PropertyController extends Controller
                 $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
             }
-            return redirect()->back()
-                ->withSuccessMessage('Your inquiry is submitted successfully.');
+//            return redirect()->back()
+//                ->withSuccessMessage('Your inquiry is submitted successfully.');
+            return redirect(route('thank-you'));
         }
 
         return redirect()->back()

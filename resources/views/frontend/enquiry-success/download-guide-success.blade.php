@@ -18,7 +18,7 @@
                     <div class="inner__block">
                         <img src="{{asset('')}}images/MD---Seller-Guide.png" alt="">
                         <h3>SELLING YOUR HOME?</h3>
-                        <a href="#" data-toggle="modal" data-target="#sellingModal" class="btn btn-warning">Download
+                        <a href={!! $buying !!} target="_blank" class="btn btn-warning">Download
                             Seller’s Guide</a>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="inner__block">
                         <img src="{{asset('')}}images/MD---Seller-Guide.png" alt="">
                         <h3>buying a HOME?</h3>
-                        <a href="#" data-toggle="modal" data-target="#buyingModal" class="btn btn-warning">Download
+                        <a href={!! $selling !!} target="_blank" class="btn btn-warning">Download
                             Buyer’s Guide</a>
                     </div>
                 </div>
