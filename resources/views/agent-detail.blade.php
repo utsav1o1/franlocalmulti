@@ -368,16 +368,17 @@
                                     <a class="thumbnail-container"
                                         href="{!! route('properties.show', $property->slug) !!}">
 
-                                        <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
+                                        <img src="{!! url($property->getImage()) !!}" alt="{{$property->name}}"
                                             class="img-responsive" />
                                     </a>
+
                                     <!--Caption Detail-->
                                     <div class="caption detail">
                                         <header>
                                             <div class="pull-left">
                                                 <h1 class="title">
-                                                    <a href="{!! route('properties.show', $property->slug) !!}">{!!
-                                                        str_limit($property->name, 30) !!}</a>
+                                                    <a href="{!! route('properties.show', $property->slug) !!}">{{$property->street_number.'
+                                                        '.$property->street.' '.$property->location->suburb}}</a>
                                                 </h1>
                                             </div>
 
@@ -400,13 +401,14 @@
                                             </div>
                                         </header>
                                         <!--Location-->
-                                        <h3 class="location">
+
+                                        {{-- <h3 class="location">
                                             @if($property->location)
                                             <a href="#">
-                                                <i class="fa fa-map-marker"></i>{!! $property->location_name !!}
+                                                {{$property->name}}
                                             </a>
                                             @endif
-                                        </h3>
+                                        </h3> --}}
                                         <!--Item Details-->
                                         <ul class="item-details col-md-12">
                                             <li>

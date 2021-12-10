@@ -812,7 +812,8 @@
                     <div class="agent-wrapper">
 
                         <div class="agent-image">
-                            <a class="agent-detail-link" href="#">
+                            <a class="agent-detail-link"
+                                href="{!! route('agents.show', $propertyAgent->getCustomId()) !!}">
                                 <img src="{{ url($propertyAgent->getAgentImagePath()) }}"
                                     alt=" {{ str_limit($propertyAgent->first_name . ' ' . $propertyAgent->last_name, 16) }}"
                                     class="img-responsive">
@@ -821,7 +822,7 @@
 
                         <div class="agent-text">
                             <h5 style="height: 27px;">
-                                <a href="#">
+                                <a href="{!! route('agents.show', $propertyAgent->getCustomId()) !!}">
                                     {{ str_limit($propertyAgent->first_name . ' ' . $propertyAgent->last_name, 16) }}
                                 </a>
                             </h5>

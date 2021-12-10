@@ -72,13 +72,13 @@ class AgentController extends Controller
         $agent = $this->agents->findByField('id', $id);
         $propertyCategory = $this->getPropertyCategory();
         $leased_properties = $agent->properties()->where('is_leased_sold',
-            'Y')->where('property_category_id', 2)->orderBy('created_at', 'desc')->paginate(6);
+            'Leased')->where('property_category_id', 2)->orderBy('created_at', 'desc')->paginate(6);
         $sold_properties = $agent->properties()->where('is_leased_sold',
-            'Y')->where('property_category_id', 1)->orderBy('created_at', 'desc')->paginate(6);
+            'Sold')->where('property_category_id', 1)->orderBy('created_at', 'desc')->paginate(6);
         $rent_properties = $agent->properties()->where('property_category_id', 2)->where('is_leased_sold',
-            'N')->orderBy('created_at', 'desc')->paginate(6);
+            'Lea')->orderBy('created_at', 'desc')->paginate(6);
         $buy_properties = $agent->properties()->where('property_category_id', 1)->where('is_leased_sold',
-            'N')->orderBy('created_at', 'desc')->paginate(6);
+            'Sale')->orderBy('created_at', 'desc')->paginate(6);
         // dd($agent->properties()->where('property_category_id', '=', 1)->count());
 
         if ($agent) {
@@ -129,7 +129,7 @@ class AgentController extends Controller
 
             return redirect(route('thank-you'));
 //            return redirect()->back()
-//                ->withSuccessMessage('Your message is submitted.');
+            //                ->withSuccessMessage('Your message is submitted.');
         }
 
         return redirect()->back()
