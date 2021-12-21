@@ -51,7 +51,7 @@
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
-
+      
         var longitude = '{!! $property->longitude !!}';
         var zoomValue = parseInt('{!! 11 !!}');
         var name = '{!! $property->name !!}';
@@ -145,103 +145,101 @@
             });
         });
 </script>
-    <script>
-        $( "span" ).on( "click", function() {
-            $("pre").css("height", "auto");
-        });
-    </script>
 @endsection
 
 @section('dynamicdata')
-<!--Page Details-->
-<div class="property-details-page">
-    <div class="container">
-        <div class="row custom-top-spacing">
-            <div class="col-sm-9 col-md-9">
-                <!--Start of Image Carousel-->
-                <div class="row">
-
-                    <?php
-
-                        $propertyImages = $property->getImages();
-
-                    ?>
-
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
 
 
-                            @if(count($propertyImages) > 0)
-                            @foreach($propertyImages as $index => $image)
-                            <li data-target="#myCarousel" data-slide-to="{!! $index !!}"
-                                class="@if($index == 0) active @endif"></li>
-                            @endforeach
-                            @endif
+<div class="property-details-page shared-page-top-padding">
 
+    <div class="single-property">
+        <div class="container">
+            <div class="row custom-top-spacing single-gallery-row">
+                <div class="col-lg-4">
+                    <div class="single-title-block">
+                        <h1>{{$property->location_name ?? ""}}</h1>
 
-                        </ol>
-                        <div class="carousel-inner detail-carousel" role="listbox">
-
-                            @if(count($propertyImages) > 0)
-
-                            @foreach($propertyImages as $index => $image)
-                            <div class="item @if($index == 0) active @endif">
-                                <img class="d-block img-fluid" src="{{ url($image->getPropertyImagePath()) }}"
-                                    alt="{!! $property->name !!}">
-                            </div>
-                            @endforeach
-
-                            @else
-
-                            <div class="item active">
-                                <img class="d-block img-fluid" src="{{ url($property->getDefaultPropertyImagePath()) }}"
-                                    alt="{!! $property->name !!}">
-                            </div>
-
-                            @endif
-                        </div>
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
-                <!--Back Print Save-->
-                <div class="row">
+                <div class="col-lg-8">
+                    <div class="property-gallery">
+                        <div id="carouselSliderIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <?php
+                                                        
+                                                        $propertyImages = $property->getImages();
+                                
+                                                    ?>
+                                @if($propertyImages->count() > 0)
+
+                                @foreach($propertyImages as $index => $propertyImage)
+
+                                <li data-target="#carouselSliderIndicators" data-slide-to="{{$index}}"
+                                    class="{{ ($index == 0) ? 'active' : '' }}"></li>
+                                @endforeach
+                                @else
+
+                                <li data-target="#carouselSliderIndicators" data-slide-to="0" class="active">
+                                    <div class="image-preview-container">
+                                        <img class="img-responsive" src="{{ url($defaultImage) }}" />
+                                    </div>
+                                </li>
+
+                                @endif
+                            </ol>
+                            <div class="carousel-inner detail-carousel" role="listbox">
+
+                                @if($propertyImages->count() > 0)
+
+                                @foreach($propertyImages as $index => $propertyImage)
+                                <div class="item {{ ($index == 0) ? 'active' : '' }}">
+                                    <img class="d-block img-fluid"
+                                        src="{{ url($propertyImage->getPropertyImagePath()) }}">
+                                </div>
+                                @endforeach
+                                @else
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="{{ url($defaultImage) }}">
+                                </div>
+                                @endif
+                            </div>
+                            <a class="left carousel-control" href="#carouselSliderIndicators" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carouselSliderIndicators" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row custom-top-spacing">
+
+                <div class="col-lg-9">
+
+                    <!-- end gallery  -->
                     <div class="detail-print-container">
                         <ul class="nav detail-print">
 
-                            <li><a href="{!! url()->previous() !!}" class="btn btn-info detail-btn"><span
+                            <li><a href="https://multidynamicingleburn.com.au" class="btn btn-info detail-btn"><span
                                         class="glyphicon glyphicon-menu-left"></span>Back</a></li>
-                            {{-- <li><a href="{!! route('properties.print', $property->slug) !!}" target="_blank"
-                                    class="btn btn-info detail-btn"><span
-                                        class="glyphicon glyphicon-print"></span>Print</a>
-                            </li>
-                            <li>
-                                @if($existFlag)
-                                <button class="btn btn-info detail-btn"><span
-                                        class="glyphicon glyphicon-pushpin"></span>Saved
-                                </button>
-                                @else
-                                <a href="javascript:;" id="save-property" class="btn btn-info detail-btn"><span
-                                        class="glyphicon glyphicon-pushpin"></span>Save</a>
-                                @endif
-                            </li>
-                            <li>
-                                <a class="btn btn-info detail-btn" data-toggle="modal" data-target="#sendEmailModal">
-                                    <span class="glyphicon glyphicon-message"></span>Email</a>
-                            </li> --}}
+
 
                             <li class="fb-share">
-                                <div class="fb-share-button"
-                                    data-href="{!! route('properties.show', $property->slug) !!}"
-                                    data-layout="button_count" data-size="large" data-mobile-iframe="true">
-                                    <a class="fb-xfbml-parse-ignore" target="_blank"
-                                        href="https://www.facebook.com/sharer/sharer.php?u={!! urlencode(route('properties.show', $property->slug)) !!}&amp;src=sdkpreparse">Share</a>
+                                <div class="fb-share-button fb_iframe_widget"
+                                    data-href="https://multidynamicingleburn.com.au/properties/location-location-location-welcome-to-this-well-designed-modern-home"
+                                    data-layout="button_count" data-size="large" data-mobile-iframe="true"
+                                    fb-xfbml-state="rendered"
+                                    fb-iframe-plugin-query="app_id=911895265634736&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large">
+                                    <span style="vertical-align: bottom; width: 89px; height: 28px;"><iframe
+                                            name="f3e18663cc988bc" data-testid="fb:share_button Facebook Social Plugin"
+                                            title="fb:share_button Facebook Social Plugin" allowtransparency="true"
+                                            allowfullscreen="true" scrolling="no" allow="encrypted-media"
+                                            style="border: medium none; visibility: visible; width: 89px; height: 28px;"
+                                            src="https://www.facebook.com/v2.10/plugins/share_button.php?app_id=911895265634736&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df26a287e52fcbe4%26domain%3Dmultidynamicingleburn.com.au%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmultidynamicingleburn.com.au%252Ff27311465998866%26relation%3Dparent.parent&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large"
+                                            class="" width="1000px" height="1000px" frameborder="0"></iframe></span>
                                 </div>
                             </li>
                             <li>
@@ -251,9 +249,8 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                    <!-- single title block  -->
 
-                <div class="row">
                     <div class="thumbnail">
                         <div class="thumbnail recent-properties-box">
                             <!--Caption Detail-->
@@ -263,50 +260,41 @@
                                     <div class="area-block">
                                         <div class="property-type">
                                             Property Type
-                                            : {!! $property->property_type_name !!}
+                                            : {{$property->property_type_name ?? ""}}
                                         </div>
                                         <div class="property-area">
-                                            {!! $property->price_type_name !!}
-                                            <div class="st-price">{{ $property->getFormattedPrice() }}</div>
+                                            {{$property->price_view ?? "Contact Agent"}}
+                                            <div class="st-price"></div>
                                         </div>
                                     </div>
                                 </header>
 
-                                @if($property->location)
-                                <h3 class="location_nameation">
-                                    <a><i class="fa fa-map-marker"></i>&nbsp;{!! $property->location_name !!}</a>
-                                </h3>
-                                @endif
 
                                 <!--Item Details-->
                                 <ul class="item-details">
+
                                     <li>
-                                        @if($property->area > 0)
-                                        <p class="item-area">{!! $property->area !!} m<sup>2</sup></p>
-                                        @endif
-                                    </li>
-                                    <li>
-                                        <p class="item-bed">{!! $property->number_of_bedrooms !!}
+                                        <p class="item-bed">{{$property->number_of_bedrooms ?? 0}}
                                             Bedroom</p>
                                     </li>
                                     <li>
-                                        <p class="item-bath">{!! $property->number_of_bathrooms !!}
+                                        <p class="item-bath">{{$property->number_of_bathrooms ?? 0}}
                                             Bathroom</p>
                                     </li>
                                     <li>
-                                        <p class="item-garage">{!! $property->number_of_garages !!}
+                                        <p class="item-garage">{{$property->number_of_garages ?? 0}}
                                             Garage</p>
                                     </li>
                                 </ul>
 
-                                <div id="agent-details-navigation"></div>
 
                                 <div class="detail-footer">
+
                                     <a href="#agent-details-navigation"><i class="fa-user"></i>
-                                        {{ $property->agents_count }}
-                                        {{ ($property->agents_count < 2) ? 'agent' : 'agents' }}</a>
+                                        {{ $property->property_agent ?? 0 }}
+                                        {{ ($property->property_agent < 2) ? 'agent' : 'agents' }}</a>
                                             <span><i class="fa-calendar-o"></i>{!!
-                                                App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
+                                                \Carbon\Carbon::parse($property->created_at)->diffForHumans() !!}</span>
                                 </div>
 
                             </div>
@@ -314,254 +302,671 @@
                         </div>
 
                     </div>
+                    <!-- end   -->
+                    <div class="single-title-block">
+                        <h2>{{$property->name ?? null}}</h2>
+                        <!-- <p>166 welling street, collingwood, vic 3066</p> -->
+                    </div>
+                    <!-- end single title block  -->
+                    <div class="description content-box">
+                        <h2>Description</h2>
+                        <p>{!! $property->description ?? "" !!}</p>
+                    </div>
+                    <!-- end div content-box  -->
+
+                    <div class="property-details content-box">
+                        <h2>Property details</h2>
+                        <div class="row">
+                            <ul class="row">
+                                <li class="col-lg-6">
+                                    <label>Property ID:</label> {{$property->id}}
+                                </li>
+                                <li class="col-lg-6">
+                                    <label>Price:</label> {{$property->price_view ?? "Contact Agent"}}
+                                </li>
+                                <li class="col-lg-6">
+                                    <label>Property Size:</label>{{$property->area ?? "Not available"}}
+                                </li>
+                                <li class="col-lg-6">
+                                    <label>Bedrooms:</label> {{$property->number_of_bedrooms ?? 0}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end div content-box  -->
+                    @if(isset($property->airConditioning) || isset($property->openSpaces) ||
+                    isset($property->livingAreas) ||
+                    isset($property->carports) ||
+                    isset($property->alarmSystem) ||
+                    isset($property->builtInRobes) ||
+                    isset($property->ensuite) ||
+                    isset($property->furnished) ||
+                    isset($property->intercom) ||
+                    isset($property->openFirePlace) ||
+                    isset($property->petFriendly) ||
+                    isset($property->smokers) ||
+                    isset($property->tennisCourt) ||
+                    isset($property->vacuumSystem))
+                    <div class="features-details content-box">
+                        <h2>features</h2>
+                        <ul class="row">
+                            @if(isset($property->airConditioning))
+                            <li class="col-lg-4">Air Conditioning</li>
+                            @endif
+                            @if(isset($property->openSpaces))
+                            <li class="col-lg-4">Open Space</li>
+                            @endif
+                            @if(isset($property->livingAreas))
+                            <li class="col-lg-4">Living Area</li>
+                            @endif
+                            @if(isset($property->carports))
+                            <li class="col-lg-4">Carports</li>
+                            @endif
+                            @if(isset($property->alarmSystem))
+                            <li class="col-lg-4">Alarm System</li>
+                            @endif
+                            @if(isset($property->builtInRobes))
+                            <li class="col-lg-4">Built in Robes</li>
+                            @endif
+                            @if(isset($property->ensuite))
+                            <li class="col-lg-4">Ensuite</li>
+                            @endif
+                            @if(isset($property->furnished))
+                            <li class="col-lg-4">Furnished</li>
+                            @endif
+                            @if(isset($property->intercom))
+                            <li class="col-lg-4">Intercom</li>
+                            @endif
+                            @if(isset($property->openFirePlace))
+                            <li class="col-lg-4">Open Fire Place</li>
+                            @endif
+                            @if(isset($property->petFriendly))
+                            <li class="col-lg-4">Pet Friendly</li>
+                            @endif
+                            @if(isset($property->smokers))
+                            <li class="col-lg-4">Smokers</li>
+                            @endif
+                            @if(isset($property->tennisCourt))
+                            <li class="col-lg-4">Tennis Court</li>
+                            @endif
+                            @if(isset($property->vacuumSystem))
+                            <li class="col-lg-4">Vaccum System</li>
+                            @endif
+                        </ul>
+                    </div>
+                    @endif
+                    <!-- end div content-box  -->
+                    @if(isset($property->floor_plan_1) || isset($property->floor_plan_2) ||
+                    isset($property->floor_plan_3))
+                    <div class="floorplan content-box">
+                        <h2>floor plan</h2>
+
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            @if(isset($property->floor_plan_1))
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <button role="button" data-toggle="collapse" data-parent="#accordion"
+                                            href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Floor 1
+                                        </button>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                    aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <div class="plan-image">
+                                            <img src="{{$property->floor_plan_1}}" alt="">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @if(isset($property->floor_plan_2))
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <button class="collapsed" role="button" data-toggle="collapse"
+                                            data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            Floor 2
+                                        </button>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                    aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <div class="plan-image">
+                                            <img src="{{$property->floor_plan_2 ?? ""}}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @if(isset($property->floor_plan_3))
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <button class="collapsed" role="button" data-toggle="collapse"
+                                            data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Floor 3
+                                        </button>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                    aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <div class="plan-image">
+                                            <img src="{{$property->floor_plan_1 ?? null}}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+
+                    </div>
+                    @endif
+                    <!-- end div content-box  -->
+                    @if(isset($property->video_link))
+                    <div class="video content-box">
+                        <h2>video</h2>
+                        <div class="video__block">
+                            <iframe width="100%" height="315" src="{{$property->video_link ?? null}}">
+                            </iframe>
+                            <a href="#" class="link"><i class="icon fa fa-play text-white"></i></a>
+                        </div>
+                    </div>
+                    @endif
+                    <!-- end div content-box  -->
+                    @if(isset($property->inspection_1) || isset($property->inspection_2))
+                    <div class="inspections content-box">
+                        <h2>inspections</h2>
+                        <div class="inspection-date">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            @if(isset($property->inspection_1))
+                                            <td>{{$property->inspection_1 ?? null}}</td>
+                                            @endif
+                                            @if(isset($property->inspection_2))
+                                            <td>{{$property->inspection_2 ?? null}}</td>
+                                            @endif
+                                            {{--<td><a href="#"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    Add to calendar</a></td>--}}
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+
+                            <!-- Nav tabs -->
+                            {{-- <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#primary" aria-controls="primary"
+                                        role="tab" data-toggle="tab">Primary </a>
+                                </li>
+                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                        data-toggle="tab">Secondary</a></li>
+                                <li role="presentation"><a href="#child-care" aria-controls="child-care" role="tab"
+                                        data-toggle="tab">Child Care</a></li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="primary">
+                                    <div class="content-wrapper">
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+                                        <div class="final-link">
+                                            <button class="btn btn-default">"Distance" is a straight line
+                                                calculation.
+                                                See more about our child care and schools data.
+                                            </button>
+                                            <div class="final-collapse-content">We receive schools data from
+                                                government
+                                                agencies, schools, real estate agents and the general public.
+                                                Childcare
+                                                data is provided by KN Enrol Pty Ltd. We update our data from
+                                                regular
+                                                updates and feedback received. "Distance" refers to the straight
+                                                line
+                                                between the property and the school or child care address on our
+                                                database. We recommend contacting schools and child cares
+                                                directly
+                                                regarding zoning and admissions.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="profile">
+                                    <div class="content-wrapper">
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+                                        <div class="final-link">
+                                            <button class="btn btn-default">"Distance" is a straight line
+                                                calculation.
+                                                See more about our child care and schools data.
+                                            </button>
+                                            <div class="final-collapse-content">We receive schools data from
+                                                government
+                                                agencies, schools, real estate agents and the general public.
+                                                Childcare
+                                                data is provided by KN Enrol Pty Ltd. We update our data from
+                                                regular
+                                                updates and feedback received. "Distance" refers to the straight
+                                                line
+                                                between the property and the school or child care address on our
+                                                database. We recommend contacting schools and child cares
+                                                directly
+                                                regarding zoning and admissions.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="child-care">
+                                    <div class="content-wrapper">
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+
+                                        <div class="main-row">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    William Carey Christian School
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">Combined</div>
+                                                        <div class="col-sm-4">Independent</div>
+                                                        <div class="col-sm-4">42km</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end main row  -->
+                                        <div class="final-link">
+                                            <button class="btn btn-default">"Distance" is a straight line
+                                                calculation.
+                                                See more about our child care and schools data.
+                                            </button>
+                                            <div class="final-collapse-content">We receive schools data from
+                                                government
+                                                agencies, schools, real estate agents and the general public.
+                                                Childcare
+                                                data is provided by KN Enrol Pty Ltd. We update our data from
+                                                regular
+                                                updates and feedback received. "Distance" refers to the straight
+                                                line
+                                                between the property and the school or child care address on our
+                                                database. We recommend contacting schools and child cares
+                                                directly
+                                                regarding zoning and admissions.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            --}}
+                        </div>
+
+                    </div>
+                    @endif
+                    <!-- end div content-box  -->
+                    <div class="hidden-values">
+                        <input type="hidden" name="property_title" value="{{ $property->name }}" />
+                        <input type="hidden" name="location_name" value="{{ $property->location_name }}" />
+                        <input type="hidden" name="latitude" value="{{ $property->latitude }}" />
+                        <input type="hidden" name="longitude" value="{{ $property->longitude }}" />
+                    </div>
+                    <div class="row map-container">
+                        <div class="col-sm-12 col-md-12">
+                            <h4>{{$property->name ?? ""}}</h4>
+                            <div class="google_map">
+                                <div id="gmap_canvas" style="height:400px;width:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-
-
+                <!-- end col 9  -->
                 <?php
 
-                    $agents = $property->getPropertyAgents();
+                    $propertyAgents = $property->getPropertyAgents();
 
-                ?>
-                @foreach($agents as $agent)
-                <a class="agent-detail-link" href="{!! route('agents.show', $agent->getCustomId()) !!}">
-                    <div class="col-lg-4 col-md-4 col-sm-6 agent-block no-padding">
-                        <div class="agent-wrapper">
-                            <div class="agent-image">
-                                <a>
+                    ?>
 
-                                    <img src="{!! asset($agent->getAgentImagePath()) !!}"
-                                        alt="{!! $agent->first_name .' '. $agent->last_name !!}"
-                                        class="img-responsive" />
+                @if($propertyAgents->count() > 0)
+                <div class="col-lg-3 property_sidebar">
+                    @foreach($propertyAgents as $index => $propertyAgent)
+                    <div class="agent-wrapper">
 
+                        <div class="agent-image">
+                            <a class="agent-detail-link"
+                                href="{!! route('agents.show', $propertyAgent->getCustomId()) !!}">
+                                <img src="{{ url($propertyAgent->getAgentImagePath()) }}"
+                                    alt=" {{ str_limit($propertyAgent->first_name . ' ' . $propertyAgent->last_name, 16) }}"
+                                    class="img-responsive">
+                            </a>
+                        </div>
+
+                        <div class="agent-text">
+                            <h5 style="height: 27px;">
+                                <a href="{!! route('agents.show', $propertyAgent->getCustomId()) !!}">
+                                    {{ str_limit($propertyAgent->first_name . ' ' . $propertyAgent->last_name, 16) }}
                                 </a>
-                            </div>
-                            <div class="agent-text">
-                                <h5>
-                                    <a href="{!! route('agents.show', $agent->getCustomId()) !!}">
-                                        {!! $agent->first_name .' '.
-                                        $agent->last_name !!}
-                                    </a>
-                                </h5>
-                                <p class="designation">{!! $agent->designation ? $agent->designation->designation : ''
-                                    !!}
+                            </h5>
+
+                            <div class="agent-short-contact">
+                                <p>
+                                    <a href="tel:{{$propertyAgent->phone_number ?? ""}}"><i
+                                            class="glyphicon glyphicon-phone-alt"></i>{{ $propertyAgent->phone_number ??
+                                        "" }}</a>
                                 </p>
-                                <div class="agent-short-contact">
-                                    @if($agent->phone_number)
-                                    <p>
-                                        <a href="tel:{!! $agent->phone_number !!}"><i
-                                                class="glyphicon glyphicon-phone-alt"></i>{!!
-                                            substr($agent->phone_number,0,2).' '.substr($agent->phone_number,2,4).' '.
-                                            substr($agent->phone_number,6) !!}</a>
-                                    </p>
-                                    @endif
-                                    @if($agent->mobile_number)
-                                    <p>
-                                        <a href="tel:{!! $agent->mobile_number !!}"><i
-                                                class="glyphicon glyphicon-phone"></i>{!!
-                                            substr($agent->mobile_number,0,4).
-                                            ' ' .substr($agent->mobile_number,4,3).' '.substr($agent->mobile_number,7)
-                                            !!}</a>
-                                    </p>
-                                    @endif
-                                    @if($agent->email)
 
-                                    <p>
-                                        <a href="mailto:{!! $agent->email !!}"><i
-                                                class="glyphicon glyphicon-envelope"></i>{!!
-                                            str_limit($agent->email,
-                                            15) !!}</a>
-                                    </p>
-                                    @endif
-                                </div>
+                                <p>
+                                    <a href="tel:{{$propertyAgent->phone_number ?? ""}}"><i
+                                            class="glyphicon glyphicon-phone"></i>{{$propertyAgent->phone_number ??
+                                        ""}}</a>
+                                </p>
+
+                                <p>
+                                    <a href="mailto:{{ $propertyAgent->email }}"><i
+                                            class="glyphicon glyphicon-envelope"></i>{{str_limit($propertyAgent->email,
+                                        15)}}...</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                </a>
-                @endforeach
+                    @endforeach
+                    @endif
 
-                <div class="clearfix"></div>
-
-
-
-                <!--Start of Details Page Tab-->
-                <div class="row" id="has-inquiry-tab">
-                    <div class="detail-content-wrap">
-                        <ul class="nav nav-tabs">
-                            <li @unless(session('success_message') || session('warning_message') || count($errors)> 0)
-                                class="active" @endunless>
-                                <a data-toggle="tab" href="#description">Description</a>
-                            </li>
-                            @if(file_exists('storage/properties/'.$property->id.'/'.$property->floor_plan ) &&
-                            $property->floor_plan != '')
-                            <li><a data-toggle="tab" href="#floor_plan">Floor Plan</a></li>
-                            @endif
-                            <li @if(session('success_message') || session('warning_message') || count($errors)> 0)
-                                class="active" @endif>
-                                <a data-toggle="tab" href="#inquiry" id="inquiry-tab-link">Inquiry</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div id="description" @if(session('success_message') || session('warning_message') ||
-                                count($errors)> 0) class="tab-pane fade"
-                                @else class="tab-pane fade in active" @endif>
-                                <h3>{!! $property->name !!}</h3>
-                                <h4>{{ $property->street_number }} {{' '.$property->street.' ' }}{!!
-                                    $property->location_name !!}</h4>
-                                <div class="preformater">
-                                    <div class="inner-wrap">
-                                        <pre>{!! $property->description !!}</pre>
-                                        <div class="shadow"></div>
-                                    </div>
-                                    <div class="read-more">
-                                       <span>Read more</span>
-                                    </div>
+                    <div class="list-group property-search-sidebar-container">
+                        <div class="wrapper">
+                            <p class="list-group-item side-bar-head property-search-sidebar-header">Search
+                                Property</p>
+                            <form action="{{route('properties.search')}}" method="get" class="form-group-lg">
+                                <div class="col-md-12 slide-category">
+                                    <select class="form-control type" name="category">
+                                        <option value="">Select Property Category</option>
+                                        @foreach(DataHelper::getCategories() as $key=>$category)
+                                        <option value="{!! $category->name !!}">{!! $category->name !!}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="row map-container">
-                                    <div class="col-sm-12 col-md-12">
-                                        <h4>{!! $property->location_name !!}</h4>
-                                        <div class="google_map">
-                                            <div id="gmap_canvas" style="height:400px;width:100%;"></div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-12 slider-loc">
+                                    <input type="text" class="form-control ui-autocomplete-input" id="location"
+                                        placeholder="Choose Location" autocomplete="off">
+                                    <input type="hidden" id="location_id" name="location_id">
                                 </div>
-                            </div>
-                            @if(file_exists('storage/properties/'.$property->id.'/'.$property->floor_plan ) &&
-                            $property->floor_plan != '')
-                            <div id="floor_plan" class="tab-pane fade">
-                                <div>
-                                    <img class="img-responsive"
-                                        src="{!! asset('storage/properties/'.$property->id.'/'.$property->floor_plan) !!}"
-                                        alt="{!! $property->name !!}">
+                                <div class="col-md-12">
+                                    <select class="form-control property_type" name="property_type">
+                                        <option value="">Select Property Type</option>
+                                        @foreach(DataHelper::getPropertyTypes() as $key=>$type)
+                                        <option value="{!! $type->id !!}">{!! $type->name !!}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </div>
-                            @endif
-                            <div id="inquiry" @if(session('success_message') || session('warning_message') ||
-                                count($errors)> 0) class="tab-pane fade in active"
-                                @else class="tab-pane fade" @endif>
-                                <h3>Inquiry for the Property</h3>
-                                <div>
-                                    @include('layouts.alert')
-                                    <form action="{!! route('properties.submit.contact', $property->id) !!}"
-                                        method="post">
-                                        <div class="row agent-field">
-                                            <label class="control-label col-sm-2 col-md-2" for="name">Name</label>
-                                            <div class="col-sm-10 col-md-10">
-                                                <input type="text" class="form-control agent-form-control"
-                                                    name="full_name" value="{!! old('full_name') !!}"
-                                                    placeholder="Enter your full name" required />
-                                            </div>
-                                        </div>
-                                        <div class="row agent-field">
-                                            <label class="control-label col-sm-2 col-md-2" for="email">Email</label>
-                                            <div class="col-sm-10 col-md-10">
-                                                <input type="email" class="form-control agent-form-control"
-                                                    name="email_address" value="{!! old('email_address') !!}"
-                                                    placeholder="Enter email address" required />
-                                            </div>
-                                        </div>
-                                        <div class="row agent-field">
-                                            <label class="control-label col-sm-2 col-md-2" for="phone">Phone</label>
-                                            <div class="col-sm-10 col-md-10">
-                                                <input type="text" class="form-control agent-form-control"
-                                                    name="phone_number" value="{!! old('phone_number') !!}"
-                                                    placeholder="Enter phone number" />
-                                            </div>
-                                        </div>
-                                        <div class="row agent-field">
-                                            <label class="control-label col-sm-2 col-md-2" for="message">Message</label>
-                                            <div class="col-sm-10 col-md-10">
-                                                <textarea type="text" class="form-control agent-form-control"
-                                                    name="message" rows="4" placeholder="Leave your message"
-                                                    required>{!! old('message') !!}</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                {!! Honeypot::generate('my_name', 'my_time') !!}
-                                                @if($errors->has('my_name'))
-                                                <span class="error">{{ $errors->first('my_name') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="row agent-field">
-                                            <label class="control-label col-sm-2 col-md-2" for="ReCaptcha"></label>
-                                            {!! NoCaptcha::renderJs() !!}
-                                            {!! NoCaptcha::display() !!}
-                                        </div>
-                                        {!! csrf_field() !!}
-                                        <input type="hidden" name="property_id" value="{!! $property->id !!}" />
-                                        <button type="submit" class="btn btn-default agent-btn"><i
-                                                class="glyphicon glyphicon-send"></i>Submit
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            @include('layouts.property-search-sidebar')
+                                <div class="col-md-12">
+                                    <select class="form-control price_range" name="price_range">
+                                        <option value="">Price Range</option>
+                                        <option value="0-250000">Upto $250K</option>
+                                        <option value="250000-500000">$250K-$500K</option>
+                                        <option value="500000-650000">$500K-$650K</option>
+                                        <option value="650000-750000">$650K-$750K</option>
+                                        <option value="750000-1000000">$750K-$1M</option>
+                                        <option value="1000000-100000000000">$1M Over</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <select class="form-control type" name="number_of_bedrooms">
+                                        <option value="" selected="selected">Beds</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4+</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <select class="form-control type" name="number_of_bathrooms">
+                                        <option value="" selected="selected">Baths</option>
 
-            <div class="col-sm-3 col-md-3 pull-right">
-                @if($user)
-                <div class="row">
-                    <div class="col-sm-12-md-12">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item side-bar-head">Recently Saved Properties</a>
-                            @foreach($savedProperties as $index=>$savedProperty)
-                            <a href="{!! route('properties.show', $savedProperty->slug) !!}" class="list-group-item">{!!
-                                $savedProperty->name !!}</a>
-                            @endforeach
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1.5</option>
+                                        <option value="2">2</option>
+                                        <option value="1">2.5</option>
+                                        <option value="3">3+</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <select class="form-control type" name="number_of_garages">
+                                        <option value="" selected="selected">Garage</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3+</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary">Search</button>
+                                </div>
+
+                            </form>
+
+                            <div class="clearfix"></div>
                         </div>
                     </div>
-                </div>
-                @endif
-                <div class="row">
-                    <div class="col-sm-12-md-12">
-                        <div class="list-group">
-                            <p class="list-group-item side-bar-head">Recently Added Properties</p>
-                            @foreach($recentProperties as $index=>$recentProperty)
-                            <a href="{!! route('properties.show', $recentProperty->slug) !!}"
-                                class="list-group-item">{!!
-                                $recentProperty->name !!}</a>
-                            @endforeach
-                        </div>
+                    <!-- end list group  -->
+
+                    <div class="list-group">
+                        <p class="list-group-item side-bar-head">Recently Added Properties</p>
+                        @foreach($recentProperties as $index=>$recentProperty)
+                        <a href="{!! route('properties.show', $recentProperty->slug) !!}" class="list-group-item">{!!
+                            $recentProperty->name !!}</a>
+                        @endforeach
+
                     </div>
-                </div>
-                <!--Recently Viewed Properties-->
-                <div class="row">
-                    <div class="col-sm-12-md-12">
-                        <div class="list-group">
-                            <p class="list-group-item side-bar-head">Most Viewed Properties</p>
-                            @foreach($popularProperties as $index=>$viewedProperty)
-                            <a href="{!! route('properties.show', $viewedProperty->slug) !!}"
-                                class="list-group-item">{!!
-                                $viewedProperty->name !!}</a>
-                            @endforeach
-                        </div>
+
+                    <div class="list-group">
+                        <p class="list-group-item side-bar-head">Most Viewed Properties</p>
+                        @foreach($popularProperties as $index=>$viewedProperty)
+                        <a href="{!! route('properties.show', $viewedProperty->slug) !!}" class="list-group-item">{!!
+                            $viewedProperty->name !!}</a>
+                        @endforeach
                     </div>
-                </div>
-                <!--Recently Searched Section-->
-                <div class="row">
-                    <div class="col-sm-12-md-12">
-                        <div class="list-group">
-                            <p class="list-group-item side-bar-head">Similar Properties</p>
-                            @foreach($similarProperties as $index=>$similarProperty)
-                            <a href="{!! route('properties.show', $similarProperty->slug) !!}"
-                                class="list-group-item">{!!
-                                $similarProperty->name !!}</a>
-                            @endforeach
-                        </div>
+
+
+                    <div class="list-group">
+                        <p class="list-group-item side-bar-head">Similar Properties</p>
+
+                        @foreach($similarProperties as $index=>$similarProperty)
+                        <a href="{!! route('properties.show', $similarProperty->slug) !!}" class="list-group-item">{!!
+                            $similarProperty->name !!}</a>
+                        @endforeach
+
                     </div>
+
                 </div>
+                <!-- end col 9  -->
             </div>
         </div>
     </div>
 </div>
-</div>
-
-<!-- Modal -->
 
 @stop
