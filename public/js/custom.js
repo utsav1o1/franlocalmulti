@@ -211,4 +211,17 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $('.agent-slider').slick({
+        dots: false,
+        infinite: false,
+        arrows: false,
+        // prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left"></i></button>',
+        // nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right"></i></button>',
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+
 });

@@ -156,11 +156,126 @@
         <div class="container">
             <div class="row custom-top-spacing single-gallery-row">
                 <div class="col-lg-4">
+                <span class="wdp-ribbon wdp-ribbon-six">
+                        <span class="wdp-ribbon-inner-wrap">
+                            <span class="wdp-ribbon-border"></span>
+                                <span class="wdp-ribbon-text">
+                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='1')
+                                        SOLD
+                                    @endif
+                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='2')
+                                        LEASED
+                                    @endif
+                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='1')
+                                    SALE
+                                    @endif
+                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='2')
+                                        RENT
+                                    @endif
+                                </span>
+                            </span>
+                        </span>
                     <div class="single-title-block">
                         <h1>{{$property->location_name ?? ""}}</h1>
-
                     </div>
+
+                    <div class="badges">
+                        <ul>
+                            <li>
+                                <span>{{$property->property_type_name ?? "--"}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="thumbnail">
+                            <div class="thumbnail recent-properties-box">
+                                <!--Caption Detail-->
+                                <div class="caption detail">
+                                    <header>
+                                        <!--Area Block-->
+                                        <div class="area-block">
+                                            <!-- <div class="property-type">
+                                                Property Type
+                                                : {{$property->property_type_name ?? ""}}
+                                            </div> -->
+                                            <div class="property-area">
+                                                {{$property->price_view ?? "Contact Agent"}}
+                                                <div class="st-price"></div>
+                                            </div>
+                                        </div>
+                                    </header>
+
+
+                                    <!--Item Details-->
+                                    <ul class="item-details">
+
+                                        <li>
+                                            <p class="item-bed">{{$property->number_of_bedrooms ?? 0}}
+                                                Bed</p>
+                                        </li>
+                                        <li>
+                                            <p class="item-bath">{{$property->number_of_bathrooms ?? 0}}
+                                                Bath</p>
+                                        </li>
+                                        <li>
+                                            <p class="item-garage">{{$property->number_of_garages ?? 0}}
+                                                Garage</p>
+                                        </li>
+
+                                        <li>
+                                            <p class="item-area">{{$property->area ?? '--'}} m<sup>2</sup>
+                                                </p>
+                                        </li>
+                                    </ul>
+
+
+                                    <div class="detail-footer">
+
+                                        <a href="#agent-details-navigation"><i class="fa-eye"></i>
+                                            {{ $property->view_count ?? 0 }}</a>
+                                        <span><i class="fa-calendar-o"></i>{!! \Carbon\Carbon::parse($property->created_at)->diffForHumans() !!}</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- end thumnail  -->
+                        <div class="detail-print-container">
+                            <ul class="nav detail-print">
+
+                                <!-- <li><a href="https://multidynamicingleburn.com.au" class="btn btn-info detail-btn"><span
+                                                class="glyphicon glyphicon-menu-left"></span>Back</a></li> -->
+
+
+                                <li class="fb-share">
+                                    <div class="fb-share-button fb_iframe_widget"
+                                         data-href="https://multidynamicingleburn.com.au/properties/location-location-location-welcome-to-this-well-designed-modern-home"
+                                         data-layout="button_count" data-size="large" data-mobile-iframe="true"
+                                         fb-xfbml-state="rendered"
+                                         fb-iframe-plugin-query="app_id=911895265634736&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large">
+                                    <span style="vertical-align: bottom; width: 89px; height: 28px;"><iframe
+                                                name="f3e18663cc988bc"
+                                                data-testid="fb:share_button Facebook Social Plugin"
+                                                title="fb:share_button Facebook Social Plugin" allowtransparency="true"
+                                                allowfullscreen="true" scrolling="no" allow="encrypted-media"
+                                                style="border: medium none; visibility: visible; width: 89px; height: 28px;"
+                                                src="https://www.facebook.com/v2.10/plugins/share_button.php?app_id=911895265634736&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df26a287e52fcbe4%26domain%3Dmultidynamicingleburn.com.au%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmultidynamicingleburn.com.au%252Ff27311465998866%26relation%3Dparent.parent&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large"
+                                                class="" width="1000px" height="1000px" frameborder="0"></iframe></span>
+                                    </div>
+                                </li>
+                                <!-- <li>
+                                    <a class="btn btn-info detail-btn" id="inquiry-us-button"
+                                       href="#has-inquiry-tab">Enquire
+                                        Now</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <!-- single title block  -->
+
                 </div>
+                <!-- end col  -->
                 <div class="col-lg-8">
                     <div class="property-gallery">
                         <div id="carouselSliderIndicators" class="carousel slide" data-ride="carousel">
@@ -217,97 +332,8 @@
             </div>
             <div class="row custom-top-spacing">
 
-                <div class="col-lg-9">
+                <div class="col-lg-8">
 
-                    <!-- end gallery  -->
-                    <div class="detail-print-container">
-                        <ul class="nav detail-print">
-
-                            <li><a href="https://multidynamicingleburn.com.au" class="btn btn-info detail-btn"><span
-                                        class="glyphicon glyphicon-menu-left"></span>Back</a></li>
-
-
-                            <li class="fb-share">
-                                <div class="fb-share-button fb_iframe_widget"
-                                    data-href="https://multidynamicingleburn.com.au/properties/location-location-location-welcome-to-this-well-designed-modern-home"
-                                    data-layout="button_count" data-size="large" data-mobile-iframe="true"
-                                    fb-xfbml-state="rendered"
-                                    fb-iframe-plugin-query="app_id=911895265634736&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large">
-                                    <span style="vertical-align: bottom; width: 89px; height: 28px;"><iframe
-                                            name="f3e18663cc988bc" data-testid="fb:share_button Facebook Social Plugin"
-                                            title="fb:share_button Facebook Social Plugin" allowtransparency="true"
-                                            allowfullscreen="true" scrolling="no" allow="encrypted-media"
-                                            style="border: medium none; visibility: visible; width: 89px; height: 28px;"
-                                            src="https://www.facebook.com/v2.10/plugins/share_button.php?app_id=911895265634736&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df26a287e52fcbe4%26domain%3Dmultidynamicingleburn.com.au%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmultidynamicingleburn.com.au%252Ff27311465998866%26relation%3Dparent.parent&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large"
-                                            class="" width="1000px" height="1000px" frameborder="0"></iframe></span>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="btn btn-info detail-btn" id="inquiry-us-button"
-                                    href="#has-inquiry-tab">Enquire
-                                    Now</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- single title block  -->
-
-                    <div class="thumbnail">
-                        <div class="thumbnail recent-properties-box">
-                            <!--Caption Detail-->
-                            <div class="caption detail">
-                                <header>
-                                    <!--Area Block-->
-                                    <div class="area-block">
-                                        <div class="property-type">
-                                            Property Type
-                                            : {{$property->property_type_name ?? ""}}
-                                        </div>
-                                        <div class="property-area">
-                                            {{$property->price_view ?? "Contact Agent"}}
-                                            <div class="st-price"></div>
-                                        </div>
-                                    </div>
-                                </header>
-
-
-                                <!--Item Details-->
-                                <ul class="item-details">
-
-                                    <li>
-                                        <p class="item-bed">{{$property->number_of_bedrooms ?? 0}}
-                                            Bedroom</p>
-                                    </li>
-                                    <li>
-                                        <p class="item-bath">{{$property->number_of_bathrooms ?? 0}}
-                                            Bathroom</p>
-                                    </li>
-                                    <li>
-                                        <p class="item-garage">{{$property->number_of_garages ?? 0}}
-                                            Garage</p>
-                                    </li>
-                                </ul>
-
-
-                                <div class="detail-footer">
-
-                                    <a href="#agent-details-navigation"><i class="fa-user"></i>
-                                        {{ $property->property_agent ?? 0 }}
-                                        {{ ($property->property_agent < 2) ? 'agent' : 'agents' }}</a>
-                                            <span><i class="fa-calendar-o"></i>{!!
-                                                \Carbon\Carbon::parse($property->created_at)->diffForHumans() !!}</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- end   -->
-                    <div class="single-title-block">
-                        <h2>{{$property->name ?? null}}</h2>
-                        <!-- <p>166 welling street, collingwood, vic 3066</p> -->
-                    </div>
-                    <!-- end single title block  -->
                     <div class="description content-box">
                         <h2>Description</h2>
                         <p>{!! $property->description ?? "" !!}</p>
@@ -790,16 +816,16 @@
                         <input type="hidden" name="latitude" value="{{ $property->latitude }}" />
                         <input type="hidden" name="longitude" value="{{ $property->longitude }}" />
                     </div>
-                    <div class="row map-container">
-                        <div class="col-sm-12 col-md-12">
-                            <h4>{{$property->name ?? ""}}</h4>
+                    <div class=" map-container">
+                        <div class="content-box">
+                            <h2>{{$property->name ?? ""}}</h2>
                             <div class="google_map">
                                 <div id="gmap_canvas" style="height:400px;width:100%;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end col 9  -->
+                <!-- end col 8  -->
                 <?php
 
                     $propertyAgents = $property->getPropertyAgents();
@@ -807,7 +833,8 @@
                     ?>
 
                 @if($propertyAgents->count() > 0)
-                <div class="col-lg-3 property_sidebar">
+                <div class="col-lg-4 property_sidebar">
+                <div class="agent-slider">
                     @foreach($propertyAgents as $index => $propertyAgent)
                     <div class="agent-wrapper">
 
@@ -850,6 +877,68 @@
                     </div>
                     @endforeach
                     @endif
+                    </div>
+                    
+                    <div class="form-wrapper">
+                        <div class="list-group-item side-bar-head">Enquiry Now</div>
+                        <div class="enquiry-now">
+                                <form method="POST" action="https://multidynamic.com.au/send-enquiry-about-property-to-its-agents" accept-charset="UTF-8" id="enquiry-about-property-form"><input name="_token" type="hidden" value="Y3W7sI0PL3GWr01qMISURaPFqDxIzqfM2TpQJhNP">
+
+                                <div class="row">
+
+                                    <input type="hidden" name="property_id" value="959">
+
+                                    <div class="form-group col-md-6 col-sm-6 col-12 left">
+                                        <label>First Name</label>
+                                        <input class="form-control agent-form-control" placeholder="First Name" name="first_name" type="text">
+
+                                                                            </div>
+
+                                    <div class="form-group col-md-6 col-sm-6 col-12 right">
+                                        <label>Last Name</label>
+                                        <input class="form-control agent-form-control" placeholder="Last Name" name="last_name" type="text">
+
+                                                                            </div>
+
+                                    <div class="form-group col-md-6 col-sm-6 col-12 left">
+                                        <label>Email</label>
+                                        <input class="form-control agent-form-control" placeholder="Email Address" name="email" type="text">
+
+                                                                            </div>
+
+                                    <div class="form-group col-md-6 col-sm-6 col-12 right">
+                                        <label>Phone Number</label>
+                                        <input class="form-control agent-form-control" placeholder="Phone Number" name="phone_number" type="text">
+
+                                                                            </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label>Message</label>
+                                        <textarea class="form-control agent-form-control" placeholder="Message" rows="5" name="message" cols="50"></textarea>
+
+                                                                            </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label></label>
+                                        <script src="https://www.google.com/recaptcha/api.js?" async="" defer=""></script>
+
+                                        <div data-sitekey="6LeSEs4UAAAAAFqeb1xD2IiWrOQUQo-DUQQKMIj-" class="g-recaptcha"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeSEs4UAAAAAFqeb1xD2IiWrOQUQo-DUQQKMIj-&amp;co=aHR0cHM6Ly9tdWx0aWR5bmFtaWMuY29tLmF1OjQ0Mw..&amp;hl=en&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=53s0w21bn3kk" role="presentation" name="a-ogab2whag9tb" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+
+
+                                                                            </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <button class="btn btn-primary pull-right submit-btn" type="submit">
+                                            <i class="fa fa-paper-plane"></i>
+                                            <span>Send</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
 
                     <div class="list-group property-search-sidebar-container">
                         <div class="wrapper">
