@@ -46,12 +46,12 @@
 <script src="{{ asset('backend/plugins/formValidation/formValidation.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/formValidation/bootstrap.min.js') }}"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false"
+<script src="http://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false"
     type="text/javascript"></script>
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
-      
+debugger;
         var longitude = '{!! $property->longitude !!}';
         var zoomValue = parseInt('{!! 11 !!}');
         var name = '{!! $property->name !!}';
@@ -176,7 +176,7 @@
                             </span>
                         </span>
                     <div class="single-title-block">
-                        <h1>{{$property->location_name ?? ""}}</h1>
+                        <h1>{{$property->street_number.' '.$property->street.' '.$property->location_name ?? ""}}</h1>
                     </div>
 
                     <div class="badges">
@@ -281,9 +281,9 @@
                         <div id="carouselSliderIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <?php
-                                                        
+
                                                         $propertyImages = $property->getImages();
-                                
+
                                                     ?>
                                 @if($propertyImages->count() > 0)
 
@@ -335,28 +335,37 @@
                 <div class="col-lg-8">
 
                     <div class="description content-box">
-                        <h2>Description</h2>
-                        <p>{!! $property->description ?? "" !!}</p>
+                        <h2>{{$property->name ?? ""}}</h2>
+                        <h4>{{$property->street_number.' '.$property->street.' '.$property->location_name ?? ""}}</h4>
+                        <div class="preformater">
+                            <div class="inner-wrap">
+                                <pre>{!! $property->description ?? "" !!}</pre>
+                            </div>
+
+                            <div class="read-more">
+                                <span>Read more</span>
+                            </div>
+                        </div>
                     </div>
                     <!-- end div content-box  -->
 
                     <div class="property-details content-box">
                         <h2>Property details</h2>
-                        <div class="row">
-                            <ul class="row">
-                                <li class="col-lg-6">
-                                    <label>Property ID:</label> {{$property->id}}
-                                </li>
-                                <li class="col-lg-6">
-                                    <label>Price:</label> {{$property->price_view ?? "Contact Agent"}}
-                                </li>
-                                <li class="col-lg-6">
-                                    <label>Property Size:</label>{{$property->area ?? "Not available"}}
-                                </li>
-                                <li class="col-lg-6">
-                                    <label>Bedrooms:</label> {{$property->number_of_bedrooms ?? 0}}
-                                </li>
-                            </ul>
+                            <div class="rows">
+                                <ul class="row">
+                                    <li class="col-lg-6">
+                                        <label>Bedrooms:</label> {{$property->number_of_bathrooms ?? 0}}
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <label>Bathrooms:</label> {{$property->number_of_bedrooms ?? 0}}
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <label>Price:</label> {{$property->price_view ?? "Contact Agent"}}
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <label>Property Size:</label>{{$property->area ?? '--'}} m<sup>2</sup>
+                                    </li>
+                                </ul>
                         </div>
                     </div>
                     <!-- end div content-box  -->
@@ -376,47 +385,47 @@
                     <div class="features-details content-box">
                         <h2>features</h2>
                         <ul class="row">
-                            @if(isset($property->airConditioning))
-                            <li class="col-lg-4">Air Conditioning</li>
+                            @if(isset($property->airConditioning) && $property->airConditioning > 0)
+                                <li class="col-lg-4">Air Conditioning</li>
                             @endif
-                            @if(isset($property->openSpaces))
-                            <li class="col-lg-4">Open Space</li>
+                            @if(isset($property->openSpaces) && $property->openSpaces > 0)
+                                <li class="col-lg-4">Open Space</li>
                             @endif
-                            @if(isset($property->livingAreas))
-                            <li class="col-lg-4">Living Area</li>
+                            @if(isset($property->livingAreas) && $property->livingAreas > 0)
+                                <li class="col-lg-4">Living Area</li>
                             @endif
-                            @if(isset($property->carports))
-                            <li class="col-lg-4">Carports</li>
+                            @if(isset($property->carports) && $property->carports > 0)
+                                <li class="col-lg-4">Carports</li>
                             @endif
-                            @if(isset($property->alarmSystem))
-                            <li class="col-lg-4">Alarm System</li>
+                            @if(isset($property->alarmSystem) && $property->alarmSystem > 0)
+                                <li class="col-lg-4">Alarm System</li>
                             @endif
-                            @if(isset($property->builtInRobes))
-                            <li class="col-lg-4">Built in Robes</li>
+                            @if(isset($property->builtInRobes) && $property->builtInRobes > 0)
+                                <li class="col-lg-4">Built in Robes</li>
                             @endif
-                            @if(isset($property->ensuite))
-                            <li class="col-lg-4">Ensuite</li>
+                            @if(isset($property->ensuite) && $property->ensuite > 0)
+                                <li class="col-lg-4">Ensuite</li>
                             @endif
-                            @if(isset($property->furnished))
-                            <li class="col-lg-4">Furnished</li>
+                            @if(isset($property->furnished) && $property->furnished > 0)
+                                <li class="col-lg-4">Furnished</li>
                             @endif
-                            @if(isset($property->intercom))
-                            <li class="col-lg-4">Intercom</li>
+                            @if(isset($property->intercom) && $property->intercom > 0)
+                                <li class="col-lg-4">Intercom</li>
                             @endif
-                            @if(isset($property->openFirePlace))
-                            <li class="col-lg-4">Open Fire Place</li>
+                            @if(isset($property->openFirePlace) && $property->openFirePlace > 0)
+                                <li class="col-lg-4">Open Fire Place</li>
                             @endif
-                            @if(isset($property->petFriendly))
-                            <li class="col-lg-4">Pet Friendly</li>
+                            @if(isset($property->petFriendly) && $property->petFriendly > 0)
+                                <li class="col-lg-4">Pet Friendly</li>
                             @endif
-                            @if(isset($property->smokers))
-                            <li class="col-lg-4">Smokers</li>
+                            @if(isset($property->smokers) && $property->smokers > 0)
+                                <li class="col-lg-4">Smokers</li>
                             @endif
-                            @if(isset($property->tennisCourt))
-                            <li class="col-lg-4">Tennis Court</li>
+                            @if(isset($property->tennisCourt) && $property->tennisCourt > 0)
+                                <li class="col-lg-4">Tennis Court</li>
                             @endif
-                            @if(isset($property->vacuumSystem))
-                            <li class="col-lg-4">Vaccum System</li>
+                            @if(isset($property->vacuumSystem) && $property->vacuumSystem > 0)
+                                <li class="col-lg-4">Vaccum System</li>
                             @endif
                         </ul>
                     </div>
@@ -878,7 +887,7 @@
                     @endforeach
                     @endif
                     </div>
-                    
+
                     <div class="form-wrapper">
                         <div class="list-group-item side-bar-head">Enquiry Now</div>
                         <div class="enquiry-now">

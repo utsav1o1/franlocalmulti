@@ -50,7 +50,7 @@
                                         <div class="price">
                                             {{ $property->getFormattedPrice() }}
                                         </div>
-                                        
+
                                         <div class="price-block">
                                             <div class="starting-price"></div>
                                             <div class="st-price">{!! $property->priceType ? $property->priceType->heading : '' !!}</div>
