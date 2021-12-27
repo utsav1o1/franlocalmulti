@@ -232,7 +232,7 @@
 
         .agent-image {
             border: none;
-            width: 100px;
+            width: 100px !important;
             height: 100px;
             margin: 0;
 
@@ -350,6 +350,7 @@
         }
 
         div[class*="col-"] {
+            padding: 0 15px;
             @media (max-width:768px) {
                 // padding: 0;
             }
@@ -613,4 +614,11 @@
 .item-details li:last-child p {
     // float: right;
     width: auto;
+}
+.custom-top-spacing {
+    &:not(.single-gallery-row) {
+        width: auto;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
 }
