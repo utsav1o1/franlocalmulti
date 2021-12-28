@@ -285,7 +285,7 @@ debugger;
                                                         $propertyImages = $property->getImages();
 
                                                     ?>
-                                @if($propertyImages->count() > 0)
+                              {{--  @if($propertyImages->count() > 0)
 
                                 @foreach($propertyImages as $index => $propertyImage)
 
@@ -300,7 +300,7 @@ debugger;
                                     </div>
                                 </li>
 
-                                @endif
+                                @endif--}}
                             </ol>
                             <div class="carousel-inner detail-carousel" role="listbox">
 
