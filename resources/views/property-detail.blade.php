@@ -279,7 +279,7 @@ debugger;
                 <div class="col-lg-8">
                     <div class="property-gallery">
                         <div id="carouselSliderIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
+                            <ol class="carousel-indicators" style="display: none">
                                 <?php
 
                                                         $propertyImages = $property->getImages();
