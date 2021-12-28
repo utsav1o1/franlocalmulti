@@ -193,6 +193,10 @@
                                                             !!}</span>
                                             </div>
                                         </div>
+                                        <div class="view-detail">
+                                            <a href="{!! route('properties.show', $property->slug) !!}">View Detail</a>
+                                        </div>
+                                        <!-- view more button  -->
                                     </div>
                                 </div>
                             </div>

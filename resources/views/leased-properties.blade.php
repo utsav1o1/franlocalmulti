@@ -110,6 +110,11 @@
                                                         <span><i class="fa-calendar-o"></i>{!! App\Http\Helper::time_elapsed_string($property->created_at) !!}</span>
                                                     </div>
                                                 </div>
+                                                
+                                                <div class="view-detail">
+                                                    <a href="{!! route('properties.show', $property->slug) !!}">View Detail</a>
+                                                </div>
+                                                <!-- view more button  -->
                                             </div>
                                         </div>
                                     </div>
