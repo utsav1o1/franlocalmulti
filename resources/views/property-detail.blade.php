@@ -199,7 +199,7 @@ debugger;
                                                 : {{$property->property_type_name ?? ""}}
                                             </div> -->
                                             <div class="property-area">
-                                                {{$property->price_view ?? "Contact Agent"}}
+                                                {{$property->price_view ?? $property->property_sold_text ?? "Contact Agent"}}
                                                 <div class="st-price"></div>
                                             </div>
                                         </div>
@@ -314,7 +314,7 @@ debugger;
                                 @endforeach
                                 @else
                                 <div class="item">
-                                    <img class="d-block img-fluid" src="{{ url($defaultImage) }}">
+                                    <img class="d-block img-fluid" src="{{ url($defaultImage ?? "") }}">
                                 </div>
                                 @endif
                             </div>
