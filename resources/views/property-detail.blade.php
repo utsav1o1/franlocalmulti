@@ -199,7 +199,7 @@ debugger;
                                                 : {{$property->property_type_name ?? ""}}
                                             </div> -->
                                             <div class="property-area">
-                                                {{$property->price_view ?? $property->property_sold_text ?? "Contact Agent"}}
+                                                {{$property->price_view ?? $property->sold_price_text     ?? "Contact Agent"}}
                                                 <div class="st-price"></div>
                                             </div>
                                         </div>
