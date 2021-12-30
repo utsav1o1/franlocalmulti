@@ -49,7 +49,7 @@
 {{--<script src="http://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false"--}}
 {{--    type="text/javascript"></script>--}}
 <script type="text/javascript"
-        src="https://maps.google.com/maps/api/js?key={{ env('MAP_KEY') }}&sensor=false&libraries=places"></script>
+        src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&sensor=false&libraries=places"></script>
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
