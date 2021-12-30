@@ -30,8 +30,12 @@
 
                         <table cellspacing="0" cellpadding="0" width="100%">
                             <tr>
-                                <td width="20%">Name</td>
-                                <td>{{ $data['name'] }}</td>
+                                <td width="20%">First Name</td>
+                                <td>{{ $data['first_name'] }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%">Last Name</td>
+                                <td>{{ $data['last_name'] }}</td>
                             </tr>
                             <tr>
                                 <td width="20%">Email Address</td>
@@ -39,15 +43,7 @@
                             </tr>
                             <tr>
                                 <td width="20%">Phone Number</td>
-                                <td>{{ $data['phone'] }}</td>
-                            </tr>
-                            <tr>
-                                <td width="20%">Postal Code</td>
-                                <td>{{ $data['postal_code'] }}</td>
-                            </tr>
-                            <tr>
-                                <td width="20%">Property Type</td>
-                                <td>{{ $data['property_type'] }}</td>
+                                <td>{{ $data['phone_number'] }}</td>
                             </tr>
                             <tr>
                                 <td width="20%">Message</td>
