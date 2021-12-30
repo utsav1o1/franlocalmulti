@@ -74,6 +74,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
 Route::get('contact-us', 'ContactUsController@showContactUsForm')->name('contact-us.form');
 Route::post('send-enquiry', 'ContactUsController@sendEnquiry')->name('enquiry.send');
+Route::post('send-property-enquiry', 'ContactUsController@propertyEnquiry')->name('property.enquiry.send');
 Route::get('location-list-for-enquiry-form', 'ContactUsController@getLocationListForEnquiryForm')->name('enquiry.location-list');
 
 // property evaluation and appraisal

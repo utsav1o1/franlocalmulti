@@ -889,63 +889,85 @@ debugger;
                     </div>
 
                     <div class="form-wrapper">
+                        @if(session()->get('enquiry-success'))
+                        <div class="alert alert-success" role="alert">
+                           {{ session()->get('enquiry-success')}}
+                        </div>
+                        @endif
                         <div class="list-group-item side-bar-head">Enquiry Now</div>
                         <div class="enquiry-now">
-                                <form method="POST" action="https://multidynamic.com.au/send-enquiry-about-property-to-its-agents" accept-charset="UTF-8" id="enquiry-about-property-form"><input name="_token" type="hidden" value="Y3W7sI0PL3GWr01qMISURaPFqDxIzqfM2TpQJhNP">
+                            {!! Form::open(['url' => route('property.enquiry.send'), 'id' => 'enquiry-about-property-form']) !!}
 
-                                <div class="row">
+                            <div class="row">
 
-                                    <input type="hidden" name="property_id" value="959">
+                                <input type="hidden" name="property_id" value="{{ $property->id }}"/>
 
-                                    <div class="form-group col-md-6 col-sm-6 col-12 left">
-                                        <label>First Name</label>
-                                        <input class="form-control agent-form-control" placeholder="First Name" name="first_name" type="text">
+                                <div class="form-group col-md-6 col-sm-6 col-12 left">
+                                    <label>First Name</label>
+                                    {!! Form::text('first_name', null, ['class' => 'form-control agent-form-control' ,'placeholder' => 'First Name']) !!}
 
-                                                                            </div>
-
-                                    <div class="form-group col-md-6 col-sm-6 col-12 right">
-                                        <label>Last Name</label>
-                                        <input class="form-control agent-form-control" placeholder="Last Name" name="last_name" type="text">
-
-                                                                            </div>
-
-                                    <div class="form-group col-md-6 col-sm-6 col-12 left">
-                                        <label>Email</label>
-                                        <input class="form-control agent-form-control" placeholder="Email Address" name="email" type="text">
-
-                                                                            </div>
-
-                                    <div class="form-group col-md-6 col-sm-6 col-12 right">
-                                        <label>Phone Number</label>
-                                        <input class="form-control agent-form-control" placeholder="Phone Number" name="phone_number" type="text">
-
-                                                                            </div>
-
-                                    <div class="form-group col-md-12">
-                                        <label>Message</label>
-                                        <textarea class="form-control agent-form-control" placeholder="Message" rows="5" name="message" cols="50"></textarea>
-
-                                                                            </div>
-
-                                    <div class="form-group col-md-12">
-                                        <label></label>
-                                        <script src="https://www.google.com/recaptcha/api.js?" async="" defer=""></script>
-
-                                        <div data-sitekey="6LeSEs4UAAAAAFqeb1xD2IiWrOQUQo-DUQQKMIj-" class="g-recaptcha"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeSEs4UAAAAAFqeb1xD2IiWrOQUQo-DUQQKMIj-&amp;co=aHR0cHM6Ly9tdWx0aWR5bmFtaWMuY29tLmF1OjQ0Mw..&amp;hl=en&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=53s0w21bn3kk" role="presentation" name="a-ogab2whag9tb" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
-
-
-                                                                            </div>
+                                    @if($errors->has('first_name'))
+                                        <small class="validation-error-message">{{ $errors->get('first_name')[0] }}</small>
+                                    @endif
                                 </div>
 
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <button class="btn btn-primary pull-right submit-btn" type="submit">
-                                            <i class="fa fa-paper-plane"></i>
-                                            <span>Send</span>
-                                        </button>
-                                    </div>
+                                <div class="form-group col-md-6 col-sm-6 col-12 right">
+                                    <label>Last Name</label>
+                                    {!! Form::text('last_name', null, ['class' => 'form-control agent-form-control' ,'placeholder' => 'Last Name']) !!}
+
+                                    @if($errors->has('last_name'))
+                                        <small class="validation-error-message">{{ $errors->get('last_name')[0] }}</small>
+                                    @endif
                                 </div>
-                                </form>
+
+                                <div class="form-group col-md-6 col-sm-6 col-12 left">
+                                    <label>Email</label>
+                                    {!! Form::text('email', null, ['class' => 'form-control agent-form-control' ,'placeholder' => 'Email Address']) !!}
+
+                                    @if($errors->has('email'))
+                                        <small class="validation-error-message">{{ $errors->get('email')[0] }}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group col-md-6 col-sm-6 col-12 right">
+                                    <label>Phone Number</label>
+                                    {!! Form::text('phone_number', null, ['class' => 'form-control agent-form-control' ,'placeholder' => 'Phone Number']) !!}
+
+                                    @if($errors->has('phone_number'))
+                                        <small class="validation-error-message">{{ $errors->get('phone_number')[0] }}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label>Message</label>
+                                    {!! Form::textarea('message', null, ['class' => 'form-control agent-form-control' ,'placeholder' => 'Message', 'rows' => 5]) !!}
+
+                                    @if($errors->has('message'))
+                                        <small class="validation-error-message">{{ $errors->get('message')[0] }}</small>
+                                    @endif
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label></label>
+                                    {!! NoCaptcha::renderJs() !!}
+                                    {!! NoCaptcha::display() !!}
+
+
+                                    @if($errors->has('g-recaptcha-response'))
+                                        <small class="validation-error-message">{{ $errors->get('g-recaptcha-response')[0] }}</small>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <button class="btn btn-primary pull-right" type="submit">
+                                        <i class="fa fa-paper-plane"></i>
+                                        <span>Send</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
                             </div>
                         </div>
 

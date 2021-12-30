@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SendEnquiryRequest;
 use App\Jobs\PropertyApprasialJob;
+use App\Jobs\PropertyEnquiryJob;
 use App\Jobs\PropertyEvaluationJob;
 use App\Models\Corporate\Page;
 use App\Models\Corporate\PageDetail;
@@ -133,6 +134,7 @@ class ContactUsController extends Controller
         return response()->json(['status' => 'success']);
 
     }
+
     public function propertyEvaludationSuccess()
     {
         // dd(session()->get('name'));
@@ -220,4 +222,60 @@ class ContactUsController extends Controller
         }
 
     }
+
+
+
+    public function propertyEnquiry(Request $request)
+    {
+
+        $validated = validator()->make(request()->all(), [
+            'first_name' => 'required|min:3|max:255',
+            'last_name' => 'required|min:3|max:255',
+            'email' => 'required|email',
+            'phone_number' => 'required|numeric',
+            'message' => 'required|max:500',
+            'g-recaptcha-response' => 'required|captcha',
+        ]);
+        if ($validated->fails()) {
+            return response()->json(['errors' => $validated->errors()], 422);
+        }
+        $validated = $request->all();
+        $emails = explode(',', config('app.enquiry_to_mail'));
+
+        try {
+
+            // Mail::to(config('app.enquiry_to_mail'))->send(new PropertyApprasialMail($validated));
+            foreach ($emails as $email):
+                $validated['mail_to'] = $email;
+                $jobToDispatch = (new PropertyEnquiryJob($validated))->delay(Carbon::now()->addSeconds(10));
+                dispatch($jobToDispatch);
+            endforeach;
+
+            // saving data to google spread sheet
+            $appendData = [
+                'Property Enquiry',
+                $validated['first_name'],
+                $validated['last_name'],
+                $validated['email'],
+                $validated['phone_number'],
+                $validated['message'],
+                Carbon::parse(Carbon::now())->format('M d, Y'),
+
+            ];
+
+           // $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+
+        } catch (\Exception $e) {
+            // dd($e);
+            return $this->serverErrorResponse();
+        }
+        $request->session()->flash('enquiry-success', 'Enquiry Sent Successfullly!!');
+
+        return redirect()->back();
+
+    }
+
+
+
+
 }
