@@ -15,6 +15,7 @@ use App\Repositories\PropertyRepository;
 use App\Repositories\PropertyTypeRepository;
 use Auth;
 use DB;
+use Dymantic\InstagramFeed\Profile;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
