@@ -49,7 +49,7 @@ class HomeController extends Controller
     {
 //        $insta_posts = [];
          $profile = Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
-         var_dump($profile->getInstagramAuthUrl());
+//         var_dump($profile->getInstagramAuthUrl());
         // // dd(!empty($profile));
          if (!empty($profile)) {
              $insta_posts = $profile->refreshFeed(6);
