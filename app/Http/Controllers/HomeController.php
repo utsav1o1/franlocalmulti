@@ -47,15 +47,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $insta_posts = [];
-//         $profile = Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
+//        $insta_posts = [];
+         $profile = Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
 //         dd($profile->getInstagramAuthUrl());
         // // dd(!empty($profile));
-//         if (!empty($profile)) {
-//             $insta_posts = $profile->refreshFeed(6);
-//         } else {
-//             $insta_posts = [];
-//         }
+         if (!empty($profile)) {
+             $insta_posts = $profile->refreshFeed(6);
+         } else {
+             $insta_posts = [];
+         }
         // dd($insta_posts);
 
         $defaultPropertyCategories = \App\Models\Corporate\PropertyCategory::getDefaultPropertyCategories();
