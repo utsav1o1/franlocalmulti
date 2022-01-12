@@ -513,7 +513,7 @@ debugger;
                         <div class="video__block">
                             <iframe width="100%" height="315" src="{{$property->video_link ?? null}}">
                             </iframe>
-                            <a href="#" class="link"><i class="icon fa fa-play text-white"></i></a>
+{{--                            <a href="#" class="link"><i class="icon fa fa-play text-white"></i></a>--}}
                         </div>
                     </div>
                     @endif
