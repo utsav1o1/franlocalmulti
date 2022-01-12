@@ -67,7 +67,7 @@ class PropertyController extends Controller
             ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
             ->where('is_active', 'Y')
             ->where('branch_id', env('BRANCH_ID'));
-
+        dd($query->toSql());
         if ($request->get('category')) {
             /**
              * filter only for sold and for leased properties only
@@ -124,7 +124,6 @@ class PropertyController extends Controller
             DB::raw("CONCAT(locations.suburb, ' ', CONCAT(locations.state, ' ', locations.postal_code)) AS location_name"))
             ->groupBy('properties.id')
             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
-
         return view('search-properties')
             ->withProperties($properties)
             ->withRequestData($request->all());
