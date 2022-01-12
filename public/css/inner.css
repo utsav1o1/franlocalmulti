@@ -2357,3 +2357,6 @@ footer .footer-item .newsletter input {
 .preformater.visible .read-more {
     margin-top: 0;
 }
+.blog-details-container {
+    overflow: hidden;
+}
