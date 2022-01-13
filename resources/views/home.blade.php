@@ -478,9 +478,10 @@
                     <h3>We offer <strong>FREE</strong> <br>
                         Buyers and Sellers Guides
                     </h3>
-                    <p><strong>We care to prepare</strong> - We go the extra mile to best prepare your property for
-                        the market. If you would like to know how to best prepare your home for the market then
-                        contact us today.</p>
+                    <p>Buying or selling your property doesn’t have to be a stressful experience. Multi Dynamic have
+                        prepared these FREE guides to help make the process plain sailing. Packed with tips and tricks
+                        and need to know information, this is your go-to guide for property transactions.
+                    </p>
                     <h4>Download yours today!</h4>
                 </div>
             </div>
