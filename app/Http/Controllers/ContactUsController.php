@@ -254,10 +254,12 @@ class ContactUsController extends Controller
             // saving data to google spread sheet
             $appendData = [
                 'Property Enquiry',
-                $validated['first_name'],
-                $validated['last_name'],
+                $validated['first_name'].$validated['last_name'],
                 $validated['email'],
                 $validated['phone_number'],
+                '',
+                '',
+                '',
                 $validated['message'],
                 Carbon::parse(Carbon::now())->format('M d, Y'),
 
