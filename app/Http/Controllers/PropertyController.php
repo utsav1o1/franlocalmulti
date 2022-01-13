@@ -67,7 +67,7 @@ class PropertyController extends Controller
             ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
             ->where('is_active', 'Y')
             ->where('branch_id', env('BRANCH_ID'));
-        dd($query->toSql());
+//        dd($query->toSql());
         if ($request->get('category')) {
             /**
              * filter only for sold and for leased properties only
