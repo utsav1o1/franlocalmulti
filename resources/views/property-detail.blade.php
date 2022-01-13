@@ -873,8 +873,8 @@
                                 </p>
 
                                 <p>
-                                    <a href="tel:{{$propertyAgent->phone_number ?? ""}}"><i
-                                            class="glyphicon glyphicon-phone"></i>{{$propertyAgent->phone_number ??
+                                    <a href="tel:{{$propertyAgent->mobile_number ?? ""}}"><i
+                                            class="glyphicon glyphicon-phone"></i>{{$propertyAgent->mobile_number ??
                                         ""}}</a>
                                 </p>
 
