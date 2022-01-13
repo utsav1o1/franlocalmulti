@@ -67,6 +67,7 @@ class HomeController extends Controller
             ->leftJoin('locations', 'locations.id', '=', 'properties.location_id')
             ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
             ->where('is_active', 'Y')
+            ->where('is_leased_sold', 'N')
             ->where('property_category_id', $defaultPropertyCategories['buy'])
             ->where('branch_id', env('BRANCH_ID'));
 
