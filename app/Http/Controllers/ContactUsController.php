@@ -263,7 +263,7 @@ class ContactUsController extends Controller
 
             ];
 
-           // $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
         } catch (\Exception $e) {
             // dd($e);
