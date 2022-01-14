@@ -20,7 +20,9 @@
         max-width: none !important;
         background: none !important
     }
-
+.validation-error-message{
+    color: red;
+}
 </style>
 <link href="{{ asset('backend/plugins/sweetalert/dist/sweetalert2.min.css') }}" rel="stylesheet">
 <link href="{{ asset('backend/plugins/formValidation/formValidation.min.css') }}" rel="stylesheet">
@@ -46,6 +48,7 @@
 <script src="{{ asset('backend/plugins/formValidation/formValidation.min.js') }}"></script>
 <script src="{{ asset('backend/plugins/formValidation/bootstrap.min.js') }}"></script>
 
+
 {{--<script src="http://maps.googleapis.com/maps/api/js?key={!! env('GOOGLE_MAP_KEY') !!}&secure=false"--}}
 {{--    type="text/javascript"></script>--}}
 <script type="text/javascript"
@@ -53,7 +56,6 @@
 <script type="text/javascript">
     var propertyId = parseInt('{!! $property->id !!}');
         var latitude = '{!! $property->latitude !!}';
-debugger;
         var longitude = '{!! $property->longitude !!}';
         var zoomValue = parseInt('{!! 11 !!}');
         var name = '{!! $property->name !!}';
@@ -873,8 +875,8 @@ debugger;
                                 </p>
 
                                 <p>
-                                    <a href="tel:{{$propertyAgent->phone_number ?? ""}}"><i
-                                            class="glyphicon glyphicon-phone"></i>{{$propertyAgent->phone_number ??
+                                    <a href="tel:{{$propertyAgent->mobile_number ?? ""}}"><i
+                                            class="glyphicon glyphicon-phone"></i>{{$propertyAgent->mobile_number ??
                                         ""}}</a>
                                 </p>
 

@@ -85,7 +85,7 @@ class PageController extends Controller
             ->where('is_active', 'Y')
             ->where('is_leased_sold', 'Y')
             ->where('branch_id', env('BRANCH_ID'))
-            ->where('property_category_id', $defaultCategories['buy']);
+            ->where('property_category_id', $defaultCategories['rent']);
 
         $properties = $query->select('properties.*',
             DB::raw("COUNT(property_agents.id) AS agents_count"),

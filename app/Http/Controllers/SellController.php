@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use DB;
 use Mail;
 use App\Models\Property;
@@ -20,6 +21,21 @@ class SellController extends Controller
         $data = $request->all();
 
         $this->sendPropertyEstimationByEmail($data);
+
+        $appendData = [
+            'Property Estimate',
+            $data['full_name'],
+            $data['email'],
+            $data['phone_number'],
+            $data['suburb_postcode'],
+            $data['street_address'],
+            '',
+            $data['additional_message'],
+            Carbon::parse(Carbon::now())->format('M d, Y'),
+
+        ];
+
+        $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
 //        $request->session()->flash('success', 'Form Successfully Submitted!!');
         return redirect(route('thank-you'));
