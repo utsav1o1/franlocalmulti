@@ -2360,3 +2360,7 @@ footer .footer-item .newsletter input {
 .blog-details-container {
     overflow: hidden;
 }
+#allproperties {
+    display: flex;
+    flex-wrap: wrap;
+  }
