@@ -20,7 +20,9 @@
         max-width: none !important;
         background: none !important
     }
-
+.validation-error-message{
+    color: red;
+}
 </style>
 <link href="{{ asset('backend/plugins/sweetalert/dist/sweetalert2.min.css') }}" rel="stylesheet">
 <link href="{{ asset('backend/plugins/formValidation/formValidation.min.css') }}" rel="stylesheet">

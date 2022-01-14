@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactInquiryRequest;
 use App\Http\Requests\SendEnquiryRequest;
 use App\Jobs\PropertyApprasialJob;
 use App\Jobs\PropertyEnquiryJob;
@@ -225,20 +226,10 @@ class ContactUsController extends Controller
 
 
 
-    public function propertyEnquiry(Request $request)
+    public function propertyEnquiry(ContactInquiryRequest $request)
     {
 
-        $validated = validator()->make(request()->all(), [
-            'first_name' => 'required|min:3|max:255',
-            'last_name' => 'required|min:3|max:255',
-            'email' => 'required|email',
-            'phone_number' => 'required|numeric',
-            'message' => 'required|max:500',
-            'g-recaptcha-response' => 'required|captcha',
-        ]);
-        if ($validated->fails()) {
-            return response()->json(['errors' => $validated->errors()], 422);
-        }
+       
         $validated = $request->all();
         $emails = explode(',', config('app.enquiry_to_mail'));
 
