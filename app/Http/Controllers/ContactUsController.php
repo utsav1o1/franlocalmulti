@@ -125,7 +125,7 @@ class ContactUsController extends Controller
                 Carbon::parse(Carbon::now())->format('M d, Y'),
 
             ];
-           // $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
             //autoresponder
             EmailHelper::autoresponder($validated['email']);
@@ -192,7 +192,7 @@ class ContactUsController extends Controller
 
             ];
 
-            //$values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+            $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
             EmailHelper::autoresponder($validated['email']);
         } catch (\Exception $e) {
             // dd($e);
