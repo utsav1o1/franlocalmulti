@@ -52,6 +52,7 @@ class HomeController extends Controller
 //         var_dump($profile->getInstagramAuthUrl());
         // // dd(!empty($profile));
          if (!empty($profile)) {
+             var_dump($profile->getInstagramAuthUrl());
              $insta_posts = $profile->refreshFeed(6);
          } else {
              $insta_posts = [];
