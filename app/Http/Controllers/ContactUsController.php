@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Shared\EmailHelper;
 use App\Http\Requests\ContactInquiryRequest;
 use App\Http\Requests\SendEnquiryRequest;
 use App\Jobs\PropertyApprasialJob;
@@ -70,7 +71,7 @@ class ContactUsController extends Controller
 
         $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
-
+        EmailHelper::autoresponder($data['email']);
         return redirect(route('thank-you'));
 
     }
@@ -126,6 +127,8 @@ class ContactUsController extends Controller
             ];
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
 
+            //autoresponder
+            EmailHelper::autoresponder($validated['email']);
         } catch (\Exception $e) {
 
             return $this->serverErrorResponse();
