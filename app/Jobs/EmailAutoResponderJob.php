@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\AutoResponderMail;
 use App\Mail\PropertyEvaluationMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

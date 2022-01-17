@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Shared\EmailHelper;
 use App\Jobs\BuyingGuideJob;
 use App\Jobs\SellingGuideJob;
 use App\Jobs\SendBuyingGuideJob;
@@ -86,7 +87,8 @@ class DownloadGuideController extends Controller
             ];
 
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
-
+            //email responder
+            EmailHelper::autoresponder($data['email']);
         } catch (\Exception $e) {
             // dd($e);
             $this->serverErrorResponse();
@@ -168,7 +170,7 @@ class DownloadGuideController extends Controller
             ];
 
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
-
+            EmailHelper::autoresponder($data['email']);
             // Mail::to($data['email'])->send(new SendBuyingGuideMail($data));
         } catch (\Exception $e) {
 

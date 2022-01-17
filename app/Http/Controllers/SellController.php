@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Shared\EmailHelper;
 use Carbon\Carbon;
 use DB;
 use Mail;
@@ -36,7 +37,7 @@ class SellController extends Controller
         ];
 
         $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
-
+        EmailHelper::autoresponder($data['email']);
 //        $request->session()->flash('success', 'Form Successfully Submitted!!');
         return redirect(route('thank-you'));
 //        return redirect(route('sell-form'));

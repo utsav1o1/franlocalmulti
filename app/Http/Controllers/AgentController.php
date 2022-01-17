@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Shared\EmailHelper;
 use App\Mail\AgentInquirySent;
 use App\Models\Corporate\PropertyCategory;
 use App\Repositories\AgentMessageRepository;
@@ -125,7 +126,7 @@ class AgentController extends Controller
 
             ];
             $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
-
+            EmailHelper::autoresponder( $data['email_address']);
             return redirect(route('thank-you'));
 //            return redirect()->back()
             //                ->withSuccessMessage('Your message is submitted.');

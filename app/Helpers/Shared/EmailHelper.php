@@ -2,6 +2,7 @@
 
 namespace App\Helpers\Shared;
 
+use App\Jobs\EmailAutoResponderJob;
 use App\Jobs\PropertyEvaluationJob;
 use Carbon\Carbon;
 

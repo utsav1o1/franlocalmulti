@@ -207,7 +207,7 @@
                             $('.sendPropertyEvaluation').prop('disabled', false);
                             if (data.status == "success") {
                                 window.location.href =
-                                    "{{ route('propertyevaluationsuccess') }}"
+                                    "{{ url('/thank-you') }}"
                             } else {
                                 alert('Something went wrong. please try later!')
                             }
@@ -247,7 +247,7 @@
                             $('.sendPropertyAppraisal').prop('disabled', false);
                             if (data.status == "success") {
                                 window.location.href =
-                                    "{{ route('propertyappraisalsuccess') }}"
+                                    "{{ url('/thank-you') }}"
                             } else {
                                 alert('Something went wrong. please try later!')
                             }
