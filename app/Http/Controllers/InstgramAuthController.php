@@ -6,7 +6,7 @@ class InstgramAuthController extends Controller
 {
     public function show()
     {
-        $profile = \Dymantic\InstagramFeed\Profile::where('username', 'dibbyakarki')->first();
+        $profile = \Dymantic\InstagramFeed\Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
         return view('instagram-auth-page', ['instagram_auth_url' => $profile->getInstagramAuthUrl()]);
     }
 }
