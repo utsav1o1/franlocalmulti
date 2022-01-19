@@ -58,6 +58,7 @@ class HomeController extends Controller
         foreach(glob($dir.'*.*') as $v){
             unlink($v);
         }
+
         foreach ($accountMedias as $key  => $accountMedia) {
             $images[$key] = str_replace("&amp;","&", $accountMedia->getimageHighResolutionUrl());
             $path = $images[$key];
