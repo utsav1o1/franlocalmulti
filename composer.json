@@ -10,8 +10,7 @@
         "axlon/laravel-postal-code-validation": "^3.2",
         "barryvdh/laravel-dompdf": "^0.9.0",
         "cviebrock/eloquent-sluggable": "^6.0",
-        "dymantic/laravel-instagram-feed": "2.0",
-        "guzzlehttp/guzzle": "~5.3|^6.3",
+        "guzzlehttp/guzzle": "^7.4",
         "intervention/image": "^2.3",
         "laravel/framework": "6.20.1",
         "laravel/helpers": "^1.4",
@@ -19,6 +18,8 @@
         "laravel/tinker": "~2.6.2",
         "laravelcollective/html": "^6.2.1",
         "msurguy/honeypot": "^1.1",
+        "phpfastcache/phpfastcache": "^8.1",
+        "raiym/instagram-php-scraper": "^0.12.0",
         "revolution/laravel-google-sheets": "5.6.0"
     },
     "require-dev": {

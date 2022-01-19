@@ -4,13 +4,13 @@ return [
     /*
      * The client_id from registering your app on Instagram
      */
-    'client_id' => env('INSTAGRAM_CLIENT_ID'),
+    'client_id' => env('INSTAGRAM_CLIENT_ID','988485208456404'),
 
     /*
      * The client secret from registering your app on Instagram,
      * This is not the same as an access token.
      */
-    'client_secret' => env('INSTAGRAM_CLIENT_SECRET'),
+    'client_secret' => env('INSTAGRAM_CLIENT_SECRET','37d199b794974bc9e000114b9b8756e3'),
 
     /*
      * The route that will respond to the Instagram callback during the OAuth process.

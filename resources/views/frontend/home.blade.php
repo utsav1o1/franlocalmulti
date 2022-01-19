@@ -1113,7 +1113,7 @@
 <div class="testimonial">
     <div class="container">
         <div class="main-title">
-            <h2>Testimonilas</h2>
+            <h2>Testimonials</h2>
             <p>Find out what people are really saying about Multi Dynamic</p>
         </div>
         <div class="testimonial__slider">

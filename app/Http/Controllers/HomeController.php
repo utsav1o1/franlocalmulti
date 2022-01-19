@@ -17,6 +17,7 @@ use Auth;
 use DB;
 use Dymantic\InstagramFeed\Profile;
 use Illuminate\Http\Request;
+use Phpfastcache\Helper\Psr16Adapter;
 
 class HomeController extends Controller
 {
@@ -48,13 +49,23 @@ class HomeController extends Controller
     public function index()
     {
         $insta_posts = [];
-         $profile = Profile::where('username', env('INSTAGRAM_USERNAME'))->first();
-//         if (!empty($profile)) {
-////             var_dump($profile->getInstagramAuthUrl());
-//             $insta_posts = $profile->refreshFeed(6);
-//         } else {
-//             $insta_posts = [];
-//         }
+        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'multidynamic.ingleburn', 'mdingleburn123!', new Psr16Adapter('Files'));
+        $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
+        $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
+        $account = $instagram->getAccount('multidynamic.ingleburn');
+        $accountMedias = $account->getMedias();
+        $dir = public_path('insta/images/');
+        foreach(glob($dir.'*.*') as $v){
+            unlink($v);
+        }
+        foreach ($accountMedias as $key  => $accountMedia) {
+            $images[$key] = str_replace("&amp;","&", $accountMedia->getimageHighResolutionUrl());
+            $path = $images[$key];
+            $imageName = rand($key,999999).'.png';
+            $insta_posts[] = $imageName;
+            $img = public_path('insta/images/') . $imageName;
+            file_put_contents($img, file_get_contents($path));
+        }
 
         $defaultPropertyCategories = \App\Models\Corporate\PropertyCategory::getDefaultPropertyCategories();
 
