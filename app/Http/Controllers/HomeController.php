@@ -64,12 +64,14 @@ class HomeController extends Controller
             }
 
             foreach ($accountMedias as $key => $accountMedia) {
-                $images[$key] = str_replace("&amp;", "&", $accountMedia->getimageHighResolutionUrl());
-                $path = $images[$key];
-                $imageName = rand($key, 999999) . '.png';
-                $insta_posts[] = $imageName;
-                $img = public_path('insta/images/') . $imageName;
-                file_put_contents($img, file_get_contents($path));
+                if ($key < 6) {
+                    $images[$key] = str_replace("&amp;", "&", $accountMedia->getimageHighResolutionUrl());
+                    $path = $images[$key];
+                    $imageName = rand($key, 999999) . '.png';
+                    $insta_posts[] = $imageName;
+                    $img = public_path('insta/images/') . $imageName;
+                    file_put_contents($img, file_get_contents($path));
+                }
             }
             Cache::put('instagram_post',$insta_posts);
         }
