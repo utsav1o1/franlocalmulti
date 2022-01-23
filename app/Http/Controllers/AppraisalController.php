@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Shared\EmailHelper;
 use App\Http\Requests\SendAppraisalRequest;
 use App\Repositories\LocationRepository;
 use App\Transformers\Select2Transformer;
@@ -72,6 +73,7 @@ class AppraisalController extends Controller
         // dd($appendData);
 
         $values = Sheets::spreadsheet(env('GOOGLE_SPREADSHEET_ID'))->sheetById(env('GOOGLE_SHEET_ID'))->append([$appendData]);
+        EmailHelper::autoresponder($data['email']);
 
         $request->session()->flash('success', 'Successfully Sent!!');
 
