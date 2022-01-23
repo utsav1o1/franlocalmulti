@@ -163,8 +163,8 @@
                                     <li><a href="{{route('page.propertymanagement')}}">Property Management</a></li>
                                     <li><a href="{!! route('agents.index') !!}">Commercial</a></li>
                                     <li><a href="{!! route('properties.leased') !!}">Leased Properties</a></li>
-                                    <li><a href="{!! route('showApplicationForm') !!}" target="_blank">Application
-                                            Form</a></li>
+{{--                                    <li><a href="{!! route('showApplicationForm') !!}" target="_blank">Application--}}
+{{--                                            Form</a></li>--}}
                                 </ul>
                             </li>
 
@@ -173,10 +173,10 @@
                                     aria-haspopup="true" aria-expanded="false">Sell <span class="caret"></span></a>
 
                                 <ul class="dropdown dropdown-menu">
-                                    <li>
-                                        <a href="{!! route('sell-form') !!}">Property
-                                            Estimate</a>
-                                    </li>
+{{--                                    <li>--}}
+{{--                                        <a href="{!! route('sell-form') !!}">Property--}}
+{{--                                            Estimate</a>--}}
+{{--                                    </li>--}}
                                     <li><a href="{{route('page.selling')}}">Selling</a></li>
                                     <li>
                                         <a href="{!! route('properties.recently-sold') !!}">Recent
