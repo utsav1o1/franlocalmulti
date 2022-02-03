@@ -73,7 +73,7 @@ class HomeController extends Controller
                     file_put_contents($img, file_get_contents($path));
                 }
             }
-            Cache::put('instagram_post',$insta_posts);
+            Cache::put('instagram_post',$insta_posts,86400);
         }
 
 
