@@ -180,7 +180,7 @@ body {
 /*START OF DETAILS PAGE CSS*/
 .detail-carousel {
     width: 100%;
-    height: 440px;
+    /* height: 440px; */
 }
 
 .detail-content-wrap {
