@@ -111,6 +111,8 @@
             gtag('config', 'UA-108755403-1');
 
         </script>
+
+        <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0056/1606.js" async="async" ></script>
     </head>
 
     <body>
