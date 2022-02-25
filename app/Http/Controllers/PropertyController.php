@@ -442,6 +442,7 @@ class PropertyController extends Controller
             ->where('is_active', 'Y')
             ->where('is_leased_sold', 'Y')
             ->where('branch_id', env('BRANCH_ID'))
+            ->where('property_status','Leased')
             ->where('property_category_id', $defaultCategories['rent']);
 
         $properties = $query->select('properties.*',

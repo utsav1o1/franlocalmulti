@@ -84,14 +84,14 @@
 				@endif
 			</div>
 
-			<div class="form-group col-md-12">
+			<!-- <div class="form-group col-md-12">
 				<label>Address *</label>
 				{!! Form::text('address', null, ['class' => 'form-control']) !!}
 
 				@if($errors->has('address'))
 				<small class="validation-error-message">{{ $errors->get('address')[0] }}</small>
 				@endif
-			</div>
+			</div> -->
 
 			<div class="form-group col-md-12">
 				<label>Email *</label>
@@ -110,8 +110,26 @@
 				<small class="validation-error-message">{{ $errors->get('contact')[0] }}</small>
 				@endif
 			</div>
+			
+			<div class="form-group col-md-12">
+				<label>Post Code *</label>
+				{!! Form::text('postcode', null, ['class' => 'form-control']) !!}
+
+				@if($errors->has('postcode'))
+				<small class="validation-error-message">{{ $errors->get('postcode')[0] }}</small>
+				@endif
+			</div>
 
 			<div class="form-group col-md-12">
+				<label>Purpose *</label>
+				{!! Form::select('purpose', ['buying'=>'Buying','selling'=>'Selling','rent'=>'Rent'], null, ['class' => 'form-control', 'placeholder' => 'Choose purpose']) !!}
+
+				@if($errors->has('purpose'))
+				<small class="validation-error-message">{{ $errors->get('purpose')[0] }}</small>
+				@endif
+			</div>
+
+			<!-- <div class="form-group col-md-12">
 				<label>1. How did you hear about Multi Dynamic? *</label>
 				<div class="checkbox">
 					<label>
@@ -228,7 +246,7 @@
 				@if($errors->has('first_home_buyer_investor'))
 				<small class="validation-error-message">{{ $errors->get('first_home_buyer_investor')[0] }}</small>
 				@endif
-			</div>
+			</div> -->
 
 			<div class="form-group col-md-12">
 				<div class="checkbox">
