@@ -3,10 +3,12 @@
 		<td>Name:</td>
 		<td>{{$data['name']}}</td>
 	</tr>
-	<tr>
+	{{-- <tr>
 		<td>Address:</td>
 		<td>{{$data['address']}}</td>
 	</tr>
+	--}}
+	
 	<tr>
 		<td>Email:</td>
 		<td>{{$data['email']}}</td>
@@ -16,6 +18,14 @@
 		<td>{{$data['contact']}}</td>
 	</tr>
 	<tr>
+		<td>Post Code:</td>
+		<td>{{$data['postcode']}}</td>
+	</tr>
+	<tr>
+		<td>Purpose:</td>
+		<td>{{$data['purpose']}}</td>
+	</tr>
+	{{-- <tr>
 		<td>How did you hear about Multi Dynamic?</td>
 		<td>{{ implode(', ', $data['reference_source']) }}</td>
 	</tr>
@@ -42,5 +52,5 @@
 	<tr>
 		<td>Are you first home buyer or investor?</td>
 		<td>{{ $data['first_home_buyer_investor'] }}</td>
-	</tr>
+	</tr> --}}
 </table>

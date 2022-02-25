@@ -62,9 +62,9 @@ class ContactUsController extends Controller
             $data['name'],
             $data['email'],
             $data['contact'],
+            $data['postcode'],
             '',
-            $data['address'],
-            '',
+            $data['purpose'],
             '',
             Carbon::parse(Carbon::now())->format('M d, Y'),
         ];
