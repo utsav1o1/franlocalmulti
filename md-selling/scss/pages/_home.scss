@@ -1,0 +1,53 @@
+.top-panel {
+    left: 0;
+    [class*='col-md-'] {
+        @include breakpoint (xs) {
+            padding: 0;
+            width: 100%;
+        }
+    }
+    .social-links-container {
+        ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-end;
+            li {
+                border: none;
+                text-align: center;
+                height: auto;
+                width: auto;
+                background: none;
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+                a {
+                    background: $white;
+                    display: block;
+                    height: 25px;
+                    width: 25px;
+                    line-height: 25px;
+                    @include border-radius(50%);
+                    i {
+                        color: $blue;
+                        padding-right: 0;
+                       @include breakpoint (xs) {
+                        
+                       }
+                       &.fa-youtube {
+                           position: relative;
+                           top: 5px;
+                       }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.ui-widget.ui-widget-content {
+    max-height: 400px;
+    overflow-y: auto;
+}

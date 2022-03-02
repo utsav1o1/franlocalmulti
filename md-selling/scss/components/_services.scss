@@ -1,0 +1,149 @@
+.services {
+    text-align: center;
+    padding: 75px 0;
+    @include breakpoint (sm1) {
+        padding: 50px 0;
+    }
+    .container   {
+        max-width: 1250px;
+        width: 100%;
+    }
+
+    h2 {
+        color: $orange;
+        font-weight: 800;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .title-border {
+        position: relative;
+        max-width: 740px;
+        margin: 0 auto;
+        &::before {
+            content: '';
+            height: 2px;
+            background: $orange;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            @include transform (translateY(-50%));
+
+        }
+        span {
+            display: inline-block;
+            font-size: 20px;
+            color: $dark-gray;
+            font-weight: 600;
+            background: $white;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    &__lists {
+        margin-top: 30px;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+
+                @include breakpoint (md) {
+                    flex: 0 0 33.333333%;
+                    max-width: 33.333333%;
+                }
+
+                @include breakpoint (sm) {
+                    @include breakpoint (sm1) {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+                }
+
+                &:nth-child(odd) {
+                    .services__lists__item {
+                        background: $blue;
+                    }
+                }
+
+                &:nth-child(even) {
+                    .services__lists__item {
+                        background: $orange;
+                    }
+                }
+            }
+        }
+
+        &__item {
+            padding: 75px 35px;
+            position: relative;
+
+            .service-image {
+                position: absolute;
+                opacity: 0.2;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .service-content {
+                position: relative;
+                z-index: 10;
+
+                h3,
+                p,
+                a {
+                    color: $white;
+                }
+
+                h3 {
+                    margin-top: 0;
+                    font-size: 22px;
+                    font-weight: 800;
+                }
+
+                p {
+                    margin-bottom: 20px;
+                }
+
+                a {
+                    font-size: 16px;
+                    font-weight: 700;
+                    display: inline-block;
+                    border: 2px solid currentColor;
+                    padding: 14px 20px;
+                    min-width: 180px;
+                    @include border-radius(4px);
+                    text-decoration: none;
+
+                    i {
+                        padding-right: 0 !important;
+                        font-size: 10px !important;
+                        color: $white;
+                        position: relative;
+                        bottom: 1px;
+                        margin-left: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
