@@ -4,109 +4,182 @@
 @section('meta_description', env('APP_NAME'))
 @section('dynamicdata')
 
-<!-- selling banner  -->
+
 @if(!empty($page))
-
-
-<div class="banner banner--selling" style="background-image: url('{{ url($page->getImagePath()) }}')">
-    <div class="container">
-        <div class="banner__caption">
-            <h1><span>Thinking about</span>Selling Your Home?</h1>
-            <div class="list-property white-bg">{{$page->sub_heading}}</div>
-            <h2>{!! $page->short_description !!}</h2>
-            <a href="#property-appraisal">click here</a>
+    <!--Start of Body Part-->
+    <!--START OF SLIDER PART-->
+    <div class="zero-dollars zero-dollars-selling" style="background: url('{{ url($page->getImagePath()) }}')">
+        <div class="container">
+            <div class="zero-dollars--capton">
+                <b>Thinking about</b>
+                <h2>Selling Your Home?<span>{{$page->sub_heading}}</span></h2>
+            <div class="list-icon-type">
+                <ul>
+                    <li>Free Property Appraisal</li>
+                    <li>Pay Zero Dollar Upfront</li>
+                </ul>
+            </div>
+                <div class="button-wrapper">
+                    <a href="#property-evaluation">Click here</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<!-- end selling banner  -->
 
-<div class="prpoerty__appraisal">
-    <div class="prpoerty__appraisal__bg"></div>
-    <div class="container">
-        <div class="prpoerty__appraisal__wrapper" id="property-appraisal">
-            <h2>GET YOUR FREE PROPERTY APPRAISAL<span>Kindly enter your details below</span></h2>
-            <form method="POST" id="propertyAppraisalForm">
-                {{ csrf_field() }}
+
+    <!-- end section  -->
+    <div class="md-selling-text-block">
+        <div class="container">
+            <div class="inner-wrapper text-center">
+                <p>Customer service, innovation, and a team of local experts. These are the cornerstones that
+                    distinguish Multi Dynamics’ award-winning agency from the competition. We provide best-in-class processes from end to end.</p>
+                <p>What does that mean for you? Your property sells faster, for the best price, and with minimal stress
+                    to you.</p>
+                <p class="orange">We have just been nominated as “New South Wales Agency of the Year” for 2022 by
+                    RateMyAgent. Proof that once again, we are market leaders in New South Wales real estate.</p>
+                <p>We trust it will make another fine addition to the Multi Dynamic trophy cabinet.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="proverty-value-reaveled text-center" style="background: url(images/property-value-banner.jpg) no-repeat center;">
+        <div class="container">
+            <div class="heading">
+                <h2>YOUR PROPERTY VALUE</h2>
+                <h3>REVEALED IN<span>4 MINUTES</span></h3>
+            </div>
+            <div class="teams">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="name" id="" placeholder="Enter your full name"
-                                value="{{old('name')}}">
+                    <div class="col-lg-4">
+                        <div class="teams__block">
+                            <div class="image">
+                                <img src="images/murari-lamsal.jpg" alt="MURARI LAMSAL">
+                            </div>
+                            <div class="caption">
+                                MURARI LAMSAL
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="teams__block">
+                            <div class="image">
+                                <img src="images/bjay-paul.jpg" alt="bjay paul">
+                            </div>
+                            <div class="caption">
+                                bjay paul
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="teams__block">
+                            <div class="image">
+                                <img src="images/syed-amin.jpg" alt=" syed amin">
+                            </div>
+                            <div class="caption">
+                                syed amin
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-desc">
+                <span>TEXT YOUR ADDRESS TO </span>
+                <div class="phone">
+                    <a href="">0412 562 093</a>
+                </div>
+                <div class="email">
+                    <a href="">WWW.multidynamicingleburn.com.au</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="property-evaluation-block selling-property-evaluation">
+        <div class="mdselling-appraisal-banner" style="background: url('images/mdselling-appraisal-baner.jpg');"></div>
+        <div class="container">
+            <div class="property-evaluation-wrapper" id="property-evaluation">
+                <h2>GET YOUR FREE PROPERTY APPRAISAL</h2>
+                <p>Kindly enter your details below</p>
+                <form method="POST" id="propertyAppraisalForm">
+                {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" name="name" id="" placeholder="Enter your full name"
+                                    class="form-control" value="{{old('name')}}">
                             {{-- @if($errors->has('name'))
                             <span class="error">{{ $errors->first('name') }}</span>
                             @endif --}}
                             <span class='text-danger error name'
                                 style='display:none;font-size:11px;color:white;'></span>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end col  -->
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <input class="form-control" type="email" name="email" id="" placeholder="Enter your email"
-                                value="{{old('email')}}">
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="email" name="email" id="" placeholder="Enter your email"
+                                    class="form-control" value="{{old('email')}}">
                             {{-- @if($errors->has('email'))
                             <span class="error">{{ $errors->first('email') }}</span>
                             @endif --}}
                             <span class='text-danger error email'
                                 style='display:none;font-size:11px;color:white;'></span>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end col  -->
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <input class="form-control" type="number" name="phone" id=""
-                                placeholder="Enter your phone number" value="{{old('phone')}}">
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="number" name="phone" id="" placeholder="Enter your phone nmber"
+                                    class="form-control" value="{{old('phone')}}">
                             {{-- @if($errors->has('phone'))
                             <span class="error">{{ $errors->first('phone') }}</span>
                             @endif --}}
                             <span class='text-danger error phone'
                                 style='display:none;font-size:11px;color:white;'></span>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end col  -->
 
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="postal_code" id="" placeholder="Post code"
-                                value="{{old('postal_code')}}">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="postal_code" id="" placeholder="Post code"
+                                    class="form-control" value="{{old('postal_code')}}">
                             {{-- @if($errors->has('postal_code'))
                             <span class="error">{{ $errors->first('postal_code') }}</span>
                             @endif --}}
                             <span class='text-danger error postal_code'
                                 style='display:none;font-size:11px;color:white;'></span>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end col  -->
 
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <select name="property_type" id="" class="form-control wide"
-                                value="{{old('property_type')}}">
-                                <option value="" disabled selected>Are you looking to...</option>
-                                @foreach($propertyTypes as $property_type)
-                                <option value="{{ $property_type->name }}">{{$property_type->name}}</option>
-                                @endforeach
-                            </select>
-                            {{-- @if($errors->has('property_type'))
-                            <span class="error">{{ $errors->first('property_type') }}</span>
-                            @endif --}}
-                            <span class='text-danger error property_type'
-                                style='display:none;font-size:11px;color:white;'></span>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <select name="property_type" id="" class="form-control wide"
+                                    value="{{old('property_type')}}">
+                                    <option value="" disabled selected>Are you looking to...</option>
+                                    @foreach($propertyTypes as $property_type)
+                                    <option value="{{ $property_type->name }}">{{$property_type->name}}</option>
+                                    @endforeach
+                                </select>
+                                {{-- @if($errors->has('property_type'))
+                                <span class="error">{{ $errors->first('property_type') }}</span>
+                                @endif --}}
+                                <span class='text-danger error property_type'
+                                    style='display:none;font-size:11px;color:white;'></span>
+                            </div>
                         </div>
-                    </div>
-                    <!-- end col  -->
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Tell us more!"
-                                value="{{old('message')}}"></textarea>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="" cols="30" rows="10"
+                                    placeholder="Tell us more!" value="{{old('message')}}"></textarea>
                             {{-- @if($errors->has('message'))
                             <span class="error">{{ $errors->first('message') }}</span>
                             @endif --}}
                             <span class='text-danger error message'
                                 style='display:none;font-size:11px;color:white;'></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+                        <div class="col-lg-12">
                         <div class="form-group">
                             {!! Honeypot::generate('my_name', 'my_time') !!}
                             {{-- @if($errors->has('my_name'))
@@ -129,80 +202,78 @@
                             style='display:none;font-size:11px;color:white;'></span>
                     </div>
 
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <button class="btn btn--primary sendPropertyAppraisal">submit enquiry</button>
-                        </div>
-                    </div>
-                    <!-- end col  -->
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- end section  -->
-<div class="award-section">
-    <div class="award-section__bg"></div>
-    <div class="container">
-        <div class="award-logos">
-            <img src="images/award-logos.png" alt="">
-        </div>
-        <div class="award-title">
-            <h2>Our award winning team are here for you</h2>
-        </div>
-        <div class="award-listitem">
-            <ul>
-                <li>Dedicated</li>
-                <li>Knowledgeable</li>
-                <li>Trustworthy</li>
-                <li>Passionate</li>
-            </ul>
-        </div>
-        <div class="award-teams">
-            <img src="images/award-teams.png" alt="">
-        </div>
-    </div>
-</div>
-<!-- award section  -->
-<!--end  award section  -->
 
-<div class="free-guides white-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="first-content-block">
-                    <h3>We offer <strong>FREE</strong> <br>
-                        Buyers and Sellers Guides
-                    </h3>
-                    <p>Buying or selling your property doesn’t have to be a stressful experience. Multi Dynamic have
-                        prepared these FREE guides to help make the process plain sailing. Packed with tips and tricks
-                        and need to know information, this is your go-to guide for property transactions.
-                    </p>
-                    <h4>Download yours today!</h4>
-                </div>
+
+                        <div class="col-lg-12">
+                            <button class="btn btn-warning sendPropertyAppraisal">Submit Enquiry</button>
+                        </div>
+
+                    </div>
+                </form>
             </div>
-            @if(!empty($page->selling))
-            <div class="col-lg-4">
-                <div class="free-guides-block">
-                    <img src="images/MD---Seller-Guide.png" alt="">
-                    <h3>{{$page->selling->meta_key}}?</h3>
-                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download
-                        Seller’s Guide</a>
-                </div>
-            </div>
-            @endif
-            @if(!empty($page->buying))
-            <div class="col-lg-4">
-                <div class="free-guides-block">
-                    <img src="images/MD---Seller-Guide.png" alt="">
-                    <h3>{{$page->buying->meta_key}}?</h3>
-                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download
-                        Buyer’s Guide</a>
-                </div>
-            </div>
-            @endif
         </div>
     </div>
-</div>
+    <!-- end property evaluation block  -->
+    <div class="award-winning-team text-center">
+        <div class="award-winning-team-banner"></div>
+        <div class="container">
+            <div class="award-logo">
+                <img src="images/selling-awards.png" alt="">
+            </div>
+            <div class="team-title">
+                <h2>Our award winning team are here for you</h2>
+            </div>
+            <div class="award-listing">
+                <ul>
+                    <li>Dedicated</li>
+                    <li>Knowledgeable</li>
+                    <li>Trustworthy</li>
+                    <li>Passionate</li>
+                </ul>
+            </div>
+            <div class="group-team">
+                <img src="images/group-team.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="free-guides free-guides-nobg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="first-content-block">
+                        <h3>We offer <strong>FREE</strong> <br>
+                            Buyers and Sellers Guides
+                        </h3>
+                        <p>Buying or selling your property doesn’t have to be a stressful experience. Multi Dynamic have
+                            prepared these FREE guides to help make the process plain sailing. Packed with tips and tricks
+                            and need to know information, this is your go-to guide for property transactions.
+                        </p>
+                        <h4>Download yours today!</h4>
+                    </div>
+                </div>
+                @if(!empty($page->selling))
+                <div class="col-lg-4">
+                    <div class="free-guides-block">
+                        <img src="images/MD---Seller-Guide.png" alt="">
+                        <h3>{{$page->selling->meta_key}}?</h3>
+                        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#sellingModal">Download
+                            Seller’s Guide</a>
+                    </div>
+                </div>
+                @endif
+                @if(!empty($page->buying))
+                <div class="col-lg-4">
+                    <div class="free-guides-block">
+                        <img src="images/MD---buyers-Guide.png" alt="">
+                        <h3>{{$page->buying->meta_key}}?</h3>
+                        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#buyingModal">Download
+                            Buyer’s Guide</a>
+                    </div>
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
 @endif
 @stop

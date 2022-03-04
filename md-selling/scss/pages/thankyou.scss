@@ -1,0 +1,38 @@
+.thankyou-section {
+    text-align: center;
+    padding: 50px 0;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+
+    .thankyou-block {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 29px;
+        color: $orange;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 30px;
+        margin-top: 0;
+
+    }
+
+    p {
+        font-size: 16px;
+        color: $gray;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $orange;
+        }
+    }
+}

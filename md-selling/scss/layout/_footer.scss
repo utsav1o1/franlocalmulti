@@ -1,0 +1,75 @@
+.main-footer {
+    margin-top: 0;
+}
+
+footer {
+    background: $orange;
+
+    input.nsu-field {
+        border: none;
+    }
+
+    #btn_subscribe {
+        background: $blue;
+    }
+
+    .row {
+        .book-apprisal {
+            @include breakpoint (sm1) {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.bottom-footer {
+    background: $blue;
+}
+
+.company-location-details-container a {
+    @include breakpoint (sm1) {
+        padding: 0;
+    }
+}
+
+#footer-second {
+    .sp-block {
+        @include breakpoint (sm1) {
+            height: 10px;
+        }
+    }
+
+    .glyphicon.glyphicon-envelope {
+        padding: 0;
+    }
+}
+
+
+.ft-divider {
+    @include breakpoint (sm1) {
+        padding: 0;
+    }
+}
+
+.bottom-footer {
+    .btm-sm-icon {
+        li {
+            a {
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+
+                i {
+                    display: inline-block;
+                    padding: 0;
+
+                    &.fa-youtube {
+                        position: relative;
+                        top: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

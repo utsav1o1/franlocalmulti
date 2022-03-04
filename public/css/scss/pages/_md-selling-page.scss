@@ -1,0 +1,292 @@
+.zero-dollars {
+    &-selling {
+        .zero-dollars--capton {
+            background: $blue;
+            max-width: 405px;
+
+            .list-icon-type {
+                ul {
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        list-style: none;
+                        color: $white;
+                        font-size: 25px;
+                        font-weight: 800;
+                        margin-bottom: 5px;
+                        position: relative;
+                        padding-left: 35px;
+
+                        &:before {
+                            content: "";
+                            background: url('../images/green-check.png') no-repeat center;
+                            position: absolute;
+                            height: 25px;
+                            width: 25px;
+                            background-size: 25px;
+                            left: 0;
+                            top: 4px;
+                        }
+                    }
+                }
+            }
+
+            b {
+                display: block;
+                font-size: 20px;
+                font-weight: 800;
+                color: $white;
+                margin-bottom: 5px;
+            }
+
+            h2 {
+                font-size: 33px;
+
+                span {
+                    font-size: 22px;
+                    margin-top: 15px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+
+            .button-wrapper {
+                margin-top: 15px;
+
+                a {
+                    font-size: 18px;
+                    background: $orange;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.free-guides {
+    &-nobg {
+        background: $white;
+        padding: 60px 0;
+
+        .free-guides-block {
+            background: #f5f8fd;
+        }
+    }
+
+}
+
+.selling-property-evaluation {
+    position: relative;
+    background: $white;
+    z-index: 1;
+
+    .mdselling-appraisal-banner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.1;
+    }
+
+    .property-evaluation-wrapper {
+        margin-top: 0;
+
+        .form-group {
+            margin-top: 7px;
+            margin-bottom: 7px;
+
+            textarea {
+                &.form-control {
+                    height: 100px;
+                    resize: none;
+                }
+            }
+        }
+    }
+}
+
+.md-selling-text-block {
+    background: $white;
+    padding: 60px 0;
+
+    .inner-wrapper {
+        max-width: 740px;
+        margin: 0 auto;
+
+        p {
+            font-size: 16px;
+            color: $black;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            &.orange {
+                font-size: 20px;
+                color: $orange;
+                line-height: 1.5;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.award-winning-team {
+    background: $orange;
+    // background: $orange url('images/selling-team-banner.jpg') no-repeat center;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+
+    &-banner {
+        background: $orange url('../images/selling-team-banner.jpg') no-repeat center;
+        background-blend-mode: multiply;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.4;
+    }
+
+    .award-listing {
+        margin: 20px 0;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                font-size: 22px;
+                font-weight: 800;
+                color: $white;
+                position: relative;
+                padding-left: 45px;
+
+                &:before {
+                    content: "";
+                    background: url('../images/png-square-check.png') no-repeat center;
+                    position: absolute;
+                    height: 34px;
+                    width: 36px;
+                    background-size: 34px;
+                    left: 0;
+                    top: -1px;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+
+    .team-title {
+        h2 {
+            display: inline-block;
+            background: $blue;
+            color: $white;
+            font-weight: 800;
+            padding: 10px 20px;
+        }
+    }
+}
+
+.proverty-value-reaveled {
+    background-size: cover !important;
+    min-height: 700px;
+    padding: 80px 0;
+.col-lg-4 {
+    &:nth-child(2) {
+        @include breakpoint(md) {
+            bottom: 20px;
+        }
+    }
+}
+    h2 {
+        font-size: 45px;
+        font-weight: 800;
+        color: $white;
+        margin-top: 0;
+
+    }
+
+    h3 {
+        font-size: 36px;
+        font-weight: 600;
+        color: $white;
+        margin-top: 0;
+
+        span {
+            background: $orange;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 29px;
+            @include border-radius(0 30px 30px 0);
+            padding: 7px 15px;
+            margin-left: 15px;
+        }
+    }
+    .teams {
+        max-width: 850px;
+        margin: 40px auto 40px;
+        text-align: center;
+        &__block {
+            position: relative;
+        }
+        .image {
+            max-width: 240px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 10px solid white;
+            margin: 0 auto;
+        }
+        .caption {
+            background: $blue;
+            color: white;
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 5px 20px;
+            display: inline-block;
+            min-width: 190px;
+            border-radius: 30px;
+            border: 5px solid $orange;
+            margin-top: -30px;
+        }
+    }
+
+    .contact-desc {
+        span {
+            display: inline-block;
+            background: $blue;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 25px;
+            color: $white;
+            font-weight: 800;
+        }
+
+        .phone {
+            a {
+                font-size: 70px;
+                color: $white;
+                font-weight: 700;
+            }
+        }
+
+        .email {
+            a {
+                font-size: 19px;
+                color: $white;
+                font-weight: 600;
+            }
+        }
+    }
+}

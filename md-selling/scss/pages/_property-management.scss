@@ -1,0 +1,267 @@
+.banner {
+    padding: 60px 0;
+
+    &--property {
+        background: $orange url('../images/property-mgmt-banner.jpg') no-repeat center;
+        background-size: cover;
+        min-height: 530px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: "";
+            background: rgba($black, 0) linear-gradient(to bottom right, $orange, $orange 50%, transparent 50%, transparent);
+            position: absolute;
+            height: 100%;
+            width: 12%;
+            right: 49.5%;
+            top: 0;
+            z-index: -1;
+        }
+
+        &:after {
+            content: '';
+            background: $orange;
+            position: absolute;
+            height: 100%;
+            width: 38.5%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        .banner__caption {
+            // padding: 35px 25px;
+            // background: $blue;
+            // @include border-radius (10px);
+            max-width: 410px;
+
+            h1 {
+                font-weight: 900;
+                font-size: 30px;
+                color: $white;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            p {
+                color: $white;
+            }
+
+            a {
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 16px;
+                display: inline-block;
+                padding: 8px 20px;
+                background: $blue;
+                border-radius: 5px;
+                text-decoration: none;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+
+.property__management {
+    background: rgba($color: $orange, $alpha: 0.1);
+    padding: 60px 0;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: 800;
+        color: $blue;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 16px;
+        color: $gray;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    a {
+        text-decoration: none;
+        background: $orange;
+        color: $white;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+
+// typical property
+.typical__property {
+    padding-top: 50px;
+
+    .container {
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+        color: $blue;
+        font-size: 28px;
+        font-weight: 800;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+
+        li {
+            max-width: 100%;
+            flex: 0 0 100%;
+            list-style: none;
+
+            &:nth-child(odd) {
+                background: rgba($color: $orange, $alpha: 1);
+            }
+
+            &:nth-child(even) {
+                background: $blue;
+
+                .typical__property__wrapper {
+                    flex-direction: row-reverse;
+
+                    .content-wrapper {
+                        background: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .image-wrapper {
+            img {
+                width: 100%;
+            }
+        }
+
+        .image-wrapper,
+        .content-wrapper {
+            @include breakpoint (md) {
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+        }
+
+        .content-wrapper {
+            padding: 45px;
+            background: $orange;
+            max-width: 700px;
+
+            h3 {
+                color: $white;
+                font-weight: 700;
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                color: $white;
+                margin-bottom: 20px;
+            }
+
+            a {
+                color: $white;
+                border: 2px solid currentColor;
+                padding: 10px;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 700;
+                border-radius: 4px;
+                min-width: 180px;
+                text-align: center;
+                margin-top: 10px;
+                text-decoration: none;
+
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    margin-left: 4px;
+                    background: url('../images/arrow-small.png') no-repeat center;
+                    width: 9px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+}
+
+.recent__rentals {
+    padding-bottom: 140px;
+    padding-top: 20px;
+
+    .container {
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+        color: $orange;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &__slider {
+        .slick-arrow {
+            padding: 0;
+            // background: rgba(242, 101, 34, 50%);
+            background: rgba($orange, 0.5);
+            border: none;
+            color: $white;
+            text-align: center;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 10;
+
+            i {
+                padding: 0;
+                color: $white;
+                font-size: 35px !important;
+            }
+
+            &.prev-arrow {
+                left: 0;
+            }
+
+            &.next-arrow {
+                right: 0;
+            }
+
+        }
+    }
+}
+
+.item-details li p{
+    font-size: 13px;
+}
