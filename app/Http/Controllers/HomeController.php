@@ -54,7 +54,7 @@ class HomeController extends Controller
             $insta_posts = Cache::get('instagram_post');
         }else {
             $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'multidynamicauburn', 'mdauburn123!', new Psr16Adapter('Files'));
-            try{
+            try {
 
                 $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
                 $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
@@ -75,10 +75,10 @@ class HomeController extends Controller
                         file_put_contents($img, file_get_contents($path));
                     }
                 }
-                Cache::put('instagram_post',$insta_posts,86400);
+                Cache::put('instagram_post', $insta_posts, 86400);
             } catch (\Exception $e) {
             }
-
+        }
 
 
         $defaultPropertyCategories = \App\Models\Corporate\PropertyCategory::getDefaultPropertyCategories();
