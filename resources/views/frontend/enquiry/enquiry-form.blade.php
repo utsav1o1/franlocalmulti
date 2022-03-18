@@ -278,7 +278,7 @@
 			</div>
 
 			<div class="form-group col-md-12">
-				<button class="btn btn-primary">Submit</button>
+				<button id='submit' class="btn btn-primary">Submit</button>
 			</div>
 
 			{!! Form::close() !!}
@@ -298,6 +298,9 @@
 
 <script category="text/javascript">
 	$(document).ready(function () {
+			$('#submit').click(function() {
+				$('#loading').show();
+			});
 
             var locationSelectInput = $("[name='location']");
 

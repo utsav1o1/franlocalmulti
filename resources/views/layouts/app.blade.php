@@ -116,6 +116,9 @@
     </head>
 
     <body>
+        <div id="loading" class="loader">
+            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i>
+        </div>
 
         @yield('bodystart')
         <!--Start of Header-->
@@ -169,6 +172,8 @@
                 });
             });
             $(document).ready(function () {
+                $('#loading').hide();
+                $('#modalLoader').hide();
                 $.fn.delayedHide = function (o) {
                     var e = this;
                     return window.setTimeout(function () {
@@ -232,9 +237,11 @@
                         cache: false,
                         type: 'POST',
                         beforeSend: function () {
+                            $('#loading').show();
                             $('.sendPropertyEvaluation').prop('disabled', true);
                         },
                         success: function (data) {
+                            $('#loading').hide();
                             $('.sendPropertyEvaluation').prop('disabled', false);
                             if (data.status == "success") {
                                 window.location.href =
@@ -245,6 +252,7 @@
 
                         },
                         error: function (errors) {
+                            $('#loading').hide();
                             $('.sendPropertyEvaluation').prop('disabled', false);
                             $("#propertyEvaluationForm span.error").hide();
                             $("#propertyEvaluationForm span.error").text("");
@@ -272,9 +280,11 @@
                         cache: false,
                         type: 'POST',
                         beforeSend: function () {
+                            $('#loading').show();
                             $('.sendPropertyAppraisal').prop('disabled', true);
                         },
                         success: function (data) {
+                            $('#loading').hide();
                             $('.sendPropertyAppraisal').prop('disabled', false);
                             if (data.status == "success") {
                                 window.location.href =
@@ -285,6 +295,7 @@
 
                         },
                         error: function (errors) {
+                            $('#loading').hide();
                             $('.sendPropertyAppraisal').prop('disabled', false);
                             $("#propertyAppraisalForm span.error").hide();
                             $("#propertyAppraisalForm span.error").text("");
@@ -392,10 +403,11 @@
                         cache: false,
                         type: 'POST',
                         beforeSend: function () {
+                            $('#modalLoader').show();
                             $('.sendBookAppraisal').prop('disabled', true);
                         },
                         success: function (data) {
-                           
+                            $('#modalLoader').hide();
                             $('.sendBookAppraisal').prop('disabled', false);
                             if (data.status == "success") {
                                 window.location.href ="{{ route('thank-you') }}"
@@ -405,6 +417,7 @@
 
                         },
                         error: function (errors) {
+                            $('#modalLoader').hide();
                             $('.sendBookAppraisal').prop('disabled', false);
                             $("#appraisalForm span.error").hide();
                             $("#appraisalForm span.error").text("");

@@ -297,6 +297,9 @@
     </style>
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-" role="document">
+            <div id="modalLoader" class="loader">
+                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i>
+            </div>
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
