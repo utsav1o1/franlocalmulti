@@ -53,12 +53,12 @@ class HomeController extends Controller
         if (Cache::has('instagram_post')){
             $insta_posts = Cache::get('instagram_post');
         }else {
-            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'multidynamicauburn', 'mdauburn123!', new Psr16Adapter('Files'));
+            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'multidynamic.ingleburn', 'mdingleburn123!', new Psr16Adapter('Files'));
             try {
 
                 $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
                 $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
-                $account = $instagram->getAccount('multidynamicauburn');
+                $account = $instagram->getAccount('multidynamic.ingleburn');
                 $accountMedias = $account->getMedias();
                 $dir = public_path('insta/images/');
                 foreach (glob($dir . '*.*') as $v) {
