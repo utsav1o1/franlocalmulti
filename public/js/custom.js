@@ -224,4 +224,17 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 2000,
     });
 
+    // casula read more 
+    $('.read-more-block #read-more').on('click', function (e) {
+        $('.read-more-content').slideToggle('2000');
+        $('.read-more-block').hide();
+        $('.read-less-block').show()
+    });
+
+    $('.read-less-block #read-less').on('click', function (e) {
+        $('.read-more-content').slideToggle('2000');
+        $('.read-less-block').hide();
+        $('.read-more-block').show()
+    });
+
 });
