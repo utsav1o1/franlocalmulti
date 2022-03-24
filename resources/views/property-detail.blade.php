@@ -254,7 +254,7 @@
 
 
                                @php
-                                    $encoded_url = urlencode(route('properties.show', ['propertySlug' => $property->slug]));
+                                    $encoded_url = urlencode(route('properties.show', $property->slug));
                                     $domain = request()->getHost();
                                 @endphp
 
