@@ -6,16 +6,13 @@
     <!--Start of Body Part-->
 
 <!--START OF SLIDER PART-->
-<div class="casual--banner" style="background: url('images/casual-banner.jpg');">
+<div class="casual--banner" style="background: url('{{ url($home->banner->getFilePath()) }}')">
     <div class="container">
         <div class="award-logo">
             <img src="images/selling-awards.png" alt="">
         </div>
         <div class="banner-caption">
-            <h1>Best Real Estate Agent in Casula to Sell, Buy or Invest in Property</h1>
-            <p>Making home-related decisions is never easy. However, the Multi Dynamic renown team is here to share
-                accumulated experience in Casula to help you buy, rent or sell your property and understand, is it a
-                good place for you to live?</p>
+            {!! $home->banner->meta_value !!}
         </div>
     </div>
 </div>
@@ -28,7 +25,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="content-left">
-                {!! optional($home->content)->meta_value !!}
+                {!! $home->content->meta_value !!}
                 </div>
             </div>
             <div class="col-lg-6">
@@ -148,19 +145,6 @@
                         <span class='text-danger error g-recaptcha-response'
                             style='display:none;font-size:11px;color:white;'></span>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="mesage-content">
-                            Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate
-                            franchises in
-                            Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record
-                            of
-                            results in serving our customers to buy, sell, rent and build their properties. You can be
-                            assured
-                            when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate
-                            requirements, because it’s our client's satisfaction which is the key to our success.
-                        </div>
-                    </div>
-
                     <div class="col-lg-12">
                         <button class="btn btn-warning sendPropertyEvaluation" type="button">submit</button>
                     </div>
