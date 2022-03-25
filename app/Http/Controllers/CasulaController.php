@@ -75,11 +75,11 @@ class CasulaController extends Controller
         $home['buying'] = PageDetail::where('page_id', $selling->id)->where('slug', 'buying-a-home')->first();
 
     }
+    $home['page'] = $page;
     // dd($home);
     // return view('home')
     //     ->withProperties($properties)
     //     ->withBlogs($blogs);
-    
     return view('frontend.casula.casula')
         ->withTestimonials($testimonials)
         ->withAgents($agents)
