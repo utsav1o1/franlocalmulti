@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Home')
-@section('meta_keywords', env('APP_NAME'))
-@section('meta_description', env('APP_NAME'))
+@section('meta_keywords', config('static_data.real-estate-agent.'. $home->page .'.meta_keywords'))
+@section('meta_description', config('static_data.real-estate-agent.'. $home->page .'.meta_description'))
 @section('dynamicdata')
     <!--Start of Body Part-->
 
