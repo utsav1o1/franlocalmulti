@@ -253,19 +253,24 @@
                                                 class="glyphicon glyphicon-menu-left"></span>Back</a></li> -->
 
 
+                               @php
+                                    $encoded_url = urlencode(route('properties.show', $property->slug));
+                                    $domain = request()->getHost();
+                                @endphp
+
                                 <li class="fb-share">
                                     <div class="fb-share-button fb_iframe_widget"
-                                         data-href="https://multidynamicingleburn.com.au/properties/location-location-location-welcome-to-this-well-designed-modern-home"
+                                         data-href="{!! route('properties.show', $property->slug) !!}"
                                          data-layout="button_count" data-size="large" data-mobile-iframe="true"
                                          fb-xfbml-state="rendered"
-                                         fb-iframe-plugin-query="app_id=911895265634736&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large">
+                                         fb-iframe-plugin-query="{!! "app_id=911895265634736&amp;container_width=60&amp;href=".$encoded_url."&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large" !!}">
                                     <span style="vertical-align: bottom; width: 89px; height: 28px;"><iframe
                                                 name="f3e18663cc988bc"
                                                 data-testid="fb:share_button Facebook Social Plugin"
                                                 title="fb:share_button Facebook Social Plugin" allowtransparency="true"
                                                 allowfullscreen="true" scrolling="no" allow="encrypted-media"
                                                 style="border: medium none; visibility: visible; width: 89px; height: 28px;"
-                                                src="https://www.facebook.com/v2.10/plugins/share_button.php?app_id=911895265634736&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df26a287e52fcbe4%26domain%3Dmultidynamicingleburn.com.au%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fmultidynamicingleburn.com.au%252Ff27311465998866%26relation%3Dparent.parent&amp;container_width=60&amp;href=https%3A%2F%2Fmultidynamicingleburn.com.au%2Fproperties%2Flocation-location-location-welcome-to-this-well-designed-modern-home&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large"
+                                                src="{!! "https://www.facebook.com/v2.10/plugins/share_button.php?app_id=911895265634736&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df26a287e52fcbe4%26domain%".$domain."%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%".$domain."%252Ff27311465998866%26relation%3Dparent.parent&amp;container_width=60&amp;href=".$encoded_url."&amp;layout=button_count&amp;locale=en_US&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large" !!}"
                                                 class="" width="1000px" height="1000px" frameborder="0"></iframe></span>
                                     </div>
                                 </li>
