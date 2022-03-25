@@ -18,6 +18,9 @@
 // Route::get('/property-management', function () {
 //     return view('agent.Property.property-management');
 // });
+
+Route::get('/real-estate-agent-{slug}', 'CasulaController@index');
+
 Route::get('/guide', function () {
     return view('agent.Property.guide');
 });
