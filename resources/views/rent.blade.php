@@ -101,7 +101,7 @@
 
                         </div>
                         <div class="col-sm-12 land-search">
-                            <h1>Search Result</h1>
+                            <h1>Search Result: {{count($properties)}} properties found</h1>
                         </div>
 
                         {{-- <div class="col-sm-12 col-md-12">
