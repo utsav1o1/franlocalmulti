@@ -20,31 +20,35 @@ class CasulaController extends Controller
    public function index($page)
    {
     $insta_posts = [];
-    if (Cache::has('instagram_post')){
-        $insta_posts = Cache::get('instagram_post');
-    }else {
-        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'multidynamic.ingleburn', 'mdingleburn123!', new Psr16Adapter('Files'));
-        $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
-        $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
-        $account = $instagram->getAccount('multidynamic.ingleburn');
-        $accountMedias = $account->getMedias();
-        $dir = public_path('insta/images/');
-        foreach (glob($dir . '*.*') as $v) {
-            unlink($v);
-        }
+        if (Cache::has('instagram_post')){
+            $insta_posts = Cache::get('instagram_post');
+        }else {
+            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'multidynamic.ingleburn', 'mdingleburn123!', new Psr16Adapter('Files'));
+            try {
 
-        foreach ($accountMedias as $key => $accountMedia) {
-            if ($key < 6) {
-                $images[$key] = str_replace("&amp;", "&", $accountMedia->getimageHighResolutionUrl());
-                $path = $images[$key];
-                $imageName = rand($key, 999999) . '.png';
-                $insta_posts[] = $imageName;
-                $img = public_path('insta/images/') . $imageName;
-                file_put_contents($img, file_get_contents($path));
+                $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
+                $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
+                $account = $instagram->getAccount('multidynamic.ingleburn');
+                $accountMedias = $account->getMedias();
+                $dir = public_path('insta/images/');
+                foreach (glob($dir . '*.*') as $v) {
+                    unlink($v);
+                }
+
+                foreach ($accountMedias as $key => $accountMedia) {
+                    if ($key < 6) {
+                        $images[$key] = str_replace("&amp;", "&", $accountMedia->getimageHighResolutionUrl());
+                        $path = $images[$key];
+                        $imageName = rand($key, 999999) . '.png';
+                        $insta_posts[] = $imageName;
+                        $img = public_path('insta/images/') . $imageName;
+                        file_put_contents($img, file_get_contents($path));
+                    }
+                }
+                Cache::put('instagram_post', $insta_posts, 86400);
+            } catch (\Exception $e) {
             }
         }
-        Cache::put('instagram_post',$insta_posts,86400);
-    }
 
     // new changes
     $testimonials = Testimonial::where('branch_id', env('BRANCH_ID'))

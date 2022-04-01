@@ -11,7 +11,7 @@
         <div class="middle-wrapper">
             <div class="container">
                 <div class="main-title">
-                    <h1>SEARCH RESULT</h1>
+                    <h1>SEARCH RESULT : {{count($properties)}} properties found</h1>
                     <div class="border">
                         <div class="border-inner"></div>
                     </div>
