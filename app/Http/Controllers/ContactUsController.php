@@ -158,7 +158,7 @@ class ContactUsController extends Controller
             'email' => 'required|email',
             'phone' => 'required|numeric',
             'postal_code' => 'required|required|postal_code:Au',
-            'property_type' => 'required',
+            'property_address' => 'required|min:5|max:255',
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
             'my_name' => 'honeypot',
@@ -186,7 +186,7 @@ class ContactUsController extends Controller
                 $validated['phone'],
                 $validated['postal_code'],
                 '',
-                $validated['property_type'],
+                $validated['property_address'],
                 $validated['message'],
                 Carbon::parse(Carbon::now())->format('M d, Y'),
 

@@ -77,20 +77,14 @@
                         </div>
                     </div>
                     <!-- end col  -->
-
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <select name="property_type" id="" class="form-control wide"
-                                value="{{old('property_type')}}">
-                                <option value="" disabled selected>Are you looking to...</option>
-                                @foreach($propertyTypes as $property_type)
-                                <option value="{{ $property_type->name }}">{{$property_type->name}}</option>
-                                @endforeach
-                            </select>
-                            {{-- @if($errors->has('property_type'))
-                            <span class="error">{{ $errors->first('property_type') }}</span>
+                            <input type="text" name="property_address" id="" placeholder="Enter your property address"
+                                class="form-control" value ="{{old('property_address')}}">
+                            {{-- @if($errors->has('property_address'))
+                            <span class="error">{{ $errors->first('property_address') }}</span>
                             @endif --}}
-                            <span class='text-danger error property_type'
+                            <span class='text-danger error property_address'
                                 style='display:none;font-size:11px;color:white;'></span>
                         </div>
                     </div>

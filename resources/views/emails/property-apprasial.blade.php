@@ -46,8 +46,8 @@
                                 <td>{{ $data['postal_code'] }}</td>
                             </tr>
                             <tr>
-                                <td width="20%">Property Type</td>
-                                <td>{{ $data['property_type'] }}</td>
+                                <td width="20%">Property Address</td>
+                                <td>{{ $data['property_address'] }}</td>
                             </tr>
                             <tr>
                                 <td width="20%">Message</td>
