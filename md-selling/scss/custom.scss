@@ -1,0 +1,44 @@
+
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/font';
+
+@import 'layout/grid';
+@import 'layout/navbar';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+@import 'components/banners';
+@import 'components/welcome';
+@import 'components/services';
+@import 'components/featured-property';
+@import 'components/property-worth';
+@import 'components/why-choose';
+@import 'components/free-guide';
+@import 'components/testimonial';
+@import 'components/team';
+@import 'components/instagram';
+@import 'components/home-blog';
+@import 'components/search-form';
+@import 'components/property_tab';
+
+@import 'pages/home';
+@import 'pages/thankyou.scss';
+@import 'pages/guide';
+@import 'pages/selling';
+@import 'pages/property-management';
+@import 'pages/blog';
+@import 'pages/property-detail';
+@import 'pages/property-single.scss';
+@import 'pages/md-selling-page';
+@import 'pages/casula';
+
+// sass --watch scss/custom.scss:custom.min.css --style compressed
+
+// bell@DESKTOP-Laxman MINGW64~/Desktop/md-selling
+// $ sass --watch scss/custom.scss:css/new-custom.css

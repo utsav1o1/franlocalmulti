@@ -1,0 +1,134 @@
+.instagram {
+    background: $blue;
+    padding: 40px 0 60px 0;
+
+    h2 {
+        text-align: center;
+        font-size: 28px;
+        color: $white;
+        font-weight: 500;
+        margin-bottom: 40px;
+
+        @include breakpoint (xs) {
+            font-size: 20px;
+        }
+
+        a {
+            font-weight: 900;
+            color: $white;
+        }
+    }
+}
+
+
+
+.insta-gallery {
+    ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px;
+        justify-content: center;
+
+        li {
+            list-style: none;
+
+            &.insta-gallery-block {
+                max-width: 16.66666%;
+                flex: 0 0 16.66666%;
+                padding: 0 8px;
+                text-align: center;
+                position: relative;
+                margin-bottom: 40px;
+
+                @include breakpoint (xs) {
+                    max-width: 50%;
+                    flex: 0 0 50%;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                &:hover {
+                    .insta-share {
+                        transform: scale(1);
+                        visibility: visible;
+                    }
+                }
+
+                .image {
+                    a {
+                        position: relative;
+                        overflow: hidden;
+                        // padding-top: 80%;
+                        display: block;
+
+                        img {
+                            // position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+
+.insta-share {
+    transform: scale(0);
+    visibility: hidden;
+    position: absolute;
+    width: calc(100% - 16px);
+    left: 8px;
+    top: 0;
+    /* transform: translate(-50%, -50%); */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba($black, 0.5);
+    color: $white;
+    z-index: 10;
+    transition: transform 1s, visibility 2s;
+}
+
+
+.insta-share {
+    ul {
+        margin: 0;
+
+        li {
+            padding: 0 5px;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+
+            i {
+                padding: 0;
+                color: $white;
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+
+.follow-us-btn {
+    .btn-primary {
+        background: $orange;
+        font-size: 20px;
+        font-weight: 700;
+        border: none;
+        @include border-radius(4px);
+    }
+}

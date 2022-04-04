@@ -31,6 +31,8 @@ class ContactInquiryRequest extends FormRequest
             'phone_number' => 'required|numeric',
             'message' => 'required|max:500',
             'g-recaptcha-response' => 'required|captcha',
+            'my_name' => 'honeypot',
+            'my_time' => 'required|honeytime:10',
 
         ];
     }
