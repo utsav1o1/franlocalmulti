@@ -11,7 +11,7 @@
         <div class="middle-wrapper">
             <div class="container">
                 <div class="main-title">
-                    <h1>Recently Sold Properties</h1>
+                    <h1>Recently Sold Properties: {{$properties->total()}} properties sold</h1>
                     <div class="border">
                         <div class="border-inner"></div>
                     </div>
