@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-sm-12 col-md-12 inner-search-row">
                                 <div class="land-search">
-                                    <h1>Search Result: {{count($properties)}} properties found</h1>
+                                    <h1>Search Result: {{$properties->total()}} properties found</h1>
                                 </div>
                             <!-- <div class="main-title">
                                     <h1>@if($category) {!!  $category->property_category !!} @else {{ 'Search Results' }} @endif</h1>
