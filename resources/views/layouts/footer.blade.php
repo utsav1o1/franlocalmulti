@@ -565,7 +565,6 @@
                                 </div>
                                 <span class="sp-block"></span>
                             </div>
-                            <div class="col-md-1"></div>
                             <div class="col-md-2">
                                 <p><strong>Buy</strong></p>
                                 <a id="item" href="/buy/residential">Residential</a><br />
@@ -589,17 +588,23 @@
                                 <a id="item" href="/get-recently-sold-properties">Recent Sales</a>
                                 <span class="sp-block"></span>
                             </div>
-                            <div class="col-md-3">
-                                <h3 class="title newsletter-h2">NEWSLETTER</h3>
-                                <div class="f-text">
-                                    Subscribe to our mailing list to get the updates in your email inbox.
-                                </div>
-                                <p><input class="nsu-field btn-block" id="subscriber_email_address" type="email"
-                                        name="email" placeholder="Enter your Email Address" required="">
-                                </p>
-                                <p><button type="submit" class="button-sm button-theme btn-block"
-                                        id="btn_subscribe">Submit</button></p>
-                                <p id="subscriberNotice"></p>
+                            <div class="col-md-2">
+                                <p><strong>Suburbs</strong></p>
+                                <a id="item" href="/real-estate-agent-casula">Casula</a><br />
+                                <a id="item" href="/real-estate-agent-liverpool">Liverpool</a><br />
+                                <a id="item" href="/real-estate-agent-austral">Austral</a><br />
+                                <a id="item" href="/real-estate-agent-bardia">Bardia</a><br />
+                                <a id="item" href="/real-estate-agent-leppington">Leppington</a><br />
+                                <span class="sp-block"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <p style="color: #f36421"><strong>Suburbs</strong></p>
+                                <a id="item" href="/real-estate-agent-hoxton-park">Hoxton-Park</a><br />
+                                <a id="item" href="/real-estate-agent-minto">Minto</a><br />
+                                <a id="item" href="/real-estate-agent-glenfield">Glenfield</a><br />
+                                <a id="item" href="/real-estate-agent-hinchinbrook">Hinchinbrook</a><br />
+                                <a id="item" href="/real-estate-agent-green-valley">Green-Valley</a><br />
+                                <span class="sp-block"></span>
                             </div>
                         </div>
                     </div>
