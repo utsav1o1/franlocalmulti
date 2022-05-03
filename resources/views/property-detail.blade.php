@@ -363,10 +363,10 @@
                             <div class="rows">
                                 <ul class="row">
                                     <li class="col-lg-6">
-                                        <label>Bedrooms:</label> {{$property->number_of_bathrooms ?? 0}}
+                                        <label>Bedrooms:</label> {{$property->number_of_bedrooms ?? 0}}
                                     </li>
                                     <li class="col-lg-6">
-                                        <label>Bathrooms:</label> {{$property->number_of_bedrooms ?? 0}}
+                                        <label>Bathrooms:</label> {{$property->number_of_bathrooms ?? 0}}
                                     </li>
                                     <li class="col-lg-6">
                                         <label>Price:</label> {{$property->price_view ?? "Contact Agent"}}
