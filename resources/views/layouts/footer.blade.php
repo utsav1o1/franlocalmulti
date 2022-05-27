@@ -602,7 +602,7 @@
                                 <a id="item" href="/real-estate-agent-hoxton-park">Hoxton-Park</a><br />
                                 <a id="item" href="/real-estate-agent-minto">Minto</a><br />
                                 <a id="item" href="/real-estate-agent-glenfield">Glenfield</a><br />
-                                <a id="item" href="/real-estate-agent-hinchinbrook">Hinchinbrook</a><br />
+                                <a id="item" href="/real-estate-agent-edmondson-park">Edmondson Park</a><br />
                                 <a id="item" href="/real-estate-agent-green-valley">Green-Valley</a><br />
                                 <span class="sp-block"></span>
                             </div>
