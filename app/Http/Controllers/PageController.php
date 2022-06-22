@@ -84,6 +84,7 @@ class PageController extends Controller
             ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
             ->where('is_active', 'Y')
             ->where('is_leased_sold', 'Y')
+            ->where('property_status', 'Leased')
             ->where('branch_id', env('BRANCH_ID'))
             ->where('property_category_id', $defaultCategories['rent']);
 
