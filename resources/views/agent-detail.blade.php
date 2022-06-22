@@ -170,6 +170,7 @@
                                         <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
+                                    <span class="properties__ribon">{{ $property->property_status }}</span>
                                     <!--Caption Detail-->
                                     <div class="caption detail">
                                         <header>
@@ -270,6 +271,7 @@
                                         <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
+                                    <span class="properties__ribon">{{ $property->property_status }}</span>
                                     <!--Caption Detail-->
                                     <div class="caption detail">
                                         <header>
@@ -371,6 +373,7 @@
                                         <img src="{!! url($property->getImage()) !!}" alt="{{$property->name}}"
                                             class="img-responsive" />
                                     </a>
+                                    <span class="properties__ribon">{{ $property->property_status }}</span>
 
                                     <!--Caption Detail-->
                                     <div class="caption detail">
@@ -475,6 +478,7 @@
                                         <img src="{!! url($property->getImage()) !!}" alt="{!! $property->name !!}"
                                             class="img-responsive" />
                                     </a>
+                                    <span class="properties__ribon">{{ $property->property_status }}</span>
                                     <!--Caption Detail-->
                                     <div class="caption detail">
                                         <header>

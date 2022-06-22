@@ -202,9 +202,10 @@ class PropertyController extends Controller
             ->leftJoin('locations', 'locations.id', '=', 'properties.location_id')
             ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
             ->where('is_active', 'Y')
-            ->where('is_leased_sold', 'N')
             ->where('branch_id', env('BRANCH_ID'))
-            ->where('property_category_id', $defaultCategories['buy']);
+            ->where('property_category_id', $defaultCategories['buy'])
+            ->where('property_status', 'Sale')
+            ->orWhere('property_status', 'Under Contract');
 
         if ($slug) {
             $propertySubCategory = \App\Models\Corporate\PropertySubCategory::where('slug', $slug)->first();
@@ -356,9 +357,10 @@ class PropertyController extends Controller
             ->leftJoin('locations', 'locations.id', '=', 'properties.location_id')
             ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
             ->where('is_active', 'Y')
-            ->where('is_leased_sold', 'N')
             ->where('branch_id', env('BRANCH_ID'))
-            ->where('property_category_id', $defaultCategories['rent']);
+            ->where('property_category_id', $defaultCategories['rent'])
+            ->where('property_status', 'Lease')
+            ->orWhere('property_status', 'Deposit Taken');
 
         if ($slug) {
             $propertySubCategory = \App\Models\Corporate\PropertySubCategory::where('slug', $slug)->first();

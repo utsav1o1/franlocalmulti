@@ -23,6 +23,28 @@
 .validation-error-message{
     color: red;
 }
+
+.wdp-ribbon .wdp-ribbon-text-long{
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 26px;
+    position: absolute;
+    z-index: 14;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 23px;
+    left: -22px;
+    width: 121px;
+    text-align: center;
+    color: #fff;
+}
+.single-title-block{
+    margin-left:1.5em
+}
+.badges{
+    margin-left:1.5em
+}
 </style>
 <link href="{{ asset('backend/plugins/sweetalert/dist/sweetalert2.min.css') }}" rel="stylesheet">
 <link href="{{ asset('backend/plugins/formValidation/formValidation.min.css') }}" rel="stylesheet">
@@ -163,18 +185,35 @@
                 <span class="wdp-ribbon wdp-ribbon-six">
                         <span class="wdp-ribbon-inner-wrap">
                             <span class="wdp-ribbon-border"></span>
-                                <span class="wdp-ribbon-text">
-                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='1')
-                                        SOLD
+                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='1' && $property->property_status=='Sold')
+                                        <span class="wdp-ribbon-text">
+                                                SOLD
+                                        </span>
                                     @endif
-                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='2')
-                                        LEASED
+                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='1' && $property->property_status=='Under Contract')
+                                        <span class="wdp-ribbon-text-long">   
+                                        UNDER CONTRACT
+                                        </span>
                                     @endif
-                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='1')
-                                    SALE
+                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='2' && $property->property_status=='Leased')
+                                        <span class="wdp-ribbon-text">    
+                                            LEASED
+                                        </span>
                                     @endif
-                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='2')
+                                    @if($property->is_leased_sold=='Y' && $property->property_category_id=='2' && $property->property_status=='Deposit Taken')
+                                        <span class="wdp-ribbon-text-long">    
+                                            DEPOSIT TAKEN
+                                        </span>
+                                    @endif
+                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='1' && $property->property_status=='sale')
+                                        <span class="wdp-ribbon-text">
+                                        SALE
+                                        </span>
+                                    @endif
+                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='2' && $property->property_status=='Lease')
+                                        <span class="wdp-ribbon-text">    
                                         RENT
+                                        </span>
                                     @endif
                                 </span>
                             </span>

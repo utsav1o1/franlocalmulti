@@ -57,8 +57,9 @@ class SellController extends Controller
         ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
         ->where('is_active', 'Y')
         ->where('is_leased_sold', 'Y')
+        ->where('property_status', 'Leased')
         ->where('branch_id', env('BRANCH_ID'))
-        ->where('property_category_id', $defaultCategories['buy']);
+        ->where('property_category_id', $defaultCategories['rent']);
 
         $properties = $query->select('properties.*',
                                      DB::raw("COUNT(property_agents.id) AS agents_count"),
@@ -69,7 +70,7 @@ class SellController extends Controller
                             ->groupBy('properties.id')
                             ->orderby('created_at', 'desc')->paginate(env('PAGINATE'));
 
-        return view('frontend.sell.recently-sold-properties')->withProperties($properties);
+        return view('frontend.sell.recently-leased-properties')->withProperties($properties);
     }
 
     public function showRecentlySoldProperties()
@@ -86,6 +87,7 @@ class SellController extends Controller
         ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
         ->where('is_active', 'Y')
         ->where('is_leased_sold', 'Y')
+        ->where('property_status', 'Sold')
         ->where('branch_id', env('BRANCH_ID'))
         ->where('property_category_id', $defaultCategories['buy']);
 

@@ -86,6 +86,8 @@
                                                 </a>
                                                 @if($property->contractType)
                                                     <span class="properties__ribon">{!! $property->contractType->heading !!}</span>
+                                                    @else
+                                                    <span class="properties__ribon">{{ $property->property_status }}</span>
                                             @endif
                                             <!--Caption Detail-->
                                                 <div class="caption detail">
