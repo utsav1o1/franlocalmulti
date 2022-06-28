@@ -205,7 +205,7 @@
                                             DEPOSIT TAKEN
                                         </span>
                                     @endif
-                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='1' && $property->property_status=='sale')
+                                    @if($property->is_leased_sold=='N' && $property->property_category_id=='1' && $property->property_status=='Sale')
                                         <span class="wdp-ribbon-text">
                                         SALE
                                         </span>
