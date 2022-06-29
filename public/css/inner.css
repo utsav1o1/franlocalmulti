@@ -2329,7 +2329,7 @@ footer .footer-item .newsletter input {
     height: 200px;
     overflow: hidden;
     position: relative;
-
+    word-break: normal;
 }
 
 .preformater .shadow {
