@@ -221,7 +221,7 @@
                 </ul>
             </div>
             <div class="group-team">
-                <img src="images/group-team.png" alt="">
+                
             </div>
         </div>
     </div>
