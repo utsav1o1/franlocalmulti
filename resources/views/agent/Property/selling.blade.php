@@ -51,14 +51,7 @@
             <div class="teams">
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="teams__block">
-                            <div class="image">
-                                <img src="images/murari-lamsal.jpg" alt="MURARI LAMSAL">
-                            </div>
-                            <div class="caption">
-                                MURARI LAMSAL
-                            </div>
-                        </div>
+                       
                     </div>
                     <div class="col-lg-4">
                         <div class="teams__block">
