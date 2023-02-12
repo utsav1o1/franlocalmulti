@@ -53,7 +53,7 @@
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                    <img src="uploads/agent-images/agent-image-MDE6MDM6MDU0NA==.jpg" alt="TIRTHA ACHARYA">
+                                    <img src="https://www.multidynamic.com.au/uploads/agent-images/agent-image-MDE6MDM6MDU0NA==.jpg" alt="TIRTHA ACHARYA">
                                 </div>
                                 <div class="caption">
                                     Tirtha Acharya
