@@ -803,9 +803,10 @@
 
             <div class="col-lg-9">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="hidden embed-responsive-item" src="https://www.youtube.com/embed/ex7jGbyFgpA?rel=0"
+                    <iframe class="hidden embed-responsive-item" src="http://www.youtube.com/embed/ex7jGbyFgpA?rel=0"
                         allowfullscreen=""></iframe>
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ex7jGbyFgpA"
+                        
+                    <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/ex7jGbyFgpA"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
