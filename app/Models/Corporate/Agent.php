@@ -80,4 +80,9 @@ class Agent extends Authenticatable
         return $this->hasMany(AgentSocial::class);
     }
 
+    // public function location()
+    // {
+    //     return $this->hasOne(Location::class);
+    // }
+
 }

@@ -26,7 +26,7 @@
                             <ul class="contact-info">
                                 <li class="clearfix">
                                     <i class="fa fa-map-marker fa-lg"></i>
-                                    <label>Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565, Australia</label>
+                                    <label>Shop 2, 16 auburn Rd, auburn NSW 2565, Australia</label>
                                 </li>
                                 <li class="clearfix">
                                     <i class="fa fa-clock-o fa-lg"></i>
@@ -200,14 +200,14 @@
                             </div>
                             <div id="footer-second" class="row col-md-8">
                                 <div class="col-md-4">
-                                    <h3 class="title newsletter-h2">Multi Dynamic Ingleburn</h3>
+                                    <h3 class="title newsletter-h2">Multi Dynamic auburn</h3>
                                     <div class="media">
                                         <div class="media-left media-middle">
                                             <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <a href="https://shorturl.at/cRV08" target="_blank">Shop 2, 16 Ingleburn Rd,
-                                                Ingleburn NSW 2565</a>
+                                            <a href="https://shorturl.at/cRV08" target="_blank">Shop 2, 16 auburn Rd,
+                                                auburn NSW 2565</a>
                                         </div>
                                     </div>
                                     <div class="media">
@@ -304,7 +304,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <img class="ap-img" src="http://multidynamicingleburn.com.au/images/logo.png" />
+                    <img class="ap-img" src="http://multidynamicauburn.com.au/images/logo.png" />
                 </div>
                 <div class="modal-body">
                     @if(Session::has('success'))
@@ -498,7 +498,7 @@
                         <div id="footer-first" class="row col-md-8">
                             <div class="col-md-4 align-self-center">
                                 <img class="footer-logo"
-                                    src="http://multidynamicingleburn.com.au/images/footer-logo.png">
+                                    src="http://multidynamicauburn.com.au/images/footer-logo.png">
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-3 book-apprisal">
@@ -512,9 +512,9 @@
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-2">
-                                <a href="https://www.facebook.com/multidynamicingleburn"><i style="color: white;"
+                                <a href="https://www.facebook.com/multidynamicauburn"><i style="color: white;"
                                         class="fa fa-facebook book-apprisal"></i></a>
-                                <a href="https://www.instagram.com/multidynamic.ingleburn/"><i style="color: white;"
+                                <a href="https://www.instagram.com/multidynamic.auburn/"><i style="color: white;"
                                         class="fa fa-instagram book-apprisal"></i></a>
                                 {{-- <a href="https://www.linkedin.com/"><i style="color: white;" --}} {{--
                                         class="fa fa-linkedin book-apprisal"></i></a>--}}
@@ -527,15 +527,14 @@
                         </div>
                         <div id="footer-second" class="row col-md-8">
                             <div class="col-md-4">
-                                <h3 class="title newsletter-h2">Multi Dynamic Ingleburn</h3>
+                                <h3 class="title newsletter-h2">Multi Dynamic Auburn</h3>
                                 <div class="media">
                                     <div class="media-left media-middle">
                                         <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
                                     </div>
                                     <div class="media-body">
-                                        <a href="https://www.google.com/maps/place/shop+2%2F16+Ingleburn+Rd,+Ingleburn+NSW+2565/@-33.998541,150.864215,967m/data=!3m1!1e3!4m5!3m4!1s0x6b12eb7c35efffff:0x42923019afa6e69!8m2!3d-33.9986742!4d150.8641614?hl=en"
-                                            target="_blank">Shop 2, 16 Ingleburn Rd,
-                                            Ingleburn NSW 2565</a>
+                                        <a href="https://www.google.com/maps/place/shop+2%2F16+auburn+Rd,+auburn+NSW+2565/@-33.998541,150.864215,967m/data=!3m1!1e3!4m5!3m4!1s0x6b12eb7c35efffff:0x42923019afa6e69!8m2!3d-33.9986742!4d150.8641614?hl=en"
+                                            target="_blank">Shop 26/22, 20 Northumberland Rd, Auburn NSW 2144</a>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -551,7 +550,7 @@
                                         <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
                                     </div>
                                     <div class="media-body">
-                                        <span><a href="tel:+61296186209">(02) 9618 6209</a></span>
+                                        <span><a href="tel:+61296186209">1300 201 330</a></span>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -560,7 +559,7 @@
                                     </div>
                                     <div class="media-body">
                                         <span><a
-                                                href="mailto:sales@multidynamic.com.au">sales@multidynamic.com.au</a></span>
+                                                href="mailto:sales@multidynamic.com.au">auburn@multidynamic.com.au</a></span>
                                     </div>
                                 </div>
                                 <span class="sp-block"></span>
@@ -847,12 +846,12 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6">
             <ul class="btm-sm-icon">
-                <li><a href="https://www.facebook.com/multidynamicingleburn" target="_blank" class="sm-icon"><i
+                <li><a href="https://www.facebook.com/multidynamicauburn" target="_blank" class="sm-icon"><i
                             class="fa fa-facebook "></i></a></li>
-                <li><a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank" class="sm-icon"><i
+                <li><a href="https://www.instagram.com/multidynamicauburn/" target="_blank" class="sm-icon"><i
                             class="fa fa-instagram instagram"></i></a></li>
                 <li class="linkedin-link social-link-icon"><a
-                        href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i class="fa fa-youtube"
+                        href="https://www.youtube.com/@multidynamic-auburn4990"><i class="fa fa-youtube"
                             aria-hidden="true"></i></a></li>
             </ul>
 

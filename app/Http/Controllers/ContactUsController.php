@@ -79,7 +79,7 @@ class ContactUsController extends Controller
     private function sendContactUsByEmail($data)
     {
         Mail::send('emails.contact-us', ['data' => $data], function ($message) use ($data) {
-            $message->to('sales@multidynamic.com.au', 'Contact Us')
+            $message->to('auburn@multidynamic.com.au', 'Contact Us')
                 ->subject('Contact Us');
         });
     }

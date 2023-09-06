@@ -14,11 +14,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{!! env('APP_NAME') !!} Ingleburn</title>
+        <title>{!! env('APP_NAME') !!} Auburn</title>
         <meta name="description" content="@yield('meta_description')" />
         <meta name="keywords" content="@yield('meta_keywords')" />
         <meta name="copyright" content="© {!! date('Y-m-d') .' '. env('APP_NAME') !!}" />
-        <meta name="author" content="Multidynamic Ingleburn" />
+        <meta name="author" content="Multidynamic Auburn" />
         <meta name="email" content="sales@multidynamic.com.au" />
         <meta name="Distribution" content="Global" />
         <meta name="Rating" content="General" />

@@ -1,16 +1,16 @@
 <header>
-    <meta name="title" content="Multi Dynamic - Ingleburn | Your Dynamic Real Estate">
+    <meta name="title" content="Multi Dynamic - Auburn | Your Dynamic Real Estate">
     <meta name="description"
-        content="Multi Dynamic provides real estate services to the multicultural community all over Australia. Find houses, apartments & townhouses for sale & rent near Ingleburn area.">
+        content="Multi Dynamic provides real estate services to the multicultural community all over Australia. Find houses, apartments & townhouses for sale & rent near auburn area.">
     <meta name="keywords" content="multidynamic">
     <meta name="keywords" content="real estate in south west">
     <meta name="keywords" content="real estate in minto">
-    <meta name="keywords" content="real estate in ingleburn">
+    <meta name="keywords" content="real estate in auburn">
     <meta name="keywords" content="real estate in austral">
     <meta name="keywords" content="real estate in edmondson park">
     <meta name="keywords" content="real estate in oran park">
     <meta name="keywords" content="real estate in lepington">
-    <meta name="keywords" content="multidynamic ingleburn">
+    <meta name="keywords" content="multidynamic auburn">
     <meta name="keywords" content="nepali real estate in Sydney">
     <meta name="keywords" content="nepalese real estate">
     <meta name="keywords" content="nepali real estate in Australia">
@@ -37,7 +37,7 @@
     <meta name="keywords" content="rental properties in Sydney">
     <meta name="keywords" content="rental properties in south west sydney">
     <meta name="keywords" content="rental properties in liverpool">
-    <meta name="keywords" content="rental properties in ingleburn">
+    <meta name="keywords" content="rental properties in auburn">
     <meta name="keywords" content="rental property in edmondson park">
     <meta name="keywords" content="properties in lease near me">
     <meta name="keywords" content="Multi Dynamic">
@@ -62,21 +62,21 @@
                     <div class="top-panel-contents">
                         <div class="phone-number-container">
                             <a href="tel:0296186209"><i class="icon fa fa-phone" aria-hidden="true"></i>
-                                <span class="phone-number"> Phone No: 02 9618 6209</span>
+                                <span class="phone-number">Phone No: 1300 201 330</span>
                             </a>
                         </div>
                         <div class="social-links-container">
                             <ul>
                                 <li class="facebook-link social-link-icon" title="facesaldfjas;fkj;salfdj"><a
-                                        href="https://www.facebook.com/multidynamicingleburn"><i class="fa fa-facebook"
+                                        href="https://www.facebook.com/multidynamicauburn"><i class="fa fa-facebook"
                                             aria-hidden="true"></i></a></li>
                                 <li class="instragram-link social-link-icon"><a
-                                        href="https://www.instagram.com/multidynamic.ingleburn/"><i
+                                        href="https://www.instagram.com/multidynamicauburn/"><i
                                             class="fa fa-instagram" aria-hidden="true"></i></a></li>
 {{--                                <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i--}}
 {{--                                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>--}}
                                 <li class="linkedin-link social-link-icon"><a
-                                        href="https://www.youtube.com/channel/UCFmKJ8KqZ0ZVNfQ0MXoVQ9A"><i
+                                        href="https://www.youtube.com/@multidynamic-auburn4990"><i
                                             class="fa fa-youtube" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>

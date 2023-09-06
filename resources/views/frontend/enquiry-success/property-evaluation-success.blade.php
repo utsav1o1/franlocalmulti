@@ -12,7 +12,7 @@
                 your information.</h2>
             <p>Our team will be in touch with you within the next few days
                 to find out how we can help you get to where you want be.</p>
-            <p>You can also email us at: <a href="mailto:sales@multidynamic.com.au">sales@multidynamic.com.au</a></p>
+            <p>You can also email us at: <a href="mailto:auburn@multidynamic.com.au">auburn@multidynamic.com.au</a></p>
         </div>
     </div>
 </div>

@@ -53,30 +53,30 @@
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                    <img src="https://www.multidynamic.com.au/uploads/agent-images/agent-image-MDE6MDM6MDU0NA==.jpg" alt="TIRTHA ACHARYA">
+                                    <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDI6MDM6NTA4.jpg" alt="Bijay Gyawali">
                                 </div>
                                 <div class="caption">
-                                    Tirtha Acharya
+                                    Bijay Gyawali
                                 </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                <img src="images/bjay-paul.jpg" alt="bjay paul">
+                                <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDI6MDM6NTY3Ng==.jpg" alt="Dilli Dhakal">
                             </div>
                             <div class="caption">
-                                bjay paul
+                                Dilli Dhakal
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                <img src="images/syed-amin.jpg" alt=" syed amin">
+                                <img src="https://www.multidynamic.com.au/uploads/agent-images/agent-image-MDI6MDU6NTIyOQ==.jpg" alt="Jeetendra Shrestha">
                             </div>
                             <div class="caption">
-                                syed amin
+                                Jeetendra Shrestha
                             </div>
                         </div>
                     </div>
@@ -85,10 +85,10 @@
             <div class="contact-desc">
                 <span>TEXT YOUR ADDRESS TO </span>
                 <div class="phone">
-                    <a href="">0416 754 466</a>
+                    <a href="">0430 966 240</a>
                 </div>
                 <div class="email">
-                    <a href="">WWW.multidynamicingleburn.com.au</a>
+                    <a href="">www.multidynamicauburn.com.au</a>
                 </div>
             </div>
         </div>

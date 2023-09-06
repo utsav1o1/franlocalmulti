@@ -23,7 +23,7 @@
                         </p>
 
                         <div class="inner-about-img" style="border: 8px solid #efefef;"><img
-                                style="border: 12px solid #fff;" src="../images/multidynamic-team.jpg?v=1"
+                                style="border: 12px solid #fff;" src="../images/multidynamic-team.jpg?v=1" 
                                 class="img-responsive" alt="Multi Dynamic Tam Member" /></div>
                         <p align="justify">As one of the most trusted and fastest growing firms in Australia, we
                             consider ourselves a one stop solution to all your real estate requirements. You can trust
@@ -69,7 +69,7 @@
                         <h4>Easy Access </h4>
                     </b>
                     <p align="justify">We have agents all around Sydney, making it easy to locate us, no matter where
-                        you live. We are only a minute walk from Sydney’s South West’s Ingleburn Train station. We are
+                        you live. We are only a minute walk from Sydney’s South West’s Auburn Train station. We are
                         open 6 days a week Monday to Saturday (9am to 5pm) for your service. You can simply come and
                         visit us or call us on (02) 9618 6209 to book an appointment or arrange a home visit.</p>
                     </font>

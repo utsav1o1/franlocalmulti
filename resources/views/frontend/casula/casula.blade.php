@@ -274,8 +274,8 @@
 @endisset
 <div class="instagram">
 <div class="container">
-    <h2>Follow our instagram <a href="https://www.instagram.com/multidynamic.ingleburn/"
-            target="_blank">@multidynamic.ingleburn</a></h2>
+    <h2>Follow our instagram <a href="https://www.instagram.com/multidynamicauburn/"
+            target="_blank">@multidynamicauburn</a></h2>
     @if(!empty($posts))
     <div class="insta-gallery">
         <ul>
@@ -307,7 +307,7 @@
 
         </ul>
         <div class="text-center follow-us-btn">
-            <a href="https://www.instagram.com/multidynamic.ingleburn/" target="_blank"
+            <a href="https://www.instagram.com/multidynamicauburn/" target="_blank"
                 class="btn btn-primary">Follow Us</a>
         </div>
     </div>

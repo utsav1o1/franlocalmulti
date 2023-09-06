@@ -42,7 +42,7 @@
         <div class="container">
             <h1>Find your dream home </h1>
             <div class="slider-form-bg">
-                <form action="http://multidynamicingleburn.com.au/properties/search" method="get" class="form-group-lg">
+                <form action="http://multidynamicauburn.com.au/properties/search" method="get" class="form-group-lg">
                     <div class="col-md-2 slide-category">
 
 
@@ -245,7 +245,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/registered-land-in-the-heart-of-the-macarthur-height">
+                            href="http://multidynamicauburn.com.au/properties/registered-land-in-the-heart-of-the-macarthur-height">
 
                             <img src="https://multidynamic.com.au/uploads/properties/846/thumbnail-property-image-163090244652707789-rsd.jpg"
                                 alt="REGISTERED LAND IN THE HEART OF THE MACARTHUR HEIGHT" class="img-responsive" />
@@ -256,7 +256,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/registered-land-in-the-heart-of-the-macarthur-height">REGISTERED
+                                            href="http://multidynamicauburn.com.au/properties/registered-land-in-the-heart-of-the-macarthur-height">REGISTERED
                                             LAND IN THE HEART O...</a>
                                     </h1>
                                 </div>
@@ -293,7 +293,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/registered-land-in-the-heart-of-the-macarthur-height"><i
+                                    href="http://multidynamicauburn.com.au/properties/registered-land-in-the-heart-of-the-macarthur-height"><i
                                         class="fa-user"></i> 1 agent</a>
                                 <span><i class="fa-calendar-o"></i>1 day ago</span>
                             </div>
@@ -306,7 +306,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/hidden-gem-of-gregory-hills">
+                            href="http://multidynamicauburn.com.au/properties/hidden-gem-of-gregory-hills">
 
                             <img src="https://multidynamic.com.au/uploads/properties/845/thumbnail-property-image-163097337326658381-rsd.jpg"
                                 alt="Hidden Gem of Gregory Hills" class="img-responsive" />
@@ -317,7 +317,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/hidden-gem-of-gregory-hills">Hidden
+                                            href="http://multidynamicauburn.com.au/properties/hidden-gem-of-gregory-hills">Hidden
                                             Gem of Gregory Hills</a>
                                     </h1>
                                 </div>
@@ -353,7 +353,7 @@
                             </ul>
                             <div class="clearfix"></div>
                             <div class="detail-footer">
-                                <a href="http://multidynamicingleburn.com.au/properties/hidden-gem-of-gregory-hills"><i
+                                <a href="http://multidynamicauburn.com.au/properties/hidden-gem-of-gregory-hills"><i
                                         class="fa-user"></i> 1 agent</a>
                                 <span><i class="fa-calendar-o"></i>1 day ago</span>
                             </div>
@@ -366,7 +366,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/dual-occupancy-outstanding-family-home-with-a-granny-flat-in-the-heart-of-edmondson-park">
+                            href="http://multidynamicauburn.com.au/properties/dual-occupancy-outstanding-family-home-with-a-granny-flat-in-the-heart-of-edmondson-park">
 
                             <img src="https://multidynamic.com.au/uploads/properties/843/thumbnail-property-image-163053833527229384-rsd.jpg"
                                 alt="DUAL OCCUPANCY OUTSTANDING FAMILY HOME WITH A GRANNY FLAT IN THE HEART OF EDMONDSON PARK."
@@ -378,7 +378,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/dual-occupancy-outstanding-family-home-with-a-granny-flat-in-the-heart-of-edmondson-park">DUAL
+                                            href="http://multidynamicauburn.com.au/properties/dual-occupancy-outstanding-family-home-with-a-granny-flat-in-the-heart-of-edmondson-park">DUAL
                                             OCCUPANCY OUTSTANDING FAM...</a>
                                     </h1>
                                 </div>
@@ -415,7 +415,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/dual-occupancy-outstanding-family-home-with-a-granny-flat-in-the-heart-of-edmondson-park"><i
+                                    href="http://multidynamicauburn.com.au/properties/dual-occupancy-outstanding-family-home-with-a-granny-flat-in-the-heart-of-edmondson-park"><i
                                         class="fa-user"></i> 1 agent</a>
                                 <span><i class="fa-calendar-o"></i>4 days ago</span>
                             </div>
@@ -428,7 +428,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/only-pay-10-000-now-to-secure-your-next-property-selling-fast">
+                            href="http://multidynamicauburn.com.au/properties/only-pay-10-000-now-to-secure-your-next-property-selling-fast">
 
                             <img src="https://multidynamic.com.au/uploads/properties/841/thumbnail-property-image-163031020852274422-rsd.jpg"
                                 alt="ONLY PAY $10,000 NOW TO SECURE YOUR NEXT PROPERTY. SELLING FAST!!!"
@@ -440,7 +440,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/only-pay-10-000-now-to-secure-your-next-property-selling-fast">ONLY
+                                            href="http://multidynamicauburn.com.au/properties/only-pay-10-000-now-to-secure-your-next-property-selling-fast">ONLY
                                             PAY $10,000 NOW TO SECURE...</a>
                                     </h1>
                                 </div>
@@ -477,7 +477,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/only-pay-10-000-now-to-secure-your-next-property-selling-fast"><i
+                                    href="http://multidynamicauburn.com.au/properties/only-pay-10-000-now-to-secure-your-next-property-selling-fast"><i
                                         class="fa-user"></i> 2 agents</a>
                                 <span><i class="fa-calendar-o"></i>1 week ago</span>
                             </div>
@@ -490,7 +490,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/luxury-double-storey-house-at-the-heart-of-edmondson-park">
+                            href="http://multidynamicauburn.com.au/properties/luxury-double-storey-house-at-the-heart-of-edmondson-park">
 
                             <img src="https://multidynamic.com.au/uploads/properties/840/thumbnail-property-image-163038790855970845-rsd.jpg"
                                 alt="Luxury double storey house at the heart of Edmondson Park"
@@ -502,7 +502,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/luxury-double-storey-house-at-the-heart-of-edmondson-park">Luxury
+                                            href="http://multidynamicauburn.com.au/properties/luxury-double-storey-house-at-the-heart-of-edmondson-park">Luxury
                                             double storey house at...</a>
                                     </h1>
                                 </div>
@@ -539,7 +539,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/luxury-double-storey-house-at-the-heart-of-edmondson-park"><i
+                                    href="http://multidynamicauburn.com.au/properties/luxury-double-storey-house-at-the-heart-of-edmondson-park"><i
                                         class="fa-user"></i> 0 agent</a>
                                 <span><i class="fa-calendar-o"></i>1 week ago</span>
                             </div>
@@ -552,7 +552,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/welcome-to-the-meadows-in-bardia-1">
+                            href="http://multidynamicauburn.com.au/properties/welcome-to-the-meadows-in-bardia-1">
 
                             <img src="https://multidynamic.com.au/uploads/properties/827/thumbnail-property-image-162874489581679803-rsd.jpg"
                                 alt="Welcome To The Meadows in Bardia" class="img-responsive" />
@@ -563,7 +563,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/welcome-to-the-meadows-in-bardia-1">Welcome
+                                            href="http://multidynamicauburn.com.au/properties/welcome-to-the-meadows-in-bardia-1">Welcome
                                             To The Meadows in Bard...</a>
                                     </h1>
                                 </div>
@@ -600,7 +600,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/welcome-to-the-meadows-in-bardia-1"><i
+                                    href="http://multidynamicauburn.com.au/properties/welcome-to-the-meadows-in-bardia-1"><i
                                         class="fa-user"></i> 2 agents</a>
                                 <span><i class="fa-calendar-o"></i>3 weeks ago</span>
                             </div>
@@ -613,7 +613,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/the-one-you-have-been-waiting-for">
+                            href="http://multidynamicauburn.com.au/properties/the-one-you-have-been-waiting-for">
 
                             <img src="https://multidynamic.com.au/uploads/properties/823/thumbnail-property-image-162570970766966453-rsd.jpg"
                                 alt="THE ONE YOU HAVE BEEN WAITING FOR!" class="img-responsive" />
@@ -624,7 +624,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/the-one-you-have-been-waiting-for">THE
+                                            href="http://multidynamicauburn.com.au/properties/the-one-you-have-been-waiting-for">THE
                                             ONE YOU HAVE BEEN WAITING...</a>
                                     </h1>
                                 </div>
@@ -661,7 +661,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/the-one-you-have-been-waiting-for"><i
+                                    href="http://multidynamicauburn.com.au/properties/the-one-you-have-been-waiting-for"><i
                                         class="fa-user"></i> 2 agents</a>
                                 <span><i class="fa-calendar-o"></i>1 month ago</span>
                             </div>
@@ -674,7 +674,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/in-bardia-ready-to-move-in-home-under-760k">
+                            href="http://multidynamicauburn.com.au/properties/in-bardia-ready-to-move-in-home-under-760k">
 
                             <img src="https://multidynamic.com.au/uploads/properties/822/thumbnail-property-image-162701099101010304-rsd.jpg"
                                 alt="IN BARDIA ,READY TO MOVE IN HOME UNDER $760K" class="img-responsive" />
@@ -685,7 +685,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/in-bardia-ready-to-move-in-home-under-760k">IN
+                                            href="http://multidynamicauburn.com.au/properties/in-bardia-ready-to-move-in-home-under-760k">IN
                                             BARDIA ,READY TO MOVE IN HO...</a>
                                     </h1>
                                 </div>
@@ -722,7 +722,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/in-bardia-ready-to-move-in-home-under-760k"><i
+                                    href="http://multidynamicauburn.com.au/properties/in-bardia-ready-to-move-in-home-under-760k"><i
                                         class="fa-user"></i> 2 agents</a>
                                 <span><i class="fa-calendar-o"></i>1 month ago</span>
                             </div>
@@ -735,7 +735,7 @@
                 <div class="thumbnail">
                     <div class="thumbnail recent-properties-box">
                         <a class="thumbnail-container"
-                            href="http://multidynamicingleburn.com.au/properties/everything-you-need-in-a-family-home-1">
+                            href="http://multidynamicauburn.com.au/properties/everything-you-need-in-a-family-home-1">
 
                             <img src="https://multidynamic.com.au/uploads/properties/821/thumbnail-property-image-162701165962417421-rsd.jpg"
                                 alt="EVERYTHING YOU NEED IN A FAMILY HOME!!" class="img-responsive" />
@@ -746,7 +746,7 @@
                                 <div class="pull-left">
                                     <h1 class="title">
                                         <a
-                                            href="http://multidynamicingleburn.com.au/properties/everything-you-need-in-a-family-home-1">EVERYTHING
+                                            href="http://multidynamicauburn.com.au/properties/everything-you-need-in-a-family-home-1">EVERYTHING
                                             YOU NEED IN A FAMIL...</a>
                                     </h1>
                                 </div>
@@ -783,7 +783,7 @@
                             <div class="clearfix"></div>
                             <div class="detail-footer">
                                 <a
-                                    href="http://multidynamicingleburn.com.au/properties/everything-you-need-in-a-family-home-1"><i
+                                    href="http://multidynamicauburn.com.au/properties/everything-you-need-in-a-family-home-1"><i
                                         class="fa-user"></i> 2 agents</a>
                                 <span><i class="fa-calendar-o"></i>1 month ago</span>
                             </div>
@@ -815,17 +815,17 @@
 
             <div class="col-lg-3">
                 <div class="main-title">
-                    <h2>Welcome to Multi Dynamic Ingleburn</h2>
+                    <h2>Welcome to Multi Dynamic Auburn</h2>
 
                 </div>
                 <p>
 
                     Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate franchises
                     in
-                    Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record of
+                    Australia. Our dedicated, educated and hardworking auburn team has a proven track record of
                     results in serving our customers to buy, sell, rent and build their properties. You can be
                     assured
-                    when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate
+                    when you engage Multi Dynamic auburn, you will find every solution to your real estate
                     requirements, because it’s our client's satisfaction which is the key to our success.
 
 
@@ -1017,7 +1017,7 @@
     <div class="container">
         <div class="blog__title text-center">
             <h2>BLOGS</h2>
-            <p>Find the latest useful information about property in Ingleburn and surrounding areas</p>
+            <p>Find the latest useful information about property in auburn and surrounding areas</p>
         </div>
 
         <div class="blogs-links-container">
