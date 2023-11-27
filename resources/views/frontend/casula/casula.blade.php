@@ -6,7 +6,9 @@
     <!--Start of Body Part-->
 
 <!--START OF SLIDER PART-->
-<div class="casual--banner" style="background: url('{{ url($home->banner->getFilePath()) }}')">
+{{-- This was changed by Deshant 2023-10-15 --}}
+{{-- <div class="casual--banner" style="background: url('{{ url($home->banner->getFilePath()) }}')"> --}}
+<div class="casual--banner" style="background: #F36421;height:auto !important;min-height:auto !important;">
     <div class="container">
         <div class="award-logo">
             <img src="images/selling-awards.png" alt="">
@@ -23,18 +25,18 @@
 <div class="casula__area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="content-left">
                 {!! $home->content->meta_value !!}
                 </div>
             </div>
-            <div class="col-lg-6">
+            {{-- <div class="col-lg-6">
                 <div class="content-right">
                 @if(optional($home->content)->image)
                     <img src="{{ url($home->content->getFilePath()) }}" alt="">
                 @endif
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="read-more-block text-center">
             <span id="read-more">Click here to read more</span>

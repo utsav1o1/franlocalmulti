@@ -9,6 +9,7 @@ use App\Repositories\PropertyCategoryRepository;
 use App\Repositories\PropertyInquiryRepository;
 use App\Repositories\PropertyRepository;
 use App\Repositories\PropertyTypeRepository;
+use Illuminate\Support\Facades\Log;
 use Auth;
 use Carbon\Carbon;
 use DataHelper;
@@ -192,21 +193,22 @@ class PropertyController extends Controller
     public function buy(Request $request, $slug = null)
     {
         $propertySubCategory = [];
-
         $defaultCategories = \App\Models\Corporate\PropertyCategory::getDefaultPropertyCategories();
-
+        
         $query = \App\Models\Corporate\Property::leftJoin('property_images', 'property_images.id', '=', 'properties.main_image')
-
-            ->leftJoin('property_agents', 'property_agents.property_id', '=', 'properties.id')
-            ->leftJoin('price_types', 'price_types.id', '=', 'properties.price_type_id')
-            ->leftJoin('locations', 'locations.id', '=', 'properties.location_id')
-            ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
-            ->where('is_active', 'Y')
-            ->where('branch_id', env('BRANCH_ID'))
-            ->where('property_category_id', $defaultCategories['buy'])
-            ->where('property_status', 'Sale')
-            ->orWhere('property_status', 'Under Contract');
-
+        
+        ->leftJoin('property_agents', 'property_agents.property_id', '=', 'properties.id')
+        ->leftJoin('price_types', 'price_types.id', '=', 'properties.price_type_id')
+        ->leftJoin('locations', 'locations.id', '=', 'properties.location_id')
+        ->leftJoin('property_types', 'property_types.id', '=', 'properties.property_type_id')
+        ->where('is_active', 'Y')
+        ->where('branch_id', env('BRANCH_ID'))
+        ->where('property_category_id', $defaultCategories['buy'])
+        ->where(function ($query) {
+            $query->where('property_status', 'Sale')
+                  ->orWhere('property_status', 'Under Contract');
+        });
+        
         if ($slug) {
             $propertySubCategory = \App\Models\Corporate\PropertySubCategory::where('slug', $slug)->first();
 
@@ -231,7 +233,8 @@ class PropertyController extends Controller
                 $query->where('number_of_bedrooms', $request->get('number_of_bedrooms'));
             }
         }
-
+        
+       
         if ($request->get('number_of_bathrooms')) {
             if ($request->get('number_of_bathrooms') == 4) {
                 $query->where('number_of_bathrooms', '>=', $request->get('number_of_bathrooms'));
@@ -359,8 +362,11 @@ class PropertyController extends Controller
             ->where('is_active', 'Y')
             ->where('branch_id', env('BRANCH_ID'))
             ->where('property_category_id', $defaultCategories['rent'])
-            ->where('property_status', 'Lease')
-            ->orWhere('property_status', 'Deposit Taken');
+            ->where(function ($query) {
+                $query->where('property_status', 'Lease')
+                      ->orWhere('property_status', 'Deposit Taken');
+            });
+         
 
         if ($slug) {
             $propertySubCategory = \App\Models\Corporate\PropertySubCategory::where('slug', $slug)->first();

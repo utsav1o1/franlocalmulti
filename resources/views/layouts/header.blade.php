@@ -61,8 +61,8 @@
                 <div class="col-md-12">
                     <div class="top-panel-contents">
                         <div class="phone-number-container">
-                            <a href="tel:0296186209"><i class="icon fa fa-phone" aria-hidden="true"></i>
-                                <span class="phone-number">Phone No: 1300 201 330</span>
+                            <a href="tel:1300201330"><i class="icon fa fa-phone" aria-hidden="true"></i>
+                                <span class="phone-number" style="font-size: calc(min(17px, 3vw)); color: #00529C;font-weight:bold;">Phone No: 1300 201 330</span>
                             </a>
                         </div>
                         <div class="social-links-container">
@@ -74,7 +74,7 @@
                                         href="https://www.instagram.com/multidynamicauburn/"><i
                                             class="fa fa-instagram" aria-hidden="true"></i></a></li>
 {{--                                <li class="linkedin-link social-link-icon"><a href="https://www.linkedin.com"><i--}}
-{{--                                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>--}}
+{{--                                            class="fa fa-linkedin" aria-hidden= "true"></i></a></li>--}}
                                 <li class="linkedin-link social-link-icon"><a
                                         href="https://www.youtube.com/@multidynamic-auburn4990"><i
                                             class="fa fa-youtube" aria-hidden="true"></i></a></li>
@@ -161,7 +161,7 @@
 
                                     @endforeach
                                     <li><a href="{{route('page.propertymanagement')}}">Property Management</a></li>
-                                    <li><a href="{!! route('agents.index') !!}">Commercial</a></li>
+                                    <li><a href="{{ route('properties.rent','commercial') }}">Commercial</a></li>
                                     <li><a href="{!! route('properties.leased') !!}">Leased Properties</a></li>
 {{--                                    <li><a href="{!! route('showApplicationForm') !!}" target="_blank">Application--}}
 {{--                                            Form</a></li>--}}

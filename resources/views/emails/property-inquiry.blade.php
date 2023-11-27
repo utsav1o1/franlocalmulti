@@ -5,9 +5,9 @@
 </head>
 <body>
 <div>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#8d8e90" style="margin: 20px">
-        <tr bgcolor="#520101">
-            <td align="left"><img src="{!! $message->embed($logoPath) !!}"></td>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="" style="margin: 20px">
+        <tr bgcolor="">
+            <td align="left"><img style="width: 20%"  src="{!! $message->embed($logoPath) !!}"></td>
         </tr>
     </table>
 

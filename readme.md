@@ -1,3 +1,0 @@
-# Multidynamic-queensland
-
-queensland

@@ -21,7 +21,7 @@
                         <table cellspacing="0" cellpadding="0" width="100%">
                             <tr>
                                 <td>
-                                    <p>Dear <strong>Ingleburn,</strong> <br />
+                                    <p>Dear <strong>Auburn,</strong> <br />
                                         <br />
                                         A visitor have send an inquiry to you with following details.
                                     </p>

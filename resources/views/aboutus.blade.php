@@ -32,7 +32,7 @@
                         <p align="justify">
                             Whether it’s residential project sales, residential individual sales or property management,
                             one of our Dynamic experts will be ready to assist and provide the highest quality service.
-                            We invite you to talk to us today or call on (02) 9618 6209 and book your appointment with a
+                            We invite you to talk to us today or call on 1300 201 330 and book your appointment with a
                             Multi Dynamic agent.
                         </p>
                         <h1 class="inner-about-heading">“Why Multi Dynamic?”</h1>
@@ -71,7 +71,7 @@
                     <p align="justify">We have agents all around Sydney, making it easy to locate us, no matter where
                         you live. We are only a minute walk from Sydney’s South West’s Auburn Train station. We are
                         open 6 days a week Monday to Saturday (9am to 5pm) for your service. You can simply come and
-                        visit us or call us on (02) 9618 6209 to book an appointment or arrange a home visit.</p>
+                        visit us or call us on 1300 201 330 to book an appointment or arrange a home visit.</p>
                     </font>
                 </div>
             </div>

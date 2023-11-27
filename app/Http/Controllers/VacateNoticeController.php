@@ -27,7 +27,7 @@ class VacateNoticeController extends Controller
     private function sendVacateNoticeByEmail($data)
     {
         Mail::send('emails.vacate-notice', ['data' => $data], function($message) use ($data) {
-            $message->to('sales@multidynamic.com.au', 'Vacate Notice')
+            $message->to(env('VACATE_EMAIL'), 'Vacate Notice')
                     ->subject('Vacate Notice');
         });
     }

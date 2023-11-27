@@ -498,7 +498,7 @@
                         <div id="footer-first" class="row col-md-8">
                             <div class="col-md-4 align-self-center">
                                 <img class="footer-logo"
-                                    src="http://multidynamicauburn.com.au/images/footer-logo.png">
+                                    src="{{ asset('images/footer-logo.png') }}">
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-3 book-apprisal">
@@ -514,7 +514,7 @@
                             <div class="col-md-2">
                                 <a href="https://www.facebook.com/multidynamicauburn"><i style="color: white;"
                                         class="fa fa-facebook book-apprisal"></i></a>
-                                <a href="https://www.instagram.com/multidynamic.auburn/"><i style="color: white;"
+                                <a href="https://www.instagram.com/multidynamicauburn/"><i style="color: white;"
                                         class="fa fa-instagram book-apprisal"></i></a>
                                 {{-- <a href="https://www.linkedin.com/"><i style="color: white;" --}} {{--
                                         class="fa fa-linkedin book-apprisal"></i></a>--}}
@@ -533,7 +533,7 @@
                                         <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
                                     </div>
                                     <div class="media-body">
-                                        <a href="https://www.google.com/maps/place/shop+2%2F16+auburn+Rd,+auburn+NSW+2565/@-33.998541,150.864215,967m/data=!3m1!1e3!4m5!3m4!1s0x6b12eb7c35efffff:0x42923019afa6e69!8m2!3d-33.9986742!4d150.8641614?hl=en"
+                                        <a href="https://maps.app.goo.gl/JpcWw6sRw53onH2s9"
                                             target="_blank">Shop 26/22, 20 Northumberland Rd, Auburn NSW 2144</a>
                                     </div>
                                 </div>
@@ -550,7 +550,7 @@
                                         <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
                                     </div>
                                     <div class="media-body">
-                                        <span><a href="tel:+61296186209">1300 201 330</a></span>
+                                        <span><a href="tel:1300 201 330">1300 201 330</a></span>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -559,7 +559,7 @@
                                     </div>
                                     <div class="media-body">
                                         <span><a
-                                                href="mailto:sales@multidynamic.com.au">auburn@multidynamic.com.au</a></span>
+                                                href="mailto:auburn@multidynamic.com.au">auburn@multidynamic.com.au</a></span>
                                     </div>
                                 </div>
                                 <span class="sp-block"></span>
@@ -589,20 +589,20 @@
                             </div>
                             <div class="col-md-2">
                                 <p><strong>Suburbs</strong></p>
-                                <a id="item" href="/real-estate-agent-casula">Casula</a><br />
-                                <a id="item" href="/real-estate-agent-liverpool">Liverpool</a><br />
-                                <a id="item" href="/real-estate-agent-austral">Austral</a><br />
-                                <a id="item" href="/real-estate-agent-bardia">Bardia</a><br />
-                                <a id="item" href="/real-estate-agent-leppington">Leppington</a><br />
+                                <a id="item" href="/real-estate-agent-auburn">Auburn</a><br />
+                                <a id="item" href="/real-estate-agent-granville">Granville</a><br />
+                                <a id="item" href="/real-estate-agent-lidcombe">Lidcombe</a><br />
+                                <a id="item" href="/real-estate-agent-merrylands">Merrylands</a><br />
+                                <a id="item" href="/real-estate-agent-wentworthville">Wentworthville</a><br />
                                 <span class="sp-block"></span>
                             </div>
                             <div class="col-md-2">
                                 <p style="color: #f36421"><strong>Suburbs</strong></p>
-                                <a id="item" href="/real-estate-agent-hoxton-park">Hoxton-Park</a><br />
-                                <a id="item" href="/real-estate-agent-minto">Minto</a><br />
-                                <a id="item" href="/real-estate-agent-glenfield">Glenfield</a><br />
-                                <a id="item" href="/real-estate-agent-edmondson-park">Edmondson Park</a><br />
-                                <a id="item" href="/real-estate-agent-green-valley">Green-Valley</a><br />
+                                <a id="item" href="/real-estate-agent-green-valley">Rockdale</a><br />
+                                <a id="item" href="/real-estate-agent-hoxton-park">Kogarah</a><br />
+                                <a id="item" href="/real-estate-agent-minto">Westmead</a><br />
+                                <a id="item" href="/real-estate-agent-glenfield">Blacktown</a><br />
+                                <a id="item" href="/real-estate-agent-edmondson-park">Parramatta</a><br />
                                 <span class="sp-block"></span>
                             </div>
                         </div>
@@ -859,7 +859,7 @@
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="copyright">
                 <!--  <a href="{!! route('page.show', 'privacy-policy') !!}">Privacy Policy</a>&nbsp; -->
-                ABN:77 629 002 366 &nbsp; &nbsp;
+                ABN:20 608 935 208 &nbsp; &nbsp;
                 <a href="{!! route('page.show', 'terms-and-conditions') !!}">Terms & Conditions</a>
             </div>
             <div class="design-develop">Design and developed by <a href="http://www.111it.com.au" target="_blank">111IT

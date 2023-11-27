@@ -7,6 +7,7 @@
     @isset($sliders)
         @if ($sliders->count() > 0)
             <div class="main__banner">
+                <div id="daintegration">  </div>
                 <div class="main__banner__slide">
                     @foreach ($sliders as $slider)
                         <div class="item ">

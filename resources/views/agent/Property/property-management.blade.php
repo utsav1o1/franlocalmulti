@@ -145,7 +145,7 @@
 <div class="property-evaluation-block">
     <div class="container">
         <h2>Curious about your property's value?</h2>
-        <p>Don’t list in Ingleburn without talking to Ingleburn’s premium property experts</p>
+        <p>Don’t list in Auburn without talking to Auburn’s premium property experts</p>
         <div class="property-evaluation-wrapper" id="property-evaluation">
             <h2>Free Property Evaluation!</h2>
             <p>We’ll send you a comprehensive, personalised report with in-depth analysis and market insights from
@@ -234,11 +234,11 @@
                         <div class="mesage-content">
                             Multi Dynamic Real Estate is one of the most trusted and fastest growing real estate
                             franchises in
-                            Australia. Our dedicated, educated and hardworking Ingleburn team has a proven track record
+                            Australia. Our dedicated, educated and hardworking Auburn team has a proven track record
                             of
                             results in serving our customers to buy, sell, rent and build their properties. You can be
                             assured
-                            when you engage Multi Dynamic Ingleburn, you will find every solution to your real estate
+                            when you engage Multi Dynamic Auburn, you will find every solution to your real estate
                             requirements, because it’s our client's satisfaction which is the key to our success.
                         </div>
                     </div>

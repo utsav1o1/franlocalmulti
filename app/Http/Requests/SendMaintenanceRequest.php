@@ -26,7 +26,7 @@ class SendMaintenanceRequest extends FormRequest
     {
         return [
             'date' => 'required|date_format:Y-m-d',
-            'request_by' => 'required',
+            'tenant_name' => 'required',
             'tenant_address' => 'required',
             'tenant_email' => 'required|email',
             'tenant_phone_number' => 'required',

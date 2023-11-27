@@ -31,7 +31,7 @@ Route::get('/guide', function () {
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/send', 'HomeController@send')->name('send');
 Route::get('properties/search', 'PropertyController@search')->name('properties.search');
-Route::get('properties', 'PropertyController@index')->name('properties.index');
+Route::get('properties', 'PropertyController@search')->name('properties.search');
 Route::get('properties/{slug}', 'PropertyController@show')->name('properties.show');
 Route::post('properties/{slug}', 'PropertyController@submitContact')->name('properties.submit.contact');
 Route::get('properties/{slug}/print', 'PropertyController@printProperty')->name('properties.print');

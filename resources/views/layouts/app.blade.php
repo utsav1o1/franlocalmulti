@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{!! env('APP_NAME') !!} Auburn</title>
+        <title>{!! env('APP_NAME') !!} Auburn | Under Maintenance<</title>
         <meta name="description" content="@yield('meta_description')" />
         <meta name="keywords" content="@yield('meta_keywords')" />
         <meta name="copyright" content="© {!! date('Y-m-d') .' '. env('APP_NAME') !!}" />
@@ -451,6 +451,10 @@
             });
 
         </script>
+        <script defer src="https://dpr.leadplus.com.au/main.js"></script> 
+        <script src="{{ url('packages/select2/js/select2.min.js') }}"></script>
+        <script src="{{ url('packages/bootstrap-slider/js/bootstrap-slider.min.js') }}"></script>
+    
 
 
 

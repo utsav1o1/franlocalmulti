@@ -27,7 +27,7 @@ class MaintenanceRequestController extends Controller
     private function sendMaintenanceRequestEmail($data)
     {
         Mail::send('emails.maintenance-request', ['data' => $data], function($message) use ($data) {
-            $message->to('sales@multidynamic.com.au', 'Maintenance Request')
+            $message->to(env('MAINTENANCE_EMAIL'), 'Maintenance Request')
                     ->subject('Maintenance Request');
         });
     }

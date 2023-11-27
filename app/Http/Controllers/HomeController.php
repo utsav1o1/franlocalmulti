@@ -131,7 +131,7 @@ class HomeController extends Controller
             ->get();
 
         // gettting home page extra content
-        $home = Page::where('slug', 'home')->first();
+        $home = Page::where('slug', 'home')->where('branch_id',env('BRANCH_ID'))->first();
 
         if (isset($home) && $home != null) {
             $home['welcome_message'] = PageDetail::where('page_id', $home->id)->where('slug', 'welcome-message')->first();

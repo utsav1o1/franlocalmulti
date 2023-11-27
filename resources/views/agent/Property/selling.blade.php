@@ -53,7 +53,7 @@
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                    <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDI6MDM6NTA4.jpg" alt="Bijay Gyawali">
+                                    <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDQ6MTA6NTQ1Mw==.jpg" alt="Bijay Gyawali">
                                 </div>
                                 <div class="caption">
                                     Bijay Gyawali
@@ -63,7 +63,7 @@
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDI6MDM6NTY3Ng==.jpg" alt="Dilli Dhakal">
+                                <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDI6MTA6MjEyNw==.jpg" alt="Dilli Dhakal">
                             </div>
                             <div class="caption">
                                 Dilli Dhakal
@@ -73,7 +73,7 @@
                     <div class="col-lg-4">
                         <div class="teams__block">
                             <div class="image">
-                                <img src="https://www.multidynamic.com.au/uploads/agent-images/agent-image-MDI6MDU6NTIyOQ==.jpg" alt="Jeetendra Shrestha">
+                                <img src="https://multidynamic.com.au/uploads/agent-images/agent-image-MDI6MTA6MjU5MA==.jpg" alt="Jeetendra Shrestha">
                             </div>
                             <div class="caption">
                                 Jeetendra Shrestha
@@ -83,12 +83,12 @@
                 </div>
             </div>
             <div class="contact-desc">
-                <span>TEXT YOUR ADDRESS TO </span>
+                <span>TEXT YOUR ADDRESS TO</span>
                 <div class="phone">
-                    <a href="">0430 966 240</a>
+                    <a href="sms:0430966240">0430 966 240</a>
                 </div>
                 <div class="email">
-                    <a href="">www.multidynamicauburn.com.au</a>
+                    <a href="https://auburn.multidynamic.com.au">www.multidynamicauburn.com.au</a>
                 </div>
             </div>
         </div>

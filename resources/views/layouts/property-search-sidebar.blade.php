@@ -1,4 +1,3 @@
-
 <div class="col-sm-3 col-md-3 list-group property-search-sidebar-container">
     <div class="wrapper">
         <p class="list-group-item side-bar-head property-search-sidebar-header">Search Property</p>
@@ -6,21 +5,38 @@
             <div class="col-md-12 slide-category">
                 <select class="form-control type" name="category">
                     <option value="">Select Category</option>
-                    @foreach(DataHelper::getCategories() as $key=>$category)
-                        <option value="{!! $category->id !!}">{!! $category->property_category !!}</option>
-                    @endforeach
+                    <option value="1">Buy - Residential</option>
+                            <option value="2">Buy - House & Land</option>
+                            <option value="3">Buy - Land</option>
+                            <option value="4">Buy - Commercial</option>
+                            <option value="5">Buy - Rural</option>
+                            <option value="6">Rent - Residential</option>
+                            <option value="7">Rent - Commercial</option>
+                            <option value="8">Rent - Rental</option>
+                            <option value="9">Rent - Holiday Rental</option>
+
                 </select>
             </div>
             <div class="col-md-12 slider-loc">
                 <input type="text" class="form-control" id="location" placeholder="Choose Location" />
-                <input type='hidden' id='location_id' name="location_id" >
+                <input type='hidden' id='location_id' name="location_id">
             </div>
             <div class="col-md-12">
                 <select class="form-control property_type" name="property_type">
-                    <option value="">Property Type</option>
-                    @foreach(DataHelper::getPropertyTypes() as $key=>$type)
-                        <option value="{!! $type->id !!}">{!! $type->property_type !!}</option>
-                    @endforeach
+                            <option value="">Property Type</option>
+                            <option value="1">Duplex</option>
+                            <option value="2">Terrace</option>
+                            <option value="3">Studio</option>
+                            <option value="4">Townhouse</option>
+                            <option value="5">Unit</option>
+                            <option value="6">House</option>
+                            <option value="7">House & Land</option>
+                            <option value="8">Land</option>
+                            <option value="9">Villa</option>
+                            <option value="10">Acreage</option>
+                            <option value="11">Serviced Apartment</option>
+                            <option value="12">Apartment</option>
+                            <option value="13">Others</option>
                 </select>
             </div>
 
@@ -51,11 +67,11 @@
 
                     <option value="0">0</option>
                     <option value="1">1</option>
-                     <option value="1">1.5</option>
+                    <option value="1">1.5</option>
                     <option value="2">2</option>
-                     <option value="1">2.5</option>
+                    <option value="1">2.5</option>
                     <option value="3">3+</option>
-                    
+
                 </select>
             </div>
 

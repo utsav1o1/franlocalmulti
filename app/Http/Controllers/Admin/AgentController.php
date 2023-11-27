@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\AgentRepository;
+use App\Repositories\FranchiseAgentRepository;
 use App\Http\Requests\Admin\Agent\StoreRequest;
 use App\Http\Requests\Admin\Agent\UpdateRequest;
 
@@ -24,7 +24,7 @@ class AgentController extends Controller
     public function __construct(
         LocationRepository $locations,
         DesignationRepository $designations,
-        AgentRepository $agents
+        FranchiseAgentRepository $agents
     ){
         $this->locations = $locations;
         $this->designations = $designations;

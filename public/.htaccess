@@ -18,4 +18,9 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+RewriteCond %{HTTP_HOST} ^multidynamicauburn\.com\.au$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.multidynamicauburn\.com\.au$
+RewriteRule ^(.*)$ https://auburn.multidynamic.com.au/$1 [R=301,L]
+
 </IfModule>

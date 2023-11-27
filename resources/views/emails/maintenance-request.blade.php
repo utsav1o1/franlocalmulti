@@ -5,7 +5,7 @@
 	</tr>
 	<tr>
 		<td>Request By:</td>
-		<td>{{$data['request_by']}}</td>
+		<td>{{$data['tenant_name']}}</td>
 	</tr>
 	<tr>
 		<td>Tenant Address:</td>

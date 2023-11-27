@@ -17,7 +17,7 @@
 		<div class="col-md-12">
 			<h1 class="form-title">CONTACT US</h1>
 			<p class="text-center font-weight-bold">
-				Isn’t it time you experienced the Multi Dynamic Ingleburn difference? <br>
+				Isn’t it time you experienced the Multi Dynamic Auburn difference? <br>
 				Here’s how you can get in contact with our team of real estate agents, based throughout Australia.
 				<hr>
 			</p>
@@ -312,7 +312,7 @@
 	        var longitude = '150.864174';
 	        var zoomValue = 15;
 	        var name = 'Multidynamic Sydney';
-	        var address = 'Shop 2, 16 Ingleburn Rd, Ingleburn NSW 2565, Australia';
+	        var address = 'Shop 26/22, 20 Northumberland Rd, Auburn NSW 2144';
 
 	        function init_map() {
 	            var myOptions = {
